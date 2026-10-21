@@ -103,6 +103,7 @@
         </div>
         <div class="nav-links">
             <a href="#about" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
+            <a href="#how-it-works" data-vi="Quy trình" data-en="How It Works">Quy trình</a>
             <a href="#architecture" data-vi="Kiến trúc" data-en="Architecture">Kiến trúc</a>
             <a href="#vision" data-vi="Tầm nhìn Việt Nam" data-en="Vietnam Vision">Tầm nhìn Việt Nam</a>
             <a href="#connect" data-vi="Kết nối" data-en="Connect">Kết nối</a>
@@ -117,6 +118,20 @@
             <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-vi="Đọc White Paper" data-en="Read Whitepaper">Đọc White Paper</a>
             <a href="https://github.com/nan-nexus-network/ai2ai-core" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-vi="Xem Mã nguồn" data-en="View Source">Xem Mã nguồn</a>
         </div>
+        <div style="margin-top: 3rem; background: #1A1A1A; border-radius: 8px; overflow: hidden; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; border: 1px solid #333;">
+            <div style="background: #2D2D2D; padding: 10px 15px; display: flex; gap: 8px;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F56;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #FFBD2E;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #27C93F;"></div>
+            </div>
+            <div style="padding: 1.5rem; font-family: monospace; font-size: 0.9rem; color: #A0A0A0; line-height: 1.5;">
+                <span style="color: #27C93F;">$</span> python examples/02-agent-to-agent-chat/agent_chat.py<br>
+                <span style="color: #FFFFFF;">[1] Alice_Agent khởi tạo yêu cầu: Tìm nhà cung cấp linh kiện...</span><br>
+                <span style="color: #FFFFFF;">[2] NAN Bridge đang định tuyến từ Alice -&gt; Bob...</span><br>
+                <span style="color: #FFFFFF;">[3] NAN Bridge cấp Biên nhận Xác thực (Verification Receipt):</span><br>
+                <span style="color: #FBBF24;">{ &quot;status&quot;: &quot;VERIFIED_BY_NAN_BRIDGE&quot;, &quot;sha256_proof&quot;: &quot;a1b2c3...&quot; }</span>
+            </div>
+        </div>
     </header>
 
     <section id="about">
@@ -129,6 +144,29 @@
             <div class="card" style="border-left: 4px solid var(--text-dark);">
                 <h3 data-vi="Giải pháp" data-en="The Solution">Giải pháp</h3>
                 <p data-vi="NAN AI2AI cung cấp tầng chuyển đổi trung lập (Neutral Translation Layer). Chúng tôi kết nối các giao thức, xác thực giao dịch qua mã băm (SHA-256) và bảo vệ dòng tiền của doanh nghiệp." data-en="NAN AI2AI provides a Neutral Translation Layer. We connect protocols, verify transactions via cryptographic hashes (SHA-256), and protect business cash flows.">NAN AI2AI cung cấp tầng chuyển đổi trung lập (Neutral Translation Layer). Chúng tôi kết nối các giao thức, xác thực giao dịch qua mã băm (SHA-256) và bảo vệ dòng tiền của doanh nghiệp.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" style="padding: 5rem 2rem; background: var(--bg-light);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" data-vi="Quy trình Hoạt động" data-en="How It Works">Quy trình Hoạt động</h2>
+            <div class="grid-bento">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; color: var(--primary-red); font-family: 'Merriweather', serif; font-weight: 900;">1</div>
+                    <h3 data-vi="Kết nối" data-en="Connect">Kết nối</h3>
+                    <p data-vi="Agent tự động tìm thấy nhau qua lớp Discovery." data-en="Agents automatically discover each other.">Agent tự động tìm thấy nhau qua lớp Discovery.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; color: var(--primary-red); font-family: 'Merriweather', serif; font-weight: 900;">2</div>
+                    <h3 data-vi="Đàm phán" data-en="Negotiate">Đàm phán</h3>
+                    <p data-vi="Thống nhất tác vụ và chi phí qua lớp Negotiation." data-en="Agree on tasks and costs via Negotiation.">Thống nhất tác vụ và chi phí qua lớp Negotiation.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; color: var(--primary-red); font-family: 'Merriweather', serif; font-weight: 900;">3</div>
+                    <h3 data-vi="Xác thực" data-en="Verify">Xác thực</h3>
+                    <p data-vi="Cấp biên nhận SHA-256 qua lớp Verification." data-en="Issue SHA-256 receipts via Verification.">Cấp biên nhận SHA-256 qua lớp Verification.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -160,6 +198,22 @@
     <section id="connect">
         <h2 class="section-title" data-vi="Kết nối & Đóng góp" data-en="Connect & Contribute">Kết nối & Đóng góp</h2>
         <p style="text-align: center; margin-bottom: 2rem; color: var(--text-gray);" data-vi="Tham gia cùng chúng tôi xây dựng tầng giao thức mở cho Việt Nam." data-en="Join us in building an open protocol layer for Vietnam.">Tham gia cùng chúng tôi xây dựng tầng giao thức mở cho Việt Nam.</p>
+
+        <div class="grid-bento" style="margin-bottom: 3rem;">
+            <div class="card">
+                <h3 data-vi="Dành cho Kỹ sư" data-en="For Engineers">Dành cho Kỹ sư</h3>
+                <p data-vi="Chạy thử Demo, mở Issue, hoặc gửi PR để tối ưu hóa code." data-en="Run the demo, open issues, or submit PRs.">Chạy thử Demo, mở Issue, hoặc gửi PR để tối ưu hóa code.</p>
+            </div>
+            <div class="card">
+                <h3 data-vi="Dành cho Nhà nghiên cứu" data-en="For Researchers">Dành cho Nhà nghiên cứu</h3>
+                <p data-vi="Đọc White Paper, phản biện kiến trúc và đóng góp góc nhìn chính sách." data-en="Read the whitepaper, critique architecture, and contribute policy views.">Đọc White Paper, phản biện kiến trúc và đóng góp góc nhìn chính sách.</p>
+            </div>
+            <div class="card">
+                <h3 data-vi="Dành cho Doanh nghiệp" data-en="For Enterprises">Dành cho Doanh nghiệp</h3>
+                <p data-vi="Thử nghiệm tích hợp chuỗi cung ứng hoặc liên hệ hợp tác thí điểm." data-en="Test supply chain integration or contact us for pilot partnerships.">Thử nghiệm tích hợp chuỗi cung ứng hoặc liên hệ hợp tác thí điểm.</p>
+            </div>
+        </div>
+
         <div class="connect-grid">
             <a href="https://www.facebook.com/profile.php?id=61595651371198" target="_blank" rel="noopener noreferrer" class="connect-btn">Facebook</a>
             <a href="https://x.com/Nan_ai2ai_vn" target="_blank" rel="noopener noreferrer" class="connect-btn">X (Twitter)</a>
@@ -181,7 +235,14 @@
         function toggleLang() {
             currentLang = currentLang === 'vi' ? 'en' : 'vi';
             document.querySelectorAll('[data-vi]').forEach(el => {
-                el.textContent = el.getAttribute('data-' + currentLang);
+                const text = el.getAttribute('data-' + currentLang);
+                if (text) {
+                    if (text.includes('<') && text.includes('>')) {
+                        el.innerHTML = text;
+                    } else {
+                        el.textContent = text;
+                    }
+                }
             });
             document.documentElement.lang = currentLang;
         }
