@@ -38,7 +38,9 @@
         .nav-links { display: flex; gap: 2rem; align-items: center; font-weight: 500; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--primary-red); }
         .lang-toggle { cursor: pointer; border: 1px solid var(--border-color); padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 600; }
-        .lang-toggle:hover { border-color: var(--primary-red); color: var(--primary-red); }
+        .lang-toggle:hover { border-color: var(--primary-red); }
+        .lang-btn { cursor: pointer; transition: color 0.2s; }
+        .lang-btn:hover { color: var(--primary-red); }
 
         /* Hero */
         .hero { text-align: center; padding: 6rem 2rem; max-width: 900px; margin: 0 auto; }
@@ -102,21 +104,25 @@
             <strong style="font-family: 'Merriweather', serif; font-size: 1.2rem;">NAN AI2AI</strong>
         </div>
         <div class="nav-links">
-            <a href="#about" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
-            <a href="#how-it-works" data-vi="Quy trình" data-en="How It Works">Quy trình</a>
-            <a href="#architecture" data-vi="Kiến trúc" data-en="Architecture">Kiến trúc</a>
-            <a href="#vision" data-vi="Tầm nhìn Việt Nam" data-en="Vietnam Vision">Tầm nhìn Việt Nam</a>
-            <a href="#connect" data-vi="Kết nối" data-en="Connect">Kết nối</a>
-            <div class="lang-toggle" onclick="toggleLang()">VI | EN</div>
+            <a href="#about" data-vi="Giới thiệu" data-en="About" data-zh="关于">Giới thiệu</a>
+            <a href="#how-it-works" data-vi="Quy trình" data-en="How It Works" data-zh="运作流程">Quy trình</a>
+            <a href="#architecture" data-vi="Kiến trúc" data-en="Architecture" data-zh="架构">Kiến trúc</a>
+            <a href="#vision" data-vi="Tầm nhìn Việt Nam" data-en="Vietnam Vision" data-zh="越南愿景">Tầm nhìn Việt Nam</a>
+            <a href="#connect" data-vi="Kết nối" data-en="Connect" data-zh="连接与贡献">Kết nối</a>
+            <div class="lang-toggle" style="display: flex; gap: 5px;">
+                <span onclick="setLang('vi')" class="lang-btn">VI</span> |
+                <span onclick="setLang('en')" class="lang-btn">EN</span> |
+                <span onclick="setLang('zh')" class="lang-btn">ZH</span>
+            </div>
         </div>
     </nav>
 
     <header class="hero">
-        <h1 data-vi="Việt Nam như Cầu nối trong Nền kinh tế AI2AI" data-en="Vietnam as a Bridge in the AI2AI Economy">Việt Nam như Cầu nối trong Nền kinh tế AI2AI</h1>
-        <p data-vi="Một khung tham chiếu mở (Open Reference Framework) kết nối các hệ sinh thái AI. Đóng góp cho Kỷ nguyên Vươn mình của Việt Nam. Không gọi vốn, không xin tài trợ." data-en="An open reference framework connecting AI ecosystems. Contributing to Vietnam's Ascension Era. No fundraising, no grants.">Một khung tham chiếu mở (Open Reference Framework) kết nối các hệ sinh thái AI. Đóng góp cho Kỷ nguyên Vươn mình của Việt Nam. Không gọi vốn, không xin tài trợ.</p>
+        <h1 data-vi="Việt Nam như Cầu nối trong Nền kinh tế AI2AI" data-en="Vietnam as a Bridge in the AI2AI Economy" data-zh="越南作为 AI2AI 经济中的桥梁">Việt Nam như Cầu nối trong Nền kinh tế AI2AI</h1>
+        <p data-vi="Một khung tham chiếu mở (Open Reference Framework) kết nối các hệ sinh thái AI. Đóng góp cho Kỷ nguyên Vươn mình của Việt Nam. Không gọi vốn, không xin tài trợ." data-en="An open reference framework connecting AI ecosystems. Contributing to Vietnam's Ascension Era. No fundraising, no grants." data-zh="连接 AI 生态系统的开放参考框架。为越南的崛起时代贡献力量。无融资，无赞助。">Một khung tham chiếu mở (Open Reference Framework) kết nối các hệ sinh thái AI. Đóng góp cho Kỷ nguyên Vươn mình của Việt Nam. Không gọi vốn, không xin tài trợ.</p>
         <div class="cta-group">
-            <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-vi="Đọc White Paper" data-en="Read Whitepaper">Đọc White Paper</a>
-            <a href="https://github.com/nan-nexus-network/ai2ai-core" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-vi="Xem Mã nguồn" data-en="View Source">Xem Mã nguồn</a>
+            <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-vi="Đọc White Paper" data-en="Read Whitepaper" data-zh="阅读白皮书">Đọc White Paper</a>
+            <a href="https://github.com/nan-nexus-network/ai2ai-core" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-vi="Xem Mã nguồn" data-en="View Source" data-zh="查看源码">Xem Mã nguồn</a>
         </div>
         <div style="margin-top: 3rem; background: #1A1A1A; border-radius: 8px; overflow: hidden; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; border: 1px solid #333;">
             <div style="background: #2D2D2D; padding: 10px 15px; display: flex; gap: 8px;">
@@ -135,82 +141,82 @@
     </header>
 
     <section id="about">
-        <h2 class="section-title" data-vi="Vấn đề & Giải pháp" data-en="Problem & Solution">Vấn đề & Giải pháp</h2>
+        <h2 class="section-title" data-vi="Vấn đề & Giải pháp" data-en="Problem & Solution" data-zh="问题与解决方案">Vấn đề & Giải pháp</h2>
         <div class="grid-2">
             <div class="card" style="border-left: 4px solid var(--primary-red);">
-                <h3 data-vi="Vấn đề" data-en="The Problem">Vấn đề</h3>
-                <p data-vi="Các AI Agent đang bị chia rẽ bởi các hệ sinh thái khác nhau (MCP, GB/Z, EU). Chúng không thể tự giao dịch xuyên biên giới, gây lãng phí chi phí và cơ hội cho doanh nghiệp Việt Nam." data-en="AI Agents are divided by different ecosystems (MCP, GB/Z, EU). They cannot transact cross-border autonomously, wasting costs and opportunities for Vietnamese businesses.">Các AI Agent đang bị chia rẽ bởi các hệ sinh thái khác nhau (MCP, GB/Z, EU). Chúng không thể tự giao dịch xuyên biên giới, gây lãng phí chi phí và cơ hội cho doanh nghiệp Việt Nam.</p>
+                <h3 data-vi="Vấn đề" data-en="The Problem" data-zh="问题">Vấn đề</h3>
+                <p data-vi="Các AI Agent đang bị chia rẽ bởi các hệ sinh thái khác nhau (MCP, GB/Z, EU). Chúng không thể tự giao dịch xuyên biên giới, gây lãng phí chi phí và cơ hội cho doanh nghiệp Việt Nam." data-en="AI Agents are divided by different ecosystems (MCP, GB/Z, EU). They cannot transact cross-border autonomously, wasting costs and opportunities for Vietnamese businesses." data-zh="AI 智能体被不同的生态系统（美国 MCP、中国 GB/Z、欧盟标准）割裂。它们无法自主进行跨境交易，浪费了越南企业的成本和机会。">Các AI Agent đang bị chia rẽ bởi các hệ sinh thái khác nhau (MCP, GB/Z, EU). Chúng không thể tự giao dịch xuyên biên giới, gây lãng phí chi phí và cơ hội cho doanh nghiệp Việt Nam.</p>
             </div>
             <div class="card" style="border-left: 4px solid var(--text-dark);">
-                <h3 data-vi="Giải pháp" data-en="The Solution">Giải pháp</h3>
-                <p data-vi="NAN AI2AI cung cấp tầng chuyển đổi trung lập (Neutral Translation Layer). Chúng tôi kết nối các giao thức, xác thực giao dịch qua mã băm (SHA-256) và bảo vệ dòng tiền của doanh nghiệp." data-en="NAN AI2AI provides a Neutral Translation Layer. We connect protocols, verify transactions via cryptographic hashes (SHA-256), and protect business cash flows.">NAN AI2AI cung cấp tầng chuyển đổi trung lập (Neutral Translation Layer). Chúng tôi kết nối các giao thức, xác thực giao dịch qua mã băm (SHA-256) và bảo vệ dòng tiền của doanh nghiệp.</p>
+                <h3 data-vi="Giải pháp" data-en="The Solution" data-zh="解决方案">Giải pháp</h3>
+                <p data-vi="NAN AI2AI cung cấp tầng chuyển đổi trung lập (Neutral Translation Layer). Chúng tôi kết nối các giao thức, xác thực giao dịch qua mã băm (SHA-256) và bảo vệ dòng tiền của doanh nghiệp." data-en="NAN AI2AI provides a Neutral Translation Layer. We connect protocols, verify transactions via cryptographic hashes (SHA-256), and protect business cash flows." data-zh="NAN AI2AI 提供中立转换层。我们连接协议，通过加密哈希 (SHA-256) 验证交易，并保护企业的现金流。">NAN AI2AI cung cấp tầng chuyển đổi trung lập (Neutral Translation Layer). Chúng tôi kết nối các giao thức, xác thực giao dịch qua mã băm (SHA-256) và bảo vệ dòng tiền của doanh nghiệp.</p>
             </div>
         </div>
     </section>
 
     <section id="how-it-works" style="padding: 5rem 2rem; background: var(--bg-light);">
         <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title" data-vi="Quy trình Hoạt động" data-en="How It Works">Quy trình Hoạt động</h2>
+            <h2 class="section-title" data-vi="Quy trình Hoạt động" data-en="How It Works" data-zh="运作流程">Quy trình Hoạt động</h2>
             <div class="grid-bento">
                 <div class="card" style="text-align: center;">
                     <div style="font-size: 3rem; color: var(--primary-red); font-family: 'Merriweather', serif; font-weight: 900;">1</div>
-                    <h3 data-vi="Kết nối" data-en="Connect">Kết nối</h3>
-                    <p data-vi="Agent tự động tìm thấy nhau qua lớp Discovery." data-en="Agents automatically discover each other.">Agent tự động tìm thấy nhau qua lớp Discovery.</p>
+                    <h3 data-vi="Kết nối" data-en="Connect" data-zh="连接">Kết nối</h3>
+                    <p data-vi="Agent tự động tìm thấy nhau qua lớp Discovery." data-en="Agents automatically discover each other." data-zh="智能体通过发现层自动找到彼此。">Agent tự động tìm thấy nhau qua lớp Discovery.</p>
                 </div>
                 <div class="card" style="text-align: center;">
                     <div style="font-size: 3rem; color: var(--primary-red); font-family: 'Merriweather', serif; font-weight: 900;">2</div>
-                    <h3 data-vi="Đàm phán" data-en="Negotiate">Đàm phán</h3>
-                    <p data-vi="Thống nhất tác vụ và chi phí qua lớp Negotiation." data-en="Agree on tasks and costs via Negotiation.">Thống nhất tác vụ và chi phí qua lớp Negotiation.</p>
+                    <h3 data-vi="Đàm phán" data-en="Negotiate" data-zh="协商">Đàm phán</h3>
+                    <p data-vi="Thống nhất tác vụ và chi phí qua lớp Negotiation." data-en="Agree on tasks and costs via Negotiation." data-zh="通过协商层就任务和成本达成一致。">Thống nhất tác vụ và chi phí qua lớp Negotiation.</p>
                 </div>
                 <div class="card" style="text-align: center;">
                     <div style="font-size: 3rem; color: var(--primary-red); font-family: 'Merriweather', serif; font-weight: 900;">3</div>
-                    <h3 data-vi="Xác thực" data-en="Verify">Xác thực</h3>
-                    <p data-vi="Cấp biên nhận SHA-256 qua lớp Verification." data-en="Issue SHA-256 receipts via Verification.">Cấp biên nhận SHA-256 qua lớp Verification.</p>
+                    <h3 data-vi="Xác thực" data-en="Verify" data-zh="验证">Xác thực</h3>
+                    <p data-vi="Cấp biên nhận SHA-256 qua lớp Verification." data-en="Issue SHA-256 receipts via Verification." data-zh="通过验证层签发 SHA-256 回执。">Cấp biên nhận SHA-256 qua lớp Verification.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="architecture">
-        <h2 class="section-title" data-vi="Khung tham chiếu mở & Kiến trúc 3 lớp" data-en="Open Framework & 3-Layer Architecture">Khung tham chiếu mở & Kiến trúc 3 lớp</h2>
+        <h2 class="section-title" data-vi="Khung tham chiếu mở & Kiến trúc 3 lớp" data-en="Open Framework & 3-Layer Architecture" data-zh="开放框架与三层架构">Khung tham chiếu mở & Kiến trúc 3 lớp</h2>
         <div class="grid-bento">
             <div class="card">
-                <h3 data-vi="1. Lớp Kết nối (Discovery)" data-en="1. Discovery Layer">1. Lớp Kết nối (Discovery)</h3>
-                <p data-vi="Định danh tác tử, kết nối các hệ sinh thái (MCP, GB/Z, EU) qua giao thức trung lập." data-en="Agent identity, connecting ecosystems (MCP, GB/Z, EU) via a neutral protocol.">Định danh tác tử, kết nối các hệ sinh thái (MCP, GB/Z, EU) qua giao thức trung lập.</p>
+                <h3 data-vi="1. Lớp Kết nối (Discovery)" data-en="1. Discovery Layer" data-zh="1. 发现层 (Discovery)">1. Lớp Kết nối (Discovery)</h3>
+                <p data-vi="Định danh tác tử, kết nối các hệ sinh thái (MCP, GB/Z, EU) qua giao thức trung lập." data-en="Agent identity, connecting ecosystems (MCP, GB/Z, EU) via a neutral protocol." data-zh="智能体身份，通过中立协议连接生态系统（MCP、GB/Z、欧盟）。">Định danh tác tử, kết nối các hệ sinh thái (MCP, GB/Z, EU) qua giao thức trung lập.</p>
             </div>
             <div class="card">
-                <h3 data-vi="2. Lớp Xác thực (Verification)" data-en="2. Verification Layer">2. Lớp Xác thực (Verification)</h3>
-                <p data-vi="Ghi nhận giao dịch, cấp biên nhận băm (SHA-256) bất biến làm bằng chứng kỹ thuật." data-en="Records transactions, issues immutable hash receipts (SHA-256) as technical evidence.">Ghi nhận giao dịch, cấp biên nhận băm (SHA-256) bất biến làm bằng chứng kỹ thuật.</p>
+                <h3 data-vi="2. Lớp Xác thực (Verification)" data-en="2. Verification Layer" data-zh="2. 验证层 (Verification)">2. Lớp Xác thực (Verification)</h3>
+                <p data-vi="Ghi nhận giao dịch, cấp biên nhận băm (SHA-256) bất biến làm bằng chứng kỹ thuật." data-en="Records transactions, issues immutable hash receipts (SHA-256) as technical evidence." data-zh="记录交易，签发不可篡改的哈希回执 (SHA-256) 作为技术证据。">Ghi nhận giao dịch, cấp biên nhận băm (SHA-256) bất biến làm bằng chứng kỹ thuật.</p>
             </div>
             <div class="card">
-                <h3 data-vi="3. Lớp Trọng tài (Arbitration)" data-en="3. Arbitration Layer">3. Lớp Trọng tài (Arbitration)</h3>
-                <p data-vi="Chuyển giao bằng chứng kỹ thuật cho cơ chế giải quyết tranh chấp tại Việt Nam, đảm bảo tính minh bạch." data-en="Transfers technical evidence to dispute resolution mechanisms in Vietnam, ensuring transparency.">Chuyển giao bằng chứng kỹ thuật cho cơ chế giải quyết tranh chấp tại Việt Nam, đảm bảo tính minh bạch.</p>
+                <h3 data-vi="3. Lớp Trọng tài (Arbitration)" data-en="3. Arbitration Layer" data-zh="3. 仲裁层 (Arbitration)">3. Lớp Trọng tài (Arbitration)</h3>
+                <p data-vi="Chuyển giao bằng chứng kỹ thuật cho cơ chế giải quyết tranh chấp tại Việt Nam, đảm bảo tính minh bạch." data-en="Transfers technical evidence to dispute resolution mechanisms in Vietnam, ensuring transparency." data-zh="将技术证据移交给越南的争议解决机制，确保透明度。">Chuyển giao bằng chứng kỹ thuật cho cơ chế giải quyết tranh chấp tại Việt Nam, đảm bảo tính minh bạch.</p>
             </div>
         </div>
     </section>
 
     <section id="vision" class="highlight-section">
-        <h2 data-vi="Việt Nam: Trung tâm Giải quyết Tranh chấp AI Toàn cầu" data-en="Vietnam: The Global AI Dispute Resolution Hub">Việt Nam: Trung tâm Giải quyết Tranh chấp AI Toàn cầu</h2>
-        <p data-vi="Trong kỷ nguyên AI2AI, khi các tác tử tự giao dịch, việc xảy ra tranh chấp là không thể tránh khỏi. Tuy nhiên, AI không có tư cách pháp nhân. Dựa trên chiến lược &quot;Ngoại giao Cây tre&quot; và vị thế trung lập, Việt Nam có thể trở thành trọng tài phân xử các giao dịch này, dựa trên bằng chứng kỹ thuật bất biến từ NAN AI2AI." data-en="In the AI2AI era, as agents transact autonomously, disputes are inevitable. Yet, AI lacks legal personhood. Leveraging the 'Bamboo Diplomacy' and neutral stance, Vietnam can serve as the arbitrator for these transactions, based on immutable technical evidence from NAN AI2AI.">Trong kỷ nguyên AI2AI, khi các tác tử tự giao dịch, việc xảy ra tranh chấp là không thể tránh khỏi. Tuy nhiên, AI không có tư cách pháp nhân. Dựa trên chiến lược "Ngoại giao Cây tre" và vị thế trung lập, Việt Nam có thể trở thành trọng tài phân xử các giao dịch này, dựa trên bằng chứng kỹ thuật bất biến từ NAN AI2AI.</p>
-        <p data-vi="Hướng tới đóng góp vào các đạo luật AI quốc tế trong tương lai, xây dựng một nền kinh tế AI minh bạch và an toàn cho tất cả các bên." data-en="Aiming to contribute to future international AI laws, building a transparent and secure AI economy for all parties.">Hướng tới đóng góp vào các đạo luật AI quốc tế trong tương lai, xây dựng một nền kinh tế AI minh bạch và an toàn cho tất cả các bên.</p>
+        <h2 data-vi="Việt Nam: Trung tâm Giải quyết Tranh chấp AI Toàn cầu" data-en="Vietnam: The Global AI Dispute Resolution Hub" data-zh="越南：全球 AI 争议解决中心">Việt Nam: Trung tâm Giải quyết Tranh chấp AI Toàn cầu</h2>
+        <p data-vi="Trong kỷ nguyên AI2AI, khi các tác tử tự giao dịch, việc xảy ra tranh chấp là không thể tránh khỏi. Tuy nhiên, AI không có tư cách pháp nhân. Dựa trên chiến lược &quot;Ngoại giao Cây tre&quot; và vị thế trung lập, Việt Nam có thể trở thành trọng tài phân xử các giao dịch này, dựa trên bằng chứng kỹ thuật bất biến từ NAN AI2AI." data-en="In the AI2AI era, as agents transact autonomously, disputes are inevitable. Yet, AI lacks legal personhood. Leveraging the 'Bamboo Diplomacy' and neutral stance, Vietnam can serve as the arbitrator for these transactions, based on immutable technical evidence from NAN AI2AI." data-zh="在 AI2AI 时代，随着智能体自主交易，争议不可避免。然而，AI 缺乏法人资格。凭借“竹子外交”和中立立场，越南可以基于 NAN AI2AI 不可篡改的技术证据，充当这些交易的仲裁者。">Trong kỷ nguyên AI2AI, khi các tác tử tự giao dịch, việc xảy ra tranh chấp là không thể tránh khỏi. Tuy nhiên, AI không có tư cách pháp nhân. Dựa trên chiến lược "Ngoại giao Cây tre" và vị thế trung lập, Việt Nam có thể trở thành trọng tài phân xử các giao dịch này, dựa trên bằng chứng kỹ thuật bất biến từ NAN AI2AI.</p>
+        <p data-vi="Hướng tới đóng góp vào các đạo luật AI quốc tế trong tương lai, xây dựng một nền kinh tế AI minh bạch và an toàn cho tất cả các bên." data-en="Aiming to contribute to future international AI laws, building a transparent and secure AI economy for all parties." data-zh="致力于为未来的国际 AI 法律做出贡献，为各方构建透明、安全的 AI 经济。">Hướng tới đóng góp vào các đạo luật AI quốc tế trong tương lai, xây dựng một nền kinh tế AI minh bạch và an toàn cho tất cả các bên.</p>
     </section>
 
     <section id="connect">
-        <h2 class="section-title" data-vi="Kết nối & Đóng góp" data-en="Connect & Contribute">Kết nối & Đóng góp</h2>
-        <p style="text-align: center; margin-bottom: 2rem; color: var(--text-gray);" data-vi="Tham gia cùng chúng tôi xây dựng tầng giao thức mở cho Việt Nam." data-en="Join us in building an open protocol layer for Vietnam.">Tham gia cùng chúng tôi xây dựng tầng giao thức mở cho Việt Nam.</p>
+        <h2 class="section-title" data-vi="Kết nối & Đóng góp" data-en="Connect & Contribute" data-zh="连接与贡献">Kết nối & Đóng góp</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: var(--text-gray);" data-vi="Tham gia cùng chúng tôi xây dựng tầng giao thức mở cho Việt Nam." data-en="Join us in building an open protocol layer for Vietnam." data-zh="加入我们，共同为越南构建开放协议层。">Tham gia cùng chúng tôi xây dựng tầng giao thức mở cho Việt Nam.</p>
 
         <div class="grid-bento" style="margin-bottom: 3rem;">
             <div class="card">
-                <h3 data-vi="Dành cho Kỹ sư" data-en="For Engineers">Dành cho Kỹ sư</h3>
-                <p data-vi="Chạy thử Demo, mở Issue, hoặc gửi PR để tối ưu hóa code." data-en="Run the demo, open issues, or submit PRs.">Chạy thử Demo, mở Issue, hoặc gửi PR để tối ưu hóa code.</p>
+                <h3 data-vi="Dành cho Kỹ sư" data-en="For Engineers" data-zh="面向工程师">Dành cho Kỹ sư</h3>
+                <p data-vi="Chạy thử Demo, mở Issue, hoặc gửi PR để tối ưu hóa code." data-en="Run the demo, open issues, or submit PRs." data-zh="运行演示，提交 Issue 或 PR 以优化代码。">Chạy thử Demo, mở Issue, hoặc gửi PR để tối ưu hóa code.</p>
             </div>
             <div class="card">
-                <h3 data-vi="Dành cho Nhà nghiên cứu" data-en="For Researchers">Dành cho Nhà nghiên cứu</h3>
-                <p data-vi="Đọc White Paper, phản biện kiến trúc và đóng góp góc nhìn chính sách." data-en="Read the whitepaper, critique architecture, and contribute policy views.">Đọc White Paper, phản biện kiến trúc và đóng góp góc nhìn chính sách.</p>
+                <h3 data-vi="Dành cho Nhà nghiên cứu" data-en="For Researchers" data-zh="面向研究人员">Dành cho Nhà nghiên cứu</h3>
+                <p data-vi="Đọc White Paper, phản biện kiến trúc và đóng góp góc nhìn chính sách." data-en="Read the whitepaper, critique architecture, and contribute policy views." data-zh="阅读白皮书，批判架构并贡献政策观点。">Đọc White Paper, phản biện kiến trúc và đóng góp góc nhìn chính sách.</p>
             </div>
             <div class="card">
-                <h3 data-vi="Dành cho Doanh nghiệp" data-en="For Enterprises">Dành cho Doanh nghiệp</h3>
-                <p data-vi="Thử nghiệm tích hợp chuỗi cung ứng hoặc liên hệ hợp tác thí điểm." data-en="Test supply chain integration or contact us for pilot partnerships.">Thử nghiệm tích hợp chuỗi cung ứng hoặc liên hệ hợp tác thí điểm.</p>
+                <h3 data-vi="Dành cho Doanh nghiệp" data-en="For Enterprises" data-zh="面向企业">Dành cho Doanh nghiệp</h3>
+                <p data-vi="Thử nghiệm tích hợp chuỗi cung ứng hoặc liên hệ hợp tác thí điểm." data-en="Test supply chain integration or contact us for pilot partnerships." data-zh="测试供应链集成或联系我们进行试点合作。">Thử nghiệm tích hợp chuỗi cung ứng hoặc liên hệ hợp tác thí điểm.</p>
             </div>
         </div>
 
@@ -226,22 +232,17 @@
 
     <footer>
         <p>© 2026 NAN AI2AI. Open Source under Apache 2.0 & CC-BY 4.0.</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;" data-vi="Website này là landing page tĩnh, chúng tôi không thu thập dữ liệu người dùng." data-en="This is a static landing page, we do not collect user data.">Website này là landing page tĩnh, chúng tôi không thu thập dữ liệu người dùng.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;" data-vi="Website này là landing page tĩnh, chúng tôi không thu thập dữ liệu người dùng." data-en="This is a static landing page, we do not collect user data." data-zh="这是一个静态落地页，我们不收集用户数据。">Website này là landing page tĩnh, chúng tôi không thu thập dữ liệu người dùng.</p>
         <p style="margin-top: 10px;"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
     </footer>
 
     <script>
         let currentLang = 'vi';
-        function toggleLang() {
-            currentLang = currentLang === 'vi' ? 'en' : 'vi';
+        function setLang(lang) {
+            currentLang = lang;
             document.querySelectorAll('[data-vi]').forEach(el => {
-                const text = el.getAttribute('data-' + currentLang);
-                if (text) {
-                    if (text.includes('<') && text.includes('>')) {
-                        el.innerHTML = text;
-                    } else {
-                        el.textContent = text;
-                    }
+                if (el.getAttribute('data-' + currentLang)) {
+                    el.textContent = el.getAttribute('data-' + currentLang);
                 }
             });
             document.documentElement.lang = currentLang;
