@@ -30,7 +30,7 @@ Không gọi vốn. Không nhận tài trợ.
 
 ---
 
-[Thảo luận kỹ thuật] Agent Interoperability — thử nghiệm Protocol Bridge chuyển đổi giao thức MCP ↔ GB/Z bằng Python stdlib.
+[Thảo luận kỹ thuật] Agent Interoperability — thử nghiệm khung cầu nối trung lập (Open Reference Bridge) chuyển đổi giao thức MCP ↔ GB/Z bằng Python stdlib.
 
 Bài toán: Một Agent chạy chuẩn MCP và một Agent chạy chuẩn GB/Z cần đàm phán tác vụ với nhau mà không cần con người làm trung gian. Hiện chưa có tầng dịch thuật trung lập nào cho việc này.
 

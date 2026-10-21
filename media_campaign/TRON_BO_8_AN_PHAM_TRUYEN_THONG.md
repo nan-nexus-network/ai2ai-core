@@ -34,7 +34,7 @@ Chào anh em, mình vừa mở mã nguồn PoC NAN AI2AI (Apache 2.0). Demo `hel
 Mình nói thật: Mình không phải dev chuyên nghiệp, code này do AI hỗ trợ viết. Mình đang cố gắng đóng góp cho Kỷ nguyên AI của Việt Nam nhưng cần anh em giúp sức. Có 3 `good first issues` trên repo, mời anh em vào chém thẳng tay để mình sửa. Cảm ơn anh em rất nhiều.
 
 ## Ấn phẩm 5 (11:00) — X Thread (English)
-**Tweet 1/8:** Most countries are racing to build bigger AI models. What if a small country's role is to connect them instead? We just open-sourced a protocol to bridge this gap. 🧵
+**Tweet 1/8:** Most countries are racing to build bigger AI models. What if a small country's role is to connect them instead? We just open-sourced an open reference bridge layer to close this gap. 🧵
 **Tweet 2/8:** The problem: AI ecosystems (MCP, A2A, GB/Z) speak different languages. There is no neutral translation layer.
 **Tweet 3/8:** We built a minimal bridge node (`hello_bridge.py`). Runs in 60s, zero dependencies. It validates schema, translates packets, and issues a SHA-256 receipt.
 **Tweet 4/8:** Transparency notice: We are not a big tech company. We are just a small team in Vietnam. This PoC was built with AI assistance. We open-sourced it (Apache 2.0) as a humble contribution to the global open-source community.

@@ -1,14 +1,15 @@
 # Quyền review mặc định cho toàn repo.
-# Thay bằng tên người dùng GitHub thật trước khi mở public.
-*                       @founder-placeholder
+# Owner: tổ chức nan-nexus-network (thành viên có quyền write sẽ được GitHub gán review).
+# Nếu GitHub báo owner không hợp lệ, xoá hẳn file này và gán review thủ công.
+*                       @nan-nexus-network
 
 # Tài liệu thảo luận — cần review chặt hơn vì nó là tuyên bố công khai.
-docs/WHITEPAPER_VN_AI_BRIDGE.md   @founder-placeholder
-docs/public_launch/              @founder-placeholder
+docs/WHITEPAPER_VN_AI_BRIDGE.md   @nan-nexus-network
+docs/public_launch/              @nan-nexus-network
 
 # An toàn và giấy phép — review bắt buộc.
-SECURITY.md                       @founder-placeholder
-CLA.md                            @founder-placeholder
-TRADEMARK.md                      @founder-placeholder
-LICENSE                          @founder-placeholder
-scripts/license_gate.py          @founder-placeholder
+SECURITY.md                       @nan-nexus-network
+CLA.md                            @nan-nexus-network
+TRADEMARK.md                      @nan-nexus-network
+LICENSE                          @nan-nexus-network
+scripts/license_gate.py          @nan-nexus-network

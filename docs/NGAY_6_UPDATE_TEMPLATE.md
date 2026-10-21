@@ -1,7 +1,7 @@
 # MẪU BÀI CẬP NHẬT 24 GIỜ SAU RA MẮT (NGÀY 6)
 ## POST-LAUNCH 24-HOUR TRANSPARENCY & UPDATE TEMPLATE
 **Tài liệu tham chiếu nội bộ:** `docs/NGAY_6_UPDATE_TEMPLATE.md`  
-**Dự án:** NAN AI2AI-SI2SI Protocol Bridge Open Sandbox  
+**Dự án:** NAN AI2AI-SI2SI Open Reference Bridge Sandbox  
 **Mục đích:** Cung cấp khung bài viết minh bạch, thực tế để đăng tải lên LinkedIn, Facebook, Diễn đàn Tinh Tế và X.com sau đúng 24 giờ kể từ thời điểm công bố sáng kiến (Ngày 5).
 
 ---

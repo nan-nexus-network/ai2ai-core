@@ -82,7 +82,7 @@ Cảm ơn anh em trước.
 **1/8**
 Most countries compete to build bigger AI models.
 What if a small country's advantage is connecting them instead?
-We just open-sourced a protocol bridge. 🧵
+We just open-sourced an open reference bridge layer. 🧵
 
 **2/8**
 The problem: AI ecosystems speak different languages.
