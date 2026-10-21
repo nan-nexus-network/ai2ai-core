@@ -5,6 +5,7 @@
 * **Phiên bản:** v0.4-draft: Chuẩn hóa tông giọng Khiêm nhường & Đóng góp cho Kỷ nguyên AI của Việt Nam (Tháng 10/2026)
 * **Đơn vị khởi xướng:** Sáng kiến nghiên cứu mở NAN AI2AI-SI2SI
 * **Giấy phép tài liệu:** CC-BY 4.0 / Mã nguồn đính kèm: Apache 2.0
+* **Cam kết:** Chúng tôi cam kết không gọi vốn, không xin tài trợ. Đây là sáng kiến đóng góp độc lập cho Kỷ nguyên AI của Việt Nam.
 
 ---
 

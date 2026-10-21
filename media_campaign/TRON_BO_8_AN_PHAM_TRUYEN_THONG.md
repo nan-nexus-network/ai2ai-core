@@ -5,7 +5,7 @@
 
 Kỷ nguyên Vươn mình của Việt Nam sẽ được định hình bởi công nghệ, và AI là mảnh ghép cốt lõi. Tuy nhiên, để các AI Agent của Việt Nam có thể kết nối với thế giới mà không phụ thuộc hoàn toàn vào nước ngoài, chúng ta cần một tầng giao thức mở.
 
-Tôi không có hàng trăm tỷ đồng. Tôi không có đội ngũ hàng ngàn kỹ sư. Nhưng với khát vọng đóng góp một phần nhỏ bé cho Kỷ nguyên AI của đất nước, tôi cùng một vài cộng sự đã dùng những gì mình có (và sự hỗ trợ của AI) để phác thảo nên **Giao thức NAN AI2AI**.
+Tôi không có hàng trăm tỷ đồng. Tôi không có đội ngũ hàng ngàn kỹ sư. Nhưng với khát vọng đóng góp một phần nhỏ bé cho Kỷ nguyên AI của đất nước, tôi cùng một vài cộng sự đã dùng những gì mình có (và sự hỗ trợ của AI) để phác thảo nên **Giao thức NAN AI2AI** (Open Reference Framework).
 
 *"Nhưng Việt Nam chúng ta có những thế mạnh mà không quốc gia nào có được: một thế hệ kỹ sư trẻ ham học hỏi, mạng lưới thương mại trải khắp các châu lục, và những cam kết chính sách mạnh mẽ về AI (Tuyên bố Hà Nội 1/2026). Chúng ta không cần đua mô hình tỷ đô. Chúng ta cần một tầng giao thức để kết nối tất cả những thế mạnh đó lại."*
 
