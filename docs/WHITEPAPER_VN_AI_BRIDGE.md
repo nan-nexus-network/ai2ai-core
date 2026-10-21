@@ -86,7 +86,7 @@ Khi một tác tử AI của doanh nghiệp sử dụng hạ tầng đám mây p
 Việt Nam không thiếu thế mạnh. Chúng ta có dân số trẻ am hiểu công nghệ, có mạng lưới thương mại trải rộng khắp các châu lục, có các cam kết chính sách về hợp tác số, và có quan hệ song phương về AI với nhiều quốc gia. Nhưng các thế mạnh này đang tồn tại song song và rời rạc. NAN AI2AI ra đời không phải để tạo ra một thế mạnh mới, mà để cung cấp tầng giao thức kết nối mà Việt Nam đang thiếu.
 
 ### 3.1. Thế mạnh 1: Dân số trẻ, ham học hỏi và phát triển AI
-Việt Nam có hơn 100 triệu dân, với hơn 60% trong độ tuổi lao động. Các khảo sát của Google, Temasek và NIC cho thấy nhu cầu học AI và xây dựng AI Agent đang tăng theo cấp số nhân. NAN AI2AI cung cấp một sân chơi thực hành mở, nơi bất kỳ kỹ sư trẻ nào cũng có thể đóng góp, học hỏi từ code thật, và xây dựng hồ sơ nghề nghiệp của mình thông qua các đóng góp công khai.
+Việt Nam có hơn 100 triệu dân, với hơn 60% trong độ tuổi lao động. Theo báo cáo *e-Conomy SEA 2024* của Google, Temasek và Bain & Company, nền kinh tế số ASEAN đạt 263 tỷ USD GMV (+15%), 89 tỷ USD doanh thu (+14%) và 11 tỷ USD lợi nhuận (+24%) trong năm 2024. Báo cáo *Economic Impact Report: Driving digital growth in Vietnam with Google* (NIC và Google, 11/2024) ước tính doanh nghiệp Việt Nam có thể thu thêm 1.890 nghìn tỷ đồng (79,3 tỷ USD) lợi ích kinh tế từ AI vào năm 2030, tương đương gần 12% GDP. NAN AI2AI cung cấp một sân chơi thực hành mở, nơi bất kỳ kỹ sư trẻ nào cũng có thể đóng góp, học hỏi từ code thật, và xây dựng hồ sơ nghề nghiệp của mình thông qua các đóng góp công khai. NAN AI2AI cung cấp một sân chơi thực hành mở, nơi bất kỳ kỹ sư trẻ nào cũng có thể đóng góp, học hỏi từ code thật, và xây dựng hồ sơ nghề nghiệp của mình thông qua các đóng góp công khai.
 
 ### 3.2. Thế mạnh 2: Đa dạng thị trường xuất khẩu và quan hệ thương mại
 Việt Nam có quan hệ thương mại sâu rộng với Mỹ, Trung Quốc, EU, Nhật Bản, Hàn Quốc, và ASEAN. Điều này có nghĩa là doanh nghiệp Việt Nam phải làm việc đồng thời với nhiều hệ sinh thái AI khác nhau (MCP của Mỹ, GB/Z của Trung Quốc, chuẩn của EU). NAN AI2AI cung cấp lớp chuyển đổi trung lập (Reference Bridge) giúp doanh nghiệp Việt Nam kết nối các hệ sinh thái này mà không phải tự xây dựng adapter riêng lẻ, tiết kiệm chi phí và tăng năng suất.
@@ -98,7 +98,7 @@ Ngày 16/01/2026, tại Hội nghị Bộ trưởng Số ASEAN lần thứ 6 (AD
 Việt Nam đã ký kết nhiều văn bản hợp tác về AI và công nghệ số với Trung Quốc (Tuyên bố chung 4/2026 cam kết "khám phá cơ chế hợp tác mã nguồn mở"), ASEAN (DEFA), và các quốc gia khác. NAN AI2AI có thể trở thành dự án thí điểm cho các cam kết này, biến các văn bản trên giấy thành hành động thực tế và tạo tiền lệ cho các quốc gia khác trong khu vực.
 
 ### 3.5. Sự kết nối
-Bốn thế mạnh này không tồn tại độc lập. Khi được kết nối bởi một tầng giao thức mở, chúng tạo thành một chỉnh thể có sức mạnh cộng hưởng: kỹ sư trẻ có sân chơi, doanh nghiệp có hạ tầng kết nối, cam kết quốc gia có dự án thí điểm, và vị thế địa chính trị của Việt Nam được khẳng định trong khu vực.
+Bốn thế mạnh này không tồn tại độc lập. Khi được kết nối bởi một tầng giao thức mở, chúng tạo thành một chỉnh thể có sức mạnh cộng hưởng: kỹ sư trẻ có sân chơi, doanh nghiệp có hạ tầng kết nối, cam kết quốc gia có dự án thí điểm, và vị thế địa chính trị của Việt Nam được khẳng định trong khu vực. *(Phân tích chi tiết các văn bản chuẩn hóa quốc tế và bối cảnh địa chính trị được bảo toàn tại Phụ lục A.)*
 
 ## CHƯƠNG 4: VÌ SAO VIỆT NAM CÓ THỂ THỬ NGHIỆM VAI TRÒ "CẦU NỐI AI"?
 
@@ -182,6 +182,7 @@ Tài liệu này là một bản nháp mở. Bạn có thể tham gia theo bất
 * **Kho lưu trữ mã nguồn & Tài liệu gốc:** `https://github.com/nan-nexus-network/ai2ai-core`
 * **Cổng thông tin tổng hợp (Link Hub):** `https://nan-ai2ai.nexusasianetwork.workers.dev`
 * **Danh mục văn bản chính sách tham chiếu:**
+  > *Một số tài liệu dưới đây được trích dẫn từ Phụ lục A để bảo toàn bằng chứng gốc.*
   1. Nghị quyết số 57-NQ/TW (2024) của Bộ Chính trị về đột phá phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số quốc gia.
   2. Nghị quyết số 03/NQ-CP (2025) của Chính phủ về Chương trình hành động thực hiện Nghị quyết số 57-NQ/TW.
   3. Nghị quyết số 71/NQ-CP (2025) của Chính phủ về Chương trình hành động thực hiện Nghị quyết số 57-NQ/TW.
@@ -196,6 +197,173 @@ Tài liệu này là một bản nháp mở. Bạn có thể tham gia theo bất
   12. **Bản ghi nhớ hợp tác phát triển và quản trị AI Việt Nam - Trung Quốc** (2025).
   13. **ACFTA 3.0: Hiệp định Thương mại Tự do Trung Quốc - ASEAN nâng cấp** (ký 28/10/2025), bao gồm nội dung kinh tế số.
   14. **DEFA: Hiệp định khung kinh tế số ASEAN** (dự kiến ký cuối 2026), đàm phán đã kết thúc, chờ ký.
+  15. **e-Conomy SEA 2024**: Google, Temasek, Bain & Company (11/2024). Nguồn: `https://economysea.withgoogle.com`
+  16. **Economic Impact Report: Driving digital growth in Vietnam with Google**: NIC (Trung tâm Đổi mới Quốc gia) và Google, 14/11/2024. Nguồn: `https://accesspartnership.com/reports/economic-impact-report-driving-digital-growth-in-vietnam-with-google-2`
 
 **Cách trích dẫn tài liệu này (How to Cite):**
 > NAN AI2AI-SI2SI (2026). *Việt Nam như cầu nối trong nền kinh tế AI2AI: Tài liệu thảo luận mở (v0.4-draft)*. GitHub: <https://github.com/nan-nexus-network/ai2ai-core>. Giấy phép: CC-BY 4.0.
+
+---
+
+## PHỤ LỤC A: BỐI CẢNH ĐỊA CHÍNH TRỊ VÀ CHUẨN HÓA QUỐC TẾ
+
+*Phụ lục này bảo toàn phần đối chiếu tài liệu gốc trước khi Chương 3 được tái cấu trúc theo hướng bốn thế mạnh. Nội dung được giữ nguyên để bảo toàn bằng chứng và dẫn nguồn; phần trích dẫn cập nhật nhất vẫn nằm ở Chương 3 và Chương 4.*
+
+**Đối chiếu chính sách quốc tế và khu vực, vì sao khoảng trống không chỉ là kỹ thuật.**
+
+Chương 2 đã chỉ ra khoảng trống kỹ thuật giữa các chuẩn kết nối AI hiện có. Nhưng khoảng trống đó không tồn tại trong chân không, nó được định hình bởi các chính sách quốc gia và hiệp định quốc tế. Chương này đối chiếu ba tầng chính sách có ảnh hưởng trực tiếp đến khả năng tồn tại của một "cầu nối giao thức trung lập" do Việt Nam khởi xướng.
+
+### A.1. Trung Quốc: Từ quản trị AI đến chuẩn hóa giao thức tác tử
+
+Trung Quốc là quốc gia duy nhất trên thế giới đã ban hành **cả ba tầng** quản trị AI: tầng dịch vụ (quy định AI tạo sinh), tầng an ninh quốc gia (luật an ninh mạng sửa đổi), và tầng kỹ thuật (tiêu chuẩn quốc gia về kết nối tác tử). Việc hiểu ba tầng này là điều kiện tiên quyết để đánh giá tính khả thi của bất kỳ bridge nào kết nối với hệ sinh thái AI Trung Quốc.
+
+#### A.1.1. Biện pháp tạm thời quản lý dịch vụ AI tạo sinh (hiệu lực 15/08/2023)
+
+Văn bản do bảy cơ quan Trung Quốc đồng ban hành (Viện Hàn lâm Viễn thông, Ủy ban Cải cách và Phát triển, Bộ Giáo dục, Bộ Khoa học và Công nghệ, Bộ Công nghiệp và Công nghệ thông tin, Bộ Công an, Tổng cục Phát thanh và Truyền hình) đặt ra bốn yêu cầu ảnh hưởng trực tiếp đến thiết kế bridge:
+
+1. **Phạm vi áp dụng bao gồm API.** Điều 2 quy định văn bản áp dụng cho mọi dịch vụ AI tạo sinh cung cấp cho công chúng trong lãnh thổ Trung Quốc, bao gồm cả hình thức cung cấp qua giao diện lập trình ứng dụng (API). Điều này có nghĩa là khi một agent Việt Nam gọi API model Trung Quốc, hoặc một agent Trung Quốc tham gia mạng lưới xuyên biên giới, cả hai bên đều chịu sự điều chỉnh.
+
+2. **Yêu cầu về dữ liệu huấn luyện và dữ liệu đầu vào.** Khi quá trình huấn luyện hoặc vận hành liên quan đến thông tin cá nhân, phải có sự đồng ý của chủ thể dữ liệu. Đây là rào cản compliance quan trọng: bridge không thể chuyển tiếp dữ liệu chứa thông tin cá nhân giữa hai agent mà không có cơ chế xác minh sự đồng ý.
+
+3. **Nghĩa vụ bảo vệ thông tin người dùng.** Nhà cung cấp dịch vụ có nghĩa vụ bảo vệ thông tin đầu vào và lịch sử sử dụng của người dùng. Điều này xung đột tiềm ẩn với yêu cầu minh bạch audit log của NAN AI2AI: nếu bridge lưu log để kiểm chứng giao dịch, log đó có thể bị coi là "lịch sử sử dụng" cần bảo vệ.
+
+4. **Yêu cầu ghi nhãn nội dung do AI tạo ra.** Đây là yêu cầu mà nhiều hệ thống bridge hiện tại chưa tính đến.
+
+#### A.1.2. GB/Z 185-2026: Bước ngoặt chiến lược về chuẩn kết nối tác tử
+
+Tháng 5/2026 (ngày 22/05/2026), Trung Quốc chính thức công bố loạt bảy tiêu chuẩn quốc gia **GB/Z 185-2026** với tiêu đề "Trí tuệ nhân tạo — Kết nối liên thông giữa các tác tử". Đây là diễn biến quan trọng nhất trong lĩnh vực giao thức tác tử kể từ sau khi MCP và A2A xuất hiện, và là nội dung mà phiên bản v0.1 của tài liệu này chưa đề cập.
+
+Cấu trúc bảy phần của tiêu chuẩn:
+
+| Phần | Nội dung |
+|---|---|
+| 1 | Kiến trúc tổng thể của hệ thống kết nối tác tử |
+| 2 | Mã định danh tác tử: mã hóa, cấp phát, quản lý |
+| 3 | Đăng ký định danh, tài khoản và thông tin xác thực |
+| 4 | Mô tả năng lực tác tử: đăng ký, công bố, cập nhật |
+| 5 | Quy trình khám phá tác tử (discovery) |
+| 6 | Chế độ tương tác: ngang hàng, nhóm, kết hợp |
+| 7 | Kiến trúc, quy trình và định dạng dữ liệu gọi công cụ bên ngoài |
+
+Văn bản chính thức của Trung Quốc **thừa nhận công khai** rằng "MCP và A2A đã xuất hiện trên thị trường quốc tế nhưng chưa hình thành đồng thuận thống nhất, và không đáp ứng đầy đủ nhu cầu phát triển ngành". Trung Quốc cũng thẳng thắn nêu vấn đề "ốc đảo tác tử" (智能体孤岛), tức là tình trạng các tác tử không thể kết nối do thiếu chuẩn chung.
+
+Đây là bằng chứng khách quan, từ một cường quốc AI hàng đầu, xác nhận rằng khoảng trống mà NAN AI2AI đang cố giải quyết là có thật, không phải do tác giả tài liệu này tự suy diễn.
+
+Trung Quốc không dừng ở tiêu chuẩn nội địa. Họ đã thành lập **AIP (Agent Interconnection Protocol) open-source community** trên nền tảng AtomGit từ tháng 10/2025, và đã đưa tiêu chuẩn này lên **ITU-T** (Liên minh Viễn thông Quốc tế) để chuẩn hóa toàn cầu. Nghĩa là Trung Quốc đang trong quá trình **xuất khẩu chuẩn** ra ngoài biên giới, không chỉ dừng ở tiêu chuẩn nội địa.
+
+#### A.1.3. Luật An ninh mạng sửa đổi (hiệu lực 01/01/2026)
+
+Trung Quốc đã sửa đổi Luật An ninh mạng, bổ sung các điều khoản riêng về trí tuệ nhân tạo. Văn bản có hiệu lực từ ngày 01/01/2026, với ba nội dung chính:
+
+1. Nhà nước hỗ trợ phát triển công nghệ AI và xây dựng hạ tầng tính toán.
+2. Nâng cao tiêu chuẩn đạo đức trong nghiên cứu và ứng dụng AI.
+3. Tăng cường giám sát rủi ro và giám sát an ninh đối với hệ thống AI.
+
+Cách tiếp cận của Trung Quốc khác với EU (ban hành luật AI riêng) và Mỹ (quản lý theo luật chuyên ngành). Việc lồng ghép quản trị AI vào luật an ninh quốc gia có nghĩa là **bất kỳ bridge nào kết nối với hệ sinh thái Trung Quốc đều phải tính đến tầng an ninh quốc gia, không chỉ tầng kỹ thuật.**
+
+#### A.1.4. Hàm ý cho NAN AI2AI
+
+Ba tầng quản trị của Trung Quốc tạo ra một thực tế phức tạp hơn bản thảo v0.1 đã mô tả:
+
+- **Khoảng trống không chỉ là kỹ thuật.** Khi Trung Quốc đã có chuẩn riêng, Mỹ đã có MCP/A2A, EU đã có luật AI riêng, thì "khoảng trống" không còn là khoảng trống đơn thuần mà là **chiến trường chuẩn hóa** (standards battlefield). Mỗi bên đều muốn chuẩn của mình trở thành chuẩn toàn cầu.
+- **Bridge trung lập phải tương thích với cả ba, không phải hai.** Yêu cầu kỹ thuật khó hơn so với bản thảo v0.1, nhưng cũng là lý do bridge trở nên có giá trị hơn, vì không ai khác đang làm việc này.
+- **Compliance dữ liệu là rào cản thực sự.** Một bridge không thể chỉ "chuyển gói tin", mà phải xử lý được câu hỏi: dữ liệu này có được phép chuyển qua biên giới không, theo luật của bên gửi và bên nhận?
+
+### A.2. Việt Nam - Trung Quốc: Mạng lưới hiệp định và cam kết
+
+Trong khi bản thảo v0.1 chỉ tham chiếu các nghị quyết đơn phương của Việt Nam, thực tế Việt Nam đã có một mạng lưới cam kết song phương và đa phương về AI và kinh tế số, tạo ra **cửa chính sách rộng hơn nhiều** so với những gì tài liệu này từng mô tả.
+
+#### A.2.1. Bản ghi nhớ hợp tác CNTT và Chuyển đổi số (12/2023)
+
+Bộ Thông tin và Truyền thông Việt Nam và Bộ Công nghiệp và Công nghệ thông tin Trung Quốc đã ký Bản ghi nhớ hợp tác trong lĩnh vực công nghệ thông tin và chuyển đổi số vào tháng 12/2023. Bản ghi nhớ này được xác định là khuôn khổ quan trọng để triển khai hợp tác thực chất trong giai đoạn 5 năm tiếp theo.
+
+Cách diễn đạt trong các trao đổi chính thức giữa hai bên đáng chú ý: "Mạng là nền tảng, ứng dụng là then chốt, tài nguyên là cốt lõi, **AI là động lực** và an toàn là bảo đảm". Cách diễn đạt này cho thấy AI không được nhìn như một lĩnh vực riêng, mà là **động lực nằm trong tổng thể hạ tầng số**, đúng với định vị của NAN AI2AI như một tầng giao thức hạ tầng, không phải một ứng dụng đơn lẻ.
+
+#### A.2.2. Bản ghi nhớ hợp tác phát triển và quản trị AI (2025)
+
+Năm 2025, nhân dịp kỷ niệm 75 năm quan hệ ngoại giao Việt Nam - Trung Quốc, hai nước đã ký Bản ghi nhớ về tăng cường hợp tác trong phát triển và quản trị trí tuệ nhân tạo. Đây là văn bản cấp chính phủ đầu tiên giữa hai nước dành riêng cho lĩnh vực AI, bao gồm cả khía cạnh **quản trị**, không chỉ hợp tác kỹ thuật.
+
+Cùng năm, tháng 11/2025, **Trung tâm Hợp tác Ứng dụng AI Việt Nam - Trung Quốc** chính thức khai trương tại Hà Nội, với cơ sở đối ứng tại Quảng Tây (ký kết ngày 26/11/2025). Đây là nền tảng hợp tác AI cấp quốc gia đầu tiên giữa hai nước, một địa chỉ thể chế mà NAN AI2AI có thể tiếp cận nếu muốn tìm đối tác hoặc xin ý kiến chính sách.
+
+#### A.2.3. Tuyên bố chung Việt Nam - Trung Quốc (17/04/2026)
+
+Tuyên bố chung về việc tiếp tục làm sâu sắc quan hệ đối tác hợp tác chiến lược toàn diện, thúc đẩy xây dựng cộng đồng chia sẻ tương lai có ý nghĩa chiến lược, ký ngày 17/04/2026, có hai nội dung đặc biệt quan trọng với NAN AI2AI:
+
+**Thứ nhất, cam kết hợp tác trong các lĩnh vực công nghệ cao.** Tuyên bố nêu rõ hai bên đồng ý thúc đẩy hợp tác trong các lĩnh vực sản xuất thông minh, kinh tế số, trí tuệ nhân tạo, công nghệ lượng tử, bán dẫn và đường sắt cao tốc. Đồng thời, hai bên hỗ trợ doanh nghiệp hợp tác sâu rộng trong các ngành công nghiệp số như 5G và dữ liệu lớn, trên cơ sở tuân thủ luật pháp mỗi nước và các cam kết quốc tế của Việt Nam, bảo đảm an ninh dữ liệu, an ninh mạng, hiệu quả kinh tế và lợi ích lâu dài.
+
+**Thứ hai (và đây là điểm quan trọng nhất): cam kết khám phá cơ chế hợp tác mã nguồn mở.** Tuyên bố nêu: "thúc đẩy trao đổi tổ chức mã nguồn mở, cùng xây dựng dự án, chia sẻ thành quả, triển khai công nghiệp, chia sẻ lợi ích phát triển mã nguồn mở".
+
+Đây là cơ sở chính sách cấp cao nhất cho một dự án như NAN AI2AI. Không chỉ là "được phép làm", mà là **nằm đúng trong định hướng hợp tác mà hai chính phủ đã cam kết**. Khi trình bày với báo chí hoặc cơ quan chính sách, đây là điểm tựa pháp lý mạnh hơn bất kỳ nghị quyết đơn phương nào.
+
+#### A.2.4. Hàm ý cho NAN AI2AI
+
+Mạng lưới cam kết Việt - Trung tạo ra ba lợi thế cụ thể:
+
+1. **Tính hợp pháp chính sách.** NAN AI2AI không phải sáng kiến "ngoài luồng", nó nằm trong định hướng hợp tác mã nguồn mở đã được hai chính phủ cam kết.
+2. **Địa chỉ thể chế để hỏi ý kiến.** Trung tâm Hợp tác Ứng dụng AI Việt - Trung là nơi có thể đặt câu hỏi về tính tương thích giữa NAN và GB/Z 185-2026.
+3. **Cơ hội thí điểm.** Tuyên bố chung 4/2026 đề cập "khám phá cơ chế hợp tác mã nguồn mở", NAN có thể trở thành một trong những dự án thí điểm đầu tiên cho cơ chế này, nếu có người đặt vấn đề đúng chỗ.
+
+### A.3. Việt Nam - ASEAN: Kinh tế số và DEFA
+
+Ở tầng khu vực, ASEAN đang xây dựng khung pháp lý cho kinh tế số, khung này sẽ là "tầng giao thức pháp lý" mà bridge kỹ thuật cần tương thích.
+
+#### A.3.1. DEFA: Hiệp định khung kinh tế số ASEAN
+
+Hiệp định khung kinh tế số ASEAN (DEFA, Digital Economy Framework Agreement) đã kết thúc đàm phán (Tuyên bố của các quan chức kinh tế cấp cao ASEAN, 12/2025), dự kiến ký cuối năm 2026. Kỳ vọng của DEFA là nhân đôi quy mô kinh tế số khu vực lên khoảng 2.000 tỷ USD vào năm 2030.
+
+Hai nội dung của DEFA liên quan trực tiếp đến NAN AI2AI:
+
+- **Xây dựng khung pháp lý và chính sách đồng bộ** cho khu vực, hài hòa quy định kỹ thuật số giữa các nước thành viên. Đây chính là tầng giao thức pháp lý mà bridge kỹ thuật cần tương thích, nếu DEFA quy định cách dữ liệu được chuyển xuyên biên giới, bridge phải tuân thủ quy định đó.
+- **Tạo điều kiện cho dữ liệu di chuyển xuyên biên giới.** Sau khi DEFA có hiệu lực, bridge xử lý dữ liệu xuyên biên giới sẽ có khung pháp lý rõ ràng hơn, giảm rủi ro pháp lý cho cả người vận hành bridge và người dùng.
+
+#### A.3.2. ACFTA 3.0: Hiệp định Thương mại Tự do Trung Quốc - ASEAN nâng cấp
+
+ACFTA 3.0 đã chính thức được ký kết ngày 28/10/2025, bổ sung nội dung mới về kinh tế số. Đây là hiệp định trực tiếp điều chỉnh thương mại số giữa Việt Nam và Trung Quốc, bao gồm thương mại điện tử xuyên biên giới, lĩnh vực mà bridge AI2AI có thể đóng vai trò hạ tầng kỹ thuật.
+
+#### A.3.3. RCEP: Mô hình hợp tác mềm dẻo
+
+RCEP tạo nền tảng thể chế cho hợp tác kinh tế số giữa Trung Quốc và ASEAN thông qua các cam kết về thương mại điện tử, dịch vụ, đầu tư và kết nối số. RCEP tiếp cận theo mô hình Trung Quốc, linh hoạt hơn, ít ràng buộc pháp lý hơn CPTPP.
+
+Điều này có nghĩa là **dư địa cho các sáng kiến tầng giao thức mềm dẻo như NAN lớn hơn trong khuôn khổ RCEP** so với CPTPP, nơi các cam kết chặt chẽ hơn và khó thí nghiệm hơn.
+
+#### A.3.4. Hàm ý cho NAN AI2AI
+
+DEFA và ACFTA 3.0 tạo ra một **cửa sổ cơ hội** cho NAN:
+
+- Nếu NAN chứng minh được tính khả thi trước khi DEFA có hiệu lực, nó có thể được tham chiếu như một **mô hình tham khảo** khi các nước ASEAN thảo luận về giao thức tầng ứng dụng.
+- Nếu NAN chứng minh được tính tương thích với cả GB/Z 185-2026 và MCP/A2A, nó có thể trở thành **bridge thực tế** cho thương mại điện tử xuyên biên giới Việt - Trung theo ACFTA 3.0.
+
+### A.4. Ba hàm ý chiến lược cho NAN AI2AI
+
+Từ các phân tích trên, có ba hàm ý cần được ghi nhận, và đây là những điều chỉnh so với bản thảo v0.1:
+
+#### A.4.1. Từ "khoảng trống" sang "chiến trường chuẩn hóa"
+
+Phiên bản v0.1 mô tả khoảng trống như một khoảng trống đơn thuần, nơi chưa ai đặt chân đến. Nhưng thực tế phức tạp hơn: Trung Quốc đã có GB/Z 185-2026 và đang xuất khẩu qua ITU-T; MCP/A2A của Mỹ đã có chỗ đứng; EU có luật riêng.
+
+Đây không phải là tin xấu. Đây là **tin tốt**, vì:
+
+- Nếu không ai làm gì, "khoảng trống" có thể chỉ là ảo tưởng.
+- Việc nhiều bên đang cố lấp khoảng trống chứng minh **vấn đề là có thật**.
+- Việt Nam không cần "phát minh lại bánh xe", chỉ cần làm **bridge tương thích đa chuẩn**, việc mà chưa ai làm.
+
+#### A.4.2. Cửa chính sách rộng hơn tưởng tượng
+
+Phiên bản v0.1 chỉ tham chiếu các nghị quyết đơn phương của Việt Nam (NQ 57, NQ 03, NQ 71, QĐ 1528, QĐ 1671); bản v0.4-draft này bổ sung thêm các hiệp định và cam kết song phương. Cụ thể, Việt Nam còn có:
+
+- Bản ghi nhớ hợp tác CNTT Việt - Trung (2023)
+- Bản ghi nhớ quản trị AI Việt - Trung (2025)
+- Trung tâm Hợp tác AI Việt - Trung tại Hà Nội (2025)
+- Tuyên bố chung Việt - Trung 4/2026 cam kết hợp tác mã nguồn mở
+- ACFTA 3.0 (2025) với nội dung kinh tế số
+- DEFA (đã kết thúc đàm phán, đang chờ ký kết chính thức; dự kiến 2026), khung pháp lý kinh tế số ASEAN
+
+Đây là mạng lưới chính sách thuận lợi nhất mà một dự án tầng giao thức có thể có. Phiên bản v0.1 chưa đề cập đến bất kỳ hiệp định nào trong số này, đây là lỗ hổng lớn nhất về mặt chính sách mà bản v0.4-draft này đã khép lại.
+
+#### A.4.3. Trung Quốc đã thừa nhận vấn đề: bằng chứng khách quan cho luận điểm của NAN
+
+Đây là điểm mạnh nhất của phụ lục này: **không cần NAN tự nói "có khoảng trống"**, chính văn bản chính thức của Trung Quốc đã nói rằng MCP và A2A chưa đủ, và cần chuẩn mới.
+
+Đây là "social proof" mạnh nhất có thể có cho White Paper: một cường quốc AI hàng đầu thế giới thừa nhận vấn đề mà NAN đang cố giải quyết. Khi trình bày với nhà báo, nhà hoạch định chính sách, hoặc nhà đầu tư, đây là câu có thể trích dẫn: "Ngay cả Trung Quốc cũng thừa nhận vấn đề 'ốc đảo tác tử' là có thật, và họ đã có chuẩn riêng để giải quyết. Việt Nam có thể học từ cách họ làm, nhưng cần làm theo cách của mình."
+
+---
