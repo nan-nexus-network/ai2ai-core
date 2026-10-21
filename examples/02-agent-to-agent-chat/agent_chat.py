@@ -9,6 +9,10 @@ Giấy phép: Apache License 2.0
 Kịch bản: Alice (Agent A) muốn tìm nhà cung cấp linh kiện tại Quảng Châu.
 Cô ấy gửi yêu cầu qua NAN Bridge đến Bob (Agent B) - người sở hữu dữ liệu chuỗi cung ứng.
 Hai Agent tự đàm phán và Bob gửi lại kết quả kèm Biên nhận xác thực (SHA-256).
+
+Lưu ý: Đây là mô phỏng luồng (simulation). Chữ ký số xác thực danh tính (Ed25519)
+đang được phát triển tại Issue #2. Kết quả SHA-256 ở đây chỉ đảm bảo tính toàn vẹn
+dữ liệu (Integrity), không xác thực danh tính hay nguồn gốc.
 """
 
 import json
@@ -42,7 +46,7 @@ class NANBridgeNode:
         return {
             "receipt_id": f"rcpt_{uuid.uuid4().hex[:10]}",
             "trace_id": trace_id,
-            "status": "VERIFIED_BY_NAN_BRIDGE",
+            "status": "DIGEST_ISSUED_BY_NAN_BRIDGE",
             "sha256_proof": proof,
             "data": result
         }

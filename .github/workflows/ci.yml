@@ -62,5 +62,8 @@ jobs:
       - name: Chạy thử nghiệm Demo 60 giây (Zero Dependencies)
         run: python examples/01-hello-agent/hello_bridge.py
 
+      - name: Chạy thử nghiệm Demo P2P (Agent-to-Agent Chat)
+        run: python examples/02-agent-to-agent-chat/agent_chat.py
+
       - name: Chạy bộ kiểm thử tự động (Unit Tests)
         run: python -m unittest discover -s tests -v
