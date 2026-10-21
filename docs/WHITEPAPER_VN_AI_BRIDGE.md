@@ -252,7 +252,7 @@ Văn bản chính thức của Trung Quốc **thừa nhận công khai** rằng 
 
 Đây là bằng chứng khách quan, từ một cường quốc AI hàng đầu, xác nhận rằng khoảng trống mà NAN AI2AI đang cố giải quyết là có thật, không phải do tác giả tài liệu này tự suy diễn.
 
-Trung Quốc không dừng ở tiêu chuẩn nội địa. Họ đã thành lập **AIP (Agent Interconnection Protocol) open-source community** trên nền tảng AtomGit từ tháng 10/2025, và đã đưa tiêu chuẩn này lên **ITU-T** (Liên minh Viễn thông Quốc tế) để chuẩn hóa toàn cầu. Nghĩa là Trung Quốc đang trong quá trình **xuất khẩu chuẩn** ra ngoài biên giới, không chỉ dừng ở tiêu chuẩn nội địa.
+Trung Quốc không dừng ở tiêu chuẩn nội địa. Cộng đồng mã nguồn mở **ANP (Agent Network Protocol)** trên nền tảng AtomGit và GitHub đã đưa bộ đặc tả của mình lên **IETF** (bản nháp cá nhân `draft-zyyhl-agent-networks-framework-00`) và đề xuất tại **W3C WebAgents CG**, nhằm chuẩn hóa toàn cầu. Nghĩa là Trung Quốc đang trong quá trình **xuất khẩu chuẩn** ra ngoài biên giới, không chỉ dừng ở tiêu chuẩn nội địa. *(Ghi chú về lịch sử dự án: AIP — Agent Interconnection Protocol — đã được lưu trữ; các phiên bản tiếp nối được phát triển dưới dạng `AIP-PUB/ACPs-community` v2.1.0. Khi trích dẫn, vui lòng dùng tên ANP kèm đường dẫn kho lưu trữ.)*
 
 #### A.1.3. Luật An ninh mạng sửa đổi (hiệu lực 01/01/2026)
 
