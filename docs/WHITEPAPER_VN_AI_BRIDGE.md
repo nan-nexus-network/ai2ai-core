@@ -2,7 +2,7 @@
 
 ## Tài Liệu Thảo Luận Mở Về Tầng Giao Thức Liên Vận (Interoperability Layer)
 
-* **Phiên bản:** v0.3-draft — Bổ sung đối chiếu chính sách quốc tế và khu vực; Tái định vị chiến lược Đóng góp & Đồng hành (Tháng 10/2026)
+* **Phiên bản:** v0.4-draft — Chuẩn hóa tông giọng Khiêm nhường & Đóng góp cho Kỷ nguyên AI của Việt Nam (Tháng 10/2026)
 * **Đơn vị khởi xướng:** Sáng kiến nghiên cứu mở NAN AI2AI-SI2SI
 * **Giấy phép tài liệu:** CC-BY 4.0 / Mã nguồn đính kèm: Apache 2.0
 
@@ -27,7 +27,7 @@
   * Vị thế trung lập về kỹ thuật cùng các định hướng chính sách mới (Nghị quyết 57-NQ/TW, Quyết định 1671/QĐ-TTg, Quyết định 1528/QĐ-TTg, Tuyên bố Hà Nội về Hợp tác số) tạo cho Việt Nam một lợi thế hẹp nhưng thực chất trong ASEAN.
 * **Bối cảnh chính sách quốc tế (bổ sung):** Trung Quốc đã ban hành chuẩn kết nối tác tử GB/Z 185-2026 (05/2026), đang đưa lên ITU-T; Việt Nam đã ký Bản ghi nhớ quản trị AI với Trung Quốc (2025) và Tuyên bố chung 4/2026 cam kết "khám phá cơ chế hợp tác mã nguồn mở"; ACFTA 3.0 (2025) và DEFA (dự kiến 2026) đang định hình khung pháp lý kinh tế số khu vực. Đây là mạng lưới chính sách thuận lợi cho một sáng kiến tầng giao thức như NAN AI2AI.
 * **NAN AI2AI-SI2SI là gì?** Đây là một hộp cát thử nghiệm mã nguồn mở (Apache 2.0) kèm bản demo chạy trong 60 giây nhằm kiểm chứng giả thuyết cầu nối giao thức — không phải là một giải pháp thương mại hoàn chỉnh.
-* **Mục đích của tài liệu:** Mời cộng đồng, chuyên gia và nhà quản lý góp ý, chỉ ra điểm sai. Dự án khởi đầu từ nguồn lực tự thân (0 đồng), công bố mở mã nguồn như một sự đóng góp cho cộng đồng. Chúng tôi tin rằng khi giá trị thực tiễn của giao thức được chứng minh, sự đồng hành và hợp tác từ các cơ quan nhà nước, doanh nghiệp và xã hội sẽ tự nhiên đến, đúng với tiềm năng đóng góp của dự án cho nền kinh tế số quốc gia.
+* **Mục đích của tài liệu:** Mời cộng đồng, chuyên gia và nhà quản lý góp ý, chỉ ra điểm sai. Sáng kiến này khởi đầu từ nguồn lực tự thân, công bố mở mã nguồn như một sự đóng góp nhỏ bé cho Kỷ nguyên Vươn mình - Kỷ nguyên AI của Việt Nam. Chúng tôi tuyệt đối không tự nhận vị thế dẫn dắt hay tiên phong, mà chỉ đóng vai trò là những người khởi xướng, sẵn sàng học hỏi và chờ đợi sự đồng hành tự nhiên từ cộng đồng khi giá trị thực tiễn được chứng minh.
 * **Ba câu hỏi trọng tâm nhất (trong 12 câu hỏi ở Chương 6):**
   1. *Việt Nam có nên đầu tư nghiên cứu vào tầng giao thức kết nối AI, hay chỉ nên tập trung vào ứng dụng đầu cuối?* (Câu 1)
   2. *Các giao thức hiện có (MCP, A2A) đã đủ cho nhu cầu liên vận đa quốc gia chưa, hay vẫn còn khoảng trống cho các bộ chuyển đổi trung lập?* (Câu 3)
@@ -339,4 +339,4 @@ Tài liệu này là một bản nháp mở. Bạn có thể tham gia theo bất
   14. **DEFA — Hiệp định khung kinh tế số ASEAN** (dự kiến ký cuối 2026), đàm phán đã kết thúc, chờ ký.
 
 **Cách trích dẫn tài liệu này (How to Cite):**
-> NAN AI2AI-SI2SI (2026). *Việt Nam như cầu nối trong nền kinh tế AI2AI — Tài liệu thảo luận mở (v0.3-draft)*. GitHub: https://github.com/nan-nexus-network/ai2ai-core. Giấy phép: CC-BY 4.0.
+> NAN AI2AI-SI2SI (2026). *Việt Nam như cầu nối trong nền kinh tế AI2AI — Tài liệu thảo luận mở (v0.4-draft)*. GitHub: https://github.com/nan-nexus-network/ai2ai-core. Giấy phép: CC-BY 4.0.

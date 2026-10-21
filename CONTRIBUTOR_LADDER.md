@@ -37,7 +37,7 @@ Chúng tôi thiết lập 3 bậc tham gia minh bạch dựa trên đóng góp t
 * **Quyền hạn & Trách nhiệm:**
   * Quyền phê duyệt và hợp nhất trực tiếp (Write / Maintain Access) vào nhánh `main` và phát hành các phiên bản Release mới (`v0.2`, `v0.3`...).
   * Quyền biểu quyết định hướng kiến trúc của giao thức và cập nhật các phiên bản tiếp theo của Tài liệu thảo luận (White Paper).
-  * **Quyền ưu tiên tiếp quản dự án:** Theo cam kết tại [HANDOVER.md](HANDOVER.md), nếu người khởi xướng dừng hoạt động sau 12 tháng, các thành viên Bậc 3 sẽ là những người đầu tiên được trao toàn quyền quản trị cao nhất (Admin Organization) để dẫn dắt dự án tiếp tục phát triển.
+  * **Quyền ưu tiên tiếp quản dự án:** Theo cam kết tại [HANDOVER.md](HANDOVER.md), nếu người khởi xướng dừng hoạt động sau 12 tháng, các thành viên Bậc 3 sẽ là những người đầu tiên được trao toàn quyền quản trị cao nhất (Admin Organization) để tiếp quản và đồng hành phát triển dự án.
 
 ---
 
