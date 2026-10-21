@@ -9,9 +9,17 @@ Chủ đề: Minh họa "Cầu nối Giao thức" (Protocol Bridge) giữa 2 Age
 
 Lưu ý kỹ thuật (PoC Disclaimer):
 - Mã nguồn này được dựng với sự hỗ trợ của AI nhằm minh họa luận điểm trong Tài liệu thảo luận.
-- Hàm sanitize_and_validate hiện kiểm tra cấu trúc gói tin cơ bản và quét mẫu chuỗi tĩnh trên toàn bộ packet.
-  Trong môi trường Production thực tế, tầng này cần được thay thế bằng JSON Schema Validator chuẩn,
-  chữ ký số bất đối xứng (Ed25519/DID) và bộ lọc ngữ nghĩa.
+- Tầng kiểm tra đã có 2 lớp (v0.2):
+  Lớp 1 - kiểm tra cấu trúc theo allowlist schema (subset JSON Schema Draft 2020-12,
+          tự triển khai bằng thư viện chuẩn): `nan_ai2ai/validation.py`.
+          Kiểm tra kiểu dữ liệu, độ dài, miền giá trị, và TỪ CHỐI mọi trường
+          không nằm trong schema.
+  Lớp 2 - quét mẫu chuỗi tĩnh (blocklist) như một lớp phòng thủ thứ hai.
+          CÁCH NÀY CỐ TÌNH SƠ KHAI và sẽ gây false-positive
+          (ví dụ: ghi chú hàng hóa hợp pháp "drop table shipment at port" sẽ bị chặn nhầm).
+          Ở bản Production, tầng này phải dùng Semantic Classifier + Allowlist Schema.
+- Chữ ký số bất đối xứng (Ed25519/DID) cho biên nhận: xem `nan_ai2ai/receipt.py`
+  và `docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md`.
 
 Cách chạy:
 python examples/01-hello-agent/hello_bridge.py
@@ -21,9 +29,18 @@ import json
 import uuid
 import hashlib
 import logging
+import os
 import sys
 from datetime import datetime, timezone
 from typing import Tuple, Dict, List, Any, Optional
+
+# Thêm thu muc goc kho vao sys.path de import duoc goi `nan_ai2ai`.
+# Van hoat dong 100% thu vien chuan - khong dung goi cai dat nao.
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
+from nan_ai2ai.validation import bridge_packet_schema, validate  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -63,27 +80,19 @@ class ProtocolBridgeNode:
     ) -> Tuple[bool, str]:
         """
         Kiểm tra toàn bộ gói tin (bao gồm cả định danh người gửi và tham số đầu vào).
+
+        Lớp 1: allowlist schema (kiểu dữ liệu, độ dài, miền giá trị, trường lạ).
+        Lớp 2: quét mẫu chuỗi tĩnh - lớp phòng thủ thứ hai, CỐ TÌNH sơ khai.
         """
-        # 1. Kiểm tra cấu trúc khung của gói tin gốc
+        # Lớp 1 — kiểm tra cấu trúc theo allowlist schema.
         if not isinstance(full_packet, dict):
             return False, "Gói tin không phải định dạng Dictionary/JSON hợp lệ."
-        if not full_packet.get("context_id") or not isinstance(full_packet.get("context_id"), str):
-            return False, "Thiếu hoặc sai định dạng 'context_id' (Định danh tác tử gửi)."
+        schema = bridge_packet_schema(required_arg_fields)
+        schema_errors = validate(full_packet, schema)
+        if schema_errors:
+            return False, "Cấu trúc không hợp lệ: " + "; ".join(schema_errors)
 
-        tool_call = full_packet.get("tool_call")
-        if not isinstance(tool_call, dict) or not tool_call.get("name"):
-            return False, "Thiếu thông tin 'tool_call.name'."
-
-        # 2. Kiểm tra các trường bắt buộc trong arguments theo hợp đồng dữ liệu
-        arguments = tool_call.get("arguments", {})
-        if not isinstance(arguments, dict):
-            return False, "Trường 'arguments' phải là một đối tượng JSON."
-
-        for field in required_arg_fields:
-            if field not in arguments:
-                return False, f"Thiếu trường dữ liệu bắt buộc trong hợp đồng: '{field}'"
-
-        # 3. Quét mẫu Prompt Injection trên TOÀN BỘ gói tin (kể cả context_id và tool_call)
+        # Lớp 2 — quét mẫu Prompt Injection trên TOÀN BỘ gói tin.
         # LƯU Ý KỸ THUẬT (PoC Limitation):
         # Pattern matching bằng danh sách từ khóa cấm (blocklist) ở đây cố tình làm tối giản
         # để minh họa luồng chặn của Cầu nối. Trong thực tế, cách này sẽ gây false-positive

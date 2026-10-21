@@ -31,9 +31,9 @@
 | Hạng mục | Trạng thái |
 | :--- | :--- |
 | Nhận ≥ 3 Pull Request đóng góp đầu tiên từ cộng đồng | ⏳ Chưa có |
-| Bổ sung ≥ 5 unit test cho luồng dịch MCP → A2A (Issue #3) | ⏳ Chưa có |
-| Thay blocklist từ khóa bằng kiểm tra cấu trúc an toàn (Issue #1) | ⏳ Chưa có |
-| Chữ ký bất đối xứng Ed25519 cho biên nhận xác thực (Issue #2) | ⏳ Chưa có |
+| Bổ sung ≥ 5 unit test cho luồng dịch MCP → A2A (Issue #3) | 🟢 **Một phần** — bộ test đã lên **100 test** (10 → 100); còn mở: test cho `agent_chat.py` |
+| Thay blocklist từ khóa bằng kiểm tra cấu trúc an toàn (Issue #1) | 🟢 **Xong** — `nan_ai2ai/validation.py`: allowlist schema kiểm tra kiểu dữ liệu / độ dài / miền giá trị (**subset** Draft 2020-12, bằng stdlib) |
+| Chữ ký bất đối xứng Ed25519 cho biên nhận xác thực (Issue #2) | 🟢 **Xong** — `nan_ai2ai/receipt.py` (`nan-receipt/v1`): Ed25519 thuần Python theo RFC 8032, **chỉ bên thực thi ký**, xác minh được mà không cần tin Bridge |
 | Chuyển tài liệu thảo luận sang **CC-BY 4.0**, mở bản dịch tóm tắt tiếng Anh | ⏳ Chưa có |
 | Báo cáo KPI công khai đầu tiên | ⏳ Chưa có (xem [docs/public_launch/03_METRICS_AND_MEASUREMENT.md](docs/public_launch/03_METRICS_AND_MEASUREMENT.md)) |
 
@@ -53,6 +53,18 @@
 | Được tham chiếu trong tài liệu kỹ thuật của bên thứ ba | ⏳ Chưa có |
 | Tái phân phối lại bởi ít nhất 1 tổ chức độc lập | ⏳ Chưa có |
 | Chuyển giao quản trị cho cộng đồng | ⏳ Chưa có (xem cam kết 12 tháng tại [HANDOVER.md](HANDOVER.md)) |
+
+---
+
+## Backlog dài hạn (ngoài phạm vi v0.2)
+
+| # | Hạng mục | Điều kiện để đưa vào phạm vi |
+|:--|:---|:---|
+| BL1 | Adapter sang **GB/Z 185-2026** | Cần **toàn văn** chuẩn **và** bộ vector kiểm thử tương thích. Hiện repo **không** có nội dung quy chuẩn — `STANDARDS/standards.csv` chỉ mang `source_ref`. Xem `docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md`, Quyết định 4. |
+| BL2 | **Transparency log** (Sigstore/Rekor-style) | Để tuyên bố biên nhận "kiểm chứng độc lập". Chưa tuyên bố điều này ở v0.2. |
+| BL3 | **Backend `cryptography`/HSM** thay cho Ed25519 thuần Python | Khi cần hiệu năng hoặc bảo mật chống side-channel. Bản thuần Python **không constant-time**. |
+| BL4 | **Hợp nhất hai hiện thực bridge** (`hello_bridge.py` và `agent_chat.py`) | Cần quyết định phạm vi riêng. Hiện đã công khai trong bài CSDN rằng đây là hai hiện thực độc lập chưa hợp nhất. |
+| BL5 | **Đóng gói chuẩn** (`pyproject.toml`, src layout) | Khi có người đóng góp bên ngoài cài bằng `pip install`. |
 
 ---
 

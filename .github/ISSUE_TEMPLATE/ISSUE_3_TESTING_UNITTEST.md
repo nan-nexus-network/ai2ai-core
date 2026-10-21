@@ -7,7 +7,13 @@ assignees: []
 
 **Nhãn (Labels):** `good first issue`, `testing`
 
-## Mô tả vấn đề (Problem Description)
+## Trạng thái
+
+🟡 **MỘT PHẦN** — bộ test đã lớn từ **10 lên 100 test** (`python -m unittest discover -s tests -v`): `tests/test_ed25519.py` (17), `tests/test_validation.py` (32), `tests/test_canonical.py` (11), `tests/test_receipt.py` (40).
+
+**Còn mở:** test cho `agent_chat.py` — demo P2P hiện **không** gọi lớp kiểm tra (xem `docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md`, Hệ quả 6); và test cho biến thể schema khác.
+
+## Mô tả vấn đề gốc (đã đóng một phần)
 Để người mới tải kho lưu trữ về có thể kiểm tra tự động trên GitHub Actions (CI/CD), dự án cần một bộ kiểm thử tự động cơ bản.
 
 ## Mục tiêu (Expected Behavior)

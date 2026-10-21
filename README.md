@@ -32,6 +32,7 @@ Trước khi bạn đọc mã nguồn hoặc tài liệu trong kho lưu trữ n�
    - **Minh bạch tuyệt đối về giới hạn kỹ thuật.**
    - **Mọi mã nguồn đã mở dưới chuẩn Apache 2.0 sẽ không bao giờ bị rút lại.**
 4. **Về tính đại diện:** Sáng kiến này **hoàn toàn không đại diện cho cộng đồng AI Việt Nam**. Đây là một thử nghiệm độc lập ở quy mô nhỏ; mọi luận điểm trong [Tài liệu thảo luận](docs/WHITEPAPER_VN_AI_BRIDGE.md) đều được trình bày như **câu hỏi mở**, không phải kết luận.
+5. **Về giới hạn kỹ thuật:** Chúng tôi liệt kê **từng giới hạn đã biết** — kể cả những giới hạn của phần mã vừa được viết — tại [ARCHITECTURE.md](ARCHITECTURE.md), trong bảng giới hạn của [ADR-001](docs/ADR_001.md), và trong [ADR-002](docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md). Phần chữ ký số mới là **bản tham chiếu phục vụ học tập**, chưa phải mã production: Ed25519 thuần Python **không constant-time**, và mô hình neo tin cậy TOFU **không** chống được tấn công MITM ở lần tiếp xúc đầu tiên.
 
 ### Tại sao tôi dùng AI?
 
@@ -41,9 +42,11 @@ Tôi dùng AI (Claude) để hỗ trợ phác thảo tài liệu và mã PoC vì
 
 ## ⚡ Chạy Thử Nghiệm Trong 60 Giây (Zero Dependencies)
 
+> 📌 **Trạng thái phiên bản:** nhánh `main` đang phát triển **v0.2** (biên nhận có chữ ký + bộ kiểm tra cấu trúc theo allowlist schema). Bản phát hành ổn định vẫn là **v0.1.0**. Chi tiết các quyết định kiến trúc: [ADR-002](docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md).
+
 Bản mẫu `hello_bridge.py` sử dụng 100% thư viện mặc định của Python (tương thích từ Python 3.8 trở lên), không cần cài đặt bất kỳ gói phụ thuộc nào (`pip install`).
 
-Xem [ARCHITECTURE.md](ARCHITECTURE.md) để biết luồng hiện có và các lớp mới chỉ mang tính khái niệm.
+Xem [ARCHITECTURE.md](ARCHITECTURE.md) để biết luồng hiện có và những lớp nào **mới chỉ là ý tưởng**.
 
 ```bash
 git clone https://github.com/nan-nexus-network/ai2ai-core.git
@@ -53,7 +56,7 @@ python examples/01-hello-agent/hello_bridge.py
 
 ### Kịch bản mô phỏng trong 60 giây:
 1. **Agent Hệ sinh thái A (chuẩn MCP-style)** phát một gói tin yêu cầu dịch vụ logistics ASEAN.
-2. **Node Cầu nối (ProtocolBridgeNode)** kiểm tra *một số trường bắt buộc* và *so khớp một số chuỗi tĩnh* trong gói tin. **PoC hiện tại mới chỉ kiểm tra cấu trúc cơ bản, chưa phải JSON Schema Validator chuẩn**, và đây là kiểm tra minh họa, không phải biện pháp bảo mật.
+2. **Node Cầu nối (ProtocolBridgeNode)** kiểm tra gói tin qua **hai lớp**: (Lớp 1) *allowlist schema* — kiểm tra kiểu dữ liệu, độ dài, miền giá trị và **từ chối mọi trường không nằm trong schema**; (Lớp 2) *so khớp một số chuỗi tĩnh* như lớp phòng thủ thứ hai. Lớp 1 là **subset của JSON Schema Draft 2020-12, tự viết bằng thư viện chuẩn** — **không phải** bản triển khai đầy đủ của Draft 2020-12, và vẫn là kiểm tra minh họa, không phải biện pháp bảo mật. Xem [ADR-002](docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md).
 3. **Chuyển đổi ngữ nghĩa:** Dịch từ cấu trúc gọi công cụ (`tool_call`) sang cấu trúc giao việc liên vận (`standardized_task` kiểu A2A).
 4. **Tạo biên nhận demo:** Tính digest SHA-256 từ dữ liệu mẫu và phản hồi mô phỏng; digest không xác thực danh tính, nguồn gốc hoặc việc thực thi.
 
@@ -64,6 +67,15 @@ python examples/02-agent-to-agent-chat/agent_chat.py
 ```
 *(Mô phỏng cảnh Alice gửi yêu cầu tìm nhà cung cấp qua NAN Bridge, Bob xử lý và trả kết quả kèm Biên nhận SHA-256).*
 
+> ⚠️ **Lưu ý trung thực:** Demo 2 **không** gọi lớp kiểm tra cấu trúc của Demo 1 — đây là **hai hiện thực bridge độc lập chưa được hợp nhất**, một việc đã đưa vào backlog. Chúng tôi nói rõ điều này thay vì để người đọc tự phát hiện.
+
+### Demo 3: Biên nhận có chữ ký (v0.2)
+Bản nhận `nan-receipt/v1`: **chỉ bên thực thi ký** (Ed25519), nên **một bên thứ ba có thể xác minh mà không cần tin vào Bridge**. Zero dependencies, chạy trong 60 giây.
+```bash
+python examples/03-signed-receipt/signed_receipt_demo.py
+```
+*(Demo cho thấy: bên thứ ba ghim khoá công khai theo mô hình TOFU, kiểm tra chữ ký, và **từ chối** biên nhận bị sửa, bị hết hạn, hoặc bị khoá lạ. Xem [ADR-002](docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md) để biết vì sao chọn phạm vi ký này.)*
+
 ---
 
 ## 📄 Tài Liệu Thảo Luận Mở (White Paper v0.4-draft)
@@ -71,6 +83,7 @@ python examples/02-agent-to-agent-chat/agent_chat.py
 - **Đọc trực tiếp bản Markdown:** [docs/WHITEPAPER_VN_AI_BRIDGE.md](docs/WHITEPAPER_VN_AI_BRIDGE.md)
 - **Tải bản PDF đầy đủ (kèm Tóm tắt 1 trang cho người bận rộn):** [GitHub Releases](https://github.com/nan-nexus-network/ai2ai-core/releases)
 - [ADR-001: Định vị Framework vs Protocol](docs/ADR_001.md)
+- [ADR-002: Biên nhận có chữ ký, mô hình neo tin cậy, và bộ kiểm tra cấu trúc](docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md)
 - [Media Kit dành cho báo chí](docs/PRESS_KIT.md)
 
 ---

@@ -26,7 +26,7 @@ The following terms describe possible future design areas only. They are not imp
 
 - **Discovery — conceptual:** no agent registry, capability discovery, or peer lookup exists.
 - **Negotiation — conceptual:** no protocol/version negotiation, consent exchange, or task agreement exists.
-- **Verification — conceptual:** no independent result verification, digital signature, identity proof, or remote execution attestation exists. The demo's SHA-256 receipt is only a local digest over its inputs.
+- **Verification — implemented in v0.2 (signed receipt):** `nan_ai2ai/receipt.py` implements the `nan-receipt/v1` receipt. The **executor signs** with Ed25519 (pure-Python RFC 8032); the bridge does **not** sign, so a third party can verify without trusting any intermediary. `kid` is an RFC 7638 JWK thumbprint; the trust anchor is **TOFU** (`nan_ai2ai/trust.py`). No remote execution attestation and no transparency log yet — see `docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md`.ts inputs.
 
 ## Current limitations
 
