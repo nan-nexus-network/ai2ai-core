@@ -1,0 +1,113 @@
+﻿# license_gate_allowlist.txt
+#
+# Danh sach package DUOC PHEP xuat hien trong bao cao license gate.
+# Mot dong = mot ten package (khong phan biet hoa thuong).
+#
+# LY DO: cac package duoi day la CONG CU KIEM TRA (audit tooling), duoc cai dat
+# trong chinh dot audit license chay ngay tren may nay — KHONG phai dependency
+# cua repository ai2ai-core va KHONG duoc ban giao trong san pham phat hanh.
+#
+# - scancode-toolkit + pip-licenses : cong cu quet license cua dot audit
+# - cac package con lai               : dependency truyen tiep cua hai cong cu tren
+#
+# QUAN TRONG: danh sach nay CHI che cong cu kiem tra. Moi package la dependency
+# that cua san pham deu phai duoc review va dua vao day bang Quyet dinh cua
+# PMO/LEGAL — khong tu dong them.
+#
+# Sinh tu: dot audit license NAN-AI2AI-INVENTORY-001 (2026-10-21)
+# So luong: 94 muc
+attrs
+banal
+beartype
+beautifulsoup4
+binaryornot
+boolean.py
+certifi
+cffi
+chardet
+charset-normalizer
+click
+colorama
+commoncode
+container-inspector
+cryptography
+cyseq
+debian-inspector
+dockerfile-parse
+dparse2
+et-xmlfile
+extractcode
+extractcode-7z
+extractcode-libarchive
+fasteners
+fingerprints
+ftfy
+gemfileparser2
+html5lib
+idna
+importlib-metadata
+iniconfig
+intbitset
+jaraco.functools
+javaproperties
+jinja2
+jsonstreams
+license-expression
+lxml
+markupsafe
+more-itertools
+multiregex
+networkx
+normality
+numpy
+openpyxl
+packageurl-python
+packaging
+packvers
+pandas
+parameter-expansion-patched
+pdfminer.six
+pefile
+pillow
+pip
+pip-licenses
+pip-requirements-parser
+pkginfo2
+pluggy
+plugincode
+ply
+prettytable
+publicsuffix2
+pyahocorasick
+pycparser
+pygmars
+pygments
+pymaven-patch
+pyparsing
+pytest
+python-dateutil
+pyyaml
+rdflib
+requests
+saneyaml
+scancode-toolkit
+scipy
+semantic-version
+setuptools
+six
+soupsieve
+spdx-tools
+text-unidecode
+toml
+typecode
+typecode-libmagic
+typing-extensions
+tzdata
+uritools
+urllib3
+urlpy
+wcwidth
+webencodings
+xmltodict
+zipp
+pymupdf  # cong cu xuat ban PDF ho so thuyet trinh, khong phai repo dependency

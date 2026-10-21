@@ -1,0 +1,51 @@
+name: NAN AI2AI-SI2SI CI & Security Scan
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  secret-scan:
+    name: Quét bảo mật (TruffleHog Secret Scan)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Chạy TruffleHog kiểm tra rò rỉ API Key / Token
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+          extra_args: --only-verified
+
+  test-poc-and-bridge:
+    name: Kiểm thử PoC trên Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.10", "3.12"]
+
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Thiết lập môi trường Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Chạy thử nghiệm Demo 60 giây (Zero Dependencies)
+        run: python examples/01-hello-agent/hello_bridge.py
+
+      - name: Chạy bộ kiểm thử tự động (Unit Tests)
+        run: python -m unittest discover -s tests -v

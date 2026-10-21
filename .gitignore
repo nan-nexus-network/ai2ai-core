@@ -1,0 +1,29 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Private & secrets
+LEADS.md
+docs/THU_NGO_DONG_HANH.md
+THU_NGO_DONG_HANH.md
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.yaml
+bootstrap_repo.py
+_tools/
+
+# Virtual envs
+venv/
+.venv/
+env/
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

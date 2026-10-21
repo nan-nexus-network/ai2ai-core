@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+      - id: license-gate
+        name: Kiểm tra license (dependency + SPDX header)
+        entry: python scripts/license_gate.py
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]

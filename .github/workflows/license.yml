@@ -1,0 +1,68 @@
+name: Quét License (License Gate)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  license-gate:
+    name: Cổng kiểm tra license (dependency + SPDX)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Thiết lập Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cài pip-licenses
+        run: python -m pip install --upgrade pip-licenses
+
+      - name: Chạy license_gate.py
+        run: python scripts/license_gate.py
+
+      - name: Xuất báo cáo JSON
+        if: always()
+        run: python scripts/license_gate.py --json > license_gate_report.json || true
+
+      - name: Upload báo cáo license gate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: license-gate-report
+          path: license_gate_report.json
+          if-no-files-found: warn
+
+  scancode-scan:
+    name: Quét mã nguồn bằng ScanCode
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Thiết lập Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cài scancode-toolkit
+        run: python -m pip install --upgrade scancode-toolkit
+
+      - name: Chạy ScanCode
+        run: |
+          scancode -clpi --json-pp license_scan.json --quiet .
+
+      - name: Upload kết quả ScanCode
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: license-scan
+          path: license_scan.json
+          if-no-files-found: warn
