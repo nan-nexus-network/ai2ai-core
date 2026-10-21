@@ -39,7 +39,7 @@ Mình nói thật: Mình không phải dev chuyên nghiệp, code này do AI h�
 **Tweet 3/8:** We built a minimal bridge node (`hello_bridge.py`). Runs in 60s, zero dependencies. It validates schema, translates packets, and issues a SHA-256 receipt.
 **Tweet 4/8:** Transparency notice: We are not a big tech company. We are just a small team in Vietnam. This PoC was built with AI assistance. We open-sourced it (Apache 2.0) as a humble contribution to the global open-source community.
 **Tweet 5/8:** We are not asking for funding. We are asking for critique. We make no grand claims. If the gap is real, help us fix the code.
-**Tweet 6/8:** We are doing this to contribute to Vietnam's AI Era. If the protocol proves its value through community verification, collaboration will follow naturally. 
+**Tweet 6/8:** We are doing this to contribute to Vietnam's AI Era. If the framework proves its value through community verification, collaboration will follow naturally. 
 **Tweet 7/8:** Repo and paper in the next tweet.
 **Tweet 8/8:** 📄 Paper: https://nan-ai2ai.nexusasianetwork.workers.dev 💻 Repo: https://github.com/nan-nexus-network/ai2ai-core #OpenSource #AI2AI #Vietnam
 
