@@ -9,6 +9,8 @@ Tôi không có hàng trăm tỷ đồng. Tôi không có đội ngũ hàng ngà
 
 *"Nhưng Việt Nam chúng ta có những thế mạnh mà không quốc gia nào có được: một thế hệ kỹ sư trẻ ham học hỏi, mạng lưới thương mại trải khắp các châu lục, và những cam kết chính sách mạnh mẽ về AI (Tuyên bố Hà Nội 1/2026). Chúng ta không cần đua mô hình tỷ đô. Chúng ta cần một tầng giao thức để kết nối tất cả những thế mạnh đó lại."*
 
+*"Nhưng chúng ta không chỉ làm cầu nối kỹ thuật. Việt Nam có một lợi thế vô giá: Vị thế trung lập và Ngoại giao Cây tre. Khi AI Agent tự giao dịch xuyên biên giới và xảy ra tranh chấp, thế giới cần một trọng tài công tâm. Chúng tôi đề xuất biến Việt Nam thành Trung tâm Giải quyết Tranh chấp AI Toàn cầu, nơi cung cấp bằng chứng kỹ thuật (SHA-256) và phân xử công bằng. Đây là đóng góp cho các luật AI quốc tế trong tương lai."*
+
 Hôm nay, chúng tôi công bố mở nó ra cho cộng đồng (Apache 2.0). Chúng tôi không tự nhận mình là chuyên gia hay người dẫn dắt. Chúng tôi chỉ là những người khởi xướng, đang đặt những viên gạch đầu tiên. Chúng tôi không xin tiền, không gọi vốn. Chúng tôi chỉ mong nhận được sự phản biện của các kỹ sư thực thụ để giao thức này thực sự hữu ích cho Việt Nam.
 
 ## Ấn phẩm 2 (09:00) — LinkedIn #2
@@ -55,9 +57,10 @@ Mình đang ấp ủ một dự án đóng góp cho Kỷ nguyên AI của Việt
 Bản PoC `hello_bridge.py` rất sơ sài, chỉ để minh họa. Mình không tự nhận nó hoàn hảo. Mình đang cần anh em thực chiến chỉ bảo thêm. Có 3 `good first issues` trên repo. Rất mong nhận được sự phản biện chân thành từ anh em. Cảm ơn anh em đã đọc.
 
 ## Ấn phẩm 8 (15:00) — Email Giới thiệu Báo chí
-**Tiêu đề:** [Câu chuyện công nghệ] Một nhóm khởi nghiệp Việt mở mã nguồn giao thức AI: Đóng góp nhỏ bé cho Kỷ nguyên AI của đất nước.
+**Tiêu đề:** [Đề xuất Chiến lược] Đưa Việt Nam thành Trung tâm Giải quyết Tranh chấp AI Toàn cầu dựa trên Ngoại giao Cây tre
 
-Kính gửi Quý Báo,
+*Kính gửi Quý Báo, trong bối cảnh AI Agent tự giao dịch nhưng thiếu tư cách pháp nhân, thế giới đang thiếu một cơ chế trọng tài công tâm. Với vị thế trung lập và uy tín ngoại giao, Việt Nam có thể trở thành "trọng tài viên" cho các giao dịch AI toàn cầu, dựa trên hạ tầng kỹ thuật mã nguồn mở NAN AI2AI. Dưới đây là bản thảo chiến lược gửi Quý Báo tham khảo...*
+
 Trong bối cảnh các cường quốc đang đốt hàng tỷ USD để xây dựng những mô hình AI khép kín, một nhóm kỹ sư tại NAN lại chọn con đường khác: tận dụng 4 thế mạnh của Việt Nam (dân số trẻ, thương mại đa dạng, Tuyên bố Hà Nội, và các cam kết quốc tế) để xây dựng một tầng giao thức mở. Họ vừa công bố mã nguồn PoC này...
 
 Điều đáng chú ý là nhóm không kêu gọi đầu tư, không đưa ra con số tài chính, và cũng không tự nhận mình là chuyên gia. Họ chỉ đưa ra một tài liệu thảo luận mở và một đoạn mã demo nhỏ gọn, với lời nguyện cầu được cộng đồng kiểm chứng. Họ xem đây là một sự đóng góp nhỏ bé cho Kỷ nguyên Vươn mình của Việt Nam.
