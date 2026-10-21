@@ -29,7 +29,7 @@ Kho này chứa **mã PoC minh hoạa**, chạy hoàn toàn bằng thư viện c
 
 | Kênh | Địa chỉ | Ghi chú |
 | :--- | :--- | :--- |
-| Email | `nan.ai2ai.initiative@proton.me` | **Kênh ưu tiên** — kèm tiêu đề `[SECURITY]` |
+| Email | `nan_ai2ai@proton.me` | **Kênh ưu tiên** — kèm tiêu đề `[SECURITY]` |
 | Issue | Tab Issues → Security | Dùng khi **không** muốn công khai ngay |
 
 **Không** báo lỗ hổng qua kênh công khai (Issue/PR) nếu lỗi đó chưa được vá.

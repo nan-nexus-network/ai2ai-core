@@ -31,11 +31,12 @@
 | **Kho GitHub** | Nơi chính của đối tượng kỹ thuật | **P0** | Repo đã public |
 | **Tài liệu thảo luận (Markdown)** | Tài liệu gốc, luôn cập nhật | **P0** | Luôn |
 | **Website / Landing Page** | Cổng thông tin | **P0** | Đã deploy |
-| **LinkedIn** | Tiếp cận doanh nghiệp & chuyên gia | P1 | Đã có tài khoản |
+| **LinkedIn** | Tiếp cận doanh nghiệp & chuyên gia B2B | P1 | Đã có tài khoản |
+| **Diễn đàn Tinh Tế & VOZ** | Thảo luận chuyên sâu & phản biện kỹ thuật cộng đồng | P1 | Có tài khoản diễn đàn uy tín |
 | **Nhóm Zalo / Telegram** | Thảo luận cộng đồng | P1 | Đã có nhóm thật |
-| **YouTube** | Giải thích trực quan | P2 | Có năng lực làm video |
 | **Báo chí / hiệp hội** | Đối tác thể chế | P2 | Có câu chuyện đã kiểm chứng |
 | **WeChat / kênh Trung Quốc** | Thị trường mục tiêu | P2 | Chỉ khi có năng lực duy trì |
+| **TikTok** | Video ngắn tiếp cận đại chúng | **P3 (Không ưu tiên)** | *Chỉ đăng 1 video ngắn 30s dạng text-on-screen vào Ngày 6 (nếu có thời gian). Không ưu tiên, bỏ toàn bộ đầu việc quay dựng video.* |
 
 > **Quy tắc:** **không mở kênh mới nếu chưa duy trì được kênh hiện tại.** Một kênh bỏ hoang 3 tháng
 > còn tệ hơn không có kênh nào.

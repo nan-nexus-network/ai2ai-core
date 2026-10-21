@@ -38,7 +38,7 @@ Tùy thuộc vào kết quả tương tác thực địa trong 24 giờ qua, ng�
   * Issues được mở: `[...]` (Trong đó: `[...]` lỗi tài liệu, `[...]` đề xuất kỹ thuật)
   * Pull Requests (PR): `[...]`
   * Thành viên tham gia nhóm Zalo / Telegram: `[...]`
-  * Email phản hồi gửi về `nan.ai2ai.initiative@proton.me`: `[...]`
+  * Email phản hồi gửi về `nan_ai2ai@proton.me`: `[...]`
 
 ### 2. Điều đáng chú ý nhất trong 24 giờ qua
 * Ghi lại 1 hoặc 2 phản biện sâu sắc nhất từ cộng đồng (nêu rõ vấn đề, tôn trọng người phản biện):

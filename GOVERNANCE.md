@@ -77,4 +77,4 @@ thì không phải kho mở, đó là một hộp đen.
 
 ## 6. Liên hệ
 
-Câu hỏi về quản trị → mở Issue với nhãn `governance` hoặc email `nan.ai2ai.initiative@proton.me`.
+Câu hỏi về quản trị → mở Issue với nhãn `governance` hoặc email `nan_ai2ai@proton.me`.

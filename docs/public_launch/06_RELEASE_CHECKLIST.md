@@ -43,10 +43,10 @@
 | C2 | `https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md` | 200 | ☐ |
 | C3 | `https://github.com/nan-nexus-network/ai2ai-core/issues` | 200 | ☐ |
 | C4 | `https://github.com/nan-nexus-network/ai2ai-core/releases` | 200 | ☐ |
-| C5 | `https://nan-ai2ai.pages.dev` | DNS phân giải, 200 | ☐ |
-| C6 | Link nhóm Zalo (đã thay `PLACEHOLDER_ZALO`) | vào được nhóm thật | ☐ |
-| C7 | Link X.com (`AI2AI_Economy`) | tồn tại — **hoặc đã gỡ nút** | ☐ |
-| C8 | Hộp thư `nan.ai2ai.initiative@proton.me` | **nhận được** email | ☐ |
+| C5 | `https://nan-ai2ai.nexusasianetwork.workers.dev` | DNS phân giải, 200 | ☐ |
+| C6 | Link nhóm Zalo (`https://zalo.me/g/h0cbluccgocfud9fmih4`) & Telegram (`https://t.me/+87ARJ1e1NUA0ZDQ1`) | vào được nhóm thật | ☐ |
+| C7 | Link X (`https://x.com/Nan_ai2ai_vn`) & LinkedIn (`https://www.linkedin.com/in/nan-ai2ai-b02b67365/`) | tồn tại, hoạt động | ☐ |
+| C8 | Hộp thư `nan_ai2ai@proton.me` | **nhận được** email | ☐ |
 | C9 | Mọi link tương đối trong `.md` / `.html` | file đích tồn tại | ☐ |
 
 > **C1–C8 là điều kiện bắt buộc.** Một link chết ở trang đích tệ hơn nhiều so với việc trễ thêm một ngày.

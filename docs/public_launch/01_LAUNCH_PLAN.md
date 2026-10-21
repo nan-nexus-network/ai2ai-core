@@ -37,10 +37,10 @@ không "chấp nhận rủi ro để kịp hạn".
 | # | Việc | Vì sao chặn | Cách kiểm tra |
 | :---: | :--- | :--- | :--- |
 | 1 | **Tạo GitHub org + repo** `nan-nexus-network/ai2ai-core` | Mọi link trong README/whitepaper/web_hub trỏ tới đây | Mở `https://github.com/nan-nexus-network/ai2ai-core` → không còn 404 |
-| 2 | **Tạo tài khoản Proton Mail** `nan.ai2ai.initiative@proton.me` | Là **địa chỉ liên hệ duy nhất** công khai | Gửi thử 1 email, nhận được |
-| 3 | **Deploy `web_hub/`** lên Cloudflare Pages → `nan-ai2ai.pages.dev` | Là "Cổng thông tin" trong README + whitepaper | DNS phân giải được |
-| 4 | **Tạo tài khoản X.com** `AI2AI_Economy` **hoặc bỏ nút** | Nút X trong web_hub hiện trỏ tới trang 404 | Hoặc tài khoản tồn tại, hoặc nút đã bị gỡ |
-| 5 | **Tạo nhóm Zalo/Telegram** rồi điền mã nhóm (thay `PLACEHOLDER_ZALO`) | Nút cộng đồng hiện dẫn tới trang đăng nhập Zalo | Mở link → vào được nhóm thật |
+| 2 | **Tạo tài khoản Proton Mail** `nan_ai2ai@proton.me` | Là **địa chỉ liên hệ duy nhất** công khai | Gửi thử 1 email, nhận được |
+| 3 | **Deploy `web_hub/`** lên Cloudflare Workers → `https://nan-ai2ai.nexusasianetwork.workers.dev` | Là "Cổng thông tin" trong README + whitepaper | DNS phân giải được |
+| 4 | **Tạo tài khoản X.com** `@Nan_ai2ai_vn` (`https://x.com/Nan_ai2ai_vn`) | Kênh đối thoại quốc tế | Mở link → tài khoản tồn tại |
+| 5 | **Tạo nhóm Zalo/Telegram** (`https://zalo.me/g/h0cbluccgocfud9fmih4` / `https://t.me/+87ARJ1e1NUA0ZDQ1`) | Kết nối cộng đồng builder kỹ thuật | Mở link → vào được nhóm thật |
 | 6 | **Ký form phát hành** (checkbox G4) | Xác nhận phạm vi phát hành | Bản ký đã tick 1 trong 2 ô |
 
 > **Không có cổng nào được "bỏ qua" để kịp hạn.** Nếu cần, hãy **lùi ngày phát hành** thay vì phát hành
@@ -71,7 +71,7 @@ không "chấp nhận rủi ro để kịp hạn".
 | :--- | :--- |
 | Phát hành "v0.2", "v0.3" liên tiếp | Không có nguồn lực để duy trì; mỗi bản phát hành là một cam kết bảo trì |
 | Thêm dependency bên thứ ba | Phá vỡ cam kết Zero Dependencies và thêm bề mặt tấn công |
-| Nhận tiền, gọi vốn, phát hành token | Vi phạm cam kết bất biến |
+| **Không** nhận tiền, **không** gọi vốn, **không** phát hành token | Vi phạm cam kết bất biến |
 | Tuyên bố "đã sẵn sàng cho production" | PoC chưa qua hậu kiểm độc lập |
 | Tuyên bố đại diện cho cộng đồng AI Việt Nam | Vi phạm tuyên bố minh bạch |
 

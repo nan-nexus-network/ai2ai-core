@@ -44,7 +44,7 @@ khuynh hướng tính dục, nhận dạng, sức khỏe hay quan điểm.
 
 ## 5. Báo cáo vi phạm
 
-Email `nan.ai2ai.initiative@proton.me` với tiêu đề `[CoC]`. Mọi báo cáo được xử lý kín.
+Email `nan_ai2ai@proton.me` với tiêu đề `[CoC]`. Mọi báo cáo được xử lý kín.
 
 > **Thực tế về năng lực xử lý:** dự án do **một người** vận hành. Chúng tôi sẽ xử lý mọi báo cáo, nhưng
 > **không thể cam kết thời gian phản hồi dưới 7 ngày**. Với cáo buộc nặng về an toàn, vui lòng ghi rõ mức độ
@@ -57,4 +57,4 @@ Email `nan.ai2ai.initiative@proton.me` với tiêu đề `[CoC]`. Mọi báo cá
 
 ## 7. Liên hệ
 
-Câu hỏi về bộ quy tắc này → mở Issue hoặc email `nan.ai2ai.initiative@proton.me`.
+Câu hỏi về bộ quy tắc này → mở Issue hoặc email `nan_ai2ai@proton.me`.

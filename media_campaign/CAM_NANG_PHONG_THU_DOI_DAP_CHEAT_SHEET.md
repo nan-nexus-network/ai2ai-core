@@ -26,7 +26,7 @@
 > **Trả lời:** "Hoàn toàn không. Ngân sách thực hiện là 0 đồng (Zero Cash), sử dụng 100% công cụ miễn phí (GitHub, Cloudflare Pages) và dưới 10 giờ/tuần của cá nhân tôi. Dự án cam kết không xin tiền, không gọi vốn."
 
 ### 3. Khi nhà báo hỏi: *"Không biết lập trình và dùng AI viết thì liệu có đáng tin cậy?"*
-> **Trả lời:** "Đó là lý do tôi công khai điều này ngay trang 1 và gọi đây là 'Tài liệu thảo luận mở v0.3-draft'. AI giúp tôi đi 20% quãng đường đầu là hệ thống hóa câu hỏi và dựng code mẫu minh họa, còn 80% tiếp theo cần giới chuyên môn và các kỹ sư thực thụ vào phản biện, kiểm chứng."
+> **Trả lời:** "Đó là lý do tôi công khai điều này ngay trang 1 và gọi đây là 'Tài liệu thảo luận mở v0.4-draft'. AI giúp tôi đi 20% quãng đường đầu là hệ thống hóa câu hỏi và dựng code mẫu minh họa, còn 80% tiếp theo cần giới chuyên môn và các kỹ sư thực thụ vào phản biện, kiểm chứng."
 
 ### 4. Khi nhà báo hỏi: *"Tại sao là Việt Nam mà không phải Singapore hay Malaysia?"*
 > **Trả lời:** "Việt Nam không mạnh nhất về vốn tài chính như Singapore hay trung tâm dữ liệu phần cứng như Malaysia, nhưng lại có vị thế trung lập hiếm có về giao thức kỹ thuật, làm việc sâu với cả hệ sinh thái Mỹ, Âu lẫn Nhật, Hàn, Trung Quốc. Đây là lợi thế hẹp nhưng thực chất để đóng góp các bộ chuyển đổi mã nguồn mở."
@@ -59,3 +59,33 @@
 
 **Cách đối đáp:**
 > "Quá tuyệt vời bác ơi! Mình đã tạo sẵn 3 đầu việc rất gọn trong mục Issues trên GitHub (gắn nhãn good first issue), trong đó có việc viết bộ Unit Test cơ bản bằng thư viện unittest mặc định của Python cho file hello_bridge.py (Issue #3). Bác ghé qua repo nhận giúp mình Issue đó nhé, cảm ơn bác rất nhiều!"
+
+---
+
+### 6 kịch bản ứng phó bổ sung (dành cho VOZ, Tinh Tế, Hacker News)
+
+**Kịch bản 1 — "Code AI viết cũng đòi làm giao thức?"**
+> *"Đúng. Đây là PoC do AI hỗ trợ viết, và tôi công khai điều đó. Nếu bạn thấy chỗ nào có thể viết tốt hơn, mời bạn mở PR. Tôi không tự nhận mình giỏi hơn bạn, tôi chỉ đang cố gắng bắt đầu."*
+
+**Kịch bản 2 — "MCP/A2A của người ta chạy ngon rồi, mày đẻ ra cái này làm gì?"**
+> *"Nếu bạn chỉ dùng một hệ sinh thái, hãy dùng MCP hoặc A2A. Cái tôi thử nghiệm là lớp chuyển đổi giữa các hệ sinh thái khác nhau. Đây là giả thuyết, chưa được kiểm chứng. Bạn có thể giúp tôi kiểm chứng bằng cách mở Issue nếu thấy lỗ hổng."*
+
+**Kịch bản 3 — "Lại mượn danh yêu nước để PR bẩn"**
+> *"Tôi không bán gì cả. Không có nút donate, không khóa học, không quảng cáo. Toàn bộ code và tài liệu đều mở. Nếu bạn thấy có dấu hiệu trục lợi, hãy chỉ ra cụ thể."*
+
+**Kịch bản 4 — "Dự án này sẽ chết trong 3 tháng"**
+> *"Có thể lắm. Tôi không hứa nó sẽ sống. Nếu chết, tôi đã chuẩn bị sẵn HANDOVER.md để bàn giao công khai. Nhưng ít nhất nó đã tồn tại và để lại một hướng tiếp cận cho người sau."*
+
+**Kịch bản 5 — "Biết code đâu mà đòi review?"**
+> *"Tôi không review code. Tôi đặt vấn đề, đưa ra kiến trúc tham khảo, và mời người có chuyên môn vào review. Đó là lý do có Issue #1, #2, #3 mở sẵn chờ người nhận."*
+
+**Kịch bản 6 — "Sao không dùng luôn MCP cho nhanh?"**
+> *"Nếu bạn ở Mỹ hoặc dùng hệ sinh thái Anthropic, hãy dùng MCP. Nếu bạn là doanh nghiệp Việt Nam cần kết nối với cả đối tác Trung Quốc (GB/Z) và đối tác Mỹ (MCP), đó là lúc cần một lớp chuyển đổi trung lập. Đây là giả thuyết của tôi, chưa kiểm chứng."*
+
+### Nguyên tắc "1 câu trả lời" (Bắt buộc)
+
+Với mọi bình luận công kích không có nội dung kỹ thuật cụ thể (xúc phạm cá nhân, mỉa mai, chửi rủa), **chỉ trả lời đúng 1 câu**:
+
+> *"Cảm ơn bạn đã góp ý. Mời bạn vào GitHub mở Issue để chỉ rõ lỗi kỹ thuật giúp tôi."*
+
+Sau đó **dừng, không reply thêm**, dù họ có nói gì tiếp. Không tranh cãi. Không giải thích. Không feed the troll.
