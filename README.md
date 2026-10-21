@@ -6,8 +6,12 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Docs: CC-BY 4.0](https://img.shields.io/badge/Whitepaper-CC--BY_4.0-green.svg)](docs/WHITEPAPER_VN_AI_BRIDGE.md)
 [![Python: 3.8+](https://img.shields.io/badge/Python-3.8%2B_Stdlib-brightgreen.svg)](examples/01-hello-agent/hello_bridge.py)
-[![Code: PoC v0.1](https://img.shields.io/badge/Code-PoC_v0.1-orange.svg)]()
-[![White Paper: v0.4-draft](https://img.shields.io/badge/Whitepaper-v0.4--draft-blue.svg)]()
+[![Code: PoC v0.1](https://img.shields.io/badge/Code-PoC_v0.1-orange.svg)](examples/01-hello-agent/hello_bridge.py)
+[![White Paper: v0.4-draft](https://img.shields.io/badge/Whitepaper-v0.4--draft-blue.svg)](docs/WHITEPAPER_VN_AI_BRIDGE.md)
+[![CI](https://github.com/nan-nexus-network/ai2ai-core/actions/workflows/ci.yml/badge.svg)](https://github.com/nan-nexus-network/ai2ai-core/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/nan-nexus-network/ai2ai-core)](https://github.com/nan-nexus-network/ai2ai-core/releases)
+
+> 📖 **Cách dự án này được xây dựng:** [BUILD_NOTES.md](BUILD_NOTES.md). 0 đồng, có dùng trợ lý AI, toàn bộ lịch sử viết trong một ngày.
 
 > ⚠️ **Định vị:** Đây là **Open Reference Framework** (Khung tham chiếu mở), **chưa phải** Protocol (Giao thức) theo nghĩa được chuẩn hóa quốc tế. Xem lý do tại [ADR-001](docs/ADR_001.md). Điều kiện để nâng cấp lên Protocol được ghi rõ trong ADR.
 
@@ -31,7 +35,7 @@ Trước khi bạn đọc mã nguồn hoặc tài liệu trong kho lưu trữ n�
 
 ### Tại sao tôi dùng AI?
 
-Tôi dùng AI (Claude) để hỗ trợ phác thảo tài liệu và mã PoC vì tôi không phải kỹ sư phần mềm chuyên nghiệp. Tôi đưa ra vấn đề muốn thảo luận, dùng bản nháp để làm rõ ý tưởng, rồi công khai giới hạn để cộng đồng có thể phản biện, kiểm tra và viết lại. Sự hỗ trợ của AI không chứng minh thiết kế đúng, mã an toàn hay giao thức đã được triển khai; PoC hiện chỉ là minh họa ban đầu.
+Tôi dùng AI (Claude) để hỗ trợ phác thảo tài liệu và mã PoC vì tôi không phải kỹ sư phần mềm chuyên nghiệp. Tôi đưa ra vấn đề muốn thảo luận, dùng bản nháp để làm rõ ý tưởng, rồi công khai giới hạn để cộng đồng có thể phản biện, kiểm tra và viết lại. Sự hỗ trợ của AI không chứng minh thiết kế đúng, mã an toàn hay giao thức đã được triển khai; PoC hiện chỉ là minh họa ban đầu. **Chi tiết đầy đủ về quá trình, chi phí, công cụ đã dùng và những gì đã bị gỡ khỏi lịch sử: [BUILD_NOTES.md](BUILD_NOTES.md).**
 
 ---
 

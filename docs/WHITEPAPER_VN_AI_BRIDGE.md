@@ -18,6 +18,8 @@
 3. **Về tính đại diện:** Sáng kiến NAN AI2AI-SI2SI chỉ là một thử nghiệm độc lập ở quy mô nhỏ, **hoàn toàn không đại diện cho cộng đồng AI Việt Nam**. Tài liệu này không đưa ra câu trả lời khẳng định, mà đặt ra các câu hỏi mở để mời các chuyên gia, nhà hoạch định chính sách, báo chí và cộng đồng kỹ thuật cùng phản biện.
 4. **Về mục đích tài chính của dự án:** Dự án NAN AI2AI được xây dựng với mục đích đóng góp cho Kỷ nguyên AI Việt Nam. Chúng tôi không tìm kiếm lợi nhuận từ việc bán dự án hay gọi vốn đầu tư.
 
+5. **Về tiêu chí dừng lại (Stopping Criteria):** *"Tiêu chí để chúng tôi dừng lại: Nếu sau 12 tháng, giao thức này không được cộng đồng đón nhận hoặc chứng minh được giá trị thực tiễn, chúng tôi sẽ công khai dừng dự án để không lãng phí nguồn lực xã hội."*
+
 ---
 
 ## TÓM TẮT CHO NGƯỜI BẬN RỘN (EXECUTIVE SUMMARY)
@@ -82,7 +84,7 @@ Khi một tác tử AI của doanh nghiệp sử dụng hạ tầng đám mây p
 
 ---
 
-## CHƯƠNG 3: VÌ SAO VIỆT NAM? — BỐN THẾ MẠNH CẦN ĐƯỢC KÍCH HOẠT
+## CHƯƠNG 3: VÌ SAO VIỆT NAM CẦN BỐN THẾ MẠNH ĐỂ ĐƯỢC KÍCH HOẠT
 
 Việt Nam không thiếu thế mạnh. Chúng ta có dân số trẻ am hiểu công nghệ, có mạng lưới thương mại trải rộng khắp các châu lục, có các cam kết chính sách về hợp tác số, và có quan hệ song phương về AI với nhiều quốc gia. Nhưng các thế mạnh này đang tồn tại song song và rời rạc. NAN AI2AI ra đời không phải để tạo ra một thế mạnh mới, mà để cung cấp tầng giao thức kết nối mà Việt Nam đang thiếu.
 
