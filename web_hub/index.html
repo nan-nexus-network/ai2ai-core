@@ -3,152 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NAN AI2AI — Open Reference Framework</title>
+  <title>NAN AI2AI — Khung Tham Chiếu Mở</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f172a;
-      --surface: #1e293b;
-      --surface-hover: #273549;
-      --border: #334155;
-      --border-accent: rgba(251, 191, 36, 0.4);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --gold: #fbbf24;
-      --gold-hover: #f59e0b;
-      --gold-bg: rgba(251, 191, 36, 0.1);
-      --cyan: #38bdf8;
-      --cyan-bg: rgba(56, 189, 248, 0.1);
-      --danger-bg: rgba(239, 68, 68, 0.1);
-      --danger-border: rgba(239, 68, 68, 0.3);
-      --success-bg: rgba(16, 185, 129, 0.1);
-      --success-border: rgba(16, 185, 129, 0.3);
+      --primary-red: #C8102E;       /* Đỏ Nhân Dân trang trọng */
+      --primary-red-hover: #A00D24;
+      --secondary-gray: #4A4A4A;     /* Xám đậm cho chữ phụ / footer */
+      --light-gray: #F5F5F5;         /* Xám nhạt cho nền khối kiến trúc */
+      --card-gray: #FAFAFA;
+      --white: #FFFFFF;              /* Nền chính trang nhã */
+      --text-dark: #1A1A1A;          /* Chữ chính */
+      --border-color: #E0E0E0;       /* Đường kẻ phân cách */
+      --border-dark: #CCCCCC;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.65;
     }
 
-    a { color: inherit; text-decoration: none; }
+    /* Đường kẻ chỉ đỏ truyền thống trên đỉnh trang */
+    .top-accent-bar {
+      height: 4px;
+      background: var(--primary-red);
+      width: 100%;
+    }
 
     .container {
-      max-width: 1080px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Navbar */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
+    /* Header & Top Bar */
+    .top-nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      height: 70px;
-    }
-    .brand {
-      display: flex;
       align-items: center;
-      gap: 0.75rem;
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-    .brand-symbol {
-      width: 32px;
-      height: 32px;
-      background: linear-gradient(135deg, var(--gold), #d97706);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0f172a;
-      font-weight: 900;
-      font-size: 1rem;
-      box-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
-    }
-    .brand-title span { color: var(--gold); }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-color);
       font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-muted);
     }
-    .nav-links a:hover { color: var(--text); }
+    .org-label {
+      font-family: 'Merriweather', Georgia, serif;
+      font-weight: 700;
+      color: var(--primary-red);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
     .lang-switcher {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
       padding: 2px 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      background: var(--white);
     }
     .lang-btn {
       background: transparent;
       border: none;
-      color: var(--text-muted);
-      padding: 4px 10px;
-      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--secondary-gray);
+      padding: 3px 8px;
       cursor: pointer;
-      transition: all 0.2s;
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
+    .lang-btn:hover {
+      color: var(--primary-red);
     }
     .lang-btn.active {
-      background: var(--gold);
-      color: #0f172a;
+      background: var(--primary-red);
+      color: var(--white);
     }
-    .lang-sep { color: var(--border); font-size: 0.75rem; }
+    .lang-sep {
+      color: var(--border-color);
+      font-size: 0.75rem;
+    }
 
     /* Hero Section */
     header.hero {
-      padding: 5rem 0 3.5rem;
       text-align: center;
+      padding: 3.5rem 0 3rem;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--white);
     }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--gold-bg);
-      color: var(--gold);
-      border: 1px solid var(--border-accent);
-      padding: 0.35rem 1rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
+    .hero-logo {
+      height: 60px;
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.82rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      color: var(--primary-red);
+      background: #FFF0F2;
+      border: 1px solid #FFD1D8;
+      padding: 0.25rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
     }
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 2.85rem);
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--text-dark);
       margin-bottom: 1.25rem;
-      background: linear-gradient(180deg, #ffffff 30%, #cbd5e1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.01em;
     }
     .hero .subtitle {
-      max-width: 760px;
-      margin: 0 auto 2rem;
-      font-size: 1.15rem;
-      color: var(--text-muted);
+      max-width: 820px;
+      margin: 0 auto 2.25rem;
+      font-size: 1.1rem;
+      color: var(--secondary-gray);
       line-height: 1.7;
     }
     .hero-actions {
@@ -156,268 +137,301 @@
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.25rem;
     }
-    .btn-main {
-      padding: 0.9rem 1.75rem;
-      border-radius: 0.6rem;
-      font-weight: 600;
-      font-size: 0.95rem;
+    .btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      transition: all 0.2s;
+      padding: 0.85rem 1.75rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
     }
-    .btn-gold {
-      background: var(--gold);
-      color: #0f172a;
-      box-shadow: 0 0 20px rgba(251, 191, 36, 0.25);
+    .btn-red {
+      background: var(--primary-red);
+      color: var(--white);
+      border: 1px solid var(--primary-red);
+      box-shadow: 0 2px 4px rgba(200, 16, 46, 0.2);
     }
-    .btn-gold:hover {
-      background: var(--gold-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 24px rgba(251, 191, 36, 0.4);
+    .btn-red:hover {
+      background: var(--primary-red-hover);
+      border-color: var(--primary-red-hover);
+      transform: translateY(-1px);
     }
-    .btn-secondary {
-      background: var(--surface);
-      color: var(--text);
-      border: 1px solid var(--border);
+    .btn-outline-red {
+      background: var(--white);
+      color: var(--primary-red);
+      border: 2px solid var(--primary-red);
     }
-    .btn-secondary:hover {
-      border-color: var(--text-muted);
-      background: var(--surface-hover);
-      transform: translateY(-2px);
+    .btn-outline-red:hover {
+      background: #FFF5F6;
+      transform: translateY(-1px);
     }
+
     .notice-card {
-      max-width: 820px;
+      max-width: 840px;
       margin: 0 auto;
-      background: rgba(30, 41, 59, 0.7);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--gold);
+      background: var(--light-gray);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary-red);
       padding: 1.1rem 1.5rem;
-      border-radius: 0.6rem;
+      border-radius: 2px;
       text-align: left;
       font-size: 0.92rem;
-      color: #cbd5e1;
+      color: var(--secondary-gray);
+      line-height: 1.6;
     }
-    .notice-card strong { color: var(--gold); }
+    .notice-card strong {
+      color: var(--text-dark);
+    }
 
-    /* Sections Shared */
+    /* Common Section Styles */
     section {
-      padding: 4.5rem 0;
-      border-top: 1px solid var(--border);
+      padding: 4rem 0;
     }
-    .section-header {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 3rem;
-    }
-    .section-header h2 {
-      font-size: 2rem;
+    .section-title {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.85rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
       margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
     }
-    .section-header p {
-      color: var(--text-muted);
+    .section-title.text-center {
+      text-align: center;
+    }
+    .section-title.text-red {
+      color: var(--primary-red);
+    }
+    .section-intro {
+      color: var(--secondary-gray);
       font-size: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-intro.text-center {
+      text-align: center;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
     }
 
-    /* About Section (Problem & Solution) */
+    /* Section About (Problem & Solution) */
+    #about {
+      background: var(--white);
+      border-bottom: 1px solid var(--border-color);
+    }
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
-    .card-problem, .card-solution {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 2rem;
-      border-radius: 0.75rem;
-      transition: transform 0.2s;
+    .editorial-card {
+      border: 1px solid var(--border-color);
+      padding: 2.25rem 2rem;
+      border-radius: 4px;
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .card-problem:hover, .card-solution:hover {
-      transform: translateY(-3px);
+    .editorial-card:hover {
+      border-color: var(--primary-red);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
-    .card-problem {
-      border-top: 4px solid #ef4444;
-      background: linear-gradient(180deg, var(--danger-bg) 0%, var(--surface) 35%);
+    .card-header-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
     }
-    .card-solution {
-      border-top: 4px solid var(--gold);
-      background: linear-gradient(180deg, var(--gold-bg) 0%, var(--surface) 35%);
+    .badge-problem {
+      color: var(--primary-red);
     }
-    .card-title {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 1.25rem;
+    .badge-solution {
+      color: #0b7a48;
+    }
+    .editorial-card h3 {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      color: var(--text-dark);
+      line-height: 1.35;
     }
-    .card-body {
-      color: #cbd5e1;
+    .editorial-card p {
+      color: var(--secondary-gray);
       font-size: 0.98rem;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    /* Architecture Section */
+    /* Section Architecture */
+    #architecture {
+      background: var(--light-gray);
+      border-bottom: 1px solid var(--border-color);
+    }
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       margin-bottom: 2rem;
     }
     .arch-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 1.75rem;
-      border-radius: 0.75rem;
-      transition: all 0.2s;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--primary-red);
+      padding: 2rem 1.75rem;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
-    .arch-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-3px);
-    }
-    .arch-num {
-      width: 36px;
-      height: 36px;
-      background: var(--gold-bg);
-      color: var(--gold);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      border: 1px solid var(--border-accent);
+    .arch-step {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--primary-red);
+      line-height: 1;
+      margin-bottom: 0.75rem;
     }
     .arch-card h3 {
+      font-family: 'Merriweather', Georgia, serif;
       font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
     }
     .arch-card p {
-      color: var(--text-muted);
+      color: var(--secondary-gray);
       font-size: 0.92rem;
-      line-height: 1.6;
+      line-height: 1.65;
     }
-    .arch-note {
-      background: rgba(30, 41, 59, 0.4);
-      border: 1px dashed var(--border);
-      padding: 1rem 1.25rem;
-      border-radius: 0.5rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    .arch-disclaimer {
       text-align: center;
+      font-size: 0.88rem;
+      color: var(--secondary-gray);
+      font-style: italic;
+      margin-top: 1.5rem;
     }
 
-    /* Contribute Section */
+    /* Section Contribute */
+    #contribute {
+      background: var(--white);
+      border-bottom: 1px solid var(--border-color);
+    }
     .contribute-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
-    .contribute-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      padding: 1.75rem;
+    .contribute-box {
+      border: 1px solid var(--border-color);
+      padding: 2rem 1.75rem;
+      border-radius: 4px;
+      background: var(--card-gray);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.2s;
+      transition: border-color 0.2s, background 0.2s;
     }
-    .contribute-card:hover {
-      border-color: var(--cyan);
-      transform: translateY(-2px);
+    .contribute-box:hover {
+      border-color: var(--primary-red);
+      background: var(--white);
     }
-    .contribute-card h3 {
+    .contribute-box h3 {
+      font-family: 'Merriweather', Georgia, serif;
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      color: var(--text-dark);
     }
-    .contribute-card p {
-      color: var(--text-muted);
+    .contribute-box p {
+      color: var(--secondary-gray);
       font-size: 0.92rem;
-      line-height: 1.6;
+      line-height: 1.65;
       margin-bottom: 1.5rem;
     }
-    .contribute-link {
+    .contribute-action {
       font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--gold);
+      font-weight: 700;
+      color: var(--primary-red);
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
     }
-    .contribute-link:hover { text-decoration: underline; }
-
-    /* Connect Section (Channels) */
-    .connect-group {
-      margin-bottom: 2.5rem;
+    .contribute-action:hover {
+      text-decoration: underline;
     }
-    .connect-group h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+
+    /* Section Connect (7 Channels) */
+    #connect {
+      background: var(--white);
     }
     .channel-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
+      margin-top: 2rem;
     }
-    .channel-btn {
+    .channel-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: var(--surface);
-      border: 1px solid var(--border);
       padding: 1.1rem 1.25rem;
-      border-radius: 0.6rem;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-dark);
+      transition: all 0.2s ease;
+    }
+    .channel-card:hover {
+      border-color: var(--primary-red);
+      color: var(--primary-red);
+      background: #FFF9FA;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 6px rgba(200, 16, 46, 0.08);
+    }
+    .channel-title {
       font-weight: 600;
       font-size: 0.92rem;
-      transition: all 0.2s;
-    }
-    .channel-btn:hover {
-      border-color: var(--gold);
-      background: var(--surface-hover);
-      transform: translateY(-2px);
-    }
-    .channel-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-    .channel-desc {
-      font-size: 0.78rem;
-      font-weight: 400;
-      color: var(--text-muted);
     }
     .channel-arrow {
-      color: var(--gold);
+      color: var(--primary-red);
+      font-weight: bold;
       font-size: 1.1rem;
     }
 
     /* Footer */
     footer {
-      border-top: 1px solid var(--border);
-      background: #090d16;
+      background: var(--secondary-gray);
+      color: #EAEAEA;
       padding: 3rem 0;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      font-size: 0.88rem;
+      border-top: 3px solid var(--primary-red);
     }
     .footer-inner {
+      text-align: center;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      text-align: center;
+    }
+    .footer-brand {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .footer-pledge {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #D5D5D5;
+      font-size: 0.85rem;
+      line-height: 1.6;
     }
     .footer-links {
       display: flex;
@@ -425,34 +439,38 @@
       gap: 1.5rem;
       flex-wrap: wrap;
     }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-pledge {
-      color: #cbd5e1;
-      font-weight: 500;
+    .footer-links a {
+      color: #EAEAEA;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--white);
+      text-decoration: underline;
+    }
+    .footer-copy {
+      color: #A5A5A5;
+      font-size: 0.82rem;
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      header.hero { padding: 3.5rem 0 2rem; }
-      section { padding: 3rem 0; }
+      header.hero { padding: 2.5rem 0 2rem; }
+      section { padding: 2.75rem 0; }
+      .hero h1 { font-size: 1.85rem; }
+      .editorial-card { padding: 1.75rem 1.25rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <nav>
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-symbol">N</div>
-        <div class="brand-title">NAN <span>AI2AI</span></div>
-      </div>
-      <div class="nav-links">
-        <a href="#about" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
-        <a href="#architecture" data-vi="Kiến trúc" data-en="Architecture">Kiến trúc</a>
-        <a href="#contribute" data-vi="Đóng góp" data-en="Contribute">Đóng góp</a>
-        <a href="#connect" data-vi="Kênh kết nối" data-en="Channels">Kênh kết nối</a>
-        <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer" data-vi="White Paper" data-en="White Paper">White Paper</a>
+  <!-- Đường chỉ đỏ đỉnh trang -->
+  <div class="top-accent-bar"></div>
+
+  <!-- Thanh điều hướng và nút chuyển ngôn ngữ -->
+  <div class="container">
+    <div class="top-nav">
+      <div class="org-label" data-vi="Sáng Kiến Mã Nguồn Mở • Kỷ Nguyên AI Việt Nam" data-en="Open Source Initiative • Vietnam AI Era">
+        Sáng Kiến Mã Nguồn Mở • Kỷ Nguyên AI Việt Nam
       </div>
       <div class="lang-switcher">
         <button id="btn-vi" class="lang-btn active" onclick="setLanguage('vi')">VI</button>
@@ -460,13 +478,16 @@
         <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">EN</button>
       </div>
     </div>
-  </nav>
+  </div>
 
   <!-- Hero Section -->
   <header class="hero">
     <div class="container">
-      <div class="badge" data-vi="Tài liệu thảo luận mở v0.4-draft • Apache 2.0" data-en="Open Reference Framework v0.4-draft • Apache 2.0">
-        Tài liệu thảo luận mở v0.4-draft • Apache 2.0
+      <img src="logo-nan-ai2ai.png" alt="NAN AI2AI Logo" class="hero-logo" />
+      <div>
+        <span class="hero-badge" data-vi="Khung Tham Chiếu Mở • Apache 2.0" data-en="Open Reference Framework • Apache 2.0">
+          Khung Tham Chiếu Mở • Apache 2.0
+        </span>
       </div>
       <h1 data-vi="Việt Nam như Cầu nối trong Nền kinh tế AI2AI" data-en="Vietnam as a Bridge in the AI2AI Economy">
         Việt Nam như Cầu nối trong Nền kinh tế AI2AI
@@ -474,130 +495,147 @@
       <p class="subtitle" data-vi="Một khung tham chiếu mở (Open Reference Framework) kết nối các hệ sinh thái AI, đóng góp cho Kỷ nguyên Vươn mình của Việt Nam. Không gọi vốn, không xin tài trợ." data-en="An open reference framework connecting AI ecosystems, contributing to Vietnam's Ascension Era. No fundraising, no grants.">
         Một khung tham chiếu mở (Open Reference Framework) kết nối các hệ sinh thái AI, đóng góp cho Kỷ nguyên Vươn mình của Việt Nam. Không gọi vốn, không xin tài trợ.
       </p>
+
       <div class="hero-actions">
-        <a class="btn-main btn-gold" href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer" data-vi="📄 Đọc White Paper v0.4-draft" data-en="📄 Read White Paper v0.4-draft">
-          📄 Đọc White Paper v0.4-draft
+        <a class="btn btn-red" href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer" data-vi="Đọc White Paper" data-en="Read White Paper">
+          Đọc White Paper
         </a>
-        <a class="btn-main btn-secondary" href="https://github.com/nan-nexus-network/ai2ai-core" target="_blank" rel="noopener noreferrer" data-vi="💻 Xem Mã Nguồn & Chạy Demo (GitHub)" data-en="💻 GitHub Repo & 60s Demo">
-          💻 Xem Mã Nguồn & Chạy Demo (GitHub)
+        <a class="btn btn-outline-red" href="https://github.com/nan-nexus-network/ai2ai-core" target="_blank" rel="noopener noreferrer" data-vi="Xem GitHub" data-en="View on GitHub">
+          Xem GitHub
         </a>
       </div>
+
       <div class="notice-card" data-vi="<strong>Tuyên bố minh bạch:</strong> Sáng kiến này khởi đầu từ nguồn lực tự thân (0 đồng), không xin tiền, không gọi vốn và không đại diện cho cộng đồng AI Việt Nam. Toàn bộ mã nguồn mở theo chuẩn Apache 2.0 nhằm mời giới chuyên môn và các kỹ sư thực thụ vào phản biện, kiểm chứng." data-en="<strong>Transparency Notice:</strong> This initiative starts with self-funded resources (zero cash), seeks no funds, conducts no fundraising, and does not represent the Vietnamese AI community. All code is open-sourced under Apache 2.0 to invite engineers and researchers to critique and verify.">
         <strong>Tuyên bố minh bạch:</strong> Sáng kiến này khởi đầu từ nguồn lực tự thân (0 đồng), không xin tiền, không gọi vốn và không đại diện cho cộng đồng AI Việt Nam. Toàn bộ mã nguồn mở theo chuẩn Apache 2.0 nhằm mời giới chuyên môn và các kỹ sư thực thụ vào phản biện, kiểm chứng.
       </div>
     </div>
   </header>
 
-  <!-- About Section: Problem & Solution -->
+  <!-- Section 1: About (Vấn đề & Giải pháp) -->
   <section id="about">
     <div class="container">
-      <div class="section-header">
-        <h2 data-vi="Vấn đề & Giải pháp" data-en="Problem & Solution">Vấn đề & Giải pháp</h2>
-        <p data-vi="Tại sao chúng ta cần một tầng cầu nối liên vận trung lập giữa các hệ sinh thái AI?" data-en="Why we need a neutral interoperability bridge layer between AI ecosystems?">
-          Tại sao chúng ta cần một tầng cầu nối liên vận trung lập giữa các hệ sinh thái AI?
-        </p>
-      </div>
+      <h2 class="section-title text-center text-red" data-vi="Vấn đề & Giải pháp" data-en="Problem & Solution">
+        Vấn đề & Giải pháp
+      </h2>
+      <p class="section-intro text-center" data-vi="Bối cảnh phân mảnh của các tác tử AI toàn cầu và giải pháp cầu nối trung lập từ Việt Nam" data-en="The fragmented landscape of global AI agents and a neutral bridge approach from Vietnam">
+        Bối cảnh phân mảnh của các tác tử AI toàn cầu và giải pháp cầu nối trung lập từ Việt Nam
+      </p>
+
       <div class="grid-2">
-        <div class="card-problem">
-          <div class="card-title">
-            <span>⚠️</span>
-            <span data-vi="Vấn đề: Phân mảnh & Bất đối xứng" data-en="Problem: Fragmentation & Barriers">Vấn đề: Phân mảnh & Bất đối xứng</span>
-          </div>
-          <div class="card-body" data-vi="Các AI Agent đang bị chia rẽ bởi các hệ sinh thái khác nhau (MCP của Mỹ, GB/Z của Trung Quốc, chuẩn của EU). Chúng không thể tự giao dịch xuyên biên giới, gây lãng phí chi phí và cơ hội cho doanh nghiệp." data-en="AI Agents are divided by different ecosystems (US MCP, China GB/Z, EU standards). They cannot transact cross-border autonomously, wasting costs and opportunities for businesses.">
+        <div class="editorial-card">
+          <span class="card-header-badge badge-problem" data-vi="Thách Thức Cốt Lõi" data-en="The Core Challenge">Thách Thức Cốt Lõi</span>
+          <h3 data-vi="Rào Cản Giữa Các Hệ Sinh Thái Phân Mảnh" data-en="Fragmentation Across AI Ecosystems">
+            Rào Cản Giữa Các Hệ Sinh Thái Phân Mảnh
+          </h3>
+          <p data-vi="Các AI Agent đang bị chia rẽ bởi các hệ sinh thái khác nhau (MCP của Mỹ, GB/Z của Trung Quốc, chuẩn của EU). Chúng không thể tự giao dịch xuyên biên giới, gây lãng phí chi phí và cơ hội cho doanh nghiệp." data-en="AI Agents are divided by different ecosystems (US MCP, China GB/Z, EU standards). They cannot transact cross-border autonomously, wasting costs and opportunities for businesses.">
             Các AI Agent đang bị chia rẽ bởi các hệ sinh thái khác nhau (MCP của Mỹ, GB/Z của Trung Quốc, chuẩn của EU). Chúng không thể tự giao dịch xuyên biên giới, gây lãng phí chi phí và cơ hội cho doanh nghiệp.
-          </div>
+          </p>
         </div>
-        <div class="card-solution">
-          <div class="card-title">
-            <span>⚡</span>
-            <span data-vi="Giải pháp: Cầu nối Giao thức Trung lập" data-en="Solution: Neutral Translation Layer">Giải pháp: Cầu nối Giao thức Trung lập</span>
-          </div>
-          <div class="card-body" data-vi="NAN AI2AI cung cấp tầng chuyển đổi trung lập (Neutral Translation Layer). Chúng tôi kết nối các giao thức, xác thực giao dịch qua mã băm (SHA-256) và bảo vệ dòng tiền của doanh nghiệp." data-en="NAN AI2AI provides a Neutral Translation Layer. We connect protocols, verify transactions via cryptographic hashes (SHA-256), and protect business cash flows.">
+
+        <div class="editorial-card">
+          <span class="card-header-badge badge-solution" data-vi="Hướng Tiếp Cận Mở" data-en="Open Approach">Hướng Tiếp Cận Mở</span>
+          <h3 data-vi="Tầng Chuyển Đổi & Xác Thực Giao Thức Trung Lập" data-en="Neutral Translation & Verification Layer">
+            Tầng Chuyển Đổi & Xác Thực Giao Thức Trung Lập
+          </h3>
+          <p data-vi="NAN AI2AI cung cấp tầng chuyển đổi trung lập (Neutral Translation Layer). Chúng tôi kết nối các giao thức, xác thực giao dịch qua mã băm (SHA-256) và bảo vệ dòng tiền của doanh nghiệp." data-en="NAN AI2AI provides a Neutral Translation Layer. We connect protocols, verify transactions via cryptographic hashes (SHA-256), and protect business cash flows.">
             NAN AI2AI cung cấp tầng chuyển đổi trung lập (Neutral Translation Layer). Chúng tôi kết nối các giao thức, xác thực giao dịch qua mã băm (SHA-256) và bảo vệ dòng tiền của doanh nghiệp.
-          </div>
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Architecture Section -->
+  <!-- Section 2: Architecture (Kiến trúc 3 lớp) -->
   <section id="architecture">
     <div class="container">
-      <div class="section-header">
-        <h2 data-vi="Kiến trúc 3 lớp" data-en="3-Layer Architecture">Kiến trúc 3 lớp</h2>
-        <p data-vi="Khung tham chiếu mở định hướng kết nối tác tử liên hệ sinh thái (AI2AI-SI2SI)" data-en="Open reference model for cross-ecosystem agent interoperability (AI2AI-SI2SI)">
-          Khung tham chiếu mở định hướng kết nối tác tử liên hệ sinh thái (AI2AI-SI2SI)
-        </p>
-      </div>
+      <h2 class="section-title text-center text-red" data-vi="Kiến trúc 3 lớp" data-en="3-Layer Architecture">
+        Kiến trúc 3 lớp
+      </h2>
+      <p class="section-intro text-center" data-vi="Khung kiến trúc tham chiếu cho liên vận giữa các tác tử trí tuệ nhân tạo (AI2AI-SI2SI)" data-en="Reference architecture framework for cross-agent interoperability (AI2AI-SI2SI)">
+        Khung kiến trúc tham chiếu cho liên vận giữa các tác tử trí tuệ nhân tạo (AI2AI-SI2SI)
+      </p>
+
       <div class="grid-3">
         <div class="arch-card">
-          <div class="arch-num">01</div>
-          <h3 data-vi="Discovery — Định danh & Tìm kiếm" data-en="Discovery — Identity & Discovery">Discovery — Định danh & Tìm kiếm</h3>
-          <p data-vi="Định danh và tìm kiếm Agent: Định danh phi tập trung (DID), tra cứu năng lực tác tử và quản lý danh bạ dịch vụ giữa các nền tảng khác biệt." data-en="Agent Identity & Discovery: Decentralized identifiers (DID), capability lookup, and service registries across heterogeneous platforms.">
-            Định danh và tìm kiếm Agent: Định danh phi tập trung (DID), tra cứu năng lực tác tử và quản lý danh bạ dịch vụ giữa các nền tảng khác biệt.
+          <div class="arch-step">01</div>
+          <h3 data-vi="Discovery — Định danh và tìm kiếm Agent" data-en="Discovery — Agent Identity & Discovery">
+            Discovery — Định danh và tìm kiếm Agent
+          </h3>
+          <p data-vi="Định danh phi tập trung (DID), quản lý danh bạ năng lực dịch vụ và cơ chế tra cứu tác tử tương thích giữa các hệ sinh thái độc lập." data-en="Decentralized identifiers (DID), capability registries, and discovery mechanisms across heterogeneous autonomous systems.">
+            Định danh phi tập trung (DID), quản lý danh bạ năng lực dịch vụ và cơ chế tra cứu tác tử tương thích giữa các hệ sinh thái độc lập.
           </p>
         </div>
+
         <div class="arch-card">
-          <div class="arch-num">02</div>
-          <h3 data-vi="Negotiation — Đàm phán tác vụ" data-en="Negotiation — Task Negotiation">Negotiation — Đàm phán tác vụ</h3>
-          <p data-vi="Đàm phán tác vụ: Ánh xạ cấu trúc dữ liệu, thống nhất schema hợp đồng và dịch chuyển ngữ nghĩa giữa MCP Tool Call và A2A Standardized Task." data-en="Task Negotiation: Schema contract agreement, semantic mapping, and payload translation between MCP Tool Calls and A2A Standardized Tasks.">
-            Đàm phán tác vụ: Ánh xạ cấu trúc dữ liệu, thống nhất schema hợp đồng và dịch chuyển ngữ nghĩa giữa MCP Tool Call và A2A Standardized Task.
+          <div class="arch-step">02</div>
+          <h3 data-vi="Negotiation — Đàm phán tác vụ" data-en="Negotiation — Task Negotiation">
+            Negotiation — Đàm phán tác vụ
+          </h3>
+          <p data-vi="Thống nhất hợp đồng dữ liệu, ánh xạ ngữ nghĩa và chuyển đổi cấu trúc gói tin (từ MCP Tool Call sang A2A Standardized Task)." data-en="Data contract harmonization, semantic field mapping, and payload translation (from MCP Tool Call to A2A Standardized Task).">
+            Thống nhất hợp đồng dữ liệu, ánh xạ ngữ nghĩa và chuyển đổi cấu trúc gói tin (từ MCP Tool Call sang A2A Standardized Task).
           </p>
         </div>
+
         <div class="arch-card">
-          <div class="arch-num">03</div>
-          <h3 data-vi="Verification — Biên nhận xác thực" data-en="Verification — Verification Receipts">Verification — Biên nhận xác thực</h3>
-          <p data-vi="Cấp biên nhận xác thực: Tính toán mã băm mật mã học (SHA-256 digest) trên toàn bộ gói tin và phản hồi, cung cấp bằng chứng kiểm chứng toàn vẹn." data-en="Verification Receipts: Computing cryptographic hashes (SHA-256 digest) across requests and responses to provide deterministic integrity proofs.">
-            Cấp biên nhận xác thực: Tính toán mã băm mật mã học (SHA-256 digest) trên toàn bộ gói tin và phản hồi, cung cấp bằng chứng kiểm chứng toàn vẹn.
+          <div class="arch-step">03</div>
+          <h3 data-vi="Verification — Cấp biên nhận xác thực" data-en="Verification — Verification Receipts">
+            Verification — Cấp biên nhận xác thực
+          </h3>
+          <p data-vi="Tạo biên nhận kiểm chứng giao dịch có mã băm mật mã học (SHA-256 digest) bảo đảm tính toàn vẹn và không thể chối bỏ của dữ liệu giao dịch." data-en="Issuing deterministic verification receipts with cryptographic hashes (SHA-256 digest) to protect data integrity.">
+            Tạo biên nhận kiểm chứng giao dịch có mã băm mật mã học (SHA-256 digest) bảo đảm tính toàn vẹn và không thể chối bỏ của dữ liệu giao dịch.
           </p>
         </div>
       </div>
-      <div class="arch-note" data-vi="*Lưu ý kỹ thuật: Bản mã mẫu hello_bridge.py hiện tại minh họa luồng thực thi cục bộ. Các tầng mạng phân tán đang ở giai đoạn khung khái niệm và mở cho cộng đồng hoàn thiện.*" data-en="*Technical Note: The current hello_bridge.py sample illustrates a local execution flow. Distributed networking layers are at the conceptual framework stage and open for community co-development.*">
-        *Lưu ý kỹ thuật: Bản mã mẫu hello_bridge.py hiện tại minh họa luồng thực thi cục bộ. Các tầng mạng phân tán đang ở giai đoạn khung khái niệm và mở cho cộng đồng hoàn thiện.*
-      </div>
+
+      <p class="arch-disclaimer" data-vi="* Lưu ý: Bản PoC hello_bridge.py hiện minh họa luồng xử lý cục bộ; các tầng mạng phân tán đang mở để cộng đồng cùng nghiên cứu và phát triển." data-en="* Note: The hello_bridge.py PoC currently demonstrates local execution; distributed networking layers are open for community research and co-development.">
+        * Lưu ý: Bản PoC hello_bridge.py hiện minh họa luồng xử lý cục bộ; các tầng mạng phân tán đang mở để cộng đồng cùng nghiên cứu và phát triển.
+      </p>
     </div>
   </section>
 
-  <!-- Contribute Section -->
+  <!-- Section 3: Contribute (Kêu gọi cộng đồng) -->
   <section id="contribute">
     <div class="container">
-      <div class="section-header">
-        <h2 data-vi="Cùng Xây dựng & Đóng góp" data-en="Build Together & Contribute">Cùng Xây dựng & Đóng góp</h2>
-        <p data-vi="Dự án mở hoàn toàn (Apache 2.0). Mọi đóng góp kỹ thuật đều được ghi nhận công khai." data-en="Fully open-source (Apache 2.0). All technical contributions are credited transparently.">
-          Dự án mở hoàn toàn (Apache 2.0). Mọi đóng góp kỹ thuật đều được ghi nhận công khai.
-        </p>
-      </div>
+      <h2 class="section-title text-center text-red" data-vi="Cùng Xây dựng & Đóng góp" data-en="Build Together & Contribute">
+        Cùng Xây dựng & Đóng góp
+      </h2>
+      <p class="section-intro text-center" data-vi="Dự án mở hoàn toàn (Apache 2.0). Mọi phản biện và đóng góp đều được trân trọng và ghi nhận công khai." data-en="Fully open-source (Apache 2.0). Every critique and contribution is respected and publicly acknowledged.">
+        Dự án mở hoàn toàn (Apache 2.0). Mọi phản biện và đóng góp đều được trân trọng và ghi nhận công khai.
+      </p>
+
       <div class="contribute-grid">
-        <div class="contribute-card">
+        <div class="contribute-box">
           <div>
-            <h3 data-vi="🛠 Kỹ sư Phần mềm" data-en="🛠 Software Engineers">🛠 Kỹ sư Phần mềm</h3>
-            <p data-vi="Kiểm tra mã nguồn PoC, rà soát lỗ hổng, bổ sung bài test và nhận các đầu việc cụ thể tại nhãn good first issue." data-en="Inspect PoC code, patch edge-cases, write test suites, and pick up tasks labeled good first issue.">
-              Kiểm tra mã nguồn PoC, rà soát lỗ hổng, bổ sung bài test và nhận các đầu việc cụ thể tại nhãn good first issue.
+            <h3 data-vi="Kỹ sư Phần mềm" data-en="Software Engineers">Kỹ sư Phần mềm</h3>
+            <p data-vi="Kiểm tra mã nguồn PoC, bắt lỗi injection, xây dựng parser chuẩn JSON Schema và tối ưu hiệu năng." data-en="Inspect PoC code, patch injection edge-cases, implement JSON Schema validators, and optimize performance.">
+              Kiểm tra mã nguồn PoC, bắt lỗi injection, xây dựng parser chuẩn JSON Schema và tối ưu hiệu năng.
             </p>
           </div>
-          <a class="contribute-link" href="https://github.com/nan-nexus-network/ai2ai-core/issues" target="_blank" rel="noopener noreferrer" data-vi="Xem Good First Issues →" data-en="View Good First Issues →">
-            Xem Good First Issues →
+          <a class="contribute-action" href="https://github.com/nan-nexus-network/ai2ai-core/issues" target="_blank" rel="noopener noreferrer" data-vi="Good First Issues →" data-en="Good First Issues →">
+            Good First Issues →
           </a>
         </div>
-        <div class="contribute-card">
+
+        <div class="contribute-box">
           <div>
-            <h3 data-vi="📐 Kiến trúc & Nghiên cứu" data-en="📐 Architects & Researchers">📐 Kiến trúc & Nghiên cứu</h3>
-            <p data-vi="Tham gia phản biện 12 câu hỏi mở trong White Paper, đề xuất chuẩn giao thức và hoàn thiện mô hình kinh tế AI2AI." data-en="Critique the 12 open questions in the White Paper, propose bridge standards, and refine the AI2AI economic model.">
-              Tham gia phản biện 12 câu hỏi mở trong White Paper, đề xuất chuẩn giao thức và hoàn thiện mô hình kinh tế AI2AI.
+            <h3 data-vi="Kiến trúc & Nghiên cứu" data-en="Architects & Researchers">Kiến trúc & Nghiên cứu</h3>
+            <p data-vi="Phản biện 12 câu hỏi mở trong White Paper, thiết kế state machine và chuẩn hóa giao diện liên vận." data-en="Critique the 12 open questions in the White Paper, design state machines, and standardize schemas.">
+              Phản biện 12 câu hỏi mở trong White Paper, thiết kế state machine và chuẩn hóa giao diện liên vận.
             </p>
           </div>
-          <a class="contribute-link" href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer" data-vi="Đọc 12 Câu hỏi Mở →" data-en="Read 12 Open Questions →">
-            Đọc 12 Câu hỏi Mở →
+          <a class="contribute-action" href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer" data-vi="12 Câu hỏi mở →" data-en="12 Open Questions →">
+            12 Câu hỏi mở →
           </a>
         </div>
-        <div class="contribute-card">
+
+        <div class="contribute-box">
           <div>
-            <h3 data-vi="📣 Báo chí & Tổ chức" data-en="📣 Media & Partners">📣 Báo chí & Tổ chức</h3>
-            <p data-vi="Theo dõi câu chuyện công nghệ tự chủ độc lập của Việt Nam, tiếp cận Media Kit và thẩm định độc lập." data-en="Follow the story of Vietnam's sovereign tech initiative, access the Media Kit, and audit independently.">
-              Theo dõi câu chuyện công nghệ tự chủ độc lập của Việt Nam, tiếp cận Media Kit và thẩm định độc lập.
+            <h3 data-vi="Báo chí & Tổ chức" data-en="Media & Institutions">Báo chí & Tổ chức</h3>
+            <p data-vi="Theo dõi câu chuyện công nghệ độc lập của Việt Nam, tiếp cận Media Kit và thẩm định độc lập." data-en="Follow the story of Vietnam's sovereign tech initiative, access the Media Kit, and audit independently.">
+              Theo dõi câu chuyện công nghệ độc lập của Việt Nam, tiếp cận Media Kit và thẩm định độc lập.
             </p>
           </div>
-          <a class="contribute-link" href="mailto:nan_ai2ai@proton.me" target="_blank" rel="noopener noreferrer" data-vi="Liên hệ Thẩm định →" data-en="Contact for Inquiries →">
+          <a class="contribute-action" href="mailto:nan_ai2ai@proton.me" target="_blank" rel="noopener noreferrer" data-vi="Liên hệ Thẩm định →" data-en="Contact for Inquiries →">
             Liên hệ Thẩm định →
           </a>
         </div>
@@ -605,119 +643,94 @@
     </div>
   </section>
 
-  <!-- Connect Section -->
+  <!-- Section 4: Connect (Kết nối & Đóng góp) -->
   <section id="connect">
     <div class="container">
-      <div class="section-header">
-        <h2 data-vi="Kết nối & Đóng góp" data-en="Connect & Contribute">Kết nối & Đóng góp</h2>
-        <p data-vi="Mạng lưới 7 kênh chính thức đồng hành cùng Kỷ nguyên AI Việt Nam" data-en="Official network channels contributing to Vietnam's AI Era">
-          Mạng lưới 7 kênh chính thức đồng hành cùng Kỷ nguyên AI Việt Nam
-        </p>
-      </div>
+      <h2 class="section-title text-center text-red" data-vi="Kết nối & Đóng góp" data-en="Connect & Contribute">
+        Kết nối & Đóng góp
+      </h2>
+      <p class="section-intro text-center" data-vi="Hệ sinh thái các kênh liên lạc và cộng đồng chính thức của sáng kiến NAN AI2AI" data-en="Official communication and community channels of the NAN AI2AI initiative">
+        Hệ sinh thái các kênh liên lạc và cộng đồng chính thức của sáng kiến NAN AI2AI
+      </p>
 
-      <!-- Group 1: Technical Communities -->
-      <div class="connect-group">
-        <h3 data-vi="Cộng đồng Kỹ sư & Đối thoại Trực tiếp" data-en="Technical Communities & Direct Channels">
-          Cộng đồng Kỹ sư & Đối thoại Trực tiếp
-        </h3>
-        <div class="channel-grid">
-          <a class="channel-btn" href="https://zalo.me/g/h0cbluccgocfud9fmih4" target="_blank" rel="noopener noreferrer">
-            <div class="channel-meta">
-              <span>💬 Nhóm Trao đổi Kỹ sư (Zalo)</span>
-              <span class="channel-desc" data-vi="Cộng đồng Builders thực chiến tại VN" data-en="Vietnam AI builders community">Cộng đồng Builders thực chiến tại VN</span>
-            </div>
-            <span class="channel-arrow">→</span>
-          </a>
-          <a class="channel-btn" href="https://t.me/+87ARJ1e1NUA0ZDQ1" target="_blank" rel="noopener noreferrer">
-            <div class="channel-meta">
-              <span>✈️ Kênh Kỹ thuật (Telegram)</span>
-              <span class="channel-desc" data-vi="Phản biện kỹ thuật & thảo luận tự do" data-en="Open technical discussion">Phản biện kỹ thuật & thảo luận tự do</span>
-            </div>
-            <span class="channel-arrow">→</span>
-          </a>
-          <a class="channel-btn" href="https://github.com/nan-nexus-network/ai2ai-core/issues" target="_blank" rel="noopener noreferrer">
-            <div class="channel-meta">
-              <span>🛠 GitHub Issues</span>
-              <span class="channel-desc" data-vi="Báo lỗi code & phản biện lập luận" data-en="Bug reports & architectural critique">Báo lỗi code & phản biện lập luận</span>
-            </div>
-            <span class="channel-arrow">→</span>
-          </a>
-          <a class="channel-btn" href="mailto:nan_ai2ai@proton.me" target="_blank" rel="noopener noreferrer">
-            <div class="channel-meta">
-              <span>✉️ Hộp thư Trực tiếp</span>
-              <span class="channel-desc">nan_ai2ai@proton.me</span>
-            </div>
-            <span class="channel-arrow">→</span>
-          </a>
-        </div>
-      </div>
+      <div class="channel-grid">
+        <a class="channel-card" href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer">
+          <span class="channel-title">📄 White Paper v0.4-draft</span>
+          <span class="channel-arrow">→</span>
+        </a>
 
-      <!-- Group 2: Social & Networks -->
-      <div class="connect-group">
-        <h3 data-vi="Mạng Xã Hội & Học Thuật Chuyên Môn" data-en="Professional Networks & Social Media">
-          Mạng Xã Hội & Học Thuật Chuyên Môn
-        </h3>
-        <div class="channel-grid">
-          <a class="channel-btn" href="https://www.linkedin.com/in/nan-ai2ai-b02b67365/" target="_blank" rel="noopener noreferrer">
-            <div class="channel-meta">
-              <span>💼 Mạng lưới Chuyên gia (LinkedIn)</span>
-              <span class="channel-desc" data-vi="Kết nối học thuật & doanh nghiệp B2B" data-en="Academic & B2B networking">Kết nối học thuật & doanh nghiệp B2B</span>
-            </div>
-            <span class="channel-arrow">→</span>
-          </a>
-          <a class="channel-btn" href="https://www.facebook.com/profile.php?id=61595651371198" target="_blank" rel="noopener noreferrer">
-            <div class="channel-meta">
-              <span>🌐 Trang Tin AI (Facebook)</span>
-              <span class="channel-desc" data-vi="Tin tức & tiến độ Kỷ nguyên AI" data-en="AI Era updates & news">Tin tức & tiến độ Kỷ nguyên AI</span>
-            </div>
-            <span class="channel-arrow">→</span>
-          </a>
-          <a class="channel-btn" href="https://x.com/Nan_ai2ai_vn" target="_blank" rel="noopener noreferrer">
-            <div class="channel-meta">
-              <span>🐦 Đối thoại Quốc tế (X / Twitter)</span>
-              <span class="channel-desc">@Nan_ai2ai_vn</span>
-            </div>
-            <span class="channel-arrow">→</span>
-          </a>
-          <a class="channel-btn" href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer">
-            <div class="channel-meta">
-              <span>📄 White Paper (Markdown)</span>
-              <span class="channel-desc" data-vi="Toàn văn 7 chương v0.4-draft" data-en="Full 7 chapters v0.4-draft">Toàn văn 7 chương v0.4-draft</span>
-            </div>
-            <span class="channel-arrow">→</span>
-          </a>
-        </div>
-      </div>
+        <a class="channel-card" href="https://github.com/nan-nexus-network/ai2ai-core" target="_blank" rel="noopener noreferrer">
+          <span class="channel-title">💻 Mã nguồn GitHub</span>
+          <span class="channel-arrow">→</span>
+        </a>
 
+        <a class="channel-card" href="https://www.facebook.com/profile.php?id=61595651371198" target="_blank" rel="noopener noreferrer">
+          <span class="channel-title">🌐 Trang Tin Facebook</span>
+          <span class="channel-arrow">→</span>
+        </a>
+
+        <a class="channel-card" href="https://www.linkedin.com/in/nan-ai2ai-b02b67365/" target="_blank" rel="noopener noreferrer">
+          <span class="channel-title">💼 Mạng Lưới LinkedIn</span>
+          <span class="channel-arrow">→</span>
+        </a>
+
+        <a class="channel-card" href="https://x.com/Nan_ai2ai_vn" target="_blank" rel="noopener noreferrer">
+          <span class="channel-title">🐦 Đối thoại Quốc tế (X)</span>
+          <span class="channel-arrow">→</span>
+        </a>
+
+        <a class="channel-card" href="https://zalo.me/g/h0cbluccgocfud9fmih4" target="_blank" rel="noopener noreferrer">
+          <span class="channel-title">💬 Nhóm Kỹ sư Zalo</span>
+          <span class="channel-arrow">→</span>
+        </a>
+
+        <a class="channel-card" href="https://t.me/+87ARJ1e1NUA0ZDQ1" target="_blank" rel="noopener noreferrer">
+          <span class="channel-title">✈️ Kênh Kỹ thuật Telegram</span>
+          <span class="channel-arrow">→</span>
+        </a>
+
+        <a class="channel-card" href="mailto:nan_ai2ai@proton.me" target="_blank" rel="noopener noreferrer">
+          <span class="channel-title">✉️ Email Góp ý Chuyên môn</span>
+          <span class="channel-arrow">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container footer-inner">
-      <div class="footer-pledge" data-vi="Sáng kiến độc lập, phi lợi nhuận • Mã nguồn: Apache 2.0 • Tài liệu: CC-BY 4.0 • Không xin tiền • Không gọi vốn" data-en="Independent, non-profit initiative • Source Code: Apache 2.0 • Docs: CC-BY 4.0 • No Fundraising • No Grants">
-        Sáng kiến độc lập, phi lợi nhuận • Mã nguồn: Apache 2.0 • Tài liệu: CC-BY 4.0 • Không xin tiền • Không gọi vốn
+      <div class="footer-brand">
+        NAN AI2AI — SÁNG KIẾN VÌ KỶ NGUYÊN AI VIỆT NAM
+      </div>
+      <div class="footer-pledge" data-vi="Khung tham chiếu mở độc lập, phi lợi nhuận • Giấy phép mã nguồn: Apache 2.0 • Tài liệu: CC-BY 4.0 • Cam kết không gọi vốn, không xin tài trợ tài chính." data-en="Independent, non-profit open reference framework • Source code: Apache 2.0 • Documentation: CC-BY 4.0 • Committed to no fundraising and no financial grants.">
+        Khung tham chiếu mở độc lập, phi lợi nhuận • Giấy phép mã nguồn: Apache 2.0 • Tài liệu: CC-BY 4.0 • Cam kết không gọi vốn, không xin tài trợ tài chính.
       </div>
       <div class="footer-links">
-        <a href="https://github.com/nan-nexus-network/ai2ai-core" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Apache 2.0 License</a>
-        <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">Security Policy</a>
-        <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer">Code of Conduct</a>
-        <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/HANDOVER.md" target="_blank" rel="noopener noreferrer">Handover Commitment</a>
+        <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Giấy phép Apache 2.0</a>
+        <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">Bảo mật (Security)</a>
+        <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer">Quy tắc Ứng xử</a>
+        <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/HANDOVER.md" target="_blank" rel="noopener noreferrer">Cam kết Chuyển giao</a>
+        <a href="mailto:nan_ai2ai@proton.me" target="_blank" rel="noopener noreferrer">Liên hệ: nan_ai2ai@proton.me</a>
       </div>
       <div class="footer-copy">
-        © 2026 NAN AI2AI Initiative • <span data-vi="Đóng góp cho Kỷ nguyên Vươn mình - Kỷ nguyên AI của Việt Nam." data-en="Contributing to Vietnam's AI Era.">Đóng góp cho Kỷ nguyên Vươn mình - Kỷ nguyên AI của Việt Nam.</span>
+        © 2026 NAN AI2AI Initiative. <span data-vi="Đóng góp cho Kỷ nguyên Vươn mình - Kỷ nguyên AI của Việt Nam." data-en="Contributing to Vietnam's Ascension Era - The AI Era.">Đóng góp cho Kỷ nguyên Vươn mình - Kỷ nguyên AI của Việt Nam.</span>
       </div>
+      <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">
+        <span data-vi="Website này là landing page tĩnh, chúng tôi không thu thập dữ liệu người dùng." data-en="This site is a static landing page; we do not collect any user data.">Website này là landing page tĩnh, chúng tôi không thu thập dữ liệu người dùng.</span><br>
+        <a href="privacy.html" style="color: #EAEAEA;">Privacy Policy</a> |
+        <a href="terms.html" style="color: #EAEAEA;">Terms of Service</a>
+      </p>
     </div>
   </footer>
 
-  <!-- Bilingual Toggle Script -->
+  <!-- Script Chuyển Đổi Ngôn Ngữ Song Ngữ (VI/EN) -->
   <script>
     function setLanguage(lang) {
       const isEn = lang === 'en';
       document.documentElement.lang = isEn ? 'en' : 'vi';
 
-      // Update active button state
+      // Cập nhật trạng thái nút bấm
       const btnVi = document.getElementById('btn-vi');
       const btnEn = document.getElementById('btn-en');
       if (btnVi && btnEn) {
@@ -730,7 +743,7 @@
         }
       }
 
-      // Update all elements with data-vi and data-en
+      // Cập nhật nội dung các thẻ có data-vi và data-en
       const elements = document.querySelectorAll('[data-vi][data-en]');
       elements.forEach(el => {
         const text = isEn ? el.getAttribute('data-en') : el.getAttribute('data-vi');
@@ -748,7 +761,7 @@
       } catch (e) {}
     }
 
-    // Initialize from localStorage if present
+    // Tự động khôi phục ngôn ngữ đã chọn khi tải trang
     document.addEventListener('DOMContentLoaded', () => {
       try {
         const saved = localStorage.getItem('nan_ai2ai_lang');

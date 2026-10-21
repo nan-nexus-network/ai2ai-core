@@ -124,3 +124,9 @@ Chúng tôi cần sự phản biện thẳng thắn của bạn hơn là những
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Nguyên tắc ứng xử cộng đồng |
 | [ROADMAP.md](ROADMAP.md) | Lộ trình công khai |
 | [CHANGELOG.md](CHANGELOG.md) | Nhật ký phát hành |
+
+---
+
+## 💰 Câu Chuyện 0 Đồng (The Zero-Budget Story)
+
+Chúng tôi khởi đầu với 0 đồng. Tên miền miễn phí, hạ tầng miễn phí, và code được hỗ trợ bởi AI. Chúng tôi tin rằng một ý tưởng lớn không cần một ngân sách lớn để bắt đầu. Nếu chúng tôi làm được, các bạn trẻ Việt Nam cũng có thể làm được.

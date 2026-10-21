@@ -28,18 +28,27 @@ jobs:
           extra_args: --only-verified
 
   test-poc-and-bridge:
-    name: Kiểm thử PoC trên Python ${{ matrix.python-version }}
+    name: Kiểm thử PoC trên ${{ matrix.os }} / Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
+        # Da bao phu 3 he dieu hanh: Linux (ubuntu), macOS, Windows
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.8", "3.10", "3.12"]
+        exclude:
+          # macOS arm64 (macos-latest): Python 3.8 khong co ban dung chinh thuc
+          # (Python chi phat hanh ban arm64 tu 3.9.1 tro di) -> macOS duoc test o 3.10 va 3.12.
+          - os: macos-latest
+            python-version: "3.8"
+          # Ubuntu 24.04 (ubuntu-latest): bo tool cache mac dinh khong co san Python 3.8
+          # -> Python 3.8 tren Linux duoc chay tren Ubuntu 22.04 (ben duoi).
+          - os: ubuntu-latest
+            python-version: "3.8"
         include:
-          - python-version: "3.8"
-            os: ubuntu-22.04   # Python 3.8 khong co ban dung cho Ubuntu 24.04
-          - python-version: "3.10"
-            os: ubuntu-latest
-          - python-version: "3.12"
-            os: ubuntu-latest
+          # Bo sung Python 3.8 tren Linux de phu day du ca 3 he dieu hanh
+          - os: ubuntu-22.04
+            python-version: "3.8"
 
     steps:
       - name: Checkout mã nguồn
