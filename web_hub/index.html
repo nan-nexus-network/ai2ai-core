@@ -648,6 +648,49 @@
       }
       .nav-center { display: none; }
     }
+
+    /* Section: Tam nhin Trung tam Trong tai AI */
+    .vision-panel {
+      background: var(--bg-white); border: 1.5px solid var(--primary-red);
+      border-radius: var(--card-radius); padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-md); text-align: center;
+    }
+    .vision-icon {
+      width: 84px; height: 84px; margin: 0 auto 1.5rem; display: block;
+      color: var(--primary-red-hover);
+    }
+    .vision-claim {
+      font-family: 'Merriweather', Georgia, serif; font-style: italic; font-weight: 700;
+      font-size: clamp(1.2rem, 2.6vw, 1.7rem); line-height: 1.5;
+      color: var(--primary-red-hover); margin-bottom: 1.25rem; letter-spacing: -0.01em;
+    }
+    .vision-sub {
+      font-size: 1.02rem; color: var(--text-gray); line-height: 1.7;
+      max-width: 780px; margin: 0 auto;
+    }
+    .vision-pillars {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem; margin-top: 2.5rem; text-align: left;
+    }
+    .vision-pillar {
+      background: var(--bg-white); border: 1px solid var(--border-color);
+      border-top: 3px solid var(--primary-red); border-radius: var(--card-radius);
+      padding: 1.75rem; box-shadow: var(--shadow-sm);
+    }
+    .vision-pillar-tag {
+      font-size: 0.72rem; font-weight: 700; color: var(--primary-red);
+      letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.35rem;
+    }
+    .vision-pillar-title {
+      font-family: 'Merriweather', Georgia, serif; font-size: 1.12rem;
+      font-weight: 700; color: var(--text-dark); margin-bottom: 0.6rem;
+    }
+    .vision-pillar-desc { font-size: 0.93rem; color: var(--text-gray); line-height: 1.65; }
+    .vision-caveat {
+      text-align: center; font-size: 0.86rem; color: var(--text-gray);
+      font-style: italic; margin-top: 2rem; line-height: 1.7;
+    }
+
   </style>
 </head>
 <body>
@@ -868,7 +911,55 @@
     </div>
   </section>
 
-  <!-- 6. CONNECT & CONTRIBUTE -->
+  <!-- 6. VISION: VIET NAM - TRUNG TAM TRONG TAI AI -->
+  <section id="vision" class="section-padding bg-light-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-vi="Việt Nam - Trung tâm Trọng tài AI" data-en="Vietnam - The Global AI Dispute Resolution Hub">Việt Nam - Trung tâm Trọng tài AI</h2>
+        <p class="section-subtitle" data-vi="Một tầm nhìn chiến lược: đưa vị thế trung lập của Việt Nam lên tầng luật AI quốc tế." data-en="A strategic vision: elevating Vietnam's neutrality into the arena of international AI law.">Một tầm nhìn chiến lược: đưa vị thế trung lập của Việt Nam lên tầng luật AI quốc tế.</p>
+      </div>
+
+      <div class="vision-panel">
+        <svg class="vision-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M32 9v39" />
+          <path d="M12 17h40" />
+          <path d="M22 17 12 35h20L22 17Z" />
+          <path d="M42 17 32 35h20L42 17Z" />
+          <path d="M24 47h16" />
+          <path d="M17 53h30" />
+          <circle cx="32" cy="11" r="3.2" />
+        </svg>
+
+        <p class="vision-claim" data-vi="Khi AI Agent tự giao dịch xuyên biên giới và xảy ra tranh chấp, thế giới cần một trọng tài công tâm. Vị thế trung lập và Ngoại giao Cây tre là lợi thế sẵn có của Việt Nam — và tầng bằng chứng kỹ thuật mở là nền tảng để biến nó thành hiện thực." data-en="When AI agents transact across borders and disputes arise, the world needs a neutral arbiter. Vietnam's neutrality and bamboo diplomacy are an existing advantage - and an open technical evidence layer is the foundation to make it real.">Khi AI Agent tự giao dịch xuyên biên giới và xảy ra tranh chấp, thế giới cần một trọng tài công tâm. Vị thế trung lập và Ngoại giao Cây tre là lợi thế sẵn có của Việt Nam — và tầng bằng chứng kỹ thuật mở là nền tảng để biến nó thành hiện thực.</p>
+
+        <p class="vision-sub" data-vi="Chúng tôi đề xuất Việt Nam trở thành Trung tâm Giải quyết Tranh chấp AI Toàn cầu: không ra phán quyết về trách nhiệm pháp lý, mà chứng minh sự thật kỹ thuật của giao dịch bằng bằng chứng bất biến (SHA-256), để các bên tự thỏa thuận phần còn lại. Đây là đóng góp cho các luật AI quốc tế trong tương lai." data-en="We propose Vietnam as the Global AI Dispute Resolution Hub: not to rule on legal liability, but to establish the technical facts of a transaction using immutable evidence (SHA-256), leaving the rest for the parties to settle. This is a contribution to the international AI law of the future.">Chúng tôi đề xuất Việt Nam trở thành Trung tâm Giải quyết Tranh chấp AI Toàn cầu: không ra phán quyết về trách nhiệm pháp lý, mà chứng minh sự thật kỹ thuật của giao dịch bằng bằng chứng bất biến (SHA-256), để các bên tự thỏa thuận phần còn lại. Đây là đóng góp cho các luật AI quốc tế trong tương lai.</p>
+
+        <div class="vision-pillars">
+          <div class="vision-pillar">
+            <div class="vision-pillar-tag" data-vi="Trụ cột 01" data-en="Pillar 01">Trụ cột 01</div>
+            <h4 class="vision-pillar-title" data-vi="Ngoại giao Cây tre" data-en="Bamboo Diplomacy">Ngoại giao Cây tre</h4>
+            <p class="vision-pillar-desc" data-vi="Vị thế trung lập, không chọn phe, cùng quan hệ đối tác rộng với Mỹ, Trung Quốc, EU, Nhật Bản, Hàn Quốc và ASEAN. Đây là vị thế có sẵn, không phải thứ cần tạo ra." data-en="A position of neutrality and no-side-taking, with broad relations across the US, China, the EU, Japan, Korea and ASEAN. This is an existing position, not something to be manufactured.">Vị thế trung lập, không chọn phe, cùng quan hệ đối tác rộng với Mỹ, Trung Quốc, EU, Nhật Bản, Hàn Quốc và ASEAN. Đây là vị thế có sẵn, không phải thứ cần tạo ra.</p>
+          </div>
+
+          <div class="vision-pillar">
+            <div class="vision-pillar-tag" data-vi="Trụ cột 02" data-en="Pillar 02">Trụ cột 02</div>
+            <h4 class="vision-pillar-title" data-vi="Hạ tầng bằng chứng mở" data-en="Open Evidence Infrastructure">Hạ tầng bằng chứng mở</h4>
+            <p class="vision-pillar-desc" data-vi="NAN AI2AI cấp biên nhận SHA-256 bất biến cho mọi giao dịch AI — nền tảng kỹ thuật để một trọng tài có thể chứng minh điều gì đã xảy ra, thay vì tranh luận bằng lời nói." data-en="NAN AI2AI issues immutable SHA-256 receipts for every AI transaction - the technical ground on which an arbiter can establish what happened, instead of arguing from assertions.">NAN AI2AI cấp biên nhận SHA-256 bất biến cho mọi giao dịch AI — nền tảng kỹ thuật để một trọng tài có thể chứng minh điều gì đã xảy ra, thay vì tranh luận bằng lời nói.</p>
+          </div>
+
+          <div class="vision-pillar">
+            <div class="vision-pillar-tag" data-vi="Trụ cột 03" data-en="Pillar 03">Trụ cột 03</div>
+            <h4 class="vision-pillar-title" data-vi="Luật chơi AI quốc tế" data-en="International AI Rules">Luật chơi AI quốc tế</h4>
+            <p class="vision-pillar-desc" data-vi="Quy trình bằng chứng và phân xử được chuẩn hóa sớm sẽ trở thành mẫu mực tham chiếu cho các hiệp định AI của ASEAN và các sáng kiến luật AI quốc tế." data-en="An evidence and arbitration process standardised early becomes the reference model for ASEAN AI agreements and international AI-law initiatives.">Quy trình bằng chứng và phân xử được chuẩn hóa sớm sẽ trở thành mẫu mực tham chiếu cho các hiệp định AI của ASEAN và các sáng kiến luật AI quốc tế.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="vision-caveat" data-vi="* Đây là đề xuất tầm nhìn chiến lược do sáng kiến đưa ra để thảo luận, chưa phải chính sách đã được ban hành. Tầng kỹ thuật hiện ở mức Proof-of-Concept: biên nhận SHA-256 chứng minh tính toàn vẹn dữ liệu, chưa chứng minh danh tính. Xem tài liệu ADR-001 trong kho mã nguồn để biết các giới hạn và tiêu chí nâng cấp." data-en="* This is a strategic vision proposed by the initiative for discussion, not an adopted policy. The technical layer is currently Proof-of-Concept: SHA-256 receipts prove data integrity, not identity. See ADR-001 in the source repository for the full limitations and upgrade criteria.">* Đây là đề xuất tầm nhìn chiến lược do sáng kiến đưa ra để thảo luận, chưa phải chính sách đã được ban hành. Tầng kỹ thuật hiện ở mức Proof-of-Concept: biên nhận SHA-256 chứng minh tính toàn vẹn dữ liệu, chưa chứng minh danh tính. Xem tài liệu ADR-001 trong kho mã nguồn để biết các giới hạn và tiêu chí nâng cấp.</p>
+    </div>
+  </section>
+
+  <!-- 7. CONNECT & CONTRIBUTE -->
   <section id="connect" class="section-padding bg-light-section">
     <div class="container">
       <div class="section-header">
@@ -944,7 +1035,7 @@
     </div>
   </section>
 
-  <!-- 7. FOOTER -->
+  <!-- 8. FOOTER -->
   <footer>
     <div class="container footer-inner">
       <div class="footer-top">
