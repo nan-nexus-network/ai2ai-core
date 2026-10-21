@@ -3,7 +3,8 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Docs: CC-BY 4.0](https://img.shields.io/badge/Whitepaper-CC--BY_4.0-green.svg)](docs/WHITEPAPER_VN_AI_BRIDGE.md)
 [![Python: 3.8+](https://img.shields.io/badge/Python-3.8%2B_Stdlib-brightgreen.svg)](examples/01-hello-agent/hello_bridge.py)
-[![Status: PoC v0.1](https://img.shields.io/badge/Status-Discussion_PoC_v0.1-orange.svg)]()
+[![Code: PoC v0.1](https://img.shields.io/badge/Code-PoC_v0.1-orange.svg)]()
+[![White Paper: v0.4-draft](https://img.shields.io/badge/Whitepaper-v0.4--draft-blue.svg)]()
 
 > **"Việt Nam không nhất thiết phải đua xây dựng các siêu mô hình tỷ đô, nhưng liệu chúng ta có thể đóng vai trò 'Cầu nối Giao thức' (Protocol Bridge) giúp các hệ sinh thái AI phân mảnh liên vận với nhau?"**
 
@@ -19,6 +20,7 @@ Trước khi bạn đọc mã nguồn hoặc tài liệu trong kho lưu trữ n�
    * **Không xin tiền, không gọi vốn, không phát hành token, không bán khóa học.**
    * **Minh bạch tuyệt đối về giới hạn kỹ thuật.**
    * **Mọi mã nguồn đã mở dưới chuẩn Apache 2.0 sẽ không bao giờ bị rút lại.**
+4. **Về tính đại diện:** Sáng kiến này **hoàn toàn không đại diện cho cộng đồng AI Việt Nam**. Đây là một thử nghiệm độc lập ở quy mô nhỏ; mọi luận điểm trong [Tài liệu thảo luận](docs/WHITEPAPER_VN_AI_BRIDGE.md) đều được trình bày như **câu hỏi mở**, không phải kết luận.
 
 ---
 
@@ -40,7 +42,7 @@ python examples/01-hello-agent/hello_bridge.py
 
 ---
 
-## 📄 Tài Liệu Thảo Luận Mở (White Paper v0.3-draft)
+## 📄 Tài Liệu Thảo Luận Mở (White Paper v0.4-draft)
 
 * **Đọc trực tiếp bản Markdown:** [docs/WHITEPAPER_VN_AI_BRIDGE.md](docs/WHITEPAPER_VN_AI_BRIDGE.md)
 * **Tải bản PDF đầy đủ (kèm Tóm tắt 1 trang cho người bận rộn):** [GitHub Releases](https://github.com/nan-nexus-network/ai2ai-core/releases)
@@ -55,3 +57,16 @@ Chúng tôi cần sự phản biện thẳng thắn của bạn hơn là những
 * Xem chính sách nhãn hiệu tại [TRADEMARK.md](TRADEMARK.md) và cam kết bàn giao dự án nếu dừng hoạt động tại [HANDOVER.md](HANDOVER.md).
 
 **Liên hệ:** nan.ai2ai.initiative@proton.me | **Cổng thông tin:** https://nan-ai2ai.pages.dev
+
+---
+
+## 📁 Kế Hoạch Công Khai & Quản Trị
+
+| Tài liệu | Nội dung |
+| :--- | :--- |
+| [docs/public_launch/](docs/public_launch/) | **Bộ kế hoạch công khai đầy đủ** — kế hoạch ra mắt, quản trị, đo lường, sổ rủi ro, checklist phát hành |
+| [GOVERNANCE.md](GOVERNANCE.md) | Cách ra quyết định, phân quyền, và **cách xử lý bất đồng** (không có deadlock) |
+| [SECURITY.md](SECURITY.md) | Công bố lỗ hổng bảo mật |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Nguyên tắc ứng xử cộng đồng |
+| [ROADMAP.md](ROADMAP.md) | Lộ trình công khai |
+| [CHANGELOG.md](CHANGELOG.md) | Nhật ký phát hành |

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Báo lỗ hổng bảo mật (KHÔNG mở Issue công khai)
+    url: https://github.com/nan-nexus-network/ai2ai-core/security/advisories/new
+    about: Vui lòng báo qua kênh riêng. Xem SECURITY.md.
+  - name: Hỏi câu hỏi / thảo luận
+    url: https://github.com/nan-nexus-network/ai2ai-core/discussions
+    about: Dùng Discussions cho câu hỏi mở, không phải lỗi.
+  - name: Liên hệ ngoài mã nguồn
+    url: mailto:nan.ai2ai.initiative@proton.me
+    about: Câu hỏi về tài liệu thảo luận, hợp tác, truyền thông.

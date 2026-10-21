@@ -1,0 +1,25 @@
+# Chuẩn hóa line ending cho toàn bộ repo
+* text=auto eol=lf
+
+# Tệp văn bản: LF
+*.md   text eol=lf
+*.txt  text eol=lf
+*.json text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.py   text eol=lf
+*.js   text eol=lf
+*.ts   text eol=lf
+*.sh   text eol=lf
+*.html text eol=lf
+*.css  text eol=lf
+
+# Tệp nhị phân: không chuyển đổi
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
+*.woff binary

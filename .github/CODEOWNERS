@@ -1,0 +1,14 @@
+# Quyền review mặc định cho toàn repo.
+# Thay bằng tên người dùng GitHub thật trước khi mở public.
+*                       @founder-placeholder
+
+# Tài liệu thảo luận — cần review chặt hơn vì nó là tuyên bố công khai.
+docs/WHITEPAPER_VN_AI_BRIDGE.md   @founder-placeholder
+docs/public_launch/              @founder-placeholder
+
+# An toàn và giấy phép — review bắt buộc.
+SECURITY.md                       @founder-placeholder
+CLA.md                            @founder-placeholder
+TRADEMARK.md                      @founder-placeholder
+LICENSE                          @founder-placeholder
+scripts/license_gate.py          @founder-placeholder

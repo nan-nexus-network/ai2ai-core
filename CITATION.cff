@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "NAN AI2AI-SI2SI — Hộp Cát Thử Nghiệm Cầu Nối Giao Thức AI"
+message: "Nếu bạn dùng hồ sơ hoặc mã nguồn này trong nghiên cứu, vui lòng trích dẫn như sau."
+type: software
+authors:
+  - name: "Người khởi xướng sáng kiến NAN AI2AI-SI2SI"
+repository-code: "https://github.com/nan-nexus-network/ai2ai-core"
+url: "https://nan-ai2ai.pages.dev"
+license: Apache-2.0
+version: 0.1.0
+keywords:
+  - protocol-bridge
+  - agent-interoperability
+  - a2a
+  - mcp
+  - ai2ai
+date-released: "2026-10-21"
