@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Điều khoản sử dụng của NAN AI2AI — mã nguồn mở Apache 2.0, tài liệu CC-BY 4.0, cung cấp nguyên trạng." />
-  <title>Terms of Service — NAN AI2AI</title>
+  <meta name="description" content="Điều khoản sử dụng của NAN AI2AI — mã nguồn mở Apache 2.0, tài liệu CC-BY 4.0." data-vi-content="Điều khoản sử dụng của NAN AI2AI — mã nguồn mở Apache 2.0, tài liệu CC-BY 4.0." data-en-content="Terms of use for the NAN AI2AI project — open source under Apache 2.0, documentation under CC-BY 4.0." />
+  <title data-vi="Điều khoản sử dụng — NAN AI2AI" data-en="Terms of Service — NAN AI2AI">Điều khoản sử dụng — NAN AI2AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
     a { color: var(--primary-red); text-decoration: none; }
     a:hover { color: var(--primary-red-hover); text-decoration: underline; }
     .top-nav {
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
       padding: 1rem 0; border-bottom: 1px solid var(--border-color); font-size: 0.9rem;
     }
     .org-label {
@@ -40,6 +40,10 @@
     }
     .back { color: var(--secondary-gray); font-size: 0.9rem; }
     .back:hover { color: var(--primary-red); text-decoration: none; }
+    .lang-toggle { display: inline-flex; gap: 5px; align-items: center; }
+    .lang-btn { cursor: pointer; font-weight: 600; }
+    .lang-btn:hover { color: var(--primary-red); }
+    .lang-note { font-size: 0.78rem; margin: 0.5rem 0 0; color: var(--secondary-gray); }
     main { padding: 2.75rem 0 3rem; }
     .brand-logo { height: 52px; margin-bottom: 1.25rem; object-fit: contain; }
     h1 {
@@ -90,51 +94,71 @@
   <div class="container">
     <div class="top-nav">
       <span class="org-label">NAN AI2AI • Vietnam AI Era</span>
-      <a class="back" href="index.html">&larr; Quay lại trang chủ</a>
+      <span class="lang-toggle"><span onclick="setLang('vi')" class="lang-btn">VI</span> | <span onclick="setLang('en')" class="lang-btn">EN</span></span>
+      <a class="back" href="index.html" data-vi="&larr; Quay lại trang chủ" data-en="&larr; Back to home">&larr; Quay lại trang chủ</a>
     </div>
   </div>
 
   <main class="container">
     <img src="logo-nan-ai2ai.png" alt="NAN AI2AI Logo" class="brand-logo" />
-    <span class="badge">Terms of Service</span>
-    <h1>Điều khoản sử dụng</h1>
-    <p class="meta">Cập nhật lần cuối: 21/10/2026</p>
+    <span class="badge" data-vi="Terms of Service" data-en="Terms of Service">Terms of Service</span>
+    <h1 data-vi="Điều khoản sử dụng" data-en="Terms of Service">Điều khoản sử dụng</h1>
+    <p class="meta" data-vi="Cập nhật lần cuối: 21/10/2026" data-en="Last updated: 21/10/2026">Cập nhật lần cuối: 21/10/2026</p>
 
     <div class="card">
-      <h2>Dự án</h2>
-      <p>Dự án NAN AI2AI.</p>
+      <h2 data-vi="Về dự án" data-en="About the project">Về dự án</h2>
+      <p data-vi="NAN AI2AI là một sáng kiến mã nguồn mở, phi lợi nhuận, đề xuất kiến trúc cầu nối trung lập giữa các hệ sinh thái AI toàn cầu. Dự án không gọi vốn, không nhận tài trợ, và không vận hành dịch vụ thương mại." data-en="NAN AI2AI is a non-profit open-source initiative proposing a neutral bridge architecture between global AI ecosystems. The project does not raise funding, does not accept grants, and does not operate a commercial service.">NAN AI2AI là một sáng kiến mã nguồn mở, phi lợi nhuận, đề xuất kiến trúc cầu nối trung lập giữa các hệ sinh thái AI toàn cầu. Dự án không gọi vốn, không nhận tài trợ, và không vận hành dịch vụ thương mại.</p>
     </div>
 
     <div class="card">
-      <h2>Giấy phép</h2>
+      <h2 data-vi="Giấy phép sử dụng" data-en="Licensing">Giấy phép sử dụng</h2>
       <ul>
-        <li>Mã nguồn mở theo giấy phép Apache 2.0.</li>
-        <li>Tài liệu theo CC-BY 4.0.</li>
+        <li><strong data-vi="Mã nguồn:" data-en="Source code:">Mã nguồn:</strong> <span data-vi="Cấp phép theo Apache License 2.0. Bạn được phép sử dụng, sao chép, chỉnh sửa và phân phối lại, kể cả cho mục đích thương mại, với điều kiện giữ nguyên thông báo giấy phép." data-en="Licensed under the Apache License 2.0. You may use, copy, modify, and redistribute it, including for commercial purposes, provided you keep the license notice.">Cấp phép theo Apache License 2.0. Bạn được phép sử dụng, sao chép, chỉnh sửa và phân phối lại, kể cả cho mục đích thương mại, với điều kiện giữ nguyên thông báo giấy phép.</span></li>
+        <li><strong data-vi="Tài liệu:" data-en="Documentation:">Tài liệu:</strong> <span data-vi="Cấp phép theo Creative Commons CC-BY 4.0. Bạn được tự do chia sẻ và chỉnh sửa, miễn là ghi rõ nguồn gốc." data-en="Licensed under Creative Commons CC-BY 4.0. You are free to share and adapt it, as long as you give appropriate credit.">Cấp phép theo Creative Commons CC-BY 4.0. Bạn được tự do chia sẻ và chỉnh sửa, miễn là ghi rõ nguồn gốc.</span></li>
       </ul>
     </div>
 
     <div class="card">
-      <h2>Tuyên bố miễn trừ trách nhiệm</h2>
-      <p>Cung cấp nguyên trạng (AS-IS), không kèm bảo hành.</p>
+      <h2 data-vi="Miễn trừ trách nhiệm" data-en="Disclaimer">Miễn trừ trách nhiệm</h2>
+      <p data-vi="Toàn bộ mã nguồn và tài liệu được cung cấp nguyên trạng (AS-IS), không kèm bảo hành dưới bất kỳ hình thức nào — dù tường minh hay ngụ ý. Người dùng tự chịu trách nhiệm về rủi ro phát sinh từ việc sử dụng dự án này." data-en="All source code and documentation are provided as-is, without warranty of any kind, express or implied. Users bear the risks arising from their use of this project.">Toàn bộ mã nguồn và tài liệu được cung cấp nguyên trạng (AS-IS), không kèm bảo hành dưới bất kỳ hình thức nào — dù tường minh hay ngụ ý. Người dùng tự chịu trách nhiệm về rủi ro phát sinh từ việc sử dụng dự án này.</p>
+      <p data-vi="Đây là đề xuất kiến trúc mở, không phải tư vấn pháp lý, kỹ thuật, hay đầu tư." data-en="This is an open architecture proposal. It is not legal, technical, or investment advice.">Đây là đề xuất kiến trúc mở, không phải tư vấn pháp lý, kỹ thuật, hay đầu tư.</p>
     </div>
 
     <div class="card">
-      <h2>Liên hệ</h2>
-      <p>Mọi liên hệ vui lòng gửi về
+      <h2 data-vi="Liên hệ" data-en="Contact">Liên hệ</h2>
+      <p><span data-vi="Mọi câu hỏi liên quan đến điều khoản hoặc giấy phép, vui lòng liên hệ:" data-en="For any questions about these terms or licensing, please contact:">Mọi câu hỏi liên quan đến điều khoản hoặc giấy phép, vui lòng liên hệ:</span>
         <a class="mail" href="mailto:nan_ai2ai@proton.me">nan_ai2ai@proton.me</a>
       </p>
     </div>
 
     <div class="note">
-      Điều khoản này áp dụng cho trang thông tin tĩnh của dự án. Việc sử dụng mã nguồn và tài liệu
-      đi kèm được điều chỉnh bởi đầy đủ văn bản giấy phép Apache 2.0 và CC-BY 4.0 trong kho mã nguồn.
+      <span data-vi="Điều khoản này áp dụng cho trang thông tin tĩnh của dự án. Toàn văn giấy phép Apache 2.0 và CC-BY 4.0 có trong kho mã nguồn trên GitHub và là văn bản có hiệu lực pháp lý cao hơn tóm tắt tại đây." data-en="These terms apply to the project static information site. The full text of the Apache 2.0 and CC-BY 4.0 licenses is in the repository on GitHub and takes precedence over this summary.">Điều khoản này áp dụng cho trang thông tin tĩnh của dự án. Toàn văn giấy phép Apache 2.0 và CC-BY 4.0 có trong kho mã nguồn trên GitHub và là văn bản có hiệu lực pháp lý cao hơn tóm tắt tại đây.</span>
     </div>
   </main>
 
   <footer>
     <div class="container">
-      © 2026 NAN AI2AI Initiative • Mã nguồn: Apache 2.0 • Tài liệu: CC-BY 4.0 • Không xin tiền • Không gọi vốn
+      <span data-vi="© 2026 NAN AI2AI Initiative · Mã nguồn: Apache 2.0 · Tài liệu: CC-BY 4.0 · Không xin tiền · Không gọi vốn" data-en="© 2026 NAN AI2AI Initiative · Source: Apache 2.0 · Docs: CC-BY 4.0 · No funding · No fundraising">© 2026 NAN AI2AI Initiative · Mã nguồn: Apache 2.0 · Tài liệu: CC-BY 4.0 · Không xin tiền · Không gọi vốn</span>
+      <p class="lang-note" data-vi="Trang pháp lý hiện có bằng tiếng Việt và tiếng Anh." data-en="Legal pages are currently available in Vietnamese and English.">Trang pháp lý hiện có bằng tiếng Việt và tiếng Anh.</p>
     </div>
   </footer>
+
+  <script>
+    let currentLang = 'vi';
+    function setLang(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-vi]').forEach(el => {
+        if (el.getAttribute('data-' + currentLang)) {
+          el.textContent = el.getAttribute('data-' + currentLang);
+        }
+      });
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) {
+        const c = meta.getAttribute('data-' + currentLang + '-content');
+        if (c) meta.setAttribute('content', c);
+      }
+      document.documentElement.lang = currentLang;
+    }
+  </script>
 </body>
 </html>

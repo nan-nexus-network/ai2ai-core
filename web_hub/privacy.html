@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chính sách quyền riêng tư của NAN AI2AI — landing page tĩnh, không thu thập dữ liệu cá nhân." />
-  <title>Privacy Policy — NAN AI2AI</title>
+  <meta name="description" content="Chính sách quyền riêng tư của NAN AI2AI — trang tĩnh, không thu thập dữ liệu cá nhân." data-vi-content="Chính sách quyền riêng tư của NAN AI2AI — trang tĩnh, không thu thập dữ liệu cá nhân." data-en-content="Privacy policy of the NAN AI2AI project — a static site that collects no personal data." />
+  <title data-vi="Chính sách Quyền riêng tư — NAN AI2AI" data-en="Privacy Policy — NAN AI2AI">Chính sách Quyền riêng tư — NAN AI2AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
     a { color: var(--primary-red); text-decoration: none; }
     a:hover { color: var(--primary-red-hover); text-decoration: underline; }
     .top-nav {
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
       padding: 1rem 0; border-bottom: 1px solid var(--border-color); font-size: 0.9rem;
     }
     .org-label {
@@ -40,6 +40,10 @@
     }
     .back { color: var(--secondary-gray); font-size: 0.9rem; }
     .back:hover { color: var(--primary-red); text-decoration: none; }
+    .lang-toggle { display: inline-flex; gap: 5px; align-items: center; }
+    .lang-btn { cursor: pointer; font-weight: 600; }
+    .lang-btn:hover { color: var(--primary-red); }
+    .lang-note { font-size: 0.78rem; margin: 0.5rem 0 0; color: var(--secondary-gray); }
     main { padding: 2.75rem 0 3rem; }
     .brand-logo { height: 52px; margin-bottom: 1.25rem; object-fit: contain; }
     h1 {
@@ -90,43 +94,68 @@
   <div class="container">
     <div class="top-nav">
       <span class="org-label">NAN AI2AI • Vietnam AI Era</span>
-      <a class="back" href="index.html">&larr; Quay lại trang chủ</a>
+      <span class="lang-toggle"><span onclick="setLang('vi')" class="lang-btn">VI</span> | <span onclick="setLang('en')" class="lang-btn">EN</span></span>
+      <a class="back" href="index.html" data-vi="&larr; Quay lại trang chủ" data-en="&larr; Back to home">&larr; Quay lại trang chủ</a>
     </div>
   </div>
 
   <main class="container">
     <img src="logo-nan-ai2ai.png" alt="NAN AI2AI Logo" class="brand-logo" />
-    <span class="badge">Privacy Policy</span>
-    <h1>Chính sách Quyền riêng tư</h1>
-    <p class="meta">Cập nhật lần cuối: 21/10/2026</p>
+    <span class="badge" data-vi="Privacy Policy" data-en="Privacy Policy">Privacy Policy</span>
+    <h1 data-vi="Chính sách Quyền riêng tư" data-en="Privacy Policy">Chính sách Quyền riêng tư</h1>
+    <p class="meta" data-vi="Cập nhật lần cuối: 21/10/2026" data-en="Last updated: 21/10/2026">Cập nhật lần cuối: 21/10/2026</p>
 
     <div class="card">
-      <h2>Phạm vi</h2>
-      <p>Website này là landing page tĩnh.</p>
+      <h2 data-vi="Phạm vi áp dụng" data-en="Scope">Phạm vi áp dụng</h2>
+      <p data-vi="Chính sách này áp dụng cho trang web tĩnh của dự án NAN AI2AI tại địa chỉ hiện tại. Trang web không có phần đăng nhập, biểu mẫu thu thập thông tin, hay bất kỳ tính năng tương tác nào yêu cầu dữ liệu cá nhân." data-en="This policy applies to the static website of the NAN AI2AI project at its current address. The website has no login, no data collection forms, and no interactive feature that requires personal data.">Chính sách này áp dụng cho trang web tĩnh của dự án NAN AI2AI tại địa chỉ hiện tại. Trang web không có phần đăng nhập, biểu mẫu thu thập thông tin, hay bất kỳ tính năng tương tác nào yêu cầu dữ liệu cá nhân.</p>
     </div>
 
     <div class="card">
-      <h2>Dữ liệu chúng tôi thu thập</h2>
-      <p>Chúng tôi không thu thập bất kỳ dữ liệu cá nhân nào.</p>
+      <h2 data-vi="Dữ liệu chúng tôi thu thập" data-en="Data we collect">Dữ liệu chúng tôi thu thập</h2>
+      <p><strong data-vi="Không có." data-en="None.">Không có.</strong> <span data-vi="Chúng tôi không thu thập, lưu trữ, hoặc xử lý bất kỳ dữ liệu cá nhân nào của người dùng — không tên, không email, không địa chỉ IP, không cookie theo dõi." data-en="We do not collect, store, or process any personal data from users: no names, no email addresses, no IP addresses, no tracking cookies.">Chúng tôi không thu thập, lưu trữ, hoặc xử lý bất kỳ dữ liệu cá nhân nào của người dùng — không tên, không email, không địa chỉ IP, không cookie theo dõi.</span></p>
+      <p data-vi="Nếu bạn chủ động liên hệ qua email, thông tin bạn cung cấp sẽ chỉ được dùng để trả lời bạn, không chia sẻ cho bên thứ ba." data-en="If you contact us by email on your own initiative, the information you provide will be used only to reply to you and will not be shared with third parties.">Nếu bạn chủ động liên hệ qua email, thông tin bạn cung cấp sẽ chỉ được dùng để trả lời bạn, không chia sẻ cho bên thứ ba.</p>
     </div>
 
     <div class="card">
-      <h2>Liên hệ</h2>
-      <p>Mọi liên hệ vui lòng gửi về
+      <h2 data-vi="Dịch vụ bên thứ ba" data-en="Third-party services">Dịch vụ bên thứ ba</h2>
+      <p data-vi="Trang web tải phông chữ từ Google Fonts. Google có thể ghi nhận yêu cầu tải font theo chính sách riêng của họ. Ngoài ra, chúng tôi không nhúng mã phân tích, quảng cáo, hay theo dõi từ bất kỳ bên nào." data-en="The website loads fonts from Google Fonts. Google may log font requests under its own policy. Otherwise, we embed no analytics, advertising, or tracking code from any party.">Trang web tải phông chữ từ Google Fonts. Google có thể ghi nhận yêu cầu tải font theo chính sách riêng của họ. Ngoài ra, chúng tôi không nhúng mã phân tích, quảng cáo, hay theo dõi từ bất kỳ bên nào.</p>
+    </div>
+
+    <div class="card">
+      <h2 data-vi="Liên hệ" data-en="Contact">Liên hệ</h2>
+      <p><span data-vi="Mọi câu hỏi về quyền riêng tư, vui lòng gửi về:" data-en="For any privacy questions, please contact:">Mọi câu hỏi về quyền riêng tư, vui lòng gửi về:</span>
         <a class="mail" href="mailto:nan_ai2ai@proton.me">nan_ai2ai@proton.me</a>
       </p>
     </div>
 
     <div class="note">
-      Trang này được phục vụ trực tiếp từ kho mã nguồn mở của dự án, không dùng cookie theo dõi,
-      không nhúng mã quảng cáo và không chạy tập lệnh thu thập dữ liệu phía máy chủ.
+      <span data-vi="Trang này được phục vụ trực tiếp từ kho mã nguồn mở của dự án. Toàn bộ mã nguồn có thể kiểm tra tại GitHub. Không cookie. Không script thu thập dữ liệu phía máy chủ." data-en="This page is served directly from the project open-source repository. The full source code can be reviewed on GitHub. No cookies. No server-side data collection scripts.">Trang này được phục vụ trực tiếp từ kho mã nguồn mở của dự án. Toàn bộ mã nguồn có thể kiểm tra tại GitHub. Không cookie. Không script thu thập dữ liệu phía máy chủ.</span>
     </div>
   </main>
 
   <footer>
     <div class="container">
-      © 2026 NAN AI2AI Initiative • Mã nguồn: Apache 2.0 • Tài liệu: CC-BY 4.0 • Không xin tiền • Không gọi vốn
+      <span data-vi="© 2026 NAN AI2AI Initiative · Mã nguồn: Apache 2.0 · Tài liệu: CC-BY 4.0 · Không xin tiền · Không gọi vốn" data-en="© 2026 NAN AI2AI Initiative · Source: Apache 2.0 · Docs: CC-BY 4.0 · No funding · No fundraising">© 2026 NAN AI2AI Initiative · Mã nguồn: Apache 2.0 · Tài liệu: CC-BY 4.0 · Không xin tiền · Không gọi vốn</span>
+      <p class="lang-note" data-vi="Trang pháp lý hiện có bằng tiếng Việt và tiếng Anh." data-en="Legal pages are currently available in Vietnamese and English.">Trang pháp lý hiện có bằng tiếng Việt và tiếng Anh.</p>
     </div>
   </footer>
+
+  <script>
+    let currentLang = 'vi';
+    function setLang(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-vi]').forEach(el => {
+        if (el.getAttribute('data-' + currentLang)) {
+          el.textContent = el.getAttribute('data-' + currentLang);
+        }
+      });
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) {
+        const c = meta.getAttribute('data-' + currentLang + '-content');
+        if (c) meta.setAttribute('content', c);
+      }
+      document.documentElement.lang = currentLang;
+    }
+  </script>
 </body>
 </html>
