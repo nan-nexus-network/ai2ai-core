@@ -23,8 +23,12 @@ jobs:
         uses: trufflesecurity/trufflehog@e63326d6545de8f425d93ce24078c6e68d83f70e # v3.99.3
         with:
           path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
+          # KHÔNG đặt `base`/`head` ở đây. Khi cả hai được đặt, action tự so
+          # base_commit với head_commit; khi push vào nhánh mặc định thì hai
+          # commit này TRÙNG NHAU và action dừng với lỗi:
+          #   "BASE and HEAD commits are the same. TruffleHog won't scan anything."
+          # Bỏ chúng đi, action tự tính BASE=github.event.before, HEAD=after
+          # (và tự xử lý trường hợp push đầu tiên, before = 000...0).
           extra_args: --only-verified
 
   test-poc-and-bridge:
