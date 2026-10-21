@@ -180,7 +180,7 @@ def run_demo() -> None:
         "provider_did": "did:eco_b:asean_freight_node_09",
         "slot_available": True,
         "estimated_hours": 18,
-        "compliance_standard": "ASEAN_Digital_Masterplan_2030"
+        "compliance_standard": "ASEAN_Digital_Masterplan_2026_2030"
     }
 
     # Bước 4: Tạo digest demo; bước này không xác thực giao dịch hay nguồn gốc dữ liệu.

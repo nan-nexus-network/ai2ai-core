@@ -45,7 +45,7 @@ python examples/01-hello-agent/hello_bridge.py
 
 ### Kịch bản mô phỏng trong 60 giây:
 1. **Agent Hệ sinh thái A (chuẩn MCP-style)** phát một gói tin yêu cầu dịch vụ logistics ASEAN.
-2. **Node Cầu nối (ProtocolBridgeNode)** kiểm tra một số trường bắt buộc và so khớp một số chuỗi tĩnh trong gói tin; đây là kiểm tra minh họa, không phải biện pháp bảo mật.
+2. **Node Cầu nối (ProtocolBridgeNode)** kiểm tra *một số trường bắt buộc* và *so khớp một số chuỗi tĩnh* trong gói tin. **PoC hiện tại mới chỉ kiểm tra cấu trúc cơ bản, chưa phải JSON Schema Validator chuẩn** — và đây là kiểm tra minh họa, không phải biện pháp bảo mật.
 3. **Chuyển đổi ngữ nghĩa:** Dịch từ cấu trúc gọi công cụ (`tool_call`) sang cấu trúc giao việc liên vận (`standardized_task` kiểu A2A).
 4. **Tạo biên nhận demo:** Tính digest SHA-256 từ dữ liệu mẫu và phản hồi mô phỏng; digest không xác thực danh tính, nguồn gốc hoặc việc thực thi.
 

@@ -24,7 +24,7 @@
 * **Luận điểm chính:**
   * Việt Nam không cần đua làm trung tâm mô hình AI tỷ đô, mà có thể thử nghiệm vai trò **"Cầu nối Giao thức AI" (AI Protocol Bridge)**.
   * Làm "cầu nối" là đóng góp các mô-đun chuyển đổi (adapters) và quy tắc xác thực (validation rules) mã nguồn mở cho thế giới, không phải làm trung gian chuyển tiếp dữ liệu chính trị.
-  * Vị thế trung lập về kỹ thuật cùng các định hướng chính sách mới (Nghị quyết 57-NQ/TW, Quyết định 1671/QĐ-TTg, Quyết định 1528/QĐ-TTg, Tuyên bố Hà Nội về Hợp tác số) tạo cho Việt Nam một lợi thế hẹp nhưng thực chất trong ASEAN.
+  * Vị thế trung lập về kỹ thuật cùng các định hướng chính sách mới (Nghị quyết 57-NQ/TW, Quyết định 1671/QĐ-TTg, Quyết định 1528/QĐ-TTg, Hanoi Digital Declaration) tạo cho Việt Nam một lợi thế hẹp nhưng thực chất trong ASEAN.
 * **Bối cảnh chính sách quốc tế (bổ sung):** Trung Quốc đã ban hành chuẩn kết nối tác tử GB/Z 185-2026 (05/2026), đang đưa lên ITU-T; Việt Nam đã ký Bản ghi nhớ quản trị AI với Trung Quốc (2025) và Tuyên bố chung 4/2026 cam kết "khám phá cơ chế hợp tác mã nguồn mở"; ACFTA 3.0 (2025) và DEFA (dự kiến 2026) đang định hình khung pháp lý kinh tế số khu vực. Đây là mạng lưới chính sách thuận lợi cho một sáng kiến tầng giao thức như NAN AI2AI.
 * **NAN AI2AI-SI2SI là gì?** Đây là một hộp cát thử nghiệm mã nguồn mở (Apache 2.0) kèm bản demo chạy trong 60 giây nhằm kiểm chứng giả thuyết cầu nối giao thức — không phải là một giải pháp thương mại hoàn chỉnh.
 * **Mục đích của tài liệu:** Mời cộng đồng, chuyên gia và nhà quản lý góp ý, chỉ ra điểm sai. Sáng kiến này khởi đầu từ nguồn lực tự thân, công bố mở mã nguồn như một sự đóng góp nhỏ bé cho Kỷ nguyên Vươn mình - Kỷ nguyên AI của Việt Nam. Chúng tôi tuyệt đối không tự nhận vị thế dẫn dắt hay tiên phong, mà chỉ đóng vai trò là những người khởi xướng, sẵn sàng học hỏi và chờ đợi sự đồng hành tự nhiên từ cộng đồng khi giá trị thực tiễn được chứng minh.
@@ -254,8 +254,8 @@ Một câu hỏi tự nhiên là: *Tại sao lại là Việt Nam, mà không ph
 
 ### 4.2. Bốn trục "Cầu nối" gắn với điểm tựa chính sách
 
-1. **Trục 1 — Cầu nối Giao thức (Protocol Bridge):** Phù hợp với tinh thần **Tuyên bố Hà Nội về Hợp tác số** (tháng 01/2026 tại Hội nghị Bộ trưởng Số ASEAN - ADGMIN lần thứ 6) và định hướng kết nối trí tuệ trong kỷ nguyên số. Kỹ sư Việt Nam có thể đóng góp các bộ chuyển đổi (Adapters) mã nguồn mở nối giữa các chuẩn quốc tế.
-2. **Trục 2 — Cầu nối Hạ tầng Số ASEAN (ASEAN Digital Bridge):** Cụ thể hóa định hướng của **Nghị quyết số 57-NQ/TW (2024)** và **Kế hoạch tổng thể số ASEAN 2030 (ASEAN Digital Masterplan 2030)** để thử nghiệm liên vận các tác tử AI trong thương mại điện tử, du lịch và logistics nội khối.
+1. **Trục 1 — Cầu nối Giao thức (Protocol Bridge):** Phù hợp với tinh thần **Hanoi Digital Declaration (Tuyên bố Hà Nội về Hợp tác Số)** — được thông qua ngày **16/01/2026** tại Hội nghị Bộ trưởng Số ASEAN lần thứ 6 (**ADGMIN-6**), Hà Nội, Việt Nam, 15–16/01/2026 và định hướng kết nối trí tuệ trong kỷ nguyên số. Kỹ sư Việt Nam có thể đóng góp các bộ chuyển đổi (Adapters) mã nguồn mở nối giữa các chuẩn quốc tế.
+2. **Trục 2 — Cầu nối Hạ tầng Số ASEAN (ASEAN Digital Bridge):** Cụ thể hóa định hướng của **Nghị quyết số 57-NQ/TW (2024)** và **ASEAN Digital Masterplan 2026–2030 (ADM 2030)** để thử nghiệm liên vận các tác tử AI trong thương mại điện tử, du lịch và logistics nội khối.
 3. **Trục 3 — Cầu nối Nam – Bắc (Global South – Global North):** Bám sát chương trình hành động tại **Nghị quyết số 03/NQ-CP (2025)** và **Nghị quyết số 71/NQ-CP (2025)**, giúp các doanh nghiệp vừa và nhỏ (SMEs) tiếp cận mạng lưới AI bằng các giao thức mở, nhẹ, chi phí thấp.
 4. **Trục 4 — Cầu nối Nhân lực Thực thi (Talent Bridge):** Đồng bộ với các Quyết định của Thủ tướng Chính phủ năm 2026 về Chương trình quốc gia phát triển nguồn nhân lực AI và Chiến lược quốc gia về trí tuệ nhân tạo (**Quyết định 1528/QĐ-TTg** và **Quyết định 1671/QĐ-TTg**). Thay vì chỉ làm gia công mã nguồn theo yêu cầu, nhân lực Việt Nam có cơ hội dịch chuyển sang thiết kế kiến trúc tích hợp và kiểm thử an toàn liên vận (Multi-Agent Security).
 
@@ -326,7 +326,7 @@ Tài liệu này là một bản nháp mở. Bạn có thể tham gia theo bất
   1. Nghị quyết số 57-NQ/TW (2024) của Bộ Chính trị về đột phá phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số quốc gia.
   2. Nghị quyết số 03/NQ-CP (2025) của Chính phủ về Chương trình hành động thực hiện Nghị quyết số 57-NQ/TW.
   3. Nghị quyết số 71/NQ-CP (2025) của Chính phủ về Chương trình hành động thực hiện Nghị quyết số 57-NQ/TW.
-  4. Tuyên bố Hà Nội về Hợp tác số (Hanoi Declaration on Digital Cooperation) và Kế hoạch tổng thể số ASEAN 2030, thông qua tại Hội nghị Bộ trưởng Số ASEAN (ADGMIN) lần thứ 6 (tháng 01/2026).
+  4. **Hanoi Digital Declaration** (Tuyên bố Hà Nội về Hợp tác Số) và **ASEAN Digital Masterplan 2026–2030 (ADM 2030)** — được thông qua tại Hội nghị Bộ trưởng Số ASEAN lần thứ 6 (**ADGMIN-6**), Hà Nội, Việt Nam, **15–16/01/2026** (Tuyên bố được thông qua ngày **16/01/2026**). Nguồn: `https://asean.org/hanoi-digital-declaration-adaptive-asean-from-connectivity-to-connected-intelligence`
   5. Quyết định số 1528/QĐ-TTg (2026) và Quyết định số 1671/QĐ-TTg (2026) của Thủ tướng Chính phủ về Chương trình phát triển nhân lực AI và Chiến lược quốc gia về trí tuệ nhân tạo.
   6. **Biện pháp tạm thời quản lý dịch vụ trí tuệ nhân tạo tạo sinh** (Trung Quốc, hiệu lực 15/08/2023) — do bảy cơ quan đồng ban hành.
   7. **GB/Z 185-2026 — Loạt 7 tiêu chuẩn quốc gia về Kết nối liên thông giữa các tác tử AI** (Trung Quốc, công bố 22/05/2026) — Tổng cục Quản lý Thị trường (SAMR) và Tổng cục Tiêu chuẩn hóa (SAC).
