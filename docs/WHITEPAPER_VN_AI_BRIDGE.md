@@ -25,7 +25,7 @@
   * Việt Nam không cần đua làm trung tâm mô hình AI tỷ đô, mà có thể thử nghiệm vai trò **"Cầu nối Giao thức AI" (AI Protocol Bridge)**.
   * Làm "cầu nối" là đóng góp các mô-đun chuyển đổi (adapters) và quy tắc xác thực (validation rules) mã nguồn mở cho thế giới, không phải làm trung gian chuyển tiếp dữ liệu chính trị.
   * Vị thế trung lập về kỹ thuật cùng các định hướng chính sách mới (Nghị quyết 57-NQ/TW, Quyết định 1671/QĐ-TTg, Quyết định 1528/QĐ-TTg, Tuyên bố Hà Nội về Hợp tác số) tạo cho Việt Nam một lợi thế hẹp nhưng thực chất trong ASEAN.
-* **Bối cảnh chính sách quốc tế (bổ sung):** Trung Quốc đã ban hành chuẩn kết nối tác tử GB/Z 185-2026 (07/2026), đang đưa lên ITU-T; Việt Nam đã ký Bản ghi nhớ quản trị AI với Trung Quốc (2025) và Tuyên bố chung 4/2026 cam kết "khám phá cơ chế hợp tác mã nguồn mở"; ACFTA 3.0 (2025) và DEFA (dự kiến 2026) đang định hình khung pháp lý kinh tế số khu vực. Đây là mạng lưới chính sách thuận lợi cho một sáng kiến tầng giao thức như NAN AI2AI.
+* **Bối cảnh chính sách quốc tế (bổ sung):** Trung Quốc đã ban hành chuẩn kết nối tác tử GB/Z 185-2026 (05/2026), đang đưa lên ITU-T; Việt Nam đã ký Bản ghi nhớ quản trị AI với Trung Quốc (2025) và Tuyên bố chung 4/2026 cam kết "khám phá cơ chế hợp tác mã nguồn mở"; ACFTA 3.0 (2025) và DEFA (dự kiến 2026) đang định hình khung pháp lý kinh tế số khu vực. Đây là mạng lưới chính sách thuận lợi cho một sáng kiến tầng giao thức như NAN AI2AI.
 * **NAN AI2AI-SI2SI là gì?** Đây là một hộp cát thử nghiệm mã nguồn mở (Apache 2.0) kèm bản demo chạy trong 60 giây nhằm kiểm chứng giả thuyết cầu nối giao thức — không phải là một giải pháp thương mại hoàn chỉnh.
 * **Mục đích của tài liệu:** Mời cộng đồng, chuyên gia và nhà quản lý góp ý, chỉ ra điểm sai. Dự án khởi đầu từ nguồn lực tự thân (0 đồng), công bố mở mã nguồn như một sự đóng góp cho cộng đồng. Chúng tôi tin rằng khi giá trị thực tiễn của giao thức được chứng minh, sự đồng hành và hợp tác từ các cơ quan nhà nước, doanh nghiệp và xã hội sẽ tự nhiên đến, đúng với tiềm năng đóng góp của dự án cho nền kinh tế số quốc gia.
 * **Ba câu hỏi trọng tâm nhất (trong 12 câu hỏi ở Chương 6):**
@@ -104,7 +104,7 @@ Văn bản do bảy cơ quan Trung Quốc đồng ban hành (Viện Hàn lâm Vi
 
 #### 3.1.2. GB/Z 185-2026 — Bước ngoặt chiến lược về chuẩn kết nối tác tử
 
-Tháng 7/2026, Trung Quốc chính thức công bố loạt bảy tiêu chuẩn quốc gia **GB/Z 185-2026** với tiêu đề "Trí tuệ nhân tạo — Kết nối liên thông giữa các tác tử". Đây là diễn biến quan trọng nhất trong lĩnh vực giao thức tác tử kể từ sau khi MCP và A2A xuất hiện, và là nội dung mà bản thảo v0.1 của tài liệu này chưa đề cập.
+Tháng 5/2026 (ngày 22/05/2026), Trung Quốc chính thức công bố loạt bảy tiêu chuẩn quốc gia **GB/Z 185-2026** với tiêu đề "Trí tuệ nhân tạo — Kết nối liên thông giữa các tác tử". Đây là diễn biến quan trọng nhất trong lĩnh vực giao thức tác tử kể từ sau khi MCP và A2A xuất hiện, và là nội dung mà phiên bản v0.1 của tài liệu này chưa đề cập.
 
 Cấu trúc bảy phần của tiêu chuẩn:
 
@@ -182,7 +182,7 @@ Mạng lưới cam kết Việt — Trung tạo ra ba lợi thế cụ thể:
 
 #### 3.3.1. DEFA — Hiệp định khung kinh tế số ASEAN
 
-Hiệp định khung kinh tế số ASEAN (Digital Economy Framework Agreement — DEFA) đang trong quá trình đàm phán, dự kiến ký cuối năm 2026. Đến nay, đàm phán đã đạt hơn 70% tiến độ. Kỳ vọng của DEFA là nhân đôi quy mô kinh tế số khu vực lên khoảng 2.000 tỷ USD vào năm 2030.
+Hiệp định khung kinh tế số ASEAN (Digital Economy Framework Agreement — DEFA) đã kết thúc đàm phán (Tuyên bố của các quan chức kinh tế cấp cao ASEAN, 12/2025), dự kiến ký cuối năm 2026. Kỳ vọng của DEFA là nhân đôi quy mô kinh tế số khu vực lên khoảng 2.000 tỷ USD vào năm 2030.
 
 Hai nội dung của DEFA liên quan trực tiếp đến NAN AI2AI:
 
@@ -212,7 +212,7 @@ Từ các phân tích trên, có ba hàm ý cần được ghi nhận — và đ
 
 #### 3.4.1. Từ "khoảng trống" sang "chiến trường chuẩn hóa"
 
-Bản thảo v0.1 mô tả khoảng trống như một khoảng trống đơn thuần — nơi chưa ai đặt chân đến. Nhưng thực tế phức tạp hơn: Trung Quốc đã có GB/Z 185-2026 và đang xuất khẩu qua ITU-T; MCP/A2A của Mỹ đã có chỗ đứng; EU có luật riêng.
+Phiên bản v0.1 mô tả khoảng trống như một khoảng trống đơn thuần — nơi chưa ai đặt chân đến. Nhưng thực tế phức tạp hơn: Trung Quốc đã có GB/Z 185-2026 và đang xuất khẩu qua ITU-T; MCP/A2A của Mỹ đã có chỗ đứng; EU có luật riêng.
 
 Đây không phải là tin xấu. Đây là **tin tốt** — vì:
 
@@ -222,7 +222,7 @@ Bản thảo v0.1 mô tả khoảng trống như một khoảng trống đơn th
 
 #### 3.4.2. Cửa chính sách rộng hơn tưởng tượng
 
-Bản thảo v0.1 chỉ tham chiếu các nghị quyết đơn phương của Việt Nam (NQ 57, NQ 03, NQ 71, QĐ 1528, QĐ 1671). Nhưng thực tế, Việt Nam còn có:
+Phiên bản v0.1 chỉ tham chiếu các nghị quyết đơn phương của Việt Nam (NQ 57, NQ 03, NQ 71, QĐ 1528, QĐ 1671); bản v0.3-draft này bổ sung thêm các hiệp định và cam kết song phương. Cụ thể, Việt Nam còn có:
 
 - Bản ghi nhớ hợp tác CNTT Việt — Trung (2023)
 - Bản ghi nhớ quản trị AI Việt — Trung (2025)
@@ -231,7 +231,7 @@ Bản thảo v0.1 chỉ tham chiếu các nghị quyết đơn phương của Vi
 - ACFTA 3.0 (2025) với nội dung kinh tế số
 - DEFA (dự kiến 2026) — khung pháp lý kinh tế số ASEAN
 
-Đây là mạng lưới chính sách thuận lợi nhất mà một dự án tầng giao thức có thể có. Bản thảo v0.1 chưa đề cập đến bất kỳ hiệp định nào trong số này — đây là lỗ hổng lớn nhất về mặt chính sách.
+Đây là mạng lưới chính sách thuận lợi nhất mà một dự án tầng giao thức có thể có. Phiên bản v0.1 chưa đề cập đến bất kỳ hiệp định nào trong số này — đây là lỗ hổng lớn nhất về mặt chính sách mà bản v0.3-draft này đã khép lại.
 
 #### 3.4.3. Trung Quốc đã thừa nhận vấn đề — bằng chứng khách quan cho luận điểm của NAN
 
@@ -329,14 +329,14 @@ Tài liệu này là một bản nháp mở. Bạn có thể tham gia theo bất
   4. Tuyên bố Hà Nội về Hợp tác số (Hanoi Declaration on Digital Cooperation) và Kế hoạch tổng thể số ASEAN 2030, thông qua tại Hội nghị Bộ trưởng Số ASEAN (ADGMIN) lần thứ 6 (tháng 01/2026).
   5. Quyết định số 1528/QĐ-TTg (2026) và Quyết định số 1671/QĐ-TTg (2026) của Thủ tướng Chính phủ về Chương trình phát triển nhân lực AI và Chiến lược quốc gia về trí tuệ nhân tạo.
   6. **Biện pháp tạm thời quản lý dịch vụ trí tuệ nhân tạo tạo sinh** (Trung Quốc, hiệu lực 15/08/2023) — do bảy cơ quan đồng ban hành.
-  7. **GB/Z 185-2026 — Loạt 7 tiêu chuẩn quốc gia về Kết nối liên thông giữa các tác tử AI** (Trung Quốc, công bố 07/2026) — Bộ Công nghiệp và Công nghệ thông tin.
+  7. **GB/Z 185-2026 — Loạt 7 tiêu chuẩn quốc gia về Kết nối liên thông giữa các tác tử AI** (Trung Quốc, công bố 22/05/2026) — Tổng cục Quản lý Thị trường (SAMR) và Tổng cục Tiêu chuẩn hóa (SAC).
   8. **T/ZGCMCA 024-2025 — Tiêu chuẩn nhóm về giao diện tương tác AI Agent** (Trung Quốc, 02/2026).
   9. **Luật An ninh mạng Trung Quốc (sửa đổi)** (hiệu lực 01/01/2026) — bổ sung điều khoản quản trị AI.
   10. **Tuyên bố chung Việt Nam — Trung Quốc** ngày 17/04/2026 về tiếp tục làm sâu sắc quan hệ đối tác hợp tác chiến lược toàn diện.
   11. **Bản ghi nhớ hợp tác CNTT và Chuyển đổi số Việt Nam — Trung Quốc** (12/2023).
   12. **Bản ghi nhớ hợp tác phát triển và quản trị AI Việt Nam — Trung Quốc** (2025).
   13. **ACFTA 3.0 — Hiệp định Thương mại Tự do Trung Quốc — ASEAN nâng cấp** (ký 28/10/2025), bao gồm nội dung kinh tế số.
-  14. **DEFA — Hiệp định khung kinh tế số ASEAN** (dự kiến ký cuối 2026), đàm phán đạt hơn 70% tiến độ.
+  14. **DEFA — Hiệp định khung kinh tế số ASEAN** (dự kiến ký cuối 2026), đàm phán đã kết thúc, chờ ký.
 
 **Cách trích dẫn tài liệu này (How to Cite):**
 > NAN AI2AI-SI2SI (2026). *Việt Nam như cầu nối trong nền kinh tế AI2AI — Tài liệu thảo luận mở (v0.3-draft)*. GitHub: https://github.com/nan-nexus-network/ai2ai-core. Giấy phép: CC-BY 4.0.

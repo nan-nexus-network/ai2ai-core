@@ -1,4 +1,9 @@
-# Issue #2: [Cryptography] Bổ sung cơ chế chữ ký số (Ed25519 / HMAC) bên cạnh mã băm SHA-256 trong Verification Receipt
+---
+name: ISSUE 2 CRYPTOGRAPHY ED25519
+about: Cryptography: Bổ sung chữ ký số bất đối xứng (Ed25519 / HMAC) cho bản nhận xác thực SHA-256 trong Verification Receipt
+labels: [good first issue, enhancement, cryptography]
+assignees: []
+---
 
 **Nhãn (Labels):** `good first issue`, `enhancement`, `cryptography`
 

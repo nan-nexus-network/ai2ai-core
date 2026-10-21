@@ -1,4 +1,4 @@
-﻿# license_gate_allowlist.txt
+# license_gate_allowlist.txt
 #
 # Danh sach package DUOC PHEP xuat hien trong bao cao license gate.
 # Mot dong = mot ten package (khong phan biet hoa thuong).

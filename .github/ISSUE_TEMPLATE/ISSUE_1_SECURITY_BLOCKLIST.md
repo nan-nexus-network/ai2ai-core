@@ -1,4 +1,9 @@
-# Issue #1: [Security / PoC] Thay thế bộ lọc từ khóa tĩnh (Blocklist) bằng cơ chế kiểm tra cấu trúc an toàn hơn
+---
+name: ISSUE 1 SECURITY BLOCKLIST
+about: Security / PoC: Thay thế bộ lọc từ khóa cấm (Blocklist) bằng cơ chế kiểm tra cấu trúc an toàn hơn
+labels: [good first issue, help wanted, security]
+assignees: []
+---
 
 **Nhãn (Labels):** `good first issue`, `help wanted`, `security`
 

@@ -27,3 +27,10 @@ env/
 *.swp
 .DS_Store
 Thumbs.db
+
+# Tai lieu noi bo - chi danh cho Van phong Chu tich (khong public)
+MASTER_EXECUTION_BLUEPRINT_v1.0.md
+FINAL_CHECK.md
+
+# Mau Issue da chuyen sang .github/ISSUE_TEMPLATE/
+issues_templates/

@@ -1,4 +1,9 @@
-# Issue #3: [Testing] Viết bộ Unit Test cơ bản (unittest) cho luồng dịch MCP sang A2A
+---
+name: ISSUE 3 TESTING UNITTEST
+about: Testing: Viết bộ Unit Test bổ sung cho luồng dịch MCP sang A2A
+labels: [good first issue, testing]
+assignees: []
+---
 
 **Nhãn (Labels):** `good first issue`, `testing`
 

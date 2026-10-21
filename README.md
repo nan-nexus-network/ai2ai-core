@@ -40,7 +40,7 @@ python examples/01-hello-agent/hello_bridge.py
 
 ---
 
-## 📄 Tài Liệu Thảo Luận Mở (White Paper v0.1)
+## 📄 Tài Liệu Thảo Luận Mở (White Paper v0.3-draft)
 
 * **Đọc trực tiếp bản Markdown:** [docs/WHITEPAPER_VN_AI_BRIDGE.md](docs/WHITEPAPER_VN_AI_BRIDGE.md)
 * **Tải bản PDF đầy đủ (kèm Tóm tắt 1 trang cho người bận rộn):** [GitHub Releases](https://github.com/nan-nexus-network/ai2ai-core/releases)

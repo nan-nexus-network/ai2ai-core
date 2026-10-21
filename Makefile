@@ -19,11 +19,13 @@ help: ## Hien thi danh sach muc tieu
 license-check: ## Cong kiem tra license
 	$(PYTHON) scripts/license_gate.py
 
-license-report: ## Sinh lai THIRD_PARTY_NOTICES.md
+license-report: ## Xuat danh sach package ra file RIENG (khong ghi de THIRD_PARTY_NOTICES.md)
 	$(PIP) install --quiet pip-licenses
-	pip-licenses --format=markdown --with-urls > THIRD_PARTY_NOTICES.md
+	mkdir -p license_scan
+	pip-licenses --format=markdown --with-urls > license_scan/pip_licenses.md
 
-license-notices: ## Sinh lai THIRD_PARTY_NOTICES.md qua license_gate.py
+license-notices: ## Sinh lai THIRD_PARTY_NOTICES.md qua license_gate.py (sao luu ban cu)
+	cp THIRD_PARTY_NOTICES.md THIRD_PARTY_NOTICES.md.bak
 	$(PYTHON) scripts/license_gate.py --update-notices
 
 scan-license: ## Quet ma nguon bang ScanCode
@@ -37,4 +39,7 @@ demo: ## Chay demo
 	$(PYTHON) examples/01-hello-agent/hello_bridge.py
 
 clean: ## Xoa file sinh ra
+	@echo "Cleaning generated files (Windows + Unix)"
+	del /q license_scan.json license_gate_report.json 2>nul || true
 	rm -f license_scan.json license_gate_report.json
+	rm -rf license_scan
