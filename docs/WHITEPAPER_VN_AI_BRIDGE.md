@@ -229,7 +229,7 @@ Phiên bản v0.1 chỉ tham chiếu các nghị quyết đơn phương của Vi
 - Trung tâm Hợp tác AI Việt — Trung tại Hà Nội (2025)
 - Tuyên bố chung Việt — Trung 4/2026 cam kết hợp tác mã nguồn mở
 - ACFTA 3.0 (2025) với nội dung kinh tế số
-- DEFA (dự kiến 2026) — khung pháp lý kinh tế số ASEAN
+- DEFA (đã kết thúc đàm phán, đang chờ ký kết chính thức; dự kiến 2026) — khung pháp lý kinh tế số ASEAN
 
 Đây là mạng lưới chính sách thuận lợi nhất mà một dự án tầng giao thức có thể có. Phiên bản v0.1 chưa đề cập đến bất kỳ hiệp định nào trong số này — đây là lỗ hổng lớn nhất về mặt chính sách mà bản v0.3-draft này đã khép lại.
 

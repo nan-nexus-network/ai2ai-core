@@ -18,7 +18,7 @@
 
 | Chỉ số | Ngưỡng | Lệnh kiểm tra | Nguồn |
 | :--- | :--- | :--- | :--- |
-| Unit test PASS | **6/6** | `python -m unittest discover -s tests -v` | `tests/test_hello_bridge.py` |
+| Unit test PASS | **10/10** | `python -m unittest discover -s tests -v` | `tests/test_hello_bridge.py` |
 | Demo chạy được | **exit 0** | `python examples/01-hello-agent/hello_bridge.py` | CI `ci.yml` |
 | Thời gian demo | **< 60 giây** (thực tế: **0,06 giây**) | đo tại CI | CI `ci.yml` |
 | Dependency ngoài stdlib | **0** | `python scripts/license_gate.py` | CI `license.yml` |
@@ -78,7 +78,7 @@ Phần này tồn tại để bảo đảm tài liệu này **không phải bả
 
 ```
 Tuần 2026-W43 · Issue mới: N · Đã trả lời: N/N · PR mới: N · Hợp nhất: N
-Kỹ thuật: test 6/6 PASS · demo exit 0 (0,06s) · license gate exit 0 · 0 rò rỉ secret
+Kỹ thuật: test 10/10 PASS · demo exit 0 (0,06s) · license gate exit 0 · 0 rò rỉ secret
 Việc tuần sau: <2 dòng>
 Cần hỗ trợ: <1 dòng, nếu có>
 ```

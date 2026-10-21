@@ -11,7 +11,7 @@
 
 | # | Kiểm tra | Lệnh | Kỳ vọng | ✅ |
 | :---: | :--- | :--- | :--- | :--- |
-| A1 | Unit test | `python -m unittest discover -s tests -v` | 6/6 PASS | ☐ |
+| A1 | Unit test | `python -m unittest discover -s tests -v` | 10/10 PASS | ☐ |
 | A2 | Demo | `python examples/01-hello-agent/hello_bridge.py` | exit 0 | ☐ |
 | A3 | Cổng license | `python scripts/license_gate.py` | exit 0, 0 blocked | ☐ |
 | A4 | Cú pháp | `python -m py_compile <mọi file .py>` | không lỗi | ☐ |

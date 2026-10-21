@@ -20,23 +20,41 @@ python examples/01-hello-agent/hello_bridge.py
 import json
 import uuid
 import hashlib
+import logging
 import sys
 from datetime import datetime, timezone
-from typing import Tuple, Dict, List, Any
+from typing import Tuple, Dict, List, Any, Optional
 
-# Hỗ trợ hiển thị tiếng Việt UTF-8 chuẩn xác trên mọi console (Windows cp1252/cp437, Linux, macOS)
-if hasattr(sys.stdout, "reconfigure"):
+logger = logging.getLogger(__name__)
+
+
+def decode_json_packet(raw_json: str) -> Optional[Dict[str, Any]]:
+    """Decode a JSON object, logging malformed or non-object input without echoing it."""
+    if not isinstance(raw_json, str):
+        logger.warning("Rejected JSON input because it was not text")
+        return None
+
     try:
-        sys.stdout.reconfigure(encoding="utf-8")
-    except Exception:
-        pass
+        packet = json.loads(raw_json)
+    except json.JSONDecodeError as exc:
+        logger.warning(
+            "Rejected malformed JSON input at line %d, column %d",
+            exc.lineno,
+            exc.colno,
+        )
+        return None
+
+    if not isinstance(packet, dict):
+        logger.warning("Rejected JSON input because the top-level value was not an object")
+        return None
+
+    return packet
 
 
 class ProtocolBridgeNode:
     """
-    Mô phỏng Node Cầu nối (Bridge) trung lập:
-    Giúp Agent Hệ sinh thái A (kiểu MCP/Tool-centric) và Agent Hệ sinh thái B (kiểu A2A/Task-centric)
-    kiểm tra hợp đồng dữ liệu, lọc mẫu câu lệnh nguy hiểm và cấp biên nhận thực thi (Receipt).
+    Mô phỏng cục bộ việc kiểm tra một số trường, ánh xạ dữ liệu và tạo digest mẫu.
+    Không kết nối hoặc xác thực các Agent ở hệ sinh thái khác nhau.
     """
 
     @staticmethod
@@ -105,11 +123,7 @@ class ProtocolBridgeNode:
     def issue_verification_receipt(
         bridged_packet: Dict[str, Any], execution_output: Dict[str, Any]
     ) -> Dict[str, Any]:
-        """
-        Tạo biên nhận kiểm chứng (Verification Receipt) bằng mã băm SHA-256.
-        Lưu ý: SHA-256 đảm bảo tính toàn vẹn (Integrity), cần bổ sung chữ ký số Ed25519
-        ở bản tiếp theo để đảm bảo tính chống chối bỏ danh tính (Non-repudiation).
-        """
+        """Create a demo receipt with a SHA-256 digest; this does not verify identity or execution."""
         raw_record = (
             json.dumps(bridged_packet, sort_keys=True) + json.dumps(execution_output, sort_keys=True)
         )
@@ -118,16 +132,16 @@ class ProtocolBridgeNode:
         return {
             "receipt_id": f"rcpt_{uuid.uuid4().hex[:10]}",
             "trace_id": bridged_packet["trace_id"],
-            "status": "VERIFIED_BY_NEUTRAL_BRIDGE",
+            "status": "DEMO_DIGEST_ONLY",
             "sha256_proof": proof_hash,
             "result_data": execution_output
         }
 
 
 def run_demo() -> None:
-    print("=" * 74)
-    print("   THỬ NGHIỆM 60 GIÂY: CẦU NỐI GIAO THỨC LIÊN VẬN (NAN AI2AI BRIDGE POC)")
-    print("=" * 74)
+    logger.info("%s", "=" * 74)
+    logger.info("THỬ NGHIỆM 60 GIÂY: CẦU NỐI GIAO THỨC LIÊN VẬN (NAN AI2AI BRIDGE POC)")
+    logger.info("%s", "=" * 74)
 
     # Bước 1: Agent từ Hệ sinh thái A phát tín hiệu bằng chuẩn riêng của nó
     ecosystem_a_packet = {
@@ -141,21 +155,25 @@ def run_demo() -> None:
             }
         }
     }
-    print("\n[1] Gói tin gốc từ Agent Hệ sinh thái A (Chuẩn MCP-Style):")
-    print(json.dumps(ecosystem_a_packet, indent=2, ensure_ascii=False))
+    logger.info("[1] Gói tin mẫu từ Agent Hệ sinh thái A (MCP-style):")
+    decoded_packet = decode_json_packet(json.dumps(ecosystem_a_packet, ensure_ascii=False))
+    if decoded_packet is None:
+        logger.error("Demo stopped because the sample packet could not be decoded")
+        return
+    logger.info("%s", json.dumps(decoded_packet, indent=2, ensure_ascii=False))
 
     # Bước 2: Qua Cầu nối NAN AI2AI kiểm tra toàn bộ packet & dịch chuẩn
     bridge = ProtocolBridgeNode()
     is_valid, validation_msg = bridge.sanitize_and_validate(
-        full_packet=ecosystem_a_packet, required_arg_fields=["route", "cargo_type"]
+        full_packet=decoded_packet, required_arg_fields=["route", "cargo_type"]
     )
     if not is_valid:
-        print(f"\n[!] Cầu nối từ chối gói tin: {validation_msg}")
+        logger.warning("Cầu nối từ chối gói tin mẫu: %s", validation_msg)
         return
 
-    bridged_packet = bridge.translate_mcp_to_a2a(ecosystem_a_packet)
-    print("\n[2] Cầu nối đã kiểm tra toàn gói tin & chuyển đổi sang chuẩn Liên vận:")
-    print(json.dumps(bridged_packet, indent=2, ensure_ascii=False))
+    bridged_packet = bridge.translate_mcp_to_a2a(decoded_packet)
+    logger.info("[2] Gói tin sau kiểm tra cấu trúc PoC và chuyển đổi:")
+    logger.info("%s", json.dumps(bridged_packet, indent=2, ensure_ascii=False))
 
     # Bước 3: Agent từ Hệ sinh thái B nhận việc và trả kết quả
     ecosystem_b_response = {
@@ -165,16 +183,25 @@ def run_demo() -> None:
         "compliance_standard": "ASEAN_Digital_Masterplan_2030"
     }
 
-    # Bước 4: Cầu nối cấp biên nhận xác thực (Verification Receipt)
+    # Bước 4: Tạo digest demo; bước này không xác thực giao dịch hay nguồn gốc dữ liệu.
     receipt = bridge.issue_verification_receipt(bridged_packet, ecosystem_b_response)
-    print("\n[3] Biên nhận hoàn tất giao dịch AI2AI (Có mã băm SHA-256 kiểm chứng):")
-    print(json.dumps(receipt, indent=2, ensure_ascii=False))
+    logger.info("[3] Biên nhận demo có mã băm SHA-256 (không xác thực nguồn gốc):")
+    logger.info("%s", json.dumps(receipt, indent=2, ensure_ascii=False))
 
-    print("\n" + "=" * 74)
-    print("   HOÀN TẤT: Hai Agent khác hệ sinh thái đã phối hợp thành công qua Cầu nối.")
-    print("   Đọc tài liệu thảo luận & phản biện tại: docs/WHITEPAPER_VN_AI_BRIDGE.md")
-    print("=" * 74)
+    logger.info("%s", "=" * 74)
+    logger.info("HOÀN TẤT DEMO CỤC BỘ: dữ liệu mẫu và phản hồi mô phỏng đã đi qua các hàm PoC.")
+    logger.info("Tài liệu thảo luận: docs/WHITEPAPER_VN_AI_BRIDGE.md")
+    logger.info("%s", "=" * 74)
 
 
 if __name__ == "__main__":
+    if hasattr(sys.stderr, "reconfigure"):
+        try:
+            sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
+        except (OSError, ValueError):
+            pass
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    )
     run_demo()

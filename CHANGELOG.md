@@ -13,7 +13,7 @@ Dự án tuân theo [Semantic Versioning](https://semver.org/lang/vi/). Mọi m�
 ### Bổ sung
 - Khung pháp lý đầy đủ: `LICENSE` (Apache 2.0), `CLA.md`, `TRADEMARK.md`, `HANDOVER.md`, `THIRD_PARTY_NOTICES.md`
 - PoC mẫu 60 giây (`examples/01-hello-agent/hello_bridge.py`) — 100% thư viện chuẩn Python, 0 dependency
-- 6 unit test cho luồng dịch MCP → A2A, biên nhận SHA-256, chống prompt injection
+- 10 unit test cho luồng dịch MCP → A2A, biên nhận SHA-256, chống prompt injection và kiểm tra JSON đầu vào
 - Tài liệu thảo luận mở 7 chương với 12 câu hỏi mở cho cộng đồng
 - CI: quét secret (TruffleHog, pin theo SHA) + test trên Python 3.8/3.10/3.12 + cổng kiểm tra license
 - Cổng kiểm tra license: `scripts/license_gate.py` + allowlist + `make license-check`

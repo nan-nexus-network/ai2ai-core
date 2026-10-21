@@ -17,7 +17,7 @@
 
 <!-- Quan trọng: cho biết bạn đã chạy gì và kết quả ra sao. -->
 
-- [ ] `python -m unittest discover -s tests -v` — 6/6 PASS
+- [ ] `python -m unittest discover -s tests -v` — 10/10 PASS
 - [ ] `python examples/01-hello-agent/hello_bridge.py` — exit 0
 - [ ] `python scripts/license_gate.py` — exit 0
 - [ ] Tài liệu cập nhật (nếu thay đổi hành vi công khai)

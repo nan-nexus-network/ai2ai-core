@@ -150,4 +150,4 @@ Tuân theo [04_RISK_REGISTER](04_RISK_REGISTER_AND_CONTINGENCY.md) mục 3. Tóm
 | 5 | `CHANGELOG.md` đã ghi "Chưa phát hành" | ☐ |
 | 6 | Đã đọc [05_CONTRIBUTOR_ONBOARDING](05_CONTRIBUTOR_ONBOARDING.md) và biết sẽ trả lời Issue thế nào | ☐ |
 
-> **Nếu chưa đủ 6/6 — chưa đăng bài nào.** Đăng bài rồi mà không có nơi nhận phản hồi thì chỉ tạo ấn tượng xấu.
+> **Nếu chưa đủ 10/10 — chưa đăng bài nào.** Đăng bài rồi mà không có nơi nhận phản hồi thì chỉ tạo ấn tượng xấu.

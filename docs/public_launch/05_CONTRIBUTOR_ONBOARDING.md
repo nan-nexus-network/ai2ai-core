@@ -11,7 +11,7 @@
 | Chạy demo lần đầu | **1 phút** |
 | Đọc tóm tắt whitepaper (chương 1 + tóm tắt) | **10 phút** |
 | Đọc whitepaper đầy đủ (7 chương) | **45 phút** |
-| Chạy 6 unit test | **30 giây** |
+| Chạy 10 unit test | **30 giây** |
 | Gửi PR đầu tiên | **1–3 giờ** (tùy đầu việc) |
 
 > Dự án **không có** yêu cầu cài đặt gì ngoài Python 3.8+. Không có `pip install`. Không có
@@ -25,7 +25,7 @@
 git clone https://github.com/nan-nexus-network/ai2ai-core.git
 cd ai2ai-core
 python examples/01-hello-agent/hello_bridge.py     # xem kịch bản 4 bước
-python -m unittest discover -s tests -v            # phải ra 6/6 OK
+python -m unittest discover -s tests -v            # phải ra 10/10 OK
 python scripts/license_gate.py                     # phải ra exit 0
 ```
 
@@ -70,7 +70,7 @@ Cả ba lệnh trên phải chạy được **trên máy sạch**, không cần 
 ## 5. Kiểm tra trước khi gửi
 
 ```bash
-python -m unittest discover -s tests -v     # 6/6 PASS
+python -m unittest discover -s tests -v     # 10/10 PASS
 python examples/01-hello-agent/hello_bridge.py   # exit 0
 python scripts/license_gate.py              # exit 0
 make test        # tương đương lệnh trên

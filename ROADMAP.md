@@ -19,7 +19,7 @@
 
 | Hạng mục | Trạng thái |
 | :--- | :--- |
-| Mã PoC 60 giây + 6 unit test | ✅ **Hoàn tất** |
+| Mã PoC 60 giây + 10 unit test | ✅ **Hoàn tất** |
 | Tài liệu thảo luận mở (7 chương, 12 câu hỏi mở) | ✅ **Hoàn tất** — `v0.4-draft` |
 | Khung pháp lý (LICENSE, CLA, TRADEMARK, HANDOVER) | ✅ Hoàn tất |
 | CI: quét secret + test 3 phiên bản Python + license gate | ✅ Hoàn tất |

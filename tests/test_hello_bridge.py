@@ -22,6 +22,7 @@ hello_bridge = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(hello_bridge)
 
 ProtocolBridgeNode = hello_bridge.ProtocolBridgeNode
+decode_json_packet = hello_bridge.decode_json_packet
 
 
 class TestProtocolBridgeNode(unittest.TestCase):
@@ -134,6 +135,31 @@ class TestProtocolBridgeNode(unittest.TestCase):
         # Cùng một đầu vào và đầu ra phải cho ra đúng một mã băm SHA-256 (Deterministic)
         self.assertEqual(receipt_1["sha256_proof"], receipt_2["sha256_proof"])
         self.assertEqual(len(receipt_1["sha256_proof"]), 64)
+        self.assertEqual(receipt_1["status"], "DEMO_DIGEST_ONLY")
+
+    def test_07_decode_json_object(self) -> None:
+        packet = decode_json_packet('{"context_id":"agent-1"}')
+        self.assertEqual(packet, {"context_id": "agent-1"})
+
+    def test_08_malformed_json_is_rejected_and_logged(self) -> None:
+        with self.assertLogs(hello_bridge.logger, level="WARNING") as captured:
+            packet = decode_json_packet('{"context_id":')
+
+        self.assertIsNone(packet)
+        self.assertIn("malformed JSON", captured.output[0])
+        self.assertNotIn('{"context_id":', captured.output[0])
+
+    def test_09_non_object_json_is_rejected(self) -> None:
+        with self.assertLogs(hello_bridge.logger, level="WARNING"):
+            packet = decode_json_packet('["not", "an object"]')
+
+        self.assertIsNone(packet)
+
+    def test_10_non_text_json_input_is_rejected(self) -> None:
+        with self.assertLogs(hello_bridge.logger, level="WARNING"):
+            packet = decode_json_packet(None)
+
+        self.assertIsNone(packet)
 
 
 if __name__ == "__main__":
