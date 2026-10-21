@@ -53,6 +53,13 @@ python examples/01-hello-agent/hello_bridge.py
 3. **Chuyển đổi ngữ nghĩa:** Dịch từ cấu trúc gọi công cụ (`tool_call`) sang cấu trúc giao việc liên vận (`standardized_task` kiểu A2A).
 4. **Tạo biên nhận demo:** Tính digest SHA-256 từ dữ liệu mẫu và phản hồi mô phỏng; digest không xác thực danh tính, nguồn gốc hoặc việc thực thi.
 
+### Demo 2: Agent-to-Agent Chat (P2P)
+Dành cho các cá nhân muốn thử nghiệm kết nối AI của mình với AI của người khác. Zero dependencies, chạy trong 60 giây.
+```bash
+python examples/02-agent-to-agent-chat/agent_chat.py
+```
+*(Mô phỏng cảnh Alice gửi yêu cầu tìm nhà cung cấp qua NAN Bridge, Bob xử lý và trả kết quả kèm Biên nhận SHA-256).*
+
 ---
 
 ## 📄 Tài Liệu Thảo Luận Mở (White Paper v0.4-draft)
