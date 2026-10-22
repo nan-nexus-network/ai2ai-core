@@ -34,6 +34,8 @@ SUA DOI SO VAI BAN GOC CUA LENH (ly do ghi ngay trong file):
   4. Phan kiem tra PDF da tach rieng (khong quet chung noi dung HTML) de tranh bao dong gia.
 """
 import hashlib
+import html as html_lib
+import io
 import json
 import os
 import re
@@ -139,6 +141,69 @@ def io_open(path):
         return fh.read()
 
 
+# --- Dong bo i18n-dict.js <-> index.html -------------------------------------
+# Tu dien la ban may-doc cua noi dung trang. Moi chuoi trong tu dien PHAI
+# khop 100% voi chuoi hien thi trong index.html (sau khi bo the HTML va
+# chuan hoa dau nhay / khoang trang). Tu dien va trang la HAI ban sao cua
+# cung mot noi dung - cong kiem tra nay chan chung troi.
+DICT_ALLOWED_NOT_ON_PAGE = ("cta_video", "sim_default",
+                             "meta_title", "meta_desc")
+
+
+def _norm(s):
+    s = re.sub(r"<[^>]+>", "", s)
+    s = s.replace("`", "")
+    s = html_lib.unescape(s)
+    for a, b in (("\u201c", '"'), ("\u201d", '"'), ("\u2018", "'"), ("\u2019", "'"),
+                 ("\u2014", "-"), ("\u2013", "-"), ("\n", " ")):
+        s = s.replace(a, b)
+    for a, b in (("\u201c", '"'), ("\u201d", '"'), ("\u2018", "'"), ("\u2019", "'"),
+                 ("\u2014", "-"), ("\u2013", "-")):
+        s = s.replace(a, b)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+FACT_NUMBER = re.compile(r"\d+(?:[.,]\d+)*")
+FACT_ID = re.compile(r"\b[A-Z][A-Z0-9]*(?:[./-][A-Za-z0-9]+)*\b")
+
+
+def check_i18n_sync(index_html_path):
+    """Kiem tra moi CON SO va MA DINH DANH trong src/i18n-dict.js co tren trang."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    dict_path = os.path.join(script_dir, "..", "src", "i18n-dict.js")
+    if not os.path.isfile(dict_path):
+        return {"status": "SKIP", "reason": "khong tim thay src/i18n-dict.js"}
+    d = io.open(dict_path, encoding="utf-8").read()
+    h = io.open(index_html_path, encoding="utf-8").read()
+    hn = _norm(h)
+    problems = []
+    checked = 0
+    for m in re.finditer(r'^    (\w+): "((?:[^"\\]|\\.)*)"', d, re.M):
+        key, val = m.group(1), m.group(2)
+        if key in DICT_ALLOWED_NOT_ON_PAGE:
+            continue
+        plain = _norm(val)
+        if len(plain) < 20:
+            continue
+        checked += 1
+        if plain in hn:
+            continue
+        # ban cong don: kiem tra tung CON SO + MA dinh danh co nam tren trang
+        facts = set(FACT_NUMBER.findall(plain))
+        facts |= {t for t in FACT_ID.findall(plain)
+                  if len(t) >= 3 and t.upper() == t
+                  and not t.startswith("Q") is False or
+                  (len(t) >= 3 and t.upper() == t and any(c.isdigit() for c in t))}
+        missing = sorted(f for f in facts if f not in hn)
+        if missing:
+            problems.append({"key": key, "missing_facts": missing[:8],
+                             "value": plain[:110]})
+    return {"dict_file": os.path.relpath(dict_path, script_dir),
+            "strings_checked": checked,
+            "problems": problems,
+            "allowed_not_on_page": list(DICT_ALLOWED_NOT_ON_PAGE),
+            "status": "PASS" if not problems else "FAIL_CLOSED"}
+
 def scan_content(text, source_label):
     banned_hits = []
     for pat in BANNED_PATTERNS:
@@ -207,9 +272,10 @@ def verify_local_bundle(index_html_path):
     # khong co script theo doi ben ngoai
     external_scripts = re.findall(r'<script[^>]+src="(https?://[^"]+)"', bundle)
 
+    sync_res = check_i18n_sync(index_html_path)
     ok = (scan_res["status"] == "PASS" and not missing_colors and not missing_sections
           and not missing_langs and has_sim and not per_file
-          and not external_scripts)
+          and not external_scripts and sync_res.get("status") in ("PASS", "SKIP"))
     return {
         "file": index_html_path,
         "size_bytes": len(html.encode("utf-8")),
@@ -222,6 +288,7 @@ def verify_local_bundle(index_html_path):
         "has_lang_deeplink": has_lang_param,
         "has_sha256_simulator": has_sim,
         "external_script_src": external_scripts,
+        "i18n_sync": sync_res,
         "status": "PASS" if ok else "FAIL_CLOSED",
     }
 
