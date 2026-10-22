@@ -1,4 +1,4 @@
-# Media Kit — NAN AI2AI
+# Media Kit - NAN AI2AI
 
 *Cập nhật lần cuối: 2026-10-21 | Phiên bản: v0.4-draft*
 
@@ -29,7 +29,7 @@ NAN AI2AI là một sáng kiến cá nhân, độc lập, phi lợi nhuận, do 
 ### Story 1: "Người không biết code dùng AI viết giao thức AI"
 - **Góc tiếp cận:** Câu chuyện về sự dân chủ hóa công nghệ. Một người tay ngang có thể dùng AI để tạo ra sản phẩm kỹ thuật, dù sản phẩm còn sơ khai.
 - **Trích dẫn có thể dùng:** *"Tôi không mở dự án này để chứng minh rằnh mình biết viết code. Tôi mở nó để một ý tưởng có cơ hội được thử thách, cải thiện và phát triển vượt xa khả năng của một cá nhân."*
-- **Góc phản biện cần nêu:** Liệu đây có phải là "vibe coding" — một xu hướng đang bị cộng đồng kỹ sư toàn cầu chỉ trích? (Xem ADR-001).
+- **Góc phản biện cần nêu:** Liệu đây có phải là "vibe coding" - một xu hướng đang bị cộng đồng kỹ sư toàn cầu chỉ trích? (Xem ADR-001).
 
 ### Story 2: "Việt Nam có thể là cầu nối giao thức giữa AI Mỹ và AI Trung Quốc?"
 - **Góc tiếp cận:** Câu chuyện địa chính trị công nghệ. Khi MCP (Mỹ) và GB/Z 185 (Trung Quốc) cạnh tranh, một quốc gia trung lập như Việt Nam có thể là nơi thử nghiệm tầng kết nối.
@@ -50,7 +50,7 @@ NAN AI2AI là một sáng kiến cá nhân, độc lập, phi lợi nhuận, do 
 > *"Không. Toàn bộ chi phí là 0 VND (Zero Cash), do cá nhân tôi tự bỏ. Chúng tôi cam kết không xin tiền, không gọi vốn, không bán khóa học."*
 
 **Q3: Anh/chị không biết code, sao viết được tài liệu kỹ thuật này?**
-> *"Tôi dùng AI để tổng hợp, cấu trúc và viết bản nháp. Tôi đối chiếu thủ công từng trích dẫn chính sách (Nghị quyết 57, QĐ 1671, v.v.). Tôi không giấu điều này — nó ghi ngay trang đầu tài liệu. Tôi không phải chuyên gia, tôi là người kết nối và đặt vấn đề."*
+> *"Tôi dùng AI để tổng hợp, cấu trúc và viết bản nháp. Tôi đối chiếu thủ công từng trích dẫn chính sách (Nghị quyết 57, QĐ 1671, v.v.). Tôi không giấu điều này - nó ghi ngay trang đầu tài liệu. Tôi không phải chuyên gia, tôi là người kết nối và đặt vấn đề."*
 
 **Q4: Tại sao lại là Việt Nam, không phải Singapore?**
 > *"Singapore mạnh về tài chính nhưng gắn chặt với hệ sinh thái phương Tây. Malaysia mạnh về data center nhưng chưa có chiến lược giao thức. Việt Nam trung lập hơn về giao thức, có quan hệ kỹ thuật với cả Mỹ, EU, Nhật, Hàn, Trung Quốc. Đây là lợi thế hẹp nhưng thật."*
@@ -81,6 +81,21 @@ Mọi thông tin trong Media Kit này có thể kiểm chứng độc lập:
 - **Lịch sử commit:** Xem toàn bộ lịch sử phát triển từ commit đầu tiên.
 - **Các văn bản chính sách:** Đối chiếu trên `vanban.chinhphu.vn` và `asean.org`.
 
+### 6.0. Tải bản PDF (Release v0.2.0)
+
+Bốn tệp PDF chính thức, tải trực tiếp, không cần đăng ký:
+
+| Tệp | Dùng cho | Trang |
+|:---|:---|--:|
+| [`NAN_AI2AI_Whitepaper_VN.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/NAN_AI2AI_Whitepaper_VN.pdf) | Báo cáo chuyên đề tiếng Việt, bản đầy đủ 7 chương + Phụ lục A + 17 mục tham khảo | 15 |
+| [`POLICY_BRIEF_2PAGES_VI.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/POLICY_BRIEF_2PAGES_VI.pdf) | Tóm tắt 2 trang, định dạng hành chính, dùng khi gửi cơ quan quản lý nhà nước và hiệp hội | 2 |
+| [`ONE_PAGE_SUMMARY_EN.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/ONE_PAGE_SUMMARY_EN.pdf) | Bản tóm tắt tiếng Anh, dùng khi gửi báo chí quốc tế và đối tác nước ngoài | 2 |
+| [`NAN_AI2AI_ZH_Whitepaper_SelfContained.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/NAN_AI2AI_ZH_Whitepaper_SelfContained.pdf) | Bản tiếng Trung tự chứa, không hyperlink, kèm sơ đồ 2 lớp và bảng 23 văn bản | 5 |
+
+Trang phát hành: <https://github.com/nan-nexus-network/ai2ai-core/releases/tag/v0.2.0>
+
+> Bản tiếng Trung được dựng cho kênh WeChat, nơi đường dẫn ra ngoài bị chặn. Vì vậy nó in link dạng chữ thuần ở chân trang và **không nhúng hyperlink**. Nó cũng được gắn nhãn AI theo quy định về nội dung sinh tự động bằng trí tuệ nhân tạo.
+
 ### 6.1. Danh mục văn bản đã được đối chiếu (17 mục)
 
 Bảng dưới đây liệt kê từng văn bản được trích dẫn trong Tài liệu thảo luận, kèm **ngày ban hành** và **nơi kiểm chứng**. Tất cả đã được đối chiếu lại với nguồn gốc ngày 22/10/2026. Bản đầy đủ kèm bảng xác minh nằm ở [`WHITEPAPER_VN_AI_BRIDGE.md`](WHITEPAPER_VN_AI_BRIDGE.md), mục "PHỤ LỤC & TÀI LIỆU THAM KHẢO".
@@ -95,7 +110,7 @@ Bảng dưới đây liệt kê từng văn bản được trích dẫn trong T�
 | 6 | Quyết định 1671/QĐ-TTg (chiến lược quốc gia AI) | 28/08/2026 | `en.baochinhphu.vn` |
 | 7 | 《生成式人工智能服务管理暂行办法》 (Trung Quốc) | công bố 13/07/2023, hiệu lực 15/08/2023 | `cac.gov.cn` |
 | 8 | GB/Z 185.1–185.7-2026 《人工智能 智能体互联》 (Trung Quốc) | 22/05/2026 | `openstd.samr.gov.cn` |
-| 9 | T/ZGCMCA 024—2025 《人工智能智能体互操作性接口规范》 | 07/02/2026 | `ttbz.org.cn` |
+| 9 | T/ZGCMCA 024-2025 《人工智能智能体互操作性接口规范》 | 07/02/2026 | `ttbz.org.cn` |
 | 10 | Luật An ninh mạng Trung Quốc (sửa đổi) | hiệu lực 01/01/2026 | văn bản chính thức |
 | 11 | Tuyên bố chung Việt Nam – Trung Quốc | 17/04/2026 | `mae.gov.vn` |
 | 12 | Bản ghi nhớ hợp tác CNTT & chuyển đổi số (cấp Bộ) | 12/2023 | VJST, hướng dẫn MOFCOM 2025 |
@@ -105,11 +120,11 @@ Bảng dưới đây liệt kê từng văn bản được trích dẫn trong T�
 | 16 | e-Conomy SEA 2024 (Google, Temasek, Bain) | 11/2024 | `economysea.withgoogle.com` |
 | 17 | Economic Impact Report (Access Partnership & Google) | 14/11/2024 | `accesspartnership.com` |
 
-> **Ba điểm đã được sửa trong đợt đối chiếu này:** (1) mục 17 — nhà thực hiện báo cáo là **Access Partnership**, không phải NIC; (2) mục 8 — tên chính thức là **《人工智能 智能体互联》** (Agent interconnection) và đây là **7 văn bản kỹ thuật chỉ dẫn chuẩn hoá quốc gia**, ban hành theo Công bố 2026 số 22 của SAMR và SAC; (3) mục 9 — tên đầy đủ là **《人工智能智能体互操作性接口规范》**.
+> **Ba điểm đã được sửa trong đợt đối chiếu này:** (1) mục 17 - nhà thực hiện báo cáo là **Access Partnership**, không phải NIC; (2) mục 8 - tên chính thức là **《人工智能 智能体互联》** (Agent interconnection) và đây là **7 văn bản kỹ thuật chỉ dẫn chuẩn hoá quốc gia**, ban hành theo Công bố 2026 số 22 của SAMR và SAC; (3) mục 9 - tên đầy đủ là **《人工智能智能体互操作性接口规范》**.
 
 ### 6.2. Một điều chúng tôi **không** khẳng định
 
-Bộ GB/Z 185.x-2026 của Trung Quốc là **tiêu chuẩn quốc gia trong nước**. Chúng tôi **chưa xác minh được** nó đã được trình lên tổ chức chuẩn hóa quốc tế nào, nên **không** nói rằng nó đã được chuẩn hóa quốc tế. Nếu quý báo cần nói về tiến độ quốc tế hóa, xin tra trực tiếp tại `openstd.samr.gov.cn` và `itu.int` — và xin ghi rõ nguồn trong bài viết.
+Bộ GB/Z 185.x-2026 của Trung Quốc là **tiêu chuẩn quốc gia trong nước**. Chúng tôi **chưa xác minh được** nó đã được trình lên tổ chức chuẩn hóa quốc tế nào, nên **không** nói rằng nó đã được chuẩn hóa quốc tế. Nếu quý báo cần nói về tiến độ quốc tế hóa, xin tra trực tiếp tại `openstd.samr.gov.cn` và `itu.int` - và xin ghi rõ nguồn trong bài viết.
 
 ## 7. Liên hệ báo chí
 
