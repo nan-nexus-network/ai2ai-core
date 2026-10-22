@@ -8,7 +8,7 @@ Dự án tuân theo [Semantic Versioning](https://semver.org/lang/vi/). Mọi m�
 
 ---
 
-## [Chưa phát hành] — v0.2.0-dev (đang phát triển)
+## [Chưa phát hành] — v0.2.1-dev (đang phát triển)
 
 ### Bổ sung
 

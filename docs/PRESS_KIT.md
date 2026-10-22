@@ -81,19 +81,19 @@ Mọi thông tin trong Media Kit này có thể kiểm chứng độc lập:
 - **Lịch sử commit:** Xem toàn bộ lịch sử phát triển từ commit đầu tiên.
 - **Các văn bản chính sách:** Đối chiếu trên `vanban.chinhphu.vn` và `asean.org`.
 
-### 6.0. Tải bản PDF (Release v0.2.0)
+### 6.0. Tải bản PDF (Release v0.2.1)
 
 Năm tệp PDF chính thức, tải trực tiếp, không cần đăng ký:
 
 | Tệp | Dùng cho | Trang |
 |:---|:---|--:|
-| [`NAN_AI2AI_Whitepaper_VN.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/NAN_AI2AI_Whitepaper_VN.pdf) | Báo cáo chuyên đề tiếng Việt, bản đầy đủ 7 chương + Phụ lục A + 17 mục tham khảo | 15 |
-| [`POLICY_BRIEF_2PAGES_VI.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/POLICY_BRIEF_2PAGES_VI.pdf) | Tóm tắt chính sách 2 trang, định dạng hành chính, dùng khi gửi cơ quan quản lý nhà nước và hiệp hội | 2 |
-| [`ONE_PAGER_VI.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/ONE_PAGER_VI.pdf) | Tóm tắt 1 trang tiếng Việt, dùng khi gửi báo chí trong nước | 1 |
-| [`ONE_PAGE_SUMMARY_EN.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/ONE_PAGE_SUMMARY_EN.pdf) | Tóm tắt 1 trang tiếng Anh, dùng khi gửi báo chí quốc tế và đối tác nước ngoài | 1 |
-| [`NAN_AI2AI_ZH_Whitepaper_SelfContained.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/NAN_AI2AI_ZH_Whitepaper_SelfContained.pdf) | Bản tiếng Trung tự chứa, không hyperlink, kèm sơ đồ 2 lớp và bảng 23 văn bản | 6 |
+| [`NAN_AI2AI_Whitepaper_VN.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.1/NAN_AI2AI_Whitepaper_VN.pdf) | Báo cáo chuyên đề tiếng Việt, bản đầy đủ 7 chương + Phụ lục A + 17 mục tham khảo | 15 |
+| [`POLICY_BRIEF_2PAGES_VI.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.1/POLICY_BRIEF_2PAGES_VI.pdf) | Tóm tắt chính sách 2 trang, định dạng hành chính, dùng khi gửi cơ quan quản lý nhà nước và hiệp hội | 2 |
+| [`ONE_PAGER_VI.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.1/ONE_PAGER_VI.pdf) | Tóm tắt 1 trang tiếng Việt, dùng khi gửi báo chí trong nước | 1 |
+| [`ONE_PAGE_SUMMARY_EN.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.1/ONE_PAGE_SUMMARY_EN.pdf) | Tóm tắt 1 trang tiếng Anh, dùng khi gửi báo chí quốc tế và đối tác nước ngoài | 1 |
+| [`NAN_AI2AI_ZH_Whitepaper_SelfContained.pdf`](https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.1/NAN_AI2AI_ZH_Whitepaper_SelfContained.pdf) | Bản tiếng Trung tự chứa, không hyperlink, kèm sơ đồ 2 lớp và bảng 23 văn bản | 6 |
 
-Trang phát hành: <https://github.com/nan-nexus-network/ai2ai-core/releases/tag/v0.2.0>
+Trang phát hành: <https://github.com/nan-nexus-network/ai2ai-core/releases/tag/v0.2.1>
 
 > Bản tiếng Trung được dựng cho kênh WeChat, nơi đường dẫn ra ngoài bị chặn. Vì vậy nó in link dạng chữ thuần ở chân trang và **không nhúng hyperlink**. Nó cũng được gắn nhãn AI theo quy định về nội dung sinh tự động bằng trí tuệ nhân tạo.
 

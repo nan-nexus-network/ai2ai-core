@@ -27,7 +27,7 @@ Worker: `nan-ai2ai` · `compatibility_date = 2026-10-22` · Cloudflare Workers F
 # kiem tra bo giao dien cuc bo (FAIL-CLOSED, exit 1 neu co vi pham)
 python tests/verify_cloudflare_web_hub.py local public/index.html
 
-# kiem tra tren URL that + manifest + 5 tep PDF cua Release v0.2.0
+# kiem tra tren URL that + manifest + 5 tep PDF cua Release v0.2.1
 python tests/verify_cloudflare_web_hub.py live
 ```
 

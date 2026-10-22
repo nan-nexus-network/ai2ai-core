@@ -1,7 +1,7 @@
 # ADR-003: Atomic In-flight Claim — chống thực thi lặp đồng thời
 
 **Ngày:** 22/10/2026 · **Trạng thái:** Đã chấp nhận (Accepted) · **Bổ sung cho:** `docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md`
-**Mã:** v0.2.0-dev
+**Mã:** v0.2.1-dev
 
 ---
 

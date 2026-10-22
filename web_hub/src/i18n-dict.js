@@ -28,7 +28,7 @@ export const I18N_DICT = {
     hero_title: "Hạ tầng Bằng chứng Kỹ thuật Trung lập cho Giao dịch AI Xuyên biên giới",
     hero_manifesto: "“Khi AI Agent tự giao dịch xuyên biên giới, tranh chấp là tất yếu. AI không có tư cách pháp nhân. Các cường quốc không thể cung cấp bằng chứng trung lập vì họ là một bên trong cuộc chơi. Việt Nam, với vị thế trung lập và Ngoại giao Cây tre, có thể cung cấp hạ tầng bằng chứng kỹ thuật để phục vụ giải quyết tranh chấp AI toàn cầu.”",
     cta_video: "Xem Video Chiến lược (7 Chương)",
-    cta_pdfs: "Tải Trọn Bộ PDF (Release v0.2.0)",
+    cta_pdfs: "Tải Trọn Bộ PDF (Release v0.2.1)",
     cta_core: "Kho Mã nguồn PoC (ai2ai-core)",
     cta_research: "Kho Chính sách 23 Văn bản (ai2ai-research)",
     sec_economy_title: "1. Nền Kinh tế AI & Định hướng Chiến lược của Việt Nam đến năm 2030",
@@ -48,7 +48,7 @@ export const I18N_DICT = {
     sec_policy_title: "5. Bộ 23 Văn bản Chính sách & Tiêu chuẩn Quốc tế",
     sec_policy_desc: "Bảng tra cứu tương tác gồm 23 văn bản chuẩn hóa trong CSV/JSON, mỗi dòng ghi ngày ban hành, cơ quan ban hành và đường dẫn tới nguồn gốc. Tự kiểm tra chéo bằng CI (data-check) trong kho nghiên cứu.",
     sec_download_title: "6. Trung tâm Tải Ấn phẩm & Bảng Mở Issue Phản biện",
-    sec_download_desc: "Năm tệp PDF chính thức trong Release v0.2.0, tải trực tiếp, không cần đăng ký. Mỗi Issue đang mở là một đầu mối rõ ràng để bắt đầu đóng góp.",
+    sec_download_desc: "Năm tệp PDF chính thức trong Release v0.2.1, tải trực tiếp, không cần đăng ký. Mỗi Issue đang mở là một đầu mối rõ ràng để bắt đầu đóng góp.",
     sec_commit_title: "7. Ba Cam kết Bất biến & Tiêu chí Tự dừng sau 12 Tháng",
     sec_sim_title: "8. Thử nghiệm Lớp A ngay trên trình duyệt",
     sec_sim_desc: "Gõ một gói tin bất kỳ, bấm Ký, và xem chính trình duyệt tính mã băm SHA-256 theo đúng thứ tự chuẩn hóa mà PoC dùng. Không có gì được gửi đi đâu cả: phép băm chạy hoàn toàn trong trình duyệt của bạn.",
@@ -72,7 +72,7 @@ export const I18N_DICT = {
     hero_title: "Neutral Technical Evidence Infrastructure for Cross-Border AI Transactions",
     hero_manifesto: "“When AI Agents transact across borders, disputes are inevitable. AI has no legal personhood. Superpowers cannot provide neutral evidence because they are players in the game. Vietnam, with its neutrality and Bamboo Diplomacy, can provide technical evidence infrastructure to support global AI dispute resolution.”",
     cta_video: "Watch Strategic Video (7 Chapters)",
-    cta_pdfs: "Download Full PDF Suite (Release v0.2.0)",
+    cta_pdfs: "Download Full PDF Suite (Release v0.2.1)",
     cta_core: "Technical PoC Repo (ai2ai-core)",
     cta_research: "23-Policy Dataset Repo (ai2ai-research)",
     sec_economy_title: "1. The Rise of the AI Economy & Vietnam's Strategic Vision to 2030",
@@ -92,7 +92,7 @@ export const I18N_DICT = {
     sec_policy_title: "5. The 23-Instrument Policy & Standards Dataset",
     sec_policy_desc: "An interactive lookup table over 23 standardised instruments in CSV/JSON. Each row records the issue date, the issuing body and a link back to the source. Cross-checked automatically by the research repository's CI (data-check).",
     sec_download_title: "6. Download Centre & Open Peer-Review Issues",
-    sec_download_desc: "Five official PDFs in Release v0.2.0, direct download, no registration required. Every open Issue is a clearly scoped starting point for a contribution.",
+    sec_download_desc: "Five official PDFs in Release v0.2.1, direct download, no registration required. Every open Issue is a clearly scoped starting point for a contribution.",
     sec_commit_title: "7. Three Immutable Commitments & a 12-Month Sunset Clause",
     sec_sim_title: "8. Try Layer A Right in Your Browser",
     sec_sim_desc: "Type any payload, press Sign, and watch your own browser compute the SHA-256 digest using the same canonical ordering as the PoC. Nothing is sent anywhere: the hash runs entirely inside your browser.",
@@ -116,7 +116,7 @@ export const I18N_DICT = {
     hero_title: "跨境 AI-to-AI 交易技术证据存证与中立证据基础设施",
     hero_manifesto: "\"当 AI Agent 跨境自动交易时，纠纷是必然的。AI 没有法人资格。科技大国无法提供中立证据，因为他们本身就是局中人。越南凭借中立地位与\"竹子外交\"，能够提供技术证据基础设施，服务于全球 AI 交易纠纷的解决。\"",
     cta_video: "观看战略解读视频（7 大章节）",
-    cta_pdfs: "下载完整 PDF 白皮书套件 (Release v0.2.0)",
+    cta_pdfs: "下载完整 PDF 白皮书套件 (Release v0.2.1)",
     cta_core: "技术验证代码库 (ai2ai-core)",
     cta_research: "23 份政策与标准库 (ai2ai-research)",
     sec_economy_title: "1. AI 经济时代的到来与越南 2030 国家人工智能战略导向",
@@ -136,7 +136,7 @@ export const I18N_DICT = {
     sec_policy_title: "5. 23 份政策与技术标准数据集",
     sec_policy_desc: "交互式查询表，收录 CSV/JSON 中 23 份标准化文件。每行均记录发布日期、发布机构与可回溯的原始来源链接。由研究库的 CI（data-check）自动交叉校验。",
     sec_download_title: "6. 下载中心与开放评审 Issue 列表",
-    sec_download_desc: "Release v0.2.0 中的五份官方 PDF，直接下载，无需注册。每个已开放的 Issue 都是一个范围清晰的贡献起点。",
+    sec_download_desc: "Release v0.2.1 中的五份官方 PDF，直接下载，无需注册。每个已开放的 Issue 都是一个范围清晰的贡献起点。",
     sec_commit_title: "7. 三项不变承诺与 12 个月自动终止条款",
     sec_sim_title: "8. 在浏览器中直接试用层级 A",
     sec_sim_desc: "输入任意内容，点击签名，浏览器将使用与 PoC 相同的规范化顺序计算 SHA-256 摘要。任何数据都不会被发送：哈希运算完全在你的浏览器内完成。",
@@ -193,7 +193,7 @@ export const OPEN_ISSUES = [
   { repo: "ai2ai-research", num: 2, title: { vi: "Siêu dữ liệu GB/Z 185 & ACFTA 3.0 cho bộ 23 văn bản", en: "Metadata for the GB/Z 185 and ACFTA 3.0 entries", zh: "补齐 GB/Z 185 与 ACFTA 3.0 条目的元数据" } }
 ];
 
-/** 5 tep PDF chinh thuc trong Release v0.2.0 (so trang kiem chung bang trich xut PDF). */
+/** 5 tep PDF chinh thuc trong Release v0.2.1 (so trang kiem chung bang trich xut PDF). */
 export const PDF_ASSETS = [
   { id: "whitepaper_vi",  pages: 15, filename: "NAN_AI2AI_Whitepaper_VN.pdf",
     label: { vi: "Whitepaper tiếng Việt (đầy đủ)", en: "Whitepaper, Vietnamese (full)", zh: "越南语白皮书（完整版）" } },
@@ -207,7 +207,7 @@ export const PDF_ASSETS = [
     label: { vi: "Whitepaper tiếng Trung tự chứa", en: "Whitepaper, Chinese (self-contained)", zh: "中文自包含版白皮书" } }
 ];
 
-export const RELEASE_TAG = "v0.2.0";
+export const RELEASE_TAG = "v0.2.1";
 export const REPO_CORE = "https://github.com/nan-nexus-network/ai2ai-core";
 export const REPO_RESEARCH = "https://github.com/nan-nexus-network/ai2ai-research";
 export const RELEASE_URL = REPO_CORE + "/releases/tag/" + RELEASE_TAG;

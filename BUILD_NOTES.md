@@ -85,7 +85,7 @@ Không có tài liệu nội bộ nào trong cây commit đầu tiên, và toàn
 **Đã xử lý:**
 - `git rm --cached docs/SOFT_LAUNCH_LIST.md` — gỡ khỏi cây commit hiện tại.
 - Thêm vào `.gitignore` — file chỉ còn trên máy cục bộ.
-- **Lịch sử Git là bất biến:** file vẫn còn trong lịch sử các commit cũ. Việc viết lại toàn bộ lịch sử (48 commit, đổi mọi SHA, di chuyển 2 tag `v0.1.0` và `v0.2.0`) là thao tác phá hủy khó hoàn tác trên kho công khai, nên **chưa thực hiện** và còn để Chủ tịch quyết định. Lệnh nếu thực hiện:
+- **Lịch sử Git là bất biến:** file vẫn còn trong lịch sử các commit cũ. Việc viết lại toàn bộ lịch sử (48 commit, đổi mọi SHA, di chuyển các tag đã phát hành `v0.1.0`, `v0.2.0`, `v0.2.1`) là thao tác phá hủy khó hoàn tác trên kho công khai, nên **chưa thực hiện** và còn để Chủ tịch quyết định. Lệnh nếu thực hiện:
   ```bash
   git filter-repo --path docs/SOFT_LAUNCH_LIST.md --invert-paths
   git push --force --tags origin main
