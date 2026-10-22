@@ -87,7 +87,7 @@
 ### ⏱️ PHÂN CẢNH 5: CALL TO ACTION - HÀNH ĐỘNG NGAY (01:10 - 01:20)
 - **Mục tiêu:** Kêu gọi giới kỹ sư và cộng đồng truy cập GitHub kiểm thử.
 - **Hình ảnh / Visual:**
-  - Giao diện Landing Page `web_hub/index.html` phong cách Editorial Tech.
+  - Giao diện Landing Page `web_hub/public/index.html` phong cách Editorial Tech.
   - Con trỏ chuột click vào nút "Star ⭐" trên repository GitHub.
   - Mũi tên chỉ xuống phần comment với link truy cập.
 - **Chữ trên màn hình (Text-on-Screen):**
@@ -106,8 +106,8 @@
 ### 1. Checklist Tư liệu Hình ảnh & Video (Footage)
 - [ ] **Màn hình Terminal 1:** Mở terminal, chạy lệnh `python examples/01-hello-agent/hello_bridge.py` để ghi lại log JSON sáng màu.
 - [ ] **Màn hình Terminal 2:** Mở file `tests/test_hello_bridge.py` và chạy `python -m unittest` với kết quả `Ran 10 tests... OK`.
-- [ ] **Logo Master:** File `web_hub/logo-nan-ai2ai.png` hiển thị sắc nét, đặt trên nền trắng hoặc than chì.
-- [ ] **Ảnh chụp Landing Page:** Cuộn trang web `web_hub/index.html` (phần Bento Grid kiến trúc và Terminal Mockup).
+- [ ] **Logo Master:** File `web_hub/public/logo-nan-ai2ai.png` hiển thị sắc nét, đặt trên nền trắng hoặc than chì.
+- [ ] **Ảnh chụp Landing Page:** Cuộn trang web `web_hub/public/index.html` (phần Bento Grid kiến trúc và Terminal Mockup).
 - [ ] **Biểu đồ động (Motion Graphics):**
   - Biểu tượng 3 khối protocol: MCP (cờ Mỹ/Màu xanh dương), GB/Z (cờ Trung Quốc/Màu đỏ), EU AI Act (cờ EU/Màu vàng xanh).
   - Bản đồ Việt Nam với các đường mạng nơ-ron phát sáng vươn ra thế giới.

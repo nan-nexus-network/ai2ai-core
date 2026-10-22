@@ -21,7 +21,7 @@ Mã nguồn mẫu hiện tại trong thư mục `examples/01-hello-agent/hello_b
 
 ---
 
-## 2. Giao diện Web Hub (`web_hub/index.html`)
+## 2. Giao diện Web Hub (`web_hub/public/index.html`)
 
 * Toàn bộ mã nguồn HTML và CSS của trang Cổng thông tin (Landing Hub) được viết thuần (Vanilla HTML/CSS).
 * Hệ thống sử dụng System Font Stack gốc của hệ điều hành người dùng (`-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `Roboto`, `sans-serif`), không tải phông chữ từ máy chủ bên thứ ba.
