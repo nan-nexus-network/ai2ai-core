@@ -2,7 +2,7 @@
 
 > **Đây là danh sách các tồn đọng kỹ thuật cần đội ngũ Core Contributor tương lai xử lý. Không sửa vào lúc này để bảo toàn nguồn lực cho chiến dịch truyền thông.**
 >
-> Tài liệu này được mở ngày **22/10/2026** nhằm chuyển trọng tâm công việc sang chiến dịch truyền thông định hướng (Nền kinh tế AI · A2A/AI2AI · Trọng tài AI).
+> Tài liệu này được mở ngày **22/10/2026** nhằm chuyển trọng tâm công việc sang chiến dịch truyền thông định hướng (Nền kinh tế AI · A2A/AI2AI · Cơ chế bằng chứng kỹ thuật trung lập).
 
 **Trạng thái repo tại thời điểm lập file:** `ai2ai-core` HEAD `71c780a` · 29 commit · 121 unit test PASS · CI 11/11 job SUCCESS · working tree CLEAN.
 **Kho tài liệu:** `ai2ai-research` HEAD `41e9dc1` · `data-check.yml` SUCCESS.

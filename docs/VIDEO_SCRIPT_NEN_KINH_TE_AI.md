@@ -1,5 +1,5 @@
 # KỊCH BẢN SẢN XUẤT VIDEO NGẮN: "NỀN KINH TẾ AI & CẦU NỐI VIỆT NAM"
-*(Dành cho TikTok, Facebook Reels, YouTube Shorts — Thời lượng: 80 giây)*
+*(Dành cho TikTok, Facebook Reels, YouTube Shorts - Thời lượng: 80 giây)*
 
 ---
 
@@ -13,7 +13,7 @@
 
 ## PHẦN 1: KỊCH BẢN CHI TIẾT (STORYBOARD & SCRIPT)
 
-### ⏱️ PHÂN CẢNH 1: HOOK — GÂY TÒ MÒ (00:00 - 00:10)
+### ⏱️ PHÂN CẢNH 1: HOOK - GÂY TÒ MÒ (00:00 - 00:10)
 - **Mục tiêu:** Giữ chân người xem trong 3 giây đầu tiên bằng một góc nhìn phản trực giác.
 - **Hình ảnh / Visual:**
   - Nền đen than chì (`#1A1A1A`). Hiệu ứng glitch/chuyển động mạnh.
@@ -28,7 +28,7 @@
 
 ---
 
-### ⏱️ PHÂN CẢNH 2: VẤN ĐỀ — SỰ CHIA CẮT CỦA CÁC ĐẾ CHẾ AI (00:10 - 00:30)
+### ⏱️ PHÂN CẢNH 2: VẤN ĐỀ - SỰ CHIA CẮT CỦA CÁC ĐẾ CHẾ AI (00:10 - 00:30)
 - **Mục tiêu:** Chỉ rõ "nỗi đau" công nghệ: sự phân mảnh giao thức giữa các cường quốc.
 - **Hình ảnh / Visual:**
   - Đồ họa hiển thị 3 khối hộp công nghệ tách rời:
@@ -48,7 +48,7 @@
 
 ---
 
-### ⏱️ PHÂN CẢNH 3: GIẢI PHÁP — NAN AI2AI & MÃ BĂM XÁC THỰC (00:30 - 00:50)
+### ⏱️ PHÂN CẢNH 3: GIẢI PHÁP - NAN AI2AI & MÃ BĂM XÁC THỰC (00:30 - 00:50)
 - **Mục tiêu:** Giới thiệu giải pháp kỹ thuật mở, trung lập do kỹ sư Việt khởi xướng.
 - **Hình ảnh / Visual:**
   - Quay màn hình terminal trực quan:
@@ -67,24 +67,24 @@
 
 ---
 
-### ⏱️ PHÂN CẢNH 4: TẦM NHÌN — VIỆT NAM VƯƠN MÌNH THÀNH TRỌNG TÀI AI (00:50 - 01:10)
+### ⏱️ PHÂN CẢNH 4: TẦM NHÌN - VIỆT NAM VÀ VAI TRÒ CƠ CHẾ BẰNG CHỨNG KỸ THUẬT TRUNG LẬP (00:50 - 01:10)
 - **Mục tiêu:** Khơi dậy niềm tự hào dân tộc, định vị vị thế chiến lược "Ngoại giao Cây tre".
 - **Hình ảnh / Visual:**
   - Quả địa cầu 3D xoay dần về Việt Nam. Các đường sáng kết nối từ Hà Nội và TP.HCM tỏa đi khắp New York, Thâm Quyến, Frankfurt.
   - Biểu tượng cán cân công lý kỹ thuật số (Digital Balance) bên cạnh bản đồ chữ S.
-  - Chữ nổi bật: "DỰ ÁN 0 ĐỒNG — VÌ TƯƠNG LAI VIỆT NAM".
+  - Chữ nổi bật: "DỰ ÁN 0 ĐỒNG - VÌ TƯƠNG LAI VIỆT NAM".
 - **Chữ trên màn hình (Text-on-Screen):**
   > VIỆT NAM TRUNG LẬP  
   > NGOẠI GIAO CÂY TRE  
-  > TRỌNG TÀI AI TOÀN CẦU  
+  > CƠ CHẾ BẰNG CHỨNG KỸ THUẬT TRUNG LẬP TOÀN CẦU  
   > ĐÓNG GÓP CHO ĐẤT NƯỚC
 - **Giọng đọc (Voice-Over):**  
-  *"Với vị thế trung lập và Ngoại giao Cây tre, chúng tôi đề xuất đưa Việt Nam trở thành Trung tâm Giải quyết Tranh chấp AI toàn cầu. Dự án làm với 0 đồng, bởi những người trẻ khát vọng, đóng góp cho Kỷ nguyên AI của đất nước."*
+  *"Với vị thế trung lập và Ngoại giao Cây tre, chúng tôi đề xuất đưa Việt Nam trở thành nơi cung cấp hạ tầng bằng chứng kỹ thuật trung lập cho các giao dịch AI xuyên biên giới. Dự án làm với 0 đồng, bởi những người trẻ khát vọng, đóng góp cho Kỷ nguyên AI của đất nước."*
 - **Hiệu ứng âm thanh (SFX):** Nhạc nền chuyển sang cao trào hùng tráng (Crescendo, dàn dây và tiếng trống Cinematic).
 
 ---
 
-### ⏱️ PHÂN CẢNH 5: CALL TO ACTION — HÀNH ĐỘNG NGAY (01:10 - 01:20)
+### ⏱️ PHÂN CẢNH 5: CALL TO ACTION - HÀNH ĐỘNG NGAY (01:10 - 01:20)
 - **Mục tiêu:** Kêu gọi giới kỹ sư và cộng đồng truy cập GitHub kiểm thử.
 - **Hình ảnh / Visual:**
   - Giao diện Landing Page `web_hub/index.html` phong cách Editorial Tech.
@@ -141,7 +141,7 @@ AI không chỉ trả lời câu hỏi nữa. Chúng đang bắt đầu tự thu
 
 Nhưng khi AI của Mỹ, Trung Quốc và châu Âu nói những ngôn ngữ khác nhau, ai sẽ là cầu nối?
 
-Chúng mình là một nhóm kỹ sư trẻ, khởi đầu với dự án 0 đồng, xây dựng NAN AI2AI — Khung tham chiếu mở (Open Reference Framework) trung lập, xác thực giao dịch qua mã băm SHA-256.
+Chúng mình là một nhóm kỹ sư trẻ, khởi đầu với dự án 0 đồng, xây dựng NAN AI2AI - Khung tham chiếu mở (Open Reference Framework) trung lập, xác thực giao dịch qua mã băm SHA-256.
 
 Không gọi vốn, không tài trợ. Chúng mình mở mã nguồn hoàn toàn để đóng góp cho Kỷ nguyên Vươn mình của Việt Nam. 🇻🇳
 
@@ -161,7 +161,7 @@ Các hệ sinh thái AI trên thế giới đang phân mảnh mạnh mẽ (MCP c
 Dự án NAN AI2AI ra đời như một sáng kiến mã nguồn mở độc lập (0 đồng, phi lợi nhuận) cung cấp:
 ✅ Tầng biên dịch giao thức trung lập.
 ✅ Biên nhận xác thực bằng mã băm SHA-256 bất biến.
-✅ Đề xuất hướng tới biến Việt Nam thành Trung tâm Giải quyết Tranh chấp AI toàn cầu dựa trên Ngoại giao Cây tre.
+✅ Đề xuất hướng tới đưa Việt Nam trở thành nơi cung cấp hạ tầng bằng chứng kỹ thuật trung lập phục vụ giao dịch AI xuyên biên giới, dựa trên Ngoại giao Cây tre.
 
 Mã nguồn đã mở công khai theo giấy phép Apache 2.0. Rất mong nhận được sự phản biện và góp ý chuyên môn từ cộng đồng kỹ sư Việt Nam!
 
