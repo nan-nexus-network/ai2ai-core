@@ -25,7 +25,7 @@
 ## Giai đoạn B — Nội dung & tính nhất quán
 
 | # | Kiểm tra | ✅ |
-| :---: | :--- | :�� |
+| :---: | :--- | :✅ |
 | B1 | Phiên bản whitepaper trong README **khớp** với dòng `Phiên bản:` trong chính file | ☑ |
 | B2 | Mọi trích dẫn pháp lý trong danh mục tham khảo có ngày/số hiệu **đã được đối chiếu** | ☐ |
 | B3 | Tuyên bố minh bạch có **đủ 5 điểm** (bản chất, người khởi xướng, 3 cam kết, không đại diện, kỹ thuật giới hạn) trong README | ☑ |
@@ -54,7 +54,7 @@
 ## Giai đoạn D — Pháp lý & giấy phép
 
 | # | Kiểm tra | ✅ |
-| :---: | :--- | :�� |
+| :---: | :--- | :✅ |
 | D1 | `LICENSE` là Apache 2.0 đầy đủ (9 điều khoản) | ☑ |
 | D2 | `CLA.md` có đủ 4 điều khoản | ☑ |
 | D3 | `TRADEMARK.md` bảo lưu đủ 3 tên | ☑ |
@@ -66,7 +66,7 @@
 ## Giai đoạn E — Cộng đồng
 
 | # | Kiểm tra | ✅ |
-| :---: | :--- | :�� |
+| :---: | :--- | :✅ |
 | E1 | 3 mẫu Issue hiển thị đúng trong tab Issues (`.github/ISSUE_TEMPLATE/`) | ☑ |
 | E2 | Mẫu Pull Request hiển thị khi mở PR | ☑ |
 | E3 | `config.yml` — Issue trống đã tắt, có contact links | ☑ |
@@ -77,7 +77,7 @@
 ## Giai đoạn F — Phát hành
 
 | # | Việc | ✅ |
-| :---: | :--- | :�� |
+| :---: | :--- | :✅ |
 | F1 | `CHANGELOG.md` có mục cho phiên bản này | ☑ |
 | F2 | Tag + push: `git tag -a v0.1.0 -m "..." && git push origin v0.1.0` | ☑ |
 | F3 | Tạo GitHub Release kèm tóm tắt 1 trang | ☑ |

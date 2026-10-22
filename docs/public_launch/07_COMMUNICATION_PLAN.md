@@ -143,7 +143,7 @@ Tuân theo [04_RISK_REGISTER](04_RISK_REGISTER_AND_CONTINGENCY.md) mục 3. Tóm
 ## 8. Điều kiện để bắt đầu lịch
 
 | # | Điều kiện | ✅ |
-| :---: | :--- | :�� |
+| :---: | :--- | :✅ |
 | 1 | Repo GitHub **đã public** và truy cập được không cần đăng nhập | ☐ |
 | 2 | Website đã deploy | ☐ |
 | 3 | **Đầu việc #1, #2, #3 đã đăng** trong tab Issues | ☐ |
