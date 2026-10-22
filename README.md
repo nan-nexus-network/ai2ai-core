@@ -55,10 +55,14 @@ python examples/01-hello-agent/hello_bridge.py
 ```
 
 ### Kịch bản mô phỏng trong 60 giây:
-1. **Agent Hệ sinh thái A (chuẩn MCP-style)** phát một gói tin yêu cầu dịch vụ logistics ASEAN.
+1. **Agent Hệ sinh thái A (chuẩn MCP-style)** phát một gói tin yêu cầu dịch vụ logistics ASEAN, kèm **`operation_id`** — khoá idempotency bắt buộc.
 2. **Node Cầu nối (ProtocolBridgeNode)** kiểm tra gói tin qua **hai lớp**: (Lớp 1) *allowlist schema* — kiểm tra kiểu dữ liệu, độ dài, miền giá trị và **từ chối mọi trường không nằm trong schema**; (Lớp 2) *so khớp một số chuỗi tĩnh* như lớp phòng thủ thứ hai. Lớp 1 là **subset của JSON Schema Draft 2020-12, tự viết bằng thư viện chuẩn** — **không phải** bản triển khai đầy đủ của Draft 2020-12, và vẫn là kiểm tra minh họa, không phải biện pháp bảo mật. Xem [ADR-002](docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md).
 3. **Chuyển đổi ngữ nghĩa:** Dịch từ cấu trúc gọi công cụ (`tool_call`) sang cấu trúc giao việc liên vận (`standardized_task` kiểu A2A).
 4. **Tạo biên nhận demo:** Tính digest SHA-256 từ dữ liệu mẫu và phản hồi mô phỏng; digest không xác thực danh tính, nguồn gốc hoặc việc thực thi.
+5. **Chống thực thi lặp (Idempotency):** Cùng một `operation_id` chỉ được thực thi **một lần**. Lần retry (ví dụ khi ACK bị mất) nhận lại **đúng biên nhận cũ** nhờ deduplication cache, và bên thực thi **không** bị gọi lại. Demo 2 (P2P) thể hiện rõ điều này: Alice gửi 2 lần, Bob chỉ chạy 1 lần.
+
+> **Đã hỗ trợ Idempotency (`operation_id`) chống Replay Attack ở mức PoC.**
+> *Giới hạn cần nói rõ:* deduplication cache nằm **trong bộ nhớ của một tiến trình** — mất khi khởi động lại, không dùng chung giữa các nút, **không có TTL**, và khoá là do phía gọi tự chọn (dùng lại khoá cho hai thao tác khác nhau là lỗi phía gọi). Đây là bước đầu của cơ chế idempotency, **không phải** bảo vệ replay ở mức production. Xem [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ### Demo 2: Agent-to-Agent Chat (P2P)
 Dành cho các cá nhân muốn thử nghiệm kết nối AI của mình với AI của người khác. Zero dependencies, chạy trong 60 giây.
@@ -75,6 +79,7 @@ Bản nhận `nan-receipt/v1`: **chỉ bên thực thi ký** (Ed25519), nên **m
 python examples/03-signed-receipt/signed_receipt_demo.py
 ```
 *(Demo cho thấy: bên thứ ba ghim khoá công khai theo mô hình TOFU, kiểm tra chữ ký, và **từ chối** biên nhận bị sửa, bị hết hạn, hoặc bị khoá lạ. Xem [ADR-002](docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md) để biết vì sao chọn phạm vi ký này.)*
+> Biên nhận `nan-receipt/v1` cũng mang trường `operation_id` (tuỳ chọn) **nằm trong phạm vi chữ ký** — nên khoá idempotency không thể bị đổi mà không làm vô hiệu chữ ký.
 
 ---
 

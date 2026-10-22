@@ -114,7 +114,7 @@ Nếu Bridge ký, bên thứ ba buộc phải quyết định "có tin Bridge kh
 | 1 | Ed25519 phải làm thuần Python (không `cryptography`/`PyNaCl` — cả hai là PyPI) | `nan_ai2ai/ed25519.py` triển khai RFC 8032. **Cảnh báo:** không constant-time, chỉ dùng cho dữ liệu công khai. Kiểm chứng bằng **5 vector chính thức RFC 8032 §7.1** + đối chiếu chéo với `cryptography` (25/25 mẫu ngẫu nhiên khớp tuyệt đối cả khoá công khai lẫn chữ ký). |
 | 2 | Cần đóng gói để import được | Gói `nan_ai2ai/` ở thư mục gốc (không cần bước cài đặt, `python -m unittest` từ thư mục gốc là chạy được). Việc đóng gói chuẩn (`pyproject.toml`, src layout) để v0.3. |
 | 3 | Cần định danh khoá không registry | `kid` = JWK thumbprint RFC 7638. |
-| 4 | Cần chống replay | `nonce` (16 byte ngẫu nhiên) + `expires_at`; bên xác minh tự từ chối biên nhận hết hạn. |
+| 4 | Cần chống replay | `nonce` (16 byte ngẫu nhiên) + `expires_at`; bên xác minh tự từ chối biên nhận hết hạn. Ngoài ra biên nhận có thể mang `operation_id` (khoá idempotency) **nằm trong phạm vi chữ ký**. |
 | 5 | Cần băm không nhập nhằng | `canonical.digest_input` thêm **domain separator** + **độ dài 4 byte big-endian** trước mỗi phần, lấy cảm hứng từ RFC 6962 (Certificate Transparency) và RFC 8032 §5.1.5. |
 | 6 | Hai hiện thực bridge đang phân kỳ | **Chưa** hợp nhất trong v0.2 — cần một quyết định riêng về phạm vi. Hiện đã **công khai** trong `03_CSDN_TUTORIAL_ZH.md` (bài CSDN dạy chạy `agent_chat.py`) rằng đây là hai hiện thực độc lập chưa hợp nhất. |
 

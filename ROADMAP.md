@@ -33,6 +33,7 @@
 | Nhận ≥ 3 Pull Request đóng góp đầu tiên từ cộng đồng | ⏳ Chưa có |
 | Bổ sung ≥ 5 unit test cho luồng dịch MCP → A2A (Issue #3) | 🟢 **Một phần** — bộ test đã lên **100 test** (10 → 100); còn mở: test cho `agent_chat.py` |
 | Thay blocklist từ khóa bằng kiểm tra cấu trúc an toàn (Issue #1) | 🟢 **Xong** — `nan_ai2ai/validation.py`: allowlist schema kiểm tra kiểu dữ liệu / độ dài / miền giá trị (**subset** Draft 2020-12, bằng stdlib) |
+| **Idempotency (`operation_id`) + deduplication cache chống thực thi lặp** | 🟢 **Xong** — mọi gói tin phải có `operation_id`; lần retry nhận lại đúng biên nhận cũ và **không** gọi lại bên thực thi. *Giới hạn PoC: cache trong bộ nhớ một tiến trình, không TTL* |
 | Chữ ký bất đối xứng Ed25519 cho biên nhận xác thực (Issue #2) | 🟢 **Xong** — `nan_ai2ai/receipt.py` (`nan-receipt/v1`): Ed25519 thuần Python theo RFC 8032, **chỉ bên thực thi ký**, xác minh được mà không cần tin Bridge |
 | Chuyển tài liệu thảo luận sang **CC-BY 4.0**, mở bản dịch tóm tắt tiếng Anh | ⏳ Chưa có |
 | Báo cáo KPI công khai đầu tiên | ⏳ Chưa có (xem [docs/public_launch/03_METRICS_AND_MEASUREMENT.md](docs/public_launch/03_METRICS_AND_MEASUREMENT.md)) |

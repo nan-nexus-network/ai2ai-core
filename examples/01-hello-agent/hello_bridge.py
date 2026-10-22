@@ -20,6 +20,10 @@ Lưu ý kỹ thuật (PoC Disclaimer):
           Ở bản Production, tầng này phải dùng Semantic Classifier + Allowlist Schema.
 - Chữ ký số bất đối xứng (Ed25519/DID) cho biên nhận: xem `nan_ai2ai/receipt.py`
   và `docs/ADR_002_SIGNED_RECEIPT_AND_TRUST_MODEL.md`.
+- **Idempotency:** mỗi gói tin phải có `operation_id` (khoá idempotency). Cùng một
+  `operation_id` sẽ chỉ được thực thi **một lần**; lần retry nhận lại đúng biên
+  nhận cũ nhờ deduplication cache (`ProtocolBridgeNode._receipt_cache`).
+  Đây là cơ chế **mức PoC, trong bộ nhớ tiến trình** — xem `ARCHITECTURE.md`.
 
 Cách chạy:
 python examples/01-hello-agent/hello_bridge.py
@@ -74,6 +78,22 @@ class ProtocolBridgeNode:
     Không kết nối hoặc xác thực các Agent ở hệ sinh thái khác nhau.
     """
 
+    #: Cache loại trừ trùng lặp (deduplication cache), dùng để chống Replay.
+    #:
+    #: Mỗi ``operation_id`` ánh xạ tới một mục cache gồm biên nhận đã cấp và
+    #: digest của task, để phát hiện cả trường hợp *dùng lại cùng khoá cho
+    #: một task khác*.
+    #:
+    #: **Giới hạn PoC (cần nói rõ khi trả lời báo chí):**
+    #:   - Trạng thái **chỉ tồn tại trong bộ nhớ tiến trình**: mất khi khởi
+    #:     động lại, và **không** dùng chung giữa nhiều tiến trình/nút.
+    #:   - **Không có TTL**: cache phình vô hạn nếu không dọn.
+    #:   - Khoá là do phía gọi tự chọn, nên **người gọi phải tạo khoá khác nhau
+    #:     cho mỗi thao tác logic**; dùng lại khoá cho hai thao tác khác nhau là
+    #:     lỗi phía gọi (được phát hiện và ghi cảnh báo, xem
+    #:     ``issue_verification_receipt``).
+    _receipt_cache: Dict[str, Dict[str, Any]] = {}
+
     @staticmethod
     def sanitize_and_validate(
         full_packet: Dict[str, Any], required_arg_fields: List[str]
@@ -84,9 +104,17 @@ class ProtocolBridgeNode:
         Lớp 1: allowlist schema (kiểu dữ liệu, độ dài, miền giá trị, trường lạ).
         Lớp 2: quét mẫu chuỗi tĩnh - lớp phòng thủ thứ hai, CỐ TÌNH sơ khai.
         """
-        # Lớp 1 — kiểm tra cấu trúc theo allowlist schema.
+        # Lớp 0 — khoá idempotency (chống thực thi lặp / Replay).
         if not isinstance(full_packet, dict):
             return False, "Gói tin không phải định dạng Dictionary/JSON hợp lệ."
+        operation_id = full_packet.get("operation_id")
+        if not isinstance(operation_id, str) or not operation_id.strip():
+            return False, (
+                "Thiếu hoặc sai định dạng 'operation_id' (khoá idempotency: "
+                "cùng một operation_id chỉ được thực thi đúng một lần)."
+            )
+
+        # Lớp 1 — kiểm tra cấu trúc theo allowlist schema.
         schema = bridge_packet_schema(required_arg_fields)
         schema_errors = validate(full_packet, schema)
         if schema_errors:
@@ -129,22 +157,64 @@ class ProtocolBridgeNode:
         }
 
     @staticmethod
+    def lookup_cached_receipt(operation_id: str) -> Optional[Dict[str, Any]]:
+        """Trả về biên nhận đã cấp cho ``operation_id``, hoặc ``None``.
+
+        Dùng để kiểm tra **trước khi** gọi bên thực thi, để một lần retry không
+        làm tác vụ chạy hai lần.
+        """
+        if not isinstance(operation_id, str) or not operation_id:
+            return None
+        entry = ProtocolBridgeNode._receipt_cache.get(operation_id)
+        if entry is None:
+            return None
+        return dict(entry["receipt"])
+
+    @staticmethod
     def issue_verification_receipt(
-        bridged_packet: Dict[str, Any], execution_output: Dict[str, Any]
+        bridged_packet: Dict[str, Any],
+        execution_output: Dict[str, Any],
+        operation_id: str,
     ) -> Dict[str, Any]:
-        """Create a demo receipt with a SHA-256 digest; this does not verify identity or execution."""
+        """Create a demo receipt with a SHA-256 digest; this does not verify identity or execution.
+
+        ``operation_id`` là khoá idempotency. Nếu khoá này đã được cấp biên nhận
+        trước đó, hàm **không tạo biên nhận mới** mà trả lại biên nhận đã lưu,
+        kèm log ``Duplicate detected! Returning cached receipt.``
+        """
+        if not isinstance(operation_id, str) or not operation_id.strip():
+            raise ValueError(
+                "operation_id khong duoc rong: can khoa idempotency de chong "
+                "thuc thi lap (replay).")
+
+        cached = ProtocolBridgeNode.lookup_cached_receipt(operation_id)
+        if cached is not None:
+            logger.warning("Duplicate detected! Returning cached receipt.")
+            return cached
+
         raw_record = (
             json.dumps(bridged_packet, sort_keys=True) + json.dumps(execution_output, sort_keys=True)
         )
         proof_hash = hashlib.sha256(raw_record.encode("utf-8")).hexdigest()
 
-        return {
+        receipt = {
             "receipt_id": f"rcpt_{uuid.uuid4().hex[:10]}",
             "trace_id": bridged_packet["trace_id"],
+            "operation_id": operation_id,
             "status": "DEMO_DIGEST_ONLY",
             "sha256_proof": proof_hash,
             "result_data": execution_output
         }
+
+        # Luu vao cache de lan retry nhan duoc cung mot bien nhan.
+        task_digest = hashlib.sha256(
+            json.dumps(bridged_packet.get("standardized_task", {}), sort_keys=True).encode("utf-8")
+        ).hexdigest()
+        ProtocolBridgeNode._receipt_cache[operation_id] = {
+            "receipt": dict(receipt),
+            "task_digest": task_digest,
+        }
+        return receipt
 
 
 def run_demo() -> None:
@@ -155,6 +225,7 @@ def run_demo() -> None:
     # Bước 1: Agent từ Hệ sinh thái A phát tín hiệu bằng chuẩn riêng của nó
     ecosystem_a_packet = {
         "context_id": "did:eco_a:travel_assistant_01",
+        "operation_id": "op_demo_0001",
         "tool_call": {
             "name": "query_asean_logistics_slot",
             "arguments": {
@@ -193,7 +264,9 @@ def run_demo() -> None:
     }
 
     # Bước 4: Tạo digest demo; bước này không xác thực giao dịch hay nguồn gốc dữ liệu.
-    receipt = bridge.issue_verification_receipt(bridged_packet, ecosystem_b_response)
+    receipt = bridge.issue_verification_receipt(
+        bridged_packet, ecosystem_b_response, decoded_packet["operation_id"]
+    )
     logger.info("[3] Biên nhận demo có mã băm SHA-256 (không xác thực nguồn gốc):")
     logger.info("%s", json.dumps(receipt, indent=2, ensure_ascii=False))
 

@@ -102,11 +102,17 @@ def build_receipt(
     issued_at: str,
     expires_at: str,
     nonce: Optional[str] = None,
+    operation_id: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Tao bien nhan **chua ky** (trang thai "awaiting signature").
 
     ``nonce`` mac dinh la 16 byte ngau nhien. ``expires_at`` la moc het han
     (chong replay) - ben xac minh se tu choi bien nhan da het han.
+
+    ``operation_id`` la khoa idempotency: cung mot ``operation_id`` thi chi
+    thuc hien mot lan. Khi co mat, no **nam trong payload duoc ky** (chi
+    ``signatures`` va ``transporter_attestations`` duoc loai khoi payload), nen
+    khong the doi chieu ma ma khong lam vo chu ky.
     """
     if not trace_id:
         raise ValueError("trace_id khong duoc rong")
@@ -116,7 +122,7 @@ def build_receipt(
         nonce = _b64u(os.urandom(16))
     digests = compute_digests(task, result)
     kid = jwk_thumbprint(executor_public_key)
-    return {
+    receipt: Dict[str, Any] = {
         "receipt_version": RECEIPT_VERSION,
         "receipt_id": "rcpt_" + _b64u(os.urandom(10)),
         "trace_id": trace_id,
@@ -130,6 +136,11 @@ def build_receipt(
         },
         "signatures": [],
     }
+    if operation_id is not None:
+        if not isinstance(operation_id, str) or not operation_id.strip():
+            raise ValueError("operation_id phai la chuoi khong rong")
+        receipt["operation_id"] = operation_id
+    return receipt
 
 
 def signing_payload(receipt: Mapping[str, Any]) -> bytes:

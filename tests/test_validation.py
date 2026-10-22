@@ -160,6 +160,70 @@ class TestAllowlist(unittest.TestCase):
         self.assertEqual(validation.validate({"a": "x", "b": 1}, schema), [])
 
 
+class TestOperationIdSchema(unittest.TestCase):
+    """operation_id la khoa idempotency - bat buoc co trong goi tin Bridge."""
+
+    def test_module_schema_requires_operation_id(self):
+        from nan_ai2ai import validation as v
+        schema = v.bridge_packet_schema(["route", "cargo_type"])
+        self.assertIn("operation_id", schema["required"])
+        self.assertIn("operation_id", schema["properties"])
+
+    def test_packet_without_operation_id_fails_module_schema(self):
+        from nan_ai2ai import validation as v
+        schema = v.bridge_packet_schema(["route", "cargo_type"])
+        packet = {
+            "context_id": "did:eco_a:agent_01",
+            "tool_call": {"name": "q", "arguments": {"route": "R", "cargo_type": "C"}},
+        }
+        self.assertTrue(v.validate(packet, schema))
+
+    def test_packet_with_operation_id_passes_module_schema(self):
+        from nan_ai2ai import validation as v
+        schema = v.bridge_packet_schema(["route", "cargo_type"])
+        packet = {
+            "context_id": "did:eco_a:agent_01",
+            "operation_id": "op_1",
+            "tool_call": {"name": "q", "arguments": {"route": "R", "cargo_type": "C"}},
+        }
+        self.assertEqual(v.validate(packet, schema), [])
+
+    def test_empty_operation_id_fails_module_schema(self):
+        from nan_ai2ai import validation as v
+        schema = v.bridge_packet_schema(["route", "cargo_type"])
+        packet = {
+            "context_id": "did:eco_a:agent_01",
+            "operation_id": "",
+            "tool_call": {"name": "q", "arguments": {"route": "R", "cargo_type": "C"}},
+        }
+        self.assertTrue(v.validate(packet, schema))
+
+    def test_unknown_required_argument_is_rejected(self):
+        from nan_ai2ai import validation as v
+        with self.assertRaises(ValueError):
+            v.bridge_packet_schema(["khong_co_trong_kho_dac_biet"])
+
+
+class TestAnnotationKeywords(unittest.TestCase):
+    """Tu khoa chi mang tinh CHU THICH (khong co nghia ganh validation) duoc bo qua."""
+
+    def test_description_is_accepted_as_no_op(self):
+        schema = {"type": "string", "description": "mo ta"}
+        self.assertEqual(validation.validate("x", schema), [])
+
+    def test_title_is_accepted_as_no_op(self):
+        schema = {"type": "integer", "title": "so"}
+        self.assertEqual(validation.validate(5, schema), [])
+
+    def test_annotation_keywords_are_listed_separately(self):
+        self.assertIn("description", validation.ANNOTATION_KEYWORDS)
+        self.assertNotIn("description", validation.KNOWN_UNSUPPORTED)
+
+    def test_validation_affecting_keyword_is_still_rejected(self):
+        with self.assertRaises(validation.ValidationError):
+            validation.validate(1, {"if": {"type": "integer"}})
+
+
 class TestUnsupportedKeywords(unittest.TestCase):
 
     def test_unsupported_keyword_is_reported_not_ignored(self):

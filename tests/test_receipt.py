@@ -267,6 +267,57 @@ class TestThirdPartyVerification(unittest.TestCase):
         self.assertFalse(report.ok)
 
 
+class TestOperationId(unittest.TestCase):
+    """operation_id phai nam trong payload duoc ky de khong the doi ma
+    ma khong lam vo chu ky."""
+
+    def setUp(self):
+        self.secret, self.public = ed25519.generate_keypair()
+        self.kid = receipt.jwk_thumbprint(self.public)
+        self.draft = receipt.build_receipt(
+            trace_id="trace_op", task=TASK, result=RESULT,
+            executor_agent_id="did:nan:bob_02",
+            executor_public_key=self.public,
+            issued_at=now_iso(-1), expires_at=now_iso(15),
+            operation_id="op_123456")
+
+    def test_operation_id_is_present(self):
+        self.assertEqual(self.draft["operation_id"], "op_123456")
+
+    def test_operation_id_is_covered_by_the_signature(self):
+        signed = receipt.sign_receipt(self.draft, self.secret)
+        payload = receipt.signing_payload(signed)
+        self.assertIn(b"op_123456", payload)
+
+    def test_tampering_with_operation_id_breaks_the_signature(self):
+        signed = receipt.sign_receipt(self.draft, self.secret)
+        tampered = dict(signed)
+        tampered["operation_id"] = "op_999999"
+        report = receipt.verify_receipt(tampered, {self.kid: self.public})
+        self.assertFalse(report.ok)
+
+    def test_verification_still_passes(self):
+        signed = receipt.sign_receipt(self.draft, self.secret)
+        report = receipt.verify_receipt(signed, {self.kid: self.public},
+                                       task=TASK, result=RESULT)
+        self.assertTrue(report.ok, report.summary())
+
+    def test_empty_operation_id_is_rejected(self):
+        with self.assertRaises(ValueError):
+            receipt.build_receipt(
+                trace_id="t", task=TASK, result=RESULT,
+                executor_agent_id="a", executor_public_key=self.public,
+                issued_at=now_iso(), expires_at=now_iso(5),
+                operation_id="   ")
+
+    def test_operation_id_is_optional(self):
+        without = receipt.build_receipt(
+            trace_id="t", task=TASK, result=RESULT,
+            executor_agent_id="a", executor_public_key=self.public,
+            issued_at=now_iso(), expires_at=now_iso(5))
+        self.assertNotIn("operation_id", without)
+
+
 class TestAgentCard(unittest.TestCase):
 
     def setUp(self):

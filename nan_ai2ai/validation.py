@@ -46,6 +46,7 @@ import re
 from typing import Any, Dict, List, Mapping, Sequence, Tuple
 
 __all__ = [
+    "ANNOTATION_KEYWORDS",
     "ValidationError",
     "SUPPORTED_KEYWORDS",
     "bridge_packet_schema",
@@ -81,10 +82,12 @@ def bridge_packet_schema(
             "nan_ai2ai.validation.ARGUMENT_SPECS truoc khi dung." % ", ".join(unknown))
     return {
         "type": "object",
-        "required": ["context_id", "tool_call"],
+        "required": ["context_id", "tool_call", "operation_id"],
         "additionalProperties": False,
         "properties": {
             "context_id": {"type": "string", "minLength": 3, "maxLength": 256},
+            # Khoa idempotency: cung mot operation_id thi chi thuc hien mot lan.
+            "operation_id": {"type": "string", "minLength": 1, "maxLength": 128},
             "tool_call": {
                 "type": "object",
                 "required": ["name"],
@@ -111,16 +114,23 @@ SUPPORTED_KEYWORDS = frozenset({
     "propertyNames", "multipleOf",
 })
 
-#: Cac tu khoa bi biet la co trong Draft 2020-12 nhung KHONG duoc ho tro.
-#: Neu gap, bao loi ro rang thay vi bo qua.
+#: Cac tu khoa **chi mang tinh chu thich**, KHONG co nghia ganh validation
+#: trong Draft 2020-12 -> duoc bo qua mot cach an toan (khong the lam sai
+#: ket qua kiem tra). Vi du: 'title', 'description'.
+ANNOTATION_KEYWORDS = frozenset({
+    "title", "description", "$comment",
+})
+
+#: Cac tu khoa bi biet la co trong Draft 2020-12 nhung KHONG duoc ho tro
+#: va **co the anh huong ket qua validation** -> neu gap, bao loi ro rang
+#: thay vi bo qua am tham.
 KNOWN_UNSUPPORTED = frozenset({
     "$ref", "$defs", "$dynamicRef", "$dynamicAnchor", "$anchor", "$id",
     "if", "then", "else", "dependentSchemas", "dependentRequired",
     "unevaluatedProperties", "unevaluatedItems", "contains", "minContains",
     "maxContains", "uniqueItems", "format", "contentEncoding",
     "contentMediaType", "contentSchema", "prefixItems", "patternProperties",
-    "title", "description", "default", "examples", "deprecated", "readOnly",
-    "writeOnly", "$comment", "$schema",
+    "default", "examples", "deprecated", "readOnly", "writeOnly", "$schema",
 })
 
 
@@ -154,7 +164,7 @@ def _type_matches(value: Any, expected: str) -> bool:
 def _check_keywords(schema: Mapping[str, Any], path: str) -> None:
     """Tu cho moi tu khoa ngoai subset, thay vi im lang bo qua."""
     for key in schema:
-        if key in SUPPORTED_KEYWORDS:
+        if key in SUPPORTED_KEYWORDS or key in ANNOTATION_KEYWORDS:
             continue
         if key in KNOWN_UNSUPPORTED:
             raise ValidationError(
