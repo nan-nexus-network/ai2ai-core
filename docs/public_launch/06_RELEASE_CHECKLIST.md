@@ -116,8 +116,8 @@
 
 | # | Vì sao chưa đánh dấu | Cách đóng |
 |:--|:---|:---|
-| **B2** | Trích dẫn pháp lý **mới đối chiếu một phần**. Đã kiểm chứng độc lập: GB/Z 185-2026 (công bố 22/05/2026), ACFTA 3.0 (ký 28/10/2025), Tuyên bố Hà Nội/ADM 2030 (thông qua 16/01/2026), Luật An ninh mạng sửa đổi (01/01/2026). Còn lại cần đối chiếu nốt | Đối chiếu nốt 16 mục trong `PHỤ LỤC & TÀI LIỆU THAM KHẢO` với bộ `STANDARDS/standards.csv` của kho `ai2ai-research` (mỗi dòng có `source_ref` trỏ đúng vị trí) |
-| **B8** | **Bị chặn bởi 4 câu "GB/Z 185-2026 đang đưa lên ITU-T"** trong whitepaper (L32, L39, L162, L345). Chưa có nguồn xác minh, nên chưa thể tuyên bố "không còn tuyên bố về số liệu chưa kiểm chứng" | Cần số hiệu văn bản ITU-T liên quan, **hoặc** đổi thành diễn đạt không khẳng định |
+| **B2** | ✅ **ĐÃ ĐÓNG (22/10/2026).** Toàn bộ **17 mục** trong `PHỤ LỤC & TÀI LIỆU THAM KHẢO` đã được đối chiếu với nguồn gốc, kèm **ngày ban hành + đường dẫn kiểm chứng** và một **bảng xác minh 17 dòng** ngay sau danh mục. Đã sửa 3 mục sai: nhà xuất bản báo cáo NIC → **Access Partnership**; tên chính thức GB/Z → **《人工智能 智能体互联》** (7 văn bản kỹ thuật chỉ dẫn, Công bố 2026 số 22, SAMR+SAC); tên T/ZGCMCA 024 → **《人工智能智能体互操作性接口规范》** | Xem bảng xác minh trong whitepaper + `docs/PRESS_KIT.md` mục 6.1 |
+| **B8** | ✅ **ĐÃ ĐÓNG (22/10/2026).** 4 câu "GB/Z 185-2026 đang đưa lên ITU-T" đã được **gỡ bỏ** ở cả 2 bản whitepaper và thay bằng mô tả trung tính, có nêu rõ **"chúng tôi chưa xác minh được nó đã được trình lên tổ chức chuẩn hóa quốc tế nào, nên không khẳng định điều đó"**. Đồng thời gỡ claim ITU-T ở `ONE_PAGE_SUMMARY.md` và `STANDARDS/standards.csv` + `.json` ( AIP → ANP). | Không còn cổng chặn. `docs/PRESS_KIT.md` mục 6.2 nêu rõ điều chúng tôi **không** khẳng định |
 | **C8** | Kiểm tra **thủ công** — phải mở hộp thư `nan_ai2ai@proton.me` và xác nhận nhận được | Người phụ trách kiểm tra mở hộp thư |
 | **F4** | Chưa đăng bài giới thiệu nào (cần chọn kênh) | Chọn kênh + đăng, ghi lại URL vào `audit.log` |
 | **F6** | Chưa khởi tạo nhật ký báo cáo tuần | Tạo file nhật ký tuần trong `C:\NAN_DATA\07_AUDIT\` |

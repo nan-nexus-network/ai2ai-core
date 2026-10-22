@@ -29,14 +29,14 @@
   * Việt Nam không cần đua làm trung tâm mô hình AI tỷ đô, mà có thể thử nghiệm vai trò **"Cầu nối Giao thức AI" (AI Reference Bridge)**.
   * Làm "cầu nối" là đóng góp các mô-đun chuyển đổi (adapters) và quy tắc xác thực (validation rules) mã nguồn mở cho thế giới, không phải làm trung gian chuyển tiếp dữ liệu chính trị.
   * Vị thế trung lập về kỹ thuật cùng các định hướng chính sách mới (Nghị quyết 57-NQ/TW, Quyết định 1671/QĐ-TTg, Quyết định 1528/QĐ-TTg, Hanoi Digital Declaration) tạo cho Việt Nam một lợi thế hẹp nhưng thực chất trong ASEAN.
-* **Bối cảnh chính sách quốc tế (bổ sung):** Trung Quốc đã ban hành chuẩn kết nối tác tử GB/Z 185-2026 (05/2026), đang đưa lên ITU-T; Việt Nam đã ký Bản ghi nhớ quản trị AI với Trung Quốc (2025) và Tuyên bố chung 4/2026 cam kết "khám phá cơ chế hợp tác mã nguồn mở"; ACFTA 3.0 (2025) và DEFA (dự kiến 2026) đang định hình khung pháp lý kinh tế số khu vực. Đây là mạng lưới chính sách thuận lợi cho một sáng kiến tầng giao thức như NAN AI2AI.
+* **Bối cảnh chính sách quốc tế (bổ sung):** Trung Quốc đã ban hành bộ tiêu chuẩn quốc gia về kết nối tác tử AI (GB/Z 185.1–185.7-2026, công bố 22/05/2026) — đây là **tiêu chuẩn quốc gia trong nước**; chúng tôi chưa xác minh được nó đã được trình lên tổ chức chuẩn hóa quốc tế nào, nên **không khẳng định** điều đó. Việt Nam đã ký Bản ghi nhớ quản trị AI với Trung Quốc (2025) và Tuyên bố chung 4/2026 cam kết "khám phá cơ chế hợp tác mã nguồn mở"; ACFTA 3.0 (2025) và DEFA (dự kiến 2026) đang định hình khung pháp lý kinh tế số khu vực. Đây là mạng lưới chính sách thuận lợi cho một sáng kiến tầng giao thức như NAN AI2AI.
 * **NAN AI2AI-SI2SI là gì?** Đây là một hộp cát thử nghiệm mã nguồn mở (Apache 2.0) kèm bản demo chạy trong 60 giây nhằm kiểm chứng giả thuyết cầu nối giao thức, không phải là một giải pháp thương mại hoàn chỉnh.
 * **Mục đích của tài liệu:** Mời cộng đồng, chuyên gia và nhà quản lý góp ý, chỉ ra điểm sai. Sáng kiến này khởi đầu từ nguồn lực tự thân, công bố mở mã nguồn như một sự đóng góp nhỏ bé cho Kỷ nguyên Vươn mình - Kỷ nguyên AI của Việt Nam. Chúng tôi tuyệt đối không tự nhận vị thế dẫn dắt hay tiên phong, mà chỉ đóng vai trò là những người khởi xướng, sẵn sàng học hỏi và chờ đợi sự đồng hành tự nhiên từ cộng đồng khi giá trị thực tiễn được chứng minh.
 * **Bốn câu hỏi trọng tâm nhất (trong 12 câu hỏi ở Chương 6):**
   1. *Việt Nam có nên đầu tư nghiên cứu vào tầng giao thức kết nối AI, hay chỉ nên tập trung vào ứng dụng đầu cuối?* (Câu 1)
   2. *Các giao thức hiện có (MCP, A2A) đã đủ cho nhu cầu liên vận đa quốc gia chưa, hay vẫn còn khoảng trống cho các bộ chuyển đổi trung lập?* (Câu 3)
   3. *Có nên đề xuất chuẩn kết nối mở mang dấu ấn Việt Nam, hay chỉ đóng góp mô-đun trực tiếp vào các chuẩn quốc tế đang định hình?* (Câu 9)
-  4. *Trong bối cảnh Trung Quốc đã có GB/Z 185-2026 và đang đẩy lên ITU-T, Việt Nam nên tham gia đóng góp vào chuẩn Trung Quốc, xây bridge tương thích đa chuẩn, hay thúc đẩy chuẩn riêng trong khuôn khổ ASEAN?* (Câu 11)
+  4. *Trong bối cảnh Trung Quốc đã có bộ tiêu chuẩn quốc gia GB/Z 185-2026 về kết nối tác tử AI, Việt Nam nên tham gia đóng góp vào chuẩn Trung Quốc, xây bridge tương thích đa chuẩn, hay thúc đẩy chuẩn riêng trong khuôn khổ ASEAN?* (Câu 11)
 
 ---
 
@@ -159,7 +159,7 @@ Chúng tôi trân trọng đặt ra 12 câu hỏi dưới đây và mong nhận 
 9. **Bài toán tiêu chuẩn:** Chúng ta có nên đề xuất các quy chuẩn kết nối mở mang dấu ấn Việt Nam, hay hướng đi khôn ngoan hơn là đóng góp các mô-đun cầu nối trực tiếp vào các chuẩn quốc tế đang định hình?
 10. **Thước đo hiệu quả:** Nếu thử nghiệm vai trò cầu nối, chúng ta nên đo lường sự thành công hay thất bại của hướng đi này sau 5 năm bằng những chỉ số thực chất nào?
 
-11. **Đối chiếu với chuẩn Trung Quốc:** Trong bối cảnh Trung Quốc đã ban hành GB/Z 185-2026 về kết nối liên thông tác tử và đang đưa tiêu chuẩn này lên ITU-T, Việt Nam nên (a) tham gia đóng góp vào chuẩn Trung Quốc, (b) xây bridge tương thích đa chuẩn (MCP + A2A + GB/Z), hay (c) thúc đẩy chuẩn riêng trong khuôn khổ ASEAN?
+11. **Đối chiếu với chuẩn Trung Quốc:** Trong bối cảnh Trung Quốc đã ban hành bộ tiêu chuẩn quốc gia GB/Z 185-2026 về kết nối tác tử AI, Việt Nam nên (a) tham gia đóng góp vào chuẩn Trung Quốc, (b) xây bridge tương thích đa chuẩn (MCP + A2A + GB/Z), hay (c) thúc đẩy chuẩn riêng trong khuôn khổ ASEAN?
 
 12. **Cơ chế hợp tác mã nguồn mở Việt - Trung:** Tuyên bố chung Việt Nam - Trung Quốc ngày 17/04/2026 có đề cập "khám phá cơ chế hợp tác mã nguồn mở". NAN AI2AI có thể trở thành dự án thí điểm cho cơ chế này không, và nếu có, cần chuẩn bị gì về pháp lý, quản trị và lộ trình?
 
@@ -186,22 +186,45 @@ Tài liệu này là một bản nháp mở. Bạn có thể tham gia theo bất
 * **Cổng thông tin tổng hợp (Link Hub):** `https://nan-ai2ai.nexusasianetwork.workers.dev`
 * **Danh mục văn bản chính sách tham chiếu:**
   > *Một số tài liệu dưới đây được trích dẫn từ Phụ lục A để bảo toàn bằng chứng gốc.*
-  1. Nghị quyết số 57-NQ/TW (2024) của Bộ Chính trị về đột phá phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số quốc gia.
-  2. Nghị quyết số 03/NQ-CP (2025) của Chính phủ về Chương trình hành động thực hiện Nghị quyết số 57-NQ/TW.
-  3. Nghị quyết số 71/NQ-CP (2025) của Chính phủ về Chương trình hành động thực hiện Nghị quyết số 57-NQ/TW.
+  1. **Nghị quyết số 57-NQ/TW** của Bộ Chính trị (người ký: Tổng Bí thư Tô Lâm), ngày **22/12/2024**, về đột phá phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số quốc gia. Nguồn: `https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-119241224180048642.htm`
+  2. **Nghị quyết số 03/NQ-CP** của Chính phủ, ngày **09/12/2025**, ban hành Chương trình hành động của Chính phủ thực hiện Nghị quyết số 57-NQ/TW.
+  3. **Nghị quyết số 71/NQ-CP** của Chính phủ, ngày **01/04/2025**, sửa đổi, bổ sung cập nhật Chương trình hành động thực hiện Nghị quyết số 57-NQ/TW. *(Ghi chú: Nghị quyết số 11/NQ-CP năm 2026 tiếp tục sửa đổi Nghị quyết này.)*
   4. **Hanoi Digital Declaration** (Tuyên bố Hà Nội về Hợp tác Số) và **ASEAN Digital Masterplan 2026–2030 (ADM 2030)**, được thông qua tại Hội nghị Bộ trưởng Số ASEAN lần thứ 6 (**ADGMIN-6**), Hà Nội, Việt Nam, **15–16/01/2026** (Tuyên bố được thông qua ngày **16/01/2026**). Nguồn: `https://asean.org/hanoi-digital-declaration-adaptive-asean-from-connectivity-to-connected-intelligence`
-  5. Quyết định số 1528/QĐ-TTg (2026) và Quyết định số 1671/QĐ-TTg (2026) của Thủ tướng Chính phủ về Chương trình phát triển nhân lực AI và Chiến lược quốc gia về trí tuệ nhân tạo.
-  6. **Biện pháp tạm thời quản lý dịch vụ trí tuệ nhân tạo tạo sinh** (Trung Quốc, hiệu lực 15/08/2023), do bảy cơ quan đồng ban hành.
-  7. **GB/Z 185-2026: Loạt 7 tiêu chuẩn quốc gia về Kết nối liên thông giữa các tác tử AI** (Trung Quốc, công bố 22/05/2026), Tổng cục Quản lý Thị trường (SAMR) và Tổng cục Tiêu chuẩn hóa (SAC).
-  8. **T/ZGCMCA 024-2025: Tiêu chuẩn nhóm về giao diện tương tác AI Agent** (Trung Quốc, 02/2026).
-  9. **Luật An ninh mạng Trung Quốc (sửa đổi)** (hiệu lực 01/01/2026), bổ sung điều khoản quản trị AI.
-  10. **Tuyên bố chung Việt Nam - Trung Quốc** ngày 17/04/2026 về tiếp tục làm sâu sắc quan hệ đối tác hợp tác chiến lược toàn diện.
-  11. **Bản ghi nhớ hợp tác CNTT và Chuyển đổi số Việt Nam - Trung Quốc** (12/2023).
-  12. **Bản ghi nhớ hợp tác phát triển và quản trị AI Việt Nam - Trung Quốc** (2025).
-  13. **ACFTA 3.0: Hiệp định Thương mại Tự do Trung Quốc - ASEAN nâng cấp** (ký 28/10/2025), bao gồm nội dung kinh tế số.
-  14. **DEFA: Hiệp định khung kinh tế số ASEAN** (dự kiến ký cuối 2026), đàm phán đã kết thúc, chờ ký.
-  15. **e-Conomy SEA 2024**: Google, Temasek, Bain & Company (11/2024). Nguồn: `https://economysea.withgoogle.com`
-  16. **Economic Impact Report: Driving digital growth in Vietnam with Google**: NIC (Trung tâm Đổi mới Quốc gia) và Google, 14/11/2024. Nguồn: `https://accesspartnership.com/reports/economic-impact-report-driving-digital-growth-in-vietnam-with-google-2`
+  5. **Quyết định số 1528/QĐ-TTg**, ngày **11/08/2026** (Phó Thủ tướng Lê Tiến Châu ký): phê duyệt **Chương trình quốc gia phát triển nhân lực trí tuệ nhân tạo đến năm 2030, định hướng đến năm 2035**. Nguồn: `https://en.baochinhphu.vn/govt-approves-national-program-for-ai-human-resources-development-through-2030-towards-2035-111260812153745145.htm`
+  6. **Quyết định số 1671/QĐ-TTg**, ngày **28/08/2026** (Phó Thủ tướng Hồ Quốc Dũng ký): phê duyệt **Chiến lược quốc gia về trí tuệ nhân tạo đến năm 2030, tầm nhìn đến năm 2045**. Nguồn: `https://en.baochinhphu.vn/govt-approves-national-ai-strategy-111260829094257423.htm`
+  7. **《生成式人工智能服务管理暂行办法》** — Biện pháp tạm thời quản lý dịch vụ trí tuệ nhân tạo tạo sinh (Trung Quốc). Thông qua **23/05/2023**, công bố **13/07/2023**, **hiệu lực 15/08/2023**; do **bảy cơ quan** đồng ban hành: 国家互联网信息办公室 (CAC), 国家发展和改革委员会, 教育部, 科学技术部, 工业和信息化部, 公安部, 国家广播电视总局. Nguồn: `https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm`
+  8. **GB/Z 185.1–185.7-2026** — bộ **7** *国家标准化指导性技术文件* (văn bản kỹ thuật chỉ dẫn chuẩn hoá quốc gia) của Trung Quốc, tên chính thức **《人工智能 智能体互联》** (Artificial intelligence — Agent interconnection), ban hành theo Công bố 2026 số 22 của **国家市场监督管理总局 (SAMR)** và **国家标准化管理委员会 (SAC)**, ngày **22/05/2026**. Bảy phần: 1. 总体架构 · 2. 身份码 · 3. 身份管理 · 4. 智能体描述 · 5. 智能体发现 · 6. 智能体交互 · 7. 智能体工具调用. Nguồn: `https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=CFF03D872963466AC7F03ED0E28B6702`
+  9. **T/ZGCMCA 024—2025** — 《人工智能智能体互操作性接口规范》 (Đặc tả giao diện tương thích lẫn nhau của intelligent agent AI), tiêu chuẩn nhóm của **中国移动通信联合会 (CMCA)**, hiệu lực **07/02/2026**. Nguồn: `https://www.ttbz.org.cn/standardDetail.html?id=ly0vzufjz95khwd216r5s3ma4snwh9l`
+  10. **Luật An ninh mạng Trung Quốc (sửa đổi)** (hiệu lực **01/01/2026**), bổ sung điều khoản quản trị AI.
+  11. **Tuyên bố chung Việt Nam - Trung Quốc** ngày **17/04/2026** (trong chuyến thăm chính thức Việt Nam của Tổng Bí thư Tô Lâm và Chủ tịch nước Tập Cận Bình, **14–17/4/2026**), về tiếp tục làm sâu sắc quan hệ đối tác hợp tác chiến lược toàn diện, thúc đẩy xây dựng cộng đồng chia sẻ tương lai Việt Nam - Trung Quốc, có ý nghĩa chiến lược; trong đó có câu *"nghiên cứu xây dựng cơ chế hợp tác mã nguồn mở"*. Nguồn: `https://mae.gov.vn/toan-van-tuyen-bo-chung-giua-hai-nuoc-viet-nam-va-trung-quoc-21460.htm`
+  12. **Bản ghi nhớ hợp tác công nghệ thông tin và chuyển đổi số Việt Nam - Trung Quốc** (ký **12/2023**, cấp Bộ); trong cùng đợt, hai bên ký **《关于深化数字经济和数据合作的谅解备忘录》** ngày **12/12/2023** (hợp tác kinh tế số và dữ liệu) và **《关于绿色发展、应对气候变化和环境保护合作的谅解备忘录》**.
+  13. **《关于深化人工智能合作的谅解备忘录》** giữa **国家发展和改革委员会 (NDRC)** Trung Quốc và **Bộ KH&CN Việt Nam**, ký **tháng 4/2025** — tăng cường hợp tác phát triển và quản trị AI. Nguồn: `https://www.ndrc.gov.cn/fzggw/wld/zsj/zyhd/202504/t20250418_1397272.html`
+  14. **ACFTA 3.0: Hiệp định Thương mại Tự do Trung Quốc - ASEAN nâng cấp** (ký **28/10/2025**), bao gồm nội dung kinh tế số.
+  15. **DEFA: Hiệp định khung kinh tế số ASEAN** (ASEAN Digital Economy Framework Agreement) — ASEAN tuyên bố **"substantial conclusion"** ngày **24/10/2025** tại Hội nghị AEC lần thứ 26 (Kuala Lumpur), sau **14** vòng đàm phán dưới sự dẫn dẫn của Thái Lan; **dự kiến ký tại Hội nghị cấp cao ASEAN lần thứ 49, tháng 11/2026 tại Manila**. Nguồn: `https://asean.org/our-communities/economic-community/asean-e-commerce/key-documents/`
+  16. **e-Conomy SEA 2024** (ấn phẩm thứ 9): Google, Temasek, Bain & Company, **11/2024** — kinh tế số Đông Nam Á đạt GMV 263 tỷ USD (+15%), lợi nhuận vượt 11 tỷ USD. Nguồn: `https://economysea.withgoogle.com`
+  17. **Economic Impact Report: Driving digital growth in Vietnam with Google**: **Access Partnership** và Google, **14/11/2024**. Nguồn: `https://accesspartnership.com/reports/economic-impact-report-driving-digital-growth-in-vietnam-with-google-2`
+
+> **Bảng xác minh (đã đối chiếu ngày 22/10/2026):** Mỗi mục dưới đây đã được kiểm chứng lại bằng cách tra nguồn gốc. Ba mục được **bổ sung** trong đợt hoàn thiện này (mục 8, 13, 17 — kèm sửa tên/số hiệu sai) và một mục được **bổ sung cơ sở kiểm chứng** (mục 3).
+>
+> | # | Mức độ xác minh | Nguồn đã đối chiếu |
+> |:--:|:---|:---|
+> | 1, 2 | ✅ Đã đối chiếu toàn văn | `xaydungchinhsach.chinhphu.vn`, `tulieuvankien.dangcongsan.vn` |
+> | 3 | ✅ Đã đối chiếu (lưu ý: có NQ 11/NQ-CP 2026 sửa đổi tiếp) | `luatvietnam.vn`, `vbpl.ts24.com.vn` |
+> | 4 | ✅ Đã đối chiếu (ngày thông qua 16/01/2026) | `asean.org` |
+> | 5, 6 | ✅ Đã đối chiếu (kèm người ký và ngày) | `en.baochinhphu.vn` |
+> | 7 | ✅ Đã đối chiểu (7 cơ quan, ngày ban hành, ngày hiệu lực) | `cac.gov.cn` |
+> | 8 | ✅ Đã đối chiếu (7 phần, tên gọi chính thức, công bố 2026 số 22) | `openstd.samr.gov.cn`, `secrss.com` |
+> | 9 | ✅ Đã đối chiếu (tên đầy đủ, ngày hiệu lực, cơ quan ban hành) | `ttbz.org.cn` |
+> | 10 | ✅ Đã đối chiếu | `nhandan.vn` |
+> | 11 | ✅ Đã đối chiếu (ngày + câu "cơ chế hợp tác mã nguồn mở") | `mae.gov.vn` |
+> | 12 | 🟡 **Xác minh một phần** — xác nhận có bộ bản ghi nhớ cấp Bộ ký 12/2023 và bản về kinh tế số–dữ liệu ngày 12/12/2023; **tên chính xác của bản "hợp tác CNTT" chưa đối chiếu được tới bản gốc** | Hướng dẫn Đầu tư nước ngoài 2025 của Bộ Công thương (MOFCOM), VJST |
+> | 13 | ✅ Đã đối chiếu (cơ quan, tháng, nội dung) | `ndrc.gov.cn` |
+> | 14 | ✅ Đã đối chiếu (ngày ký) | `vietnamnet.vn` |
+> | 15 | ✅ Đã đối chiếu (mốc 24/10/2025, 14 vòng, địa điểm ký dự kiến) | `asean.org`, `weforum.org` |
+> | 16 | ✅ Đã đối chiếu (ấn phẩm thứ 9, tháng 11/2024, số liệu chính) | `economysea.withgoogle.com`, `temasek.com.sg` |
+> | 17 | ✅ Đã đối chiếu (ngày 14/11/2024) — **đã sửa nhà xuất bản**: bản báo cáo do **Access Partnership** thực hiện, không phải NIC | `accesspartnership.com` |
+>
+> **Ba điểm đã được sửa trong đợt hoàn thiện này:** (1) mục 17 — nhà xuất bản là **Access Partnership**, không phải NIC; (2) mục 8 — tên chính thức là **《人工智能 智能体互联》** (Agent interconnection) và đây là **7 văn bản kỹ thuật chỉ dẫn** ban hành theo Công bố 2026 số 22, không phải "7 tiêu chuẩn quốc gia" theo nghĩa thông thường; (3) mục 9 — tên đầy đủ là **《人工智能智能体互操作性接口规范》**.
 
 **Cách trích dẫn tài liệu này (How to Cite):**
 > NAN AI2AI-SI2SI (2026). *Việt Nam như cầu nối trong nền kinh tế AI2AI: Tài liệu thảo luận mở (v0.4-draft)*. GitHub: <https://github.com/nan-nexus-network/ai2ai-core>. Giấy phép: CC-BY 4.0.
@@ -342,7 +365,7 @@ Từ các phân tích trên, có ba hàm ý cần được ghi nhận, và đây
 
 #### A.4.1. Từ "khoảng trống" sang "chiến trường chuẩn hóa"
 
-Phiên bản v0.1 mô tả khoảng trống như một khoảng trống đơn thuần, nơi chưa ai đặt chân đến. Nhưng thực tế phức tạp hơn: Trung Quốc đã có GB/Z 185-2026 và đang xuất khẩu qua ITU-T; MCP/A2A của Mỹ đã có chỗ đứng; EU có luật riêng.
+Phiên bản v0.1 mô tả khoảng trống như một khoảng trống đơn thuần, nơi chưa ai đặt chân đến. Nhưng thực tế phức tạp hơn: Trung Quốc đã có bộ tiêu chuẩn quốc gia riêng về kết nối tác tử AI (GB/Z 185-2026); MCP/A2A của Mỹ đã có chỗ đứng; EU có luật riêng.
 
 Đây không phải là tin xấu. Đây là **tin tốt**, vì:
 
