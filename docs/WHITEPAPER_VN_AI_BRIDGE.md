@@ -323,7 +323,7 @@ Tuyên bố chung về việc tiếp tục làm sâu sắc quan hệ đối tác
 
 **Thứ hai (và đây là điểm quan trọng nhất): cam kết khám phá cơ chế hợp tác mã nguồn mở.** Tuyên bố nêu: "thúc đẩy trao đổi tổ chức mã nguồn mở, cùng xây dựng dự án, chia sẻ thành quả, triển khai công nghiệp, chia sẻ lợi ích phát triển mã nguồn mở".
 
-Đây là cơ sở chính sách cấp cao nhất cho một dự án như NAN AI2AI. Không chỉ là "được phép làm", mà là **nằm đúng trong định hướng hợp tác mà hai chính phủ đã cam kết**. Khi trình bày với báo chí hoặc cơ quan chính sách, đây là điểm tựa pháp lý mạnh hơn bất kỳ nghị quyết đơn phương nào.
+Đây là cơ sở chính sách cấp cao nhất cho một dự án như NAN AI2AI. Không chỉ là "được phép làm", mà là **nằm đúng trong định hướng hợp tác mà hai chính phủ đã cam kết**. Đây là điểm tựa pháp lý mạnh hơn bất kỳ nghị quyết đơn phương nào mà một bên có thể dùng một mình.
 
 #### A.2.4. Hàm ý cho NAN AI2AI
 
@@ -392,8 +392,8 @@ Phiên bản v0.1 chỉ tham chiếu các nghị quyết đơn phương của Vi
 
 #### A.4.3. Trung Quốc đã thừa nhận vấn đề: bằng chứng khách quan cho luận điểm của NAN
 
-Đây là điểm mạnh nhất của phụ lục này: **không cần NAN tự nói "có khoảng trống"**, chính văn bản chính thức của Trung Quốc đã nói rằng MCP và A2A chưa đủ, và cần chuẩn mới.
+**Điểm mạnh nhất của phụ lục này:** không cần bên nào tự khẳng định "có khoảng trống" - chính văn bản chính thức của Trung Quốc đã nói rằng MCP và A2A chưa đủ, và cần chuẩn mới.
 
-Đây là "social proof" mạnh nhất có thể có cho White Paper: một cường quốc AI hàng đầu thế giới thừa nhận vấn đề mà NAN đang cố giải quyết. Khi trình bày với nhà báo, nhà hoạch định chính sách, hoặc nhà đầu tư, đây là câu có thể trích dẫn: "Ngay cả Trung Quốc cũng thừa nhận vấn đề 'ốc đảo tác tử' là có thật, và họ đã có chuẩn riêng để giải quyết. Việt Nam có thể học từ cách họ làm, nhưng cần làm theo cách của mình."
+**Về mức độ mạnh của lập luận này:** một cường quốc AI hàng đầu thế giới đã thừa nhận vấn đề mà dự án này đang cố giải quyết. Câu có thể trích dẫn: "Ngay cả Trung Quốc cũng thừa nhận vấn đề 'ốc đảo tác tử' là có thật, và họ đã có chuẩn riêng để giải quyết. Việt Nam có thể học từ cách họ làm, nhưng cần làm theo cách của mình."
 
 ---
