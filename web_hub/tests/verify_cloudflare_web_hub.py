@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2026 NAN AI2AI-SI2SI contributors
 # -*- coding: utf-8 -*-
@@ -9,11 +8,24 @@ Automated Pre-Deploy & Live Post-Deploy Verification Script for the Cloudflare W
 
 FAIL-CLOSED: bat ky kiem tra nao FAIL se lam script tra ve ma loi (exit 1).
 
+GHI CHU QUAN TRONG - TEP NAY CO Y CHI LIEU KE CAC CUM TU BI CAM:
+  BANG "BANNED_PATTERNS" ben duoi la danh sach TEST FIXTURE. Chinh cong kiem
+  tra nay phai CHUA cac chuoi bi cam de phat hien chung trong noi dung cong
+  khai. Do la ma nguon cua bo cong kiem tra, KHONG phai noi dung cong khai:
+  - kiem tra trang that: scan_content() tren HTML/CSS/JS dich vu ra phai tra
+    ve 0 ket qua;
+  - kiem tra PDF: tach rieng, khong quet chung noi dung HTML;
+  - khi quet toan bo repo, chi bao goc "web_hub/tests/" duoc loai tru khoi
+    so lieu cong khai, va dieu nay duoc ghi lai trong web_hub/README.md.
+
 SUA DOI SO VAI BAN GOC CUA LENH (ly do ghi ngay trong file):
-  1. Bieu thuc tu cam "NAN-BRIDGE" duoc siet lai thanh `NAN[\\s\\-_]+BRIDGE`:
-     - "NAN-BRIDGE" / "NAN BRIDGE" / "NAN_BRIDGE"  -> bi cam (ten san pham thuong mai)
-     - "NANBridgeNode"                                -> KHONG bi cam (dinh danh ky thuat trong
-       ma nguon, duoc QUY CHUAN THUONG HIEU muc 3.3 "Ngoai le bat buoc" ghi ro phai giu nguyen)
+  1. Bieu thuc tu cam cua ten san pham thuong mai duoc siet lai thanh
+     `NAN[\\s\\-_]+BRIDGE`:
+     - ten day du, co dau phan cach giua hai tu (gach ngang / khoang trang /
+       gach duoi)                        -> bi cam
+     - ten lop trong ma nguon, khong co dau phan cach  -> KHONG bi cam (dinh danh
+       ky thuat, duoc QUY CHUAN THUONG HIEU muc 3.3 "Ngoai le bat buoc" ghi ro
+       phai giu nguyen)
   2. "9/9 green CI" -> "9/9 CI" + "9 / 9 CI" + "9/9 CI jobs" + "9 of 9 CI" + "CI 9/9",
      de khong bat nham cac so "11/9" / "9/9" trong nguoi khac.
   3. Cac token bat buoc CHUA duoc dung trong ban goc da sua thanh phan tu ban xac minh:
