@@ -33,9 +33,7 @@ const TRU001_MANIFEST = {
     open_good_first_issues: 8,
     external_contributors_recorded: 1,
     specialized_department_brains: 7,
-    central_core_brains: 1,
     canonical_registry_skills_active: 63,
-    canonical_registry_skills_note: "63 = 51 ACTIVE_INTERNAL_ADVISORY_SPECIALIST_GUIDANCE + 12 ACTIVE_INSTALLED. 3 DISABLED and 1 SUPERSEDED are excluded.",
     tru001_truth_discipline: "Declared != Evidenced != Verified != Accepted",
     provenance_gate_fields: 7,
     hitl_digest_lock_enforced: true
