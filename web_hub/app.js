@@ -1,10 +1,9 @@
-/**
- * NAN AI2AI — WEB HUB v2.2 · app.js (ES module, zero dependencies, zero trackers)
- *
- * Nguon su that cua moi chuoi van ban la /i18n-dict.js do Worker phuc vu.
- * Phe bam SHA-256 chay bang Web Crypto API cua trinh duyet: du lieu khong roi ra mayy.
- */
-
+// SPDX-License-Identifier: Apache-2.0
+// Copyright 2026 NAN AI2AI-SI2SI contributors
+//
+// NAN AI2AI - WEB HUB v2.2 | app.js (ES module, zero dependencies, zero trackers)
+// Nguon su that cua moi chuoi van ban la /i18n-dict.js do Worker phuc vu.
+// Phe bam SHA-256 chay bang Web Crypto API cua trinh duyet: du lieu khong roi ra mayy.
 import {
   I18N_DICT, POLICY_INSTRUMENTS, OPEN_ISSUES, PDF_ASSETS,
   RELEASE_TAG, REPO_CORE, REPO_RESEARCH, RELEASE_URL

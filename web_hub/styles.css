@@ -1,9 +1,11 @@
-/* NAN AI2AI — WEB HUB v2.2 | NAN BRAND IDENTITY v1.0
-   Bảng màu: Graphite #2D3033 · Champagne Gold #C79A48 · Ivory #F3EFE5
-              Titanium #6F7378 · Light Gold #E2C27B
-   Tương phản: Graphite/Ivory = 11.57:1 (WCAG AAA) · Light Gold/Graphite = 7.74:1 (AAA)
-   Không script theo dõi. Không thư viện ngoài. */
+/* SPDX-License-Identifier: Apache-2.0
+   Copyright 2026 NAN AI2AI-SI2SI contributors
 
+   NAN AI2AI - WEB HUB v2.2 | NAN BRAND IDENTITY v1.0
+   Bang mau: Graphite #2D3033 - Champagne Gold #C79A48 - Ivory #F3EFE5
+             Titanium #6F7378 - Light Gold #E2C27B
+   Tuong phan: Graphite/Ivory = 11.56:1 (WCAG AAA) - Light Gold/Graphite = 7.73:1 (AAA)
+   Khong script theo doi. Khong thu vien ngoai. */
 :root {
   --graphite: #2D3033;
   --champagne: #C79A48;
