@@ -69,7 +69,7 @@ Dành cho các cá nhân muốn thử nghiệm kết nối AI của mình với 
 ```bash
 python examples/02-agent-to-agent-chat/agent_chat.py
 ```
-*(Mô phỏng cảnh Alice gửi yêu cầu tìm nhà cung cấp qua NAN Bridge, Bob xử lý và trả kết quả kèm Biên nhận SHA-256).*
+*(Mô phỏng cảnh Alice gửi yêu cầu tìm nhà cung cấp qua lớp bằng chứng kỹ thuật, Bob xử lý và trả kết quả kèm Biên nhận SHA-256).*
 
 > ⚠️ **Lưu ý trung thực:** Demo 2 **không** gọi lớp kiểm tra cấu trúc của Demo 1 — đây là **hai hiện thực bridge độc lập chưa được hợp nhất**, một việc đã đưa vào backlog. Chúng tôi nói rõ điều này thay vì để người đọc tự phát hiện.
 

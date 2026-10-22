@@ -1,0 +1,19 @@
+{
+  "name": "NAN AI2AI — Neutral Technical Evidence Infrastructure",
+  "short_name": "NAN AI2AI",
+  "description": "Open-source proof of concept for a neutral technical evidence layer in cross-border AI-to-AI transactions. Zero budget, no fundraising, no courses for sale.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F3EFE5",
+  "theme_color": "#2D3033",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "/logo-nan-ai2ai.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

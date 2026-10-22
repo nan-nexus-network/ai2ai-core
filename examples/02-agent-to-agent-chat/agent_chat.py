@@ -7,7 +7,7 @@ Tương thích: Python 3.8+ (Chỉ sử dụng Python Standard Library)
 Giấy phép: Apache License 2.0
 
 Kịch bản: Alice (Agent A) muốn tìm nhà cung cấp linh kiện tại Quảng Châu.
-Cô ấy gửi yêu cầu qua NAN Bridge đến Bob (Agent B) - người sở hữu dữ liệu chuỗi cung ứng.
+Cô ấy gửi yêu cầu qua lớp bằng chứng kỹ thuật của NAN AI2AI đến Bob (Agent B) - người sở hữu dữ liệu chuỗi cung ứng.
 Hai Agent tự đàm phán và Bob gửi lại kết quả kèm Biên nhận xác thực (SHA-256).
 
 Lưu ý: Đây là mô phỏng luồng (simulation). Chữ ký số xác thực danh tính (Ed25519)
@@ -79,7 +79,7 @@ class NANBridgeNode:
             "receipt_id": f"rcpt_{uuid.uuid4().hex[:10]}",
             "trace_id": trace_id,
             "operation_id": operation_id,
-            "status": "DIGEST_ISSUED_BY_NAN_BRIDGE",
+            "status": "DIGEST_ISSUED_BY_NAN_AI2AI",
             "sha256_proof": proof,
             "data": result
         }
@@ -174,7 +174,7 @@ def run_demo():
     print(json.dumps(task_payload, indent=2, ensure_ascii=False))
 
     # 2. Bridge chuyển tiếp
-    print(f"\n[2] NAN Bridge đang định tuyến từ {alice_agent.did} -> {bob_agent.did}...")
+    print(f"\n[2] NAN AI2AI đang định tuyến từ {alice_agent.did} -> {bob_agent.did}...")
     packet = bridge.route_request(alice_agent.did, bob_agent.did, task_payload)
     print(f"    - Trace ID: {packet['trace_id']}")
 
@@ -190,7 +190,7 @@ def run_demo():
         task_payload["operation_id"], _do_work, packet['trace_id'])
 
     # 4. Bridge cấp biên nhận
-    print("\n[3] NAN Bridge cấp Biên nhận Xác thực (Verification Receipt):")
+    print("\n[3] NAN AI2AI cấp Biên nhận Xác thực (Verification Receipt):")
     print(json.dumps(receipt, indent=2, ensure_ascii=False))
 
     # 5. RETRY: ACK bị mất, Alice gửi lại CÙNG operation_id

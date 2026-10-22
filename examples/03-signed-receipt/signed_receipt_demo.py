@@ -10,7 +10,7 @@ Demo nay tra loi mot cau hoi duy nhat: **ben thu ba xac minh duoc mot bien
 nhan ma KHONG CAN TIN VAO BRIDGE khong?**
 
 Ke thich:
-    Alice (caller) ---> NAN Bridge ---> Bob (executor)
+    Alice (caller) ---> NAN AI2AI ---> Bob (executor)
                           |                    |
                           |              ky bien nhan bang khoa rieng
                           |                    |
@@ -110,7 +110,7 @@ def main() -> int:
     )
     attested = receipt.add_transporter_attestation(
         signed,
-        transporter_id="nan-bridge-node-01",
+        transporter_id="nan-ai2ai-node-01",
         signature=ed25519.sign(bridge_secret, bridge_payload),
         kid=receipt.jwk_thumbprint(bridge_public),
     )

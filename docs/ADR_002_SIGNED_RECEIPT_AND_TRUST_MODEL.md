@@ -15,7 +15,7 @@
 | `max_latency_hours` không được kiểm tra kiểu dữ liệu | giá trị chuỗi `"KHONG_PHAI_SO_AM_TIEN"` đi thẳng vào `standardized_task.parameters` |
 | Biên nhận không có chữ ký | đổi thẳng trường `sha256_proof` → **không có gì chặn** |
 | Băm bằng cách nối hai blob JSON | `json.dumps(a) + json.dumps(b)` — **không dấu phân cách, không domain separator** |
-| Hai hiện thực bridge phân kỳ | `hello_bridge.py` (`ProtocolBridgeNode`, `NAN-AI2AI-Bridge/v0.1-poc`, `DEMO_DIGEST_ONLY`, **có** gọi validation) vs `agent_chat.py` (`NANBridgeNode`, `NAN-AI2AI/v1.0`, `DIGEST_ISSUED_BY_NAN_BRIDGE`, **không** gọi validation) |
+| Hai hiện thực bridge phân kỳ | `hello_bridge.py` (`ProtocolBridgeNode`, `NAN-AI2AI-Bridge/v0.1-poc`, `DEMO_DIGEST_ONLY`, **có** gọi validation) vs `agent_chat.py` (`NANBridgeNode`, `NAN-AI2AI/v1.0`, `DIGEST_ISSUED_BY_NAN_AI2AI`, **không** gọi validation) |
 
 Đồng thời, ba câu hỏi còn treo:
 

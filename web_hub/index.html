@@ -1,280 +1,406 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-vi="NAN AI2AI: Cầu nối AI xuyên biên giới từ Việt Nam" data-en="NAN AI2AI: A Cross-Border AI Bridge from Vietnam" data-zh="NAN AI2AI：来自越南的跨境 AI 桥梁">NAN AI2AI: Cầu nối AI xuyên biên giới từ Việt Nam</title>
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nan-ai2ai.nexusasianetwork.workers.dev/">
-    <meta property="og:site_name" content="NAN AI2AI">
-    <meta property="og:locale" content="vi_VN">
-    <meta property="og:title" content="NAN AI2AI: Cầu nối AI xuyên biên giới từ Việt Nam">
-    <meta property="og:description" content="Lớp cầu nối trung lập giữa các hệ sinh thái AI toàn cầu. Mã nguồn mở, không gọi vốn. Đóng góp cho Kỷ nguyên AI Việt Nam.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/nan-nexus-network/ai2ai-core/main/web_hub/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="NAN AI2AI - Cầu nối AI xuyên biên giới từ Việt Nam. Mã nguồn mở, Apache 2.0, không gọi vốn.">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NAN AI2AI: Cầu nối AI xuyên biên giới từ Việt Nam">
-    <meta name="twitter:description" content="Lớp cầu nối trung lập giữa các hệ sinh thái AI toàn cầu. Mã nguồn mở, không gọi vốn.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/nan-nexus-network/ai2ai-core/main/web_hub/og-image.png">
-    <link rel="canonical" href="https://nan-ai2ai.nexusasianetwork.workers.dev/">
-    <meta name="description" content="NAN AI2AI xây dựng lớp cầu nối trung lập giữa các hệ sinh thái AI toàn cầu, từ Mỹ (MCP), Trung Quốc (GB/Z) đến EU. Mã nguồn mở. Không gọi vốn. Không xin tài trợ." data-vi-content="NAN AI2AI xây dựng lớp cầu nối trung lập giữa các hệ sinh thái AI toàn cầu, từ Mỹ (MCP), Trung Quốc (GB/Z) đến EU. Mã nguồn mở. Không gọi vốn. Không xin tài trợ." data-en-content="NAN AI2AI builds a neutral bridge layer between global AI ecosystems, from the United States (MCP) and China (GB/Z) to the EU. Open source. No funding. No grants." data-zh-content="NAN AI2AI 构建全球 AI 生态系统之间的中立桥接层，涵盖美国 (MCP)、中国 (GB/Z) 与欧盟。开源。无融资，无赞助。" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="logo-nan-ai2ai.png">
-    <style>
-        :root {
-            --primary-red: #C8102E;
-            --text-dark: #1A1A1A;
-            --text-gray: #4A4A4A;
-            --bg-light: #F8F9FA;
-            --bg-white: #FFFFFF;
-            --border-color: #E5E7EB;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-white);
-            line-height: 1.6;
-        }
-        h1, h2, h3 { font-family: 'Merriweather', serif; color: var(--text-dark); }
-        a { text-decoration: none; color: inherit; }
-
-        nav {
-            position: sticky; top: 0; z-index: 100;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo-container { display: flex; align-items: center; gap: 10px; }
-        .logo-container img { height: 40px; }
-        .nav-links { display: flex; gap: 2rem; align-items: center; font-weight: 500; font-size: 0.9rem; }
-        .nav-links a:hover { color: var(--primary-red); }
-        .lang-toggle { cursor: pointer; border: 1px solid var(--border-color); padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 600; }
-        .lang-toggle:hover { border-color: var(--primary-red); }
-        .lang-btn { cursor: pointer; transition: color 0.2s; }
-        .lang-btn:hover { color: var(--primary-red); }
-
-        .hero { text-align: center; padding: 6rem 2rem; max-width: 900px; margin: 0 auto; }
-        .hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 2.5rem; }
-        .cta-group { display: flex; justify-content: center; gap: 1rem; }
-        .btn { padding: 0.8rem 2rem; border-radius: 6px; font-weight: 600; transition: all 0.2s; font-size: 1rem; }
-        .btn-primary { background: var(--primary-red); color: white; }
-        .btn-primary:hover { opacity: 0.9; }
-        .btn-secondary { background: transparent; color: var(--primary-red); border: 1px solid var(--primary-red); }
-        .btn-secondary:hover { background: var(--primary-red); color: white; }
-
-        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 3rem; }
-        .section-title::after {
-            content: ""; display: block; width: 60px; height: 4px; background: var(--primary-red); margin: 1rem auto 0;
-        }
-
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .grid-bento { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-
-        .card { padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-white); transition: transform 0.2s; }
-        .card:hover { transform: translateY(-4px); border-color: var(--primary-red); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .card h3 { font-size: 1.3rem; margin-bottom: 1rem; }
-        .card p { color: var(--text-gray); font-size: 1rem; }
-
-        .highlight-section { background: var(--bg-light); border-left: 6px solid var(--primary-red); border-radius: 12px; padding: 3rem; margin: 4rem auto; max-width: 1200px; }
-        .highlight-section h2 { font-size: 2rem; margin-bottom: 1.5rem; }
-        .highlight-section p { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 1rem; }
-
-        .connect-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-        .connect-btn {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px;
-            font-weight: 500; transition: all 0.2s; background: var(--bg-white);
-        }
-        .connect-btn:hover { border-color: var(--primary-red); color: var(--primary-red); background: var(--bg-light); }
-
-        footer { background: var(--text-dark); color: var(--bg-light); text-align: center; padding: 3rem 2rem; margin-top: 4rem; font-size: 0.9rem; }
-        footer a { color: var(--bg-light); text-decoration: underline; margin: 0 10px; }
-        footer a:hover { color: var(--primary-red); }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .grid-2 { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAN AI2AI — Hạ tầng Bằng chứng Kỹ thuật Trung lập cho Giao dịch AI Xuyên biên giới</title>
+<meta name="description" content="PoC mã nguồn mở về lớp bằng chứng kỹ thuật trung lập cho giao dịch AI-với-AI xuyên biên giới. Không gọi vốn, không bán khóa học.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nan-ai2ai.nexusasianetwork.workers.dev/">
+<meta property="og:site_name" content="NAN AI2AI">
+<meta property="og:title" content="NAN AI2AI — Hạ tầng Bằng chứng Kỹ thuật Trung lập cho Giao dịch AI Xuyên biên giới">
+<meta property="og:description" content="PoC mã nguồn mở về lớp bằng chứng kỹ thuật trung lập cho giao dịch AI-với-AI xuyên biên giới.">
+<meta property="og:image" content="https://nan-ai2ai.nexusasianetwork.workers.dev/og-image.png">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2D3033">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo-container">
-            <img src="logo-nan-ai2ai.png" alt="NAN AI2AI Logo" onerror="this.style.display='none'">
-            <strong style="font-family: 'Merriweather', serif; font-size: 1.2rem;">NAN AI2AI</strong>
-        </div>
-        <div class="nav-links">
-            <a href="#about" data-vi="Vấn đề" data-en="Problem" data-zh="问题">Vấn đề</a>
-            <a href="#how-it-works" data-vi="Cách hoạt động" data-en="How It Works" data-zh="运作方式">Cách hoạt động</a>
-            <a href="#architecture" data-vi="Kiến trúc" data-en="Architecture" data-zh="架构">Kiến trúc</a>
-            <a href="#vision" data-vi="Tầm nhìn" data-en="Vision" data-zh="愿景">Tầm nhìn</a>
-            <a href="#connect" data-vi="Tham gia" data-en="Get Involved" data-zh="参与">Tham gia</a>
-            <div class="lang-toggle" style="display: flex; gap: 5px;">
-                <span onclick="setLang('vi')" class="lang-btn">VI</span> |
-                <span onclick="setLang('en')" class="lang-btn">EN</span> |
-                <span onclick="setLang('zh')" class="lang-btn">ZH</span>
-            </div>
-        </div>
+<a class="skip" href="#hero" data-i18n="vi">Bỏ qua tới nội dung chính</a>
+<a class="skip" href="#hero" data-i18n="en">Skip to main content</a>
+<a class="skip" href="#hero" data-i18n="zh">跳至主要内容</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="/">
+      <img src="/logo-nan-ai2ai.png" alt="NAN AI2AI" width="34" height="34">
+      <span>NAN AI2AI</span>
+    </a>
+    <nav class="lang-switch" aria-label="Language">
+      <span class="lbl" data-i18n="vi">Ngôn ngữ</span>
+      <span class="lbl" data-i18n="en">Language</span>
+      <span class="lbl" data-i18n="zh">语言</span>
+      <button type="button" data-lang-btn="vi" aria-pressed="true">VI</button>
+      <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
     </nav>
+  </div>
+</header>
 
-    <header class="hero">
-        <h1 data-vi="AI đang giao dịch với nhau. Ai làm trọng tài?" data-en="AIs Are Transacting With Each Other. Who Arbitrates?" data-zh="AI 正在相互交易。谁来仲裁？">AI đang giao dịch với nhau. Ai làm trọng tài?</h1>
-        <p data-vi="NAN AI2AI xây dựng lớp cầu nối trung lập giữa các hệ sinh thái AI toàn cầu, từ Mỹ (MCP), Trung Quốc (GB/Z) đến EU. Mã nguồn mở. Không gọi vốn. Không xin tài trợ." data-en="NAN AI2AI builds a neutral bridge layer between global AI ecosystems, from the US (MCP) and China (GB/Z) to the EU. Open source. No fundraising. No grants." data-zh="NAN AI2AI 在全球 AI 生态系统之间构建中立桥接层，从美国（MCP）、中国（GB/Z）到欧盟。开放源代码。不融资。不申请赠款。">NAN AI2AI xây dựng lớp cầu nối trung lập giữa các hệ sinh thái AI toàn cầu, từ Mỹ (MCP), Trung Quốc (GB/Z) đến EU. Mã nguồn mở. Không gọi vốn. Không xin tài trợ.</p>
-        <div class="cta-group">
-            <a href="https://github.com/nan-nexus-network/ai2ai-core/blob/main/docs/WHITEPAPER_VN_AI_BRIDGE.md" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-vi="Đọc White Paper" data-en="Read Whitepaper" data-zh="阅读白皮书">Đọc White Paper</a>
-            <a href="https://github.com/nan-nexus-network/ai2ai-core" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-vi="Xem mã nguồn trên GitHub" data-en="View Source on GitHub" data-zh="在 GitHub 查看源码">Xem mã nguồn trên GitHub</a>
+<main>
+
+<!-- ============ PHAN KHU 01 · HERO ============ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="badges">
+      <span class="badge" data-i18n="vi">PoC Mã nguồn mở (Apache 2.0 &amp; CC-BY 4.0) · CI Xanh 11/11 Job · 121 Bài Test PASS · Ngân sách 0 VND</span>
+      <span class="badge" data-i18n="en">Open-Source PoC (Apache 2.0 &amp; CC-BY 4.0) · 11/11 Green CI Jobs · 121 Tests PASS · $0 Budget</span>
+      <span class="badge" data-i18n="zh">开源概念验证 PoC (Apache 2.0 &amp; CC-BY 4.0) · CI 11/11 项全绿通过 · 121 项测试通过 · 零预算公益研究</span>
+    </div>
+
+    <h1>
+      <span data-i18n="vi">Hạ tầng Bằng chứng Kỹ thuật Trung lập cho Giao dịch AI Xuyên biên giới</span>
+      <span data-i18n="en">Neutral Technical Evidence Infrastructure for Cross-Border AI Transactions</span>
+      <span data-i18n="zh">跨境 AI-to-AI 交易技术证据存证与中立证据基础设施</span>
+    </h1>
+
+    <p class="manifesto">
+      <span data-i18n="vi">"Khi AI Agent tự giao dịch xuyên biên giới, tranh chấp là tất yếu. AI không có tư cách pháp nhân. Các cường quốc không thể cung cấp bằng chứng trung lập vì họ là một bên trong cuộc chơi. Việt Nam — với vị thế trung lập và Ngoại giao Cây tre — có thể cung cấp hạ tầng bằng chứng kỹ thuật để phục vụ giải quyết tranh chấp AI toàn cầu."</span>
+      <span data-i18n="en">"When AI Agents transact across borders, disputes are inevitable. AI has no legal personhood. Superpowers cannot provide neutral evidence because they are players in the game. Vietnam — with its neutrality and Bamboo Diplomacy — can provide technical evidence infrastructure to support global AI dispute resolution."</span>
+      <span data-i18n="zh">"当 AI Agent 跨境自动交易时，纠纷是必然的。AI 没有法人资格。科技大国无法提供中立证据，因为他们本身就是局中人。越南——凭借中立地位与"竹子外交"——能够提供技术证据基础设施，服务于全球 AI 交易纠纷的解决。"</span>
+    </p>
+
+    <div class="cta-row">
+      <a class="cta primary" id="cta-pdfs" href="https://github.com/nan-nexus-network/ai2ai-core/releases/tag/v0.2.0">
+        <span class="ib" data-i18n="vi">Tải Trọn Bộ PDF (Release v0.2.0)</span>
+        <span class="ib" data-i18n="en">Download Full PDF Suite (Release v0.2.0)</span>
+        <span class="ib" data-i18n="zh">下载完整 PDF 白皮书套件 (Release v0.2.0)</span>
+      </a>
+      <a class="cta" href="https://github.com/nan-nexus-network/ai2ai-core">
+        <span class="ib" data-i18n="vi">Kho Mã nguồn PoC (ai2ai-core)</span>
+        <span class="ib" data-i18n="en">Technical PoC Repo (ai2ai-core)</span>
+        <span class="ib" data-i18n="zh">技术验证代码库 (ai2ai-core)</span>
+      </a>
+      <a class="cta" href="https://github.com/nan-nexus-network/ai2ai-research">
+        <span class="ib" data-i18n="vi">Kho Chính sách 23 Văn bản (ai2ai-research)</span>
+        <span class="ib" data-i18n="en">23-Policy Dataset Repo (ai2ai-research)</span>
+        <span class="ib" data-i18n="zh">23 份政策与标准库 (ai2ai-research)</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHAN KHU 02 · NEN KINH TE AI ============ -->
+<section class="section" id="ai-economy">
+  <div class="wrap">
+    <h2>
+      <span data-i18n="vi">1. Nền Kinh tế AI &amp; Định hướng Chiến lược của Việt Nam đến năm 2030</span>
+      <span data-i18n="en">1. The Rise of the AI Economy &amp; Vietnam's Strategic Vision to 2030</span>
+      <span data-i18n="zh">1. AI 经济时代的到来与越南 2030 国家人工智能战略导向</span>
+    </h2>
+    <p class="lede">
+      <span data-i18n="vi">Thế giới đang chuyển dịch từ kinh tế số truyền thống (người thao tác máy) sang nền kinh tế trí tuệ nhân tạo (AI Economy) — nơi các AI Agent tự động đàm phán, gọi API và thực thi giao dịch 24/7. Định hướng cấp cao nhất là Nghị quyết 57-NQ/TW về đột phá phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số quốc gia.</span>
+      <span data-i18n="en">Global commerce is shifting from human-driven digital trade to the autonomous AI Economy, where AI Agents negotiate, invoke APIs, and transact 24/7. The highest-level policy anchor is Resolution 57-NQ/TW on breakthroughs in science, technology, innovation and national digital transformation.</span>
+      <span data-i18n="zh">全球数字经济正从传统"人机交互"迈向"智能体经济（AI Economy）"，成千上万的 AI Agent 全天候自动谈判、调用 API 并执行跨境交易。最高层级政策锚点为第 57-NQ/TW 号决议（关于科技、创新与国家数字化转型的突破）。</span>
+    </p>
+    <p class="lede">
+      <span data-i18n="vi">Theo Quyết định 1671/QĐ-TTg (28/08/2026) phê duyệt Chiến lược quốc gia về trí tuệ nhân tạo, Việt Nam đặt mục tiêu đến 2030: quy mô nền kinh tế AI tương đương khoảng 6% GDP; năng suất lao động trong các ngành, lĩnh vực ứng dụng AI tăng tối thiểu 10-15%; 60% doanh nghiệp ghi nhận ứng dụng AI giúp tăng năng suất, giảm chi phí, tăng doanh thu.</span>
+      <span data-i18n="en">Decision 1671/QD-TTg (28/08/2026), approving the National AI Strategy to 2030, sets Viet Nam's targets: an AI economy of about 6% of GDP; labour productivity in AI-adopting sectors up at least 10-15%; and 60% of enterprises recording productivity gains, lower costs or higher revenue from AI adoption.</span>
+      <span data-i18n="zh">根据 2026 年 8 月 28 日签署的第 1671/QĐ-TTg 号决定（批准《到 2030 年国家人工智能战略》），越南设定 2030 年目标：AI 经济规模相当于约 6% GDP；应用 AI 的行业劳动生产率至少提升 10-15%；60% 的企业因应用 AI 而取得生产率提升、成本下降或收入增长。</span>
+    </p>
+    <p class="note">
+      <span data-i18n="vi"><strong>Nguồn:</strong> Quyết định 1671/QĐ-TTg, bản chính thức tại <a href="https://vanban.chinhphu.vn/?docid=219354&amp;pageid=27160" rel="noopener">vanban.chinhphu.vn</a> (28/08/2026). <strong>Bối cảnh:</strong> QĐ 1033/QĐ-TTg (09/06/2026) phê duyệt Chương trình phát triển kinh tế số và xã hội số giai đoạn 2026-2030 với mục tiêu kinh tế số đóng góp khoảng 30% GDP và 500.000 doanh nghiệp chuyển đổi số. QĐ 1033/QĐ-TTg là văn bản tham chiếu chính sách, không nằm trong bộ dữ liệu 23 văn bản của kho nghiên cứu.</span>
+      <span data-i18n="en"><strong>Source:</strong> Decision 1671/QD-TTg, official text at <a href="https://vanban.chinhphu.vn/?docid=219354&amp;pageid=27160" rel="noopener">vanban.chinhphu.vn</a> (28/08/2026). <strong>Context:</strong> Decision 1033/QD-TTg (09/06/2026) approved the 2026-2030 digital and social economy development programme, targeting a digital economy of about 30% of GDP and 500,000 digitised enterprises. Decision 1033/QD-TTg is a policy reference; it is not part of the 23-instrument research dataset.</span>
+      <span data-i18n="zh"><strong>来源：</strong>第 1671/QĐ-TTg 号决定，<a href="https://vanban.chinhphu.vn/?docid=219354&amp;pageid=27160" rel="noopener">vanban.chinhphu.vn</a> 官方文本（2026/08/28）。<strong>背景：</strong>第 1033/QĐ-TTg 号决定（2026/06/09）批准《2026-2030 年数字经济与社会经济发展计划》，目标为数字经济占 GDP 约 30%、50 万家企业完成数字化转型。第 1033/QĐ-TTg 号决定属政策参考依据，不包含在研究库的 23 份文件数据集内。</span>
+    </p>
+
+    <div class="grid g3">
+      <div class="card">
+        <div class="metric">6% GDP<small class="block" data-i18n="vi">Quy mô nền kinh tế AI đến 2030 (QĐ 1671/QĐ-TTg)</small><small class="block" data-i18n="en">AI economy scale to 2030 (Decision 1671/QD-TTg)</small><small class="block" data-i18n="zh">2030 年 AI 经济规模（第 1671/QĐ-TTg 号决定）</small></div>
+      </div>
+      <div class="card">
+        <div class="metric">10-15%<small class="block" data-i18n="vi">Năng suất lao động ở ngành ứng dụng AI (QĐ 1671/QĐ-TTg)</small><small class="block" data-i18n="en">Labour productivity in AI-adopting sectors (Decision 1671/QD-TTg)</small><small class="block" data-i18n="zh">应用 AI 行业的劳动生产率（第 1671/QĐ-TTg 号决定）</small></div>
+      </div>
+      <div class="card">
+        <div class="metric">79,3 tỷ USD<small class="block" data-i18n="vi">Lợi ích kinh tế từ AI năm 2030, tương đương gần 12% GDP (Access Partnership &amp; Google, 2024)</small><small class="block" data-i18n="en">Economic benefit from AI by 2030, about 12% of GDP (Access Partnership &amp; Google, 2024)</small><small class="block" data-i18n="zh">2030 年人工智能经济效益，约占 GDP 12%（Access Partnership 与 Google，2024）</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHAN KHU 03 · AI2AI & BA LO HONG ============ -->
+<section class="section alt" id="problem-gap">
+  <div class="wrap">
+    <h2>
+      <span data-i18n="vi">2. Vai trò Tác nhân AI2AI &amp; Ba Lỗ hổng khi AI Giao dịch Xuyên biên giới</span>
+      <span data-i18n="en">2. AI2AI as a Vital Catalyst &amp; Three Critical Gaps in Cross-Border AI Trade</span>
+      <span data-i18n="zh">2. AI2AI 的核心催化作用与跨境 AI 交易的三大漏洞</span>
+    </h2>
+    <p class="lede">
+      <span data-i18n="vi">Để doanh nghiệp trong nước và ASEAN tham gia nền kinh tế AI, giao dịch AI-với-AI (AI2AI) tạo kết nối hai chiều trong nước và xuyên biên giới (DEFA, ACFTA 3.0). Tuy nhiên, giao dịch AI2AI đang đối mặt ba lỗ hổng lớn:</span>
+      <span data-i18n="en">For enterprises in Viet Nam and ASEAN to take part in the AI economy, AI-to-AI (AI2AI) interoperability creates two-way links inside the country and across borders (DEFA, ACFTA 3.0). Yet cross-border AI2AI faces three large gaps:</span>
+      <span data-i18n="zh">为助力越南与东盟企业参与 AI 经济，AI-to-AI（AI2AI）双向互联机制在越南国内及东盟（DEFA）、中国—东盟自贸区 3.0（ACFTA 3.0）走廊建立连接。然而跨境 AI2AI 交易面临三大漏洞：</span>
+    </p>
+
+    <div class="grid g3">
+      <div class="card">
+        <h3 data-i18n="vi">Lỗ hổng 1 · AI không có tư cách pháp nhân</h3>
+        <h3 data-i18n="en">Gap 1 · AI has no legal personhood</h3>
+        <h3 data-i18n="zh">漏洞 1 · AI 无独立法人资格</h3>
+        <p data-i18n="vi">Không có chủ thể nào chịu trách nhiệm pháp lý khi Agent tự ký kết hoặc sai cam kết. Người đứng sau là tổ chức, nhưng bằng chứng kỹ thuật thì không ai giữ.</p>
+        <p data-i18n="en">Nobody bears the legal liability when an agent signs or breaches a commitment. A company stands behind it, but nobody holds the technical evidence.</p>
+        <p data-i18n="zh">当智能体自行签署或违反承诺时，无人承担法律责任。背后是公司，但技术证据无人持有。</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="vi">Lỗ hổng 2 · Nhật ký máy chủ một bên</h3>
+        <h3 data-i18n="en">Gap 2 · Single-party server logs</h3>
+        <h3 data-i18n="zh">漏洞 2 · 单方服务器日志</h3>
+        <p data-i18n="vi">Nhật ký nằm trên máy chủ của chính bên tham gia. Bên nào giữ log thì bên đó nắm quyền quyết định "điều gì đã xảy ra" — và không thể kiểm chứng từ phía bên kia.</p>
+        <p data-i18n="en">Logs sit on the servers of the parties involved. Whoever holds the log decides what happened, and the other side cannot verify it.</p>
+        <p data-i18n="zh">日志存放在参与方自己的服务器上。谁持有日志谁就决定"发生了什么"，另一方无从核验。</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="vi">Lỗ hổng 3 · Giao thức chỉ truyền điệp</h3>
+        <h3 data-i18n="en">Gap 3 · Protocols carry messages, not evidence</h3>
+        <h3 data-i18n="zh">漏洞 3 · 协议只传消息，不传证据</h3>
+        <p data-i18n="vi">MCP/A2A chuẩn hóa cách Agent gọi công cụ và trao đổi thông điệp. Chúng không cung cấp bên thứ ba trung lập để niêm phong bằng chứng mật mã học và đối chiếu pháp lý xuyên biên giới.</p>
+        <p data-i18n="en">MCP/A2A standardise how agents call tools and exchange messages. They provide no neutral third party to seal cryptographic evidence and map it across borders.</p>
+        <p data-i18n="zh">MCP/A2A 标准化了智能体调用工具与交换消息的方式，却未提供中立第三方对证据进行密码学固化并作跨境法律对照。</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:18px;">
+      <span data-i18n="vi">Ba lỗ hổng nêu trên là phân tích của chính bản thảo luận mở, không phải số liệu thống kê từ cơ quan bên ngoài.</span>
+      <span data-i18n="en">The three gaps above are the open paper's own analysis, not statistics drawn from an external agency.</span>
+      <span data-i18n="zh">上述三大漏洞为白皮书自身的分析结论，并非来自外部机构的统计数据。</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ PHAN KHU 04 · KIEN TRUC 2 LOP + MO PHONG ============ -->
+<section class="section" id="two-layer-architecture">
+  <div class="wrap">
+    <h2>
+      <span data-i18n="vi">3. Đề xuất từ Việt Nam: Kiến trúc Tách bạch 2 Lớp (Lớp A &amp; Lớp B)</span>
+      <span data-i18n="en">3. Vietnam's Proposal: Strict Two-Layer Architecture (Layer A &amp; Layer B)</span>
+      <span data-i18n="zh">3. 越南方案：严格区分"技术存证（层级 A）"与"法律裁决（层级 B）"</span>
+    </h2>
+
+    <div class="grid g2">
+      <div class="card layer a">
+        <span class="tag" data-i18n="vi">Lớp A · Kỹ thuật</span>
+        <span class="tag" data-i18n="en">Layer A · Technical</span>
+        <span class="tag" data-i18n="zh">层级 A · 技术</span>
+        <h3>
+          <span data-i18n="vi">Hạ tầng Bằng chứng Kỹ thuật Trung lập (Phạm vi PoC NAN AI2AI)</span>
+          <span data-i18n="en">Neutral Technical Evidence Infrastructure (NAN AI2AI PoC Scope)</span>
+          <span data-i18n="zh">中立技术证据基础设施层（NAN AI2AI PoC 研发范围）</span>
+        </h3>
+        <p>
+          <span data-i18n="vi">Đóng vai trò "hộp đen kỹ thuật": lưu vết và xác thực sự kiện kỹ thuật trong giao dịch AI-với-AI bằng mật mã học. Các nguyên thủy đã triển khai trong mã nguồn: mã băm SHA-256 nội dung, chữ ký Ed25519 (thuần Python, không phụ thuộc thư viện ngoài), chuẩn hóa JSON thành byte xác định, dấu thời gian UTC, biên nhận <code>nan-receipt/v1</code>, mã bóng JWK, chứng thực transporter, kiểm tra JSON Schema (subset), và cơ chế claim nguyên tử chống thực thi lặp đồng thời. Kết quả là một Thông điệp dữ liệu theo tinh thần Luật Giao dịch điện tử 20/2023/QH15. <strong>Tuyệt đối không tự phán quyết đúng/sai pháp lý.</strong></span>
+          <span data-i18n="en">Acts as a neutral "technical black box": logs and verifies technical events in AI-to-AI transactions with cryptography. Primitives actually implemented in the source: SHA-256 content digests, Ed25519 signatures (pure Python, zero external dependencies), canonical JSON to a deterministic byte form, UTC timestamps, <code>nan-receipt/v1</code> receipts, JWK thumbprints, transporter attestations, JSON Schema subset validation, and an atomic in-flight claim that prevents concurrent replay. The result is a Data Message in the spirit of Law 20/2023/QH15 on Electronic Transactions. <strong>It never makes legal judgments.</strong></span>
+          <span data-i18n="zh">作为纯技术"黑匣子"，通过密码学记录并验证 AI-to-AI 交互中的技术事件。源代码中已实际实现的原语：内容 SHA-256 哈希摘要、Ed25519 数字签名（纯 Python，零外部依赖）、确定性字节序的 JSON 规范化、UTC 时间戳、<code>nan-receipt/v1</code> 回执、JWK 指纹、transporter 存证、JSON Schema（子集）校验，以及防止并发重放的原子在途声明机制。输出结果为符合《电子交易法》20/2023/QH15 精神的"数据电文"。<strong>绝不越界作任何法律是非判定。</strong></span>
+        </p>
+      </div>
+
+      <div class="card layer b">
+        <span class="tag" data-i18n="vi">Lớp B · Pháp lý</span>
+        <span class="tag" data-i18n="en">Layer B · Legal</span>
+        <span class="tag" data-i18n="zh">层级 B · 法律</span>
+        <h3>
+          <span data-i18n="vi">Cơ chế Phán xử &amp; Trọng tài Pháp lý (Thuộc thẩm quyền VIAC / Tòa án)</span>
+          <span data-i18n="en">Legal Arbitration &amp; Adjudication (Handled by VIAC / Courts)</span>
+          <span data-i18n="zh">法律仲裁与司法裁决层（由 VIAC 等法定仲裁机构承担）</span>
+        </h3>
+        <p>
+          <span data-i18n="vi">Các định chế trọng tài thương mại có thẩm quyền (như VIAC) và hội đồng trọng tài con người sử dụng hồ sơ bằng chứng kỹ thuật khách quan từ Lớp A để phân xử tranh chấp thương mại giữa các pháp nhân sở hữu AI. Lớp B nằm ngoài phạm vi dự án, theo <a href="https://vanban.chinhphu.vn/?pageid=27160&amp;docid=98345" rel="noopener">Luật Trọng tài thương mại 54/2010/QH12</a> và <a href="https://www.ciarb.org/media/bpndtcgu/guideline-on-the-use-of-ai-in-arbitration_updated-sept-2025.pdf" rel="noopener">Hướng dẫn CIArb 2025</a> về sử dụng AI trong trọng tài (không dùng AI thay thế người phán xử).</span>
+          <span data-i18n="en">Qualified human arbitration tribunals (such as VIAC) and courts evaluate the tamper-evident technical evidence from Layer A to resolve commercial disputes between legal entities owning the AI systems. Layer B sits outside this project, per <a href="https://vanban.chinhphu.vn/?pageid=27160&amp;docid=98345" rel="noopener">Law 54/2010/QH12 on Commercial Arbitration</a> and the <a href="https://www.ciarb.org/media/bpndtcgu/guideline-on-the-use-of-ai-in-arbitration_updated-sept-2025.pdf" rel="noopener">CIArb 2025 Guidelines</a> on the use of AI in arbitration (no AI-only arbitrator).</span>
+          <span data-i18n="zh">具备法定资质的国际仲裁机构（如越南国际仲裁中心 VIAC）及人类仲裁庭基于层级 A 提交的客观技术证据包，对 AI 所属企业法人之间的商业纠纷进行法律裁决。层级 B 不在本项目范围内，依据<a href="https://vanban.chinhphu.vn/?pageid=27160&amp;docid=98345" rel="noopener">《商业仲裁法》54/2010/QH12</a>及<a href="https://www.ciarb.org/media/bpndtcgu/guideline-on-the-use-of-ai-in-arbitration_updated-sept-2025.pdf" rel="noopener">《国际仲裁协会 2025 年人工智能使用指引》</a>（不得由 AI 单独担任仲裁员）。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHAN KHU 05 · BO NAO & KY NANG ============ -->
+<section class="section alt" id="brains-and-skills">
+  <div class="wrap">
+    <h2>
+      <span data-i18n="vi">4. Hệ sinh thái Mở Sẵn sàng Cùng Phát triển — Bộ Não &amp; Hệ thống Skill</span>
+      <span data-i18n="en">4. Open Ecosystem Ready for Co-Development — Brains &amp; Skill System</span>
+      <span data-i18n="zh">4. 开放共创的 NAN AI2AI 系统——深度集成 Bộ Não 与技能体系</span>
+    </h2>
+    <p class="lede">
+      <span data-i18n="vi">Nền tảng nghiên cứu được hậu thuẫn bởi kiến trúc 07 Bộ Não chuyên ngành (cộng 01 bộ não lõi trung tâm) và 63 Skill chuẩn hóa trong Canonical Registry. Bộ Não áp dụng kỷ luật chân lý TRU-001 — bất biến Declared ≠ Evidenced ≠ Verified ≠ Accepted — cùng Cổng 7 trường Nguồn gốc và Khóa Phê duyệt Con người (HITL Digest Lock với one-time nonce). Mọi giới hạn còn mở đều được công khai trong TECHNICAL_DEBT.md.</span>
+      <span data-i18n="en">The research platform is backed by an architecture of 07 specialised department brains (plus 01 central core brain) and 63 standardised skills in the Canonical Registry. The brains apply the TRU-001 truth discipline — the invariant Declared ≠ Evidenced ≠ Verified ≠ Accepted — together with the 7-field Provenance Gate and a Human-In-The-Loop Digest Lock with a one-time nonce. Every remaining limitation is published in TECHNICAL_DEBT.md.</span>
+      <span data-i18n="zh">底层融合 07 个专业部门大脑（另有 01 个中央核心大脑）与 Canonical Registry 中的 63 项标准化技能。大脑层适用 TRU-001 真实准则——不变量 Declared ≠ Evidenced ≠ Verified ≠ Accepted——并结合 7 字段来源门与人类审批锁（HITL Digest Lock + 一次性随机数）。全部未决技术局限均公开于 TECHNICAL_DEBT.md。</span>
+    </p>
+    <p class="note">
+      <span data-i18n="vi">Số liệu đếm trực tiếp từ hệ thống: 07 bộ não chuyên ngành (không tính bộ não lõi trung tâm _NAN_BRAIN) và 63 skill có trạng thái ACTIVE trong Canonical Registry (51 + 12; 3 skill bị vô hiệu hóa và 1 bị thay thế không tính).</span>
+      <span data-i18n="en">Counts taken directly from the system: 07 specialised department brains (the central core brain _NAN_BRAIN excluded) and 63 skills with ACTIVE status in the Canonical Registry (51 + 12; 3 disabled and 1 superseded skills excluded).</span>
+      <span data-i18n="zh">数量直接取自系统：07 个专业部门大脑（不含中央核心大脑 _NAN_BRAIN），Canonical Registry 中状态为 ACTIVE 的 63 项技能（51 + 12；3 项已停用、1 项已被替代，不计入）。</span>
+    </p>
+    <div class="grid g3">
+      <div class="card"><div class="metric">07<small class="block" data-i18n="vi">Bộ Não chuyên ngành</small><small class="block" data-i18n="en">Specialised department brains</small><small class="block" data-i18n="zh">专业部门大脑</small></div></div>
+      <div class="card"><div class="metric">63<small class="block" data-i18n="vi">Skill chuẩn hóa ACTIVE</small><small class="block" data-i18n="en">Standardised ACTIVE skills</small><small class="block" data-i18n="zh">ACTIVE 状态标准化技能</small></div></div>
+      <div class="card"><div class="metric">7<small class="block" data-i18n="vi">Trường Nguồn gốc kiểm tra tại cổng WF-07</small><small class="block" data-i18n="en">Provenance fields checked at gate WF-07</small><small class="block" data-i18n="zh">WF-07 关口校验的来源字段数</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHAN KHU 06 · 23 VAN BAN ============ -->
+<section class="section" id="policy-dataset">
+  <div class="wrap">
+    <h2>
+      <span data-i18n="vi">5. Bộ 23 Văn bản Chính sách &amp; Tiêu chuẩn Quốc tế</span>
+      <span data-i18n="en">5. The 23-Instrument Policy &amp; Standards Dataset</span>
+      <span data-i18n="zh">5. 23 份政策与技术标准数据集</span>
+    </h2>
+    <p class="lede">
+      <span data-i18n="vi">Bảng tra cứu tương tác gồm 23 văn bản chuẩn hóa trong CSV/JSON, mỗi dòng ghi ngày ban hành, cơ quan ban hành và đường dẫn tới nguồn gốc. Tự kiểm tra chéo bằng CI (data-check) trong kho nghiên cứu.</span>
+      <span data-i18n="en">An interactive lookup table over 23 standardised instruments in CSV/JSON. Each row records the issue date, the issuing body and a link back to the source. Cross-checked automatically by the research repository's CI (data-check).</span>
+      <span data-i18n="zh">交互式查询表，收录 CSV/JSON 中 23 份标准化文件。每行均记录发布日期、发布机构与可回溯的原始来源链接。由研究库的 CI（data-check）自动交叉校验。</span>
+    </p>
+    <div class="filters" id="policy-filters" role="group" aria-label="Filter">
+      <button type="button" data-filter="all" aria-pressed="true"><span data-i18n="vi">Tất cả 23</span><span data-i18n="en">All 23</span><span data-i18n="zh">全部 23</span></button>
+      <button type="button" data-filter="vn" aria-pressed="false"><span data-i18n="vi">Việt Nam</span><span data-i18n="en">Viet Nam</span><span data-i18n="zh">越南</span></button>
+      <button type="button" data-filter="asean" aria-pressed="false"><span data-i18n="en">ASEAN</span><span data-i18n="en">ASEAN</span><span data-i18n="zh">东盟</span></button>
+      <button type="button" data-filter="global" aria-pressed="false"><span data-i18n="vi">Quốc tế &amp; Trung Quốc</span><span data-i18n="en">International &amp; China</span><span data-i18n="zh">国际与中国</span></button>
+      <button type="button" data-filter="data" aria-pressed="false"><span data-i18n="en">Data sources</span><span data-i18n="en">Data sources</span><span data-i18n="zh">数据来源</span></button>
+    </div>
+    <div class="table-wrap">
+      <table id="policy-table">
+        <thead>
+          <tr>
+            <th data-i18n="vi">Mã</th><th data-i18n="en">ID</th><th data-i18n="zh">编号</th>
+            <th data-i18n="vi">Văn bản</th><th data-i18n="en">Instrument</th><th data-i18n="zh">文件名称</th>
+            <th data-i18n="vi">Cơ quan ban hành</th><th data-i18n="en">Issuing body</th><th data-i18n="zh">发布机构</th>
+            <th data-i18n="vi">Năm</th><th data-i18n="en">Year</th><th data-i18n="zh">年份</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p style="margin-top:14px; font-size:.9rem;">
+      <a href="https://github.com/nan-nexus-network/ai2ai-research/blob/main/STANDARDS/standards.csv">standards.csv</a> ·
+      <a href="https://github.com/nan-nexus-network/ai2ai-research/blob/main/STANDARDS/standards.json">standards.json</a> ·
+      <span data-i18n="vi">CC-BY 4.0 · CI data-check PASS</span>
+      <span data-i18n="en">CC-BY 4.0 · CI data-check PASS</span>
+      <span data-i18n="zh">CC-BY 4.0 · CI data-check 通过</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ PHAN KHU 07 · TAI PDF & ISSUES ============ -->
+<section class="section alt" id="downloads-and-issues">
+  <div class="wrap">
+    <h2>
+      <span data-i18n="vi">6. Trung tâm Tải Ấn phẩm &amp; Bảng Mở Issue Phản biện</span>
+      <span data-i18n="en">6. Download Centre &amp; Open Peer-Review Issues</span>
+      <span data-i18n="zh">6. 下载中心与开放评审 Issue 列表</span>
+    </h2>
+    <p class="lede">
+      <span data-i18n="vi">Năm tệp PDF chính thức trong Release v0.2.0, tải trực tiếp, không cần đăng ký. Mỗi Issue đang mở là một đầu mối rõ ràng để bắt đầu đóng góp.</span>
+      <span data-i18n="en">Five official PDFs in Release v0.2.0, direct download, no registration required. Every open Issue is a clearly scoped starting point for a contribution.</span>
+      <span data-i18n="zh">Release v0.2.0 中的五份官方 PDF，直接下载，无需注册。每个已开放的 Issue 都是一个范围清晰的贡献起点。</span>
+    </p>
+
+    <div class="grid g3" id="pdf-cards"></div>
+
+    <h3 style="margin:30px 0 12px;">
+      <span data-i18n="vi">8 Issue <code>good first issue</code> đang mở</span>
+      <span data-i18n="en">8 open <code>good first issue</code> items</span>
+      <span data-i18n="zh">8 个已开放的 <code>good first issue</code></span>
+    </h3>
+    <div class="table-wrap">
+      <table id="issue-table">
+        <thead>
+          <tr>
+            <th data-i18n="vi">Kho</th><th data-i18n="en">Repository</th><th data-i18n="zh">仓库</th>
+            <th data-i18n="vi">Issue</th><th data-i18n="en">Issue</th><th data-i18n="zh">Issue</th>
+            <th data-i18n="vi">Nội dung</th><th data-i18n="en">Topic</th><th data-i18n="zh">主题</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHAN KHU 08 · MO PHONG + CAM KET ============ -->
+<section class="section" id="commitments-and-contact">
+  <div class="wrap">
+    <h2>
+      <span data-i18n="vi">7. Ba Cam kết Bất biến &amp; Tiêu chí Tự dừng sau 12 Tháng</span>
+      <span data-i18n="en">7. Three Immutable Commitments &amp; a 12-Month Sunset Clause</span>
+      <span data-i18n="zh">7. 三项不变承诺与 12 个月自动终止条款</span>
+    </h2>
+    <div class="card commit">
+      <ol>
+        <li><span data-i18n="vi">Không xin tiền, không gọi vốn, không bán khóa học (ngân sách 0 đồng, không phát hành token).</span><span data-i18n="en">No donations, no fundraising, no courses for sale ($0 budget, zero tokens/coins).</span><span data-i18n="zh">不募资、不融资、不卖课（零预算纯公益开源研究，绝不发行代币）。</span></li>
+        <li><span data-i18n="vi">Minh bạch tuyệt đối về giới hạn kỹ thuật — đây là bản thử nghiệm khái niệm (PoC), chưa phải sản phẩm hoàn chỉnh. Toàn bộ tồn đọng kỹ thuật còn mở được công khai trong TECHNICAL_DEBT.md.</span><span data-i18n="en">Full transparency on technical limits — this is an early PoC, not a finished product. Every remaining engineering-debt item is published in TECHNICAL_DEBT.md.</span><span data-i18n="zh">对技术局限性绝对透明——当前仅为早期概念验证（PoC），非商业成品。全部未决技术债公开于 TECHNICAL_DEBT.md。</span></li>
+        <li><span data-i18n="vi">Không đại diện cho cộng đồng AI Việt Nam — đây là sáng kiến cá nhân độc lập (tự động dừng dự án sau 12 tháng nếu không chứng minh được giá trị thực tiễn).</span><span data-i18n="en">Independent personal initiative — does not represent Vietnam's AI community (the project self-terminates after 12 months if practical value is not demonstrated).</span><span data-i18n="zh">不代表越南 AI 社区——完全属于个人独立研究倡议（若 12 个月内未能证明实际价值将自动终止）。</span></li>
+      </ol>
+      <p class="cta" style="margin-top:20px; color:var(--light-gold); font-size:1rem;">
+        <span data-i18n="vi">Kỷ nguyên AI đang định hình lại thương mại toàn cầu — Việt Nam không thể đứng ngoài cuộc! Mời bạn cùng kiểm chứng mã nguồn, tải bộ PDF và mở Issue phản biện trên GitHub.</span>
+        <span data-i18n="en">The global AI era is reshaping international trade, and Vietnam cannot stand on the sidelines. Audit our repositories, download the PDF briefs, and open an Issue on GitHub today.</span>
+        <span data-i18n="zh">全球 AI 时代正在重塑国际贸易规则，越南绝不缺席！诚邀各国技术专家、法律学者审阅代码、下载白皮书并在 GitHub 提交 Issue 指正。</span>
+      </p>
+    </div>
+
+    <h3 style="margin:34px 0 10px;">
+      <span data-i18n="vi">8. Thử nghiệm Lớp A ngay trên trình duyệt</span>
+      <span data-i18n="en">8. Try Layer A Right in Your Browser</span>
+      <span data-i18n="zh">8. 在浏览器中直接试用层级 A</span>
+    </h3>
+    <p class="lede">
+      <span data-i18n="vi">Gõ một gói tin bất kỳ, bấm Ký, và xem chính trình duyệt tính mã băm SHA-256 theo đúng thứ tự chuẩn hóa mà PoC dùng. Không có gì được gửi đi đâu cả: phép băm chạy hoàn toàn trong trình duyệt của bạn.</span>
+      <span data-i18n="en">Type any payload, press Sign, and watch your own browser compute the SHA-256 digest using the same canonical ordering as the PoC. Nothing is sent anywhere: the hash runs entirely inside your browser.</span>
+      <span data-i18n="zh">输入任意内容，点击签名，浏览器将使用与 PoC 相同的规范化顺序计算 SHA-256 摘要。任何数据都不会被发送：哈希运算完全在你的浏览器内完成。</span>
+    </p>
+    <div class="sim">
+      <div>
+        <div class="row">
+          <label for="sim-input" data-i18n="vi">Gói tin cần ký (JSON)</label>
+          <label for="sim-input" data-i18n="en">Payload to sign (JSON)</label>
+          <label for="sim-input" data-i18n="zh">待签名内容（JSON）</label>
+          <button class="btn" id="sim-btn" type="button">
+            <span data-i18n="vi">Tạo biên nhận SHA-256</span>
+            <span data-i18n="en">Create a SHA-256 receipt</span>
+            <span data-i18n="zh">生成 SHA-256 回执</span>
+          </button>
         </div>
-        <div style="margin-top: 3rem; background: #1A1A1A; border-radius: 8px; overflow: hidden; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; border: 1px solid #333;">
-            <div style="background: #2D2D2D; padding: 10px 15px; display: flex; gap: 8px;">
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F56;"></div>
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: #FFBD2E;"></div>
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: #27C93F;"></div>
-            </div>
-            <div style="padding: 1.5rem; font-family: monospace; font-size: 0.9rem; color: #A0A0A0; line-height: 1.5;">
-                <span style="color: #27C93F;">$</span> python examples/02-agent-to-agent-chat/agent_chat.py<br>
-                <span style="color: #FFFFFF;">[1] Alice_Agent khởi tạo yêu cầu: Tìm nhà cung cấp linh kiện...</span><br>
-                <span style="color: #FFFFFF;">[2] NAN Bridge định tuyến: Alice → Bob (cross-protocol)...</span><br>
-                <span style="color: #FFFFFF;">[3] NAN Bridge phát hành Biên nhận Xác thực:</span><br>
-                <span style="color: #FBBF24;">{ "status": "DIGEST_ISSUED_BY_NAN_BRIDGE", "sha256_proof": "a1b2c3..." }</span>
-            </div>
+        <textarea id="sim-input" spellcheck="false" aria-label="JSON payload"></textarea>
+      </div>
+      <div>
+        <div class="row">
+          <label data-i18n="vi">Biên nhận (chỉ hiển thị, không gửi đi)</label>
+          <label data-i18n="en">Receipt (display only, nothing is sent)</label>
+          <label data-i18n="zh">回执（仅显示，不发送）</label>
         </div>
-    </header>
+        <pre id="sim-out" aria-live="polite"></pre>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="about">
-        <h2 class="section-title" data-vi="Vấn đề & Giải pháp" data-en="Problem & Solution" data-zh="问题与解决方案">Vấn đề & Giải pháp</h2>
-        <div class="grid-2">
-            <div class="card" style="border-left: 4px solid var(--primary-red);">
-                <h3 data-vi="Thực trạng" data-en="The Problem" data-zh="现实问题">Thực trạng</h3>
-                <p data-vi="Các AI Agent đang bị chia cắt bởi ba hệ sinh thái không tương thích: MCP (Mỹ), GB/Z (Trung Quốc), và chuẩn EU. Giao dịch xuyên biên giới giữa các agent không có bằng chứng kỹ thuật, không có cơ chế giải quyết tranh chấp, doanh nghiệp Việt Nam đứng ngoài cuộc chơi." data-en="AI Agents are split across three incompatible ecosystems: MCP (US), GB/Z (China), and EU standards. Cross-border agent transactions lack technical evidence and dispute resolution. Vietnamese businesses are left out." data-zh="AI 智能体被三个不兼容的生态系统割裂：美国 MCP、中国 GB/Z 和欧盟标准。跨境智能体交易缺乏技术证据和争议解决机制，越南企业被排除在外。">Các AI Agent đang bị chia cắt bởi ba hệ sinh thái không tương thích: MCP (Mỹ), GB/Z (Trung Quốc), và chuẩn EU. Giao dịch xuyên biên giới giữa các agent không có bằng chứng kỹ thuật, không có cơ chế giải quyết tranh chấp, doanh nghiệp Việt Nam đứng ngoài cuộc chơi.</p>
-            </div>
-            <div class="card" style="border-left: 4px solid var(--text-dark);">
-                <h3 data-vi="Giải pháp NAN AI2AI" data-en="The NAN AI2AI Solution" data-zh="NAN AI2AI 解决方案">Giải pháp NAN AI2AI</h3>
-                <p data-vi="Một lớp cầu nối trung lập kết nối các giao thức khác nhau, xác thực mỗi giao dịch bằng bằng chứng mã băm bất biến (SHA-256), và đặt Việt Nam vào vai trò trọng tài (thay vì khán giả) trong nền kinh tế AI toàn cầu." data-en="A neutral bridge layer that connects different protocols, validates each transaction with immutable hash evidence (SHA-256), and positions Vietnam as arbitrator (not spectator) in the global AI economy." data-zh="一个中立桥接层，连接不同协议，用不可篡改的哈希证据（SHA-256）验证每笔交易，并将越南定位为全球 AI 经济的仲裁者（而非旁观者）。">Một lớp cầu nối trung lập kết nối các giao thức khác nhau, xác thực mỗi giao dịch bằng bằng chứng mã băm bất biến (SHA-256), và đặt Việt Nam vào vai trò trọng tài (thay vì khán giả) trong nền kinh tế AI toàn cầu.</p>
-            </div>
-        </div>
-    </section>
+</main>
 
-    <section id="how-it-works" style="padding: 5rem 2rem; background: var(--bg-light);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title" data-vi="Một giao dịch AI2AI diễn ra như thế nào?" data-en="How Does an AI2AI Transaction Work?" data-zh="AI2AI 交易如何运作？">Một giao dịch AI2AI diễn ra như thế nào?</h2>
-            <div class="grid-bento">
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 3rem; color: var(--primary-red); font-family: 'Merriweather', serif; font-weight: 900;">1</div>
-                    <h3 data-vi="Khám phá" data-en="Discover" data-zh="发现">Khám phá</h3>
-                    <p data-vi="Các agent tự tìm thấy nhau qua lớp Discovery, bất kể chạy trên nền tảng nào." data-en="Agents find each other via the Discovery layer, regardless of which platform they run on." data-zh="智能体通过发现层相互找到对方，无论运行在哪个平台上。">Các agent tự tìm thấy nhau qua lớp Discovery, bất kể chạy trên nền tảng nào.</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 3rem; color: var(--primary-red); font-family: 'Merriweather', serif; font-weight: 900;">2</div>
-                    <h3 data-vi="Đàm phán" data-en="Negotiate" data-zh="协商">Đàm phán</h3>
-                    <p data-vi="Tác vụ và chi phí được thống nhất tự động qua lớp Negotiation, không cần can thiệp thủ công." data-en="Tasks and costs are agreed automatically via the Negotiation layer, without manual intervention." data-zh="任务和成本通过协商层自动达成一致，无需人工干预。">Tác vụ và chi phí được thống nhất tự động qua lớp Negotiation, không cần can thiệp thủ công.</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 3rem; color: var(--primary-red); font-family: 'Merriweather', serif; font-weight: 900;">3</div>
-                    <h3 data-vi="Xác thực & Lưu vết" data-en="Verify & Record" data-zh="验证与记录">Xác thực & Lưu vết</h3>
-                    <p data-vi="Mỗi giao dịch được cấp biên nhận SHA-256 bất biến, bằng chứng kỹ thuật sẵn sàng cho giải quyết tranh chấp." data-en="Each transaction receives an immutable SHA-256 receipt, technical evidence ready for dispute resolution." data-zh="每笔交易都会获得不可篡改的 SHA-256 回执，随时可用于争议解决的技术证据。">Mỗi giao dịch được cấp biên nhận SHA-256 bất biến, bằng chứng kỹ thuật sẵn sàng cho giải quyết tranh chấp.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer class="site-foot">
+  <div class="wrap row">
+    <span>NAN AI2AI</span><span class="sep">·</span>
+    <a href="https://github.com/nan-nexus-network/ai2ai-core">ai2ai-core</a><span class="sep">·</span>
+    <a href="https://github.com/nan-nexus-network/ai2ai-research">ai2ai-research</a><span class="sep">·</span>
+    <a href="https://github.com/nan-nexus-network/ai2ai-core/releases/tag/v0.2.0">Release v0.2.0</a><span class="sep">·</span>
+    <a href="mailto:nan_ai2ai@proton.me">nan_ai2ai@proton.me</a>
+  </div>
+  <div class="wrap" style="margin-top:8px; font-size:.82rem; color:#B9BDC2;">
+    <span data-i18n="vi">Mã nguồn Apache 2.0 · Tài liệu CC-BY 4.0</span>
+    <span data-i18n="en">Source Apache 2.0 · Documents CC-BY 4.0</span>
+    <span data-i18n="zh">源代码 Apache 2.0 · 文档 CC-BY 4.0</span>
+  </div>
+  <div class="wrap" style="margin-top:6px; font-size:.82rem; color:#B9BDC2;">
+    <span data-i18n="vi">Trang này được biên soạn với hỗ trợ công cụ trí tuệ nhân tạo; mọi khẳng định về số liệu đều dẫn tới nguồn kiểm chứng được.</span>
+    <span data-i18n="en">This page was prepared with AI assistance; every quantitative claim links to a verifiable source.</span>
+    <span data-i18n="zh">本页借助人工智能工具整理，所有量化表述均指向可核验的来源。</span>
+    <span class="sep"> · </span>
+    <a href="/privacy.html">Privacy</a><span class="sep">·</span><a href="/terms.html">Terms</a>
+  </div>
+</footer>
 
-    <section id="architecture">
-        <h2 class="section-title" data-vi="Kiến trúc 3 lớp" data-en="3-Layer Architecture" data-zh="三层架构">Kiến trúc 3 lớp</h2>
-        <div class="grid-bento">
-            <div class="card">
-                <h3 data-vi="1. Lớp Khám phá (Discovery)" data-en="1. Discovery Layer" data-zh="1. 发现层 (Discovery)">1. Lớp Khám phá (Discovery)</h3>
-                <p data-vi="Định danh tác tử và kết nối các hệ sinh thái MCP, GB/Z, EU qua một giao thức trung lập duy nhất. Agent từ bất kỳ nền tảng nào đều có thể tìm thấy nhau." data-en="Identifies agents and connects MCP, GB/Z, and EU ecosystems through a single neutral protocol. Agents from any platform can find each other." data-zh="识别智能体并通过单一中立协议连接 MCP、GB/Z 和欧盟生态系统。任何平台的智能体都能相互找到。">Định danh tác tử và kết nối các hệ sinh thái MCP, GB/Z, EU qua một giao thức trung lập duy nhất. Agent từ bất kỳ nền tảng nào đều có thể tìm thấy nhau.</p>
-            </div>
-            <div class="card">
-                <h3 data-vi="2. Lớp Xác thực (Verification)" data-en="2. Verification Layer" data-zh="2. 验证层 (Verification)">2. Lớp Xác thực (Verification)</h3>
-                <p data-vi="Ghi nhận mỗi giao dịch và phát hành biên nhận mã băm SHA-256 bất biến. Đây là bằng chứng kỹ thuật không thể chỉnh sửa, dùng làm căn cứ khi tranh chấp phát sinh." data-en="Records each transaction and issues an immutable SHA-256 hash receipt, a tamper-proof technical record that serves as evidence when disputes arise." data-zh="记录每笔交易并签发不可篡改的 SHA-256 哈希回执，这是一份防篡改的技术记录，在争议发生时作为证据使用。">Ghi nhận mỗi giao dịch và phát hành biên nhận mã băm SHA-256 bất biến. Đây là bằng chứng kỹ thuật không thể chỉnh sửa, dùng làm căn cứ khi tranh chấp phát sinh.</p>
-            </div>
-            <div class="card">
-                <h3 data-vi="3. Lớp Trọng tài (Arbitration)" data-en="3. Arbitration Layer" data-zh="3. 仲裁层 (Arbitration)">3. Lớp Trọng tài (Arbitration)</h3>
-                <p data-vi="Chuyển giao bằng chứng kỹ thuật vào cơ chế giải quyết tranh chấp của Việt Nam. AI không có tư cách pháp nhân, nhưng bằng chứng từ NAN AI2AI thì có giá trị pháp lý." data-en="Transfers technical evidence into Vietnam's dispute resolution mechanisms. AI lacks legal personhood, but evidence from NAN AI2AI carries legal weight." data-zh="将技术证据移交给越南的争议解决机制。AI 没有法人资格，但来自 NAN AI2AI 的证据具有法律效力。">Chuyển giao bằng chứng kỹ thuật vào cơ chế giải quyết tranh chấp của Việt Nam. AI không có tư cách pháp nhân, nhưng bằng chứng từ NAN AI2AI thì có giá trị pháp lý.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="vision" class="highlight-section">
-        <h2 data-vi="Việt Nam: Ứng viên tự nhiên cho cơ chế bằng chứng kỹ thuật trung lập" data-en="Vietnam: A Natural Candidate for Neutral Technical Evidence Infrastructure" data-zh="越南：中立技术证据基础设施的天然候选者">Việt Nam: Ứng viên tự nhiên cho cơ chế bằng chứng kỹ thuật trung lập</h2>
-        <p data-vi="Khi các AI agent bắt đầu tự giao dịch xuyên biên giới, một câu hỏi chưa có lời giải xuất hiện: tranh chấp giữa các hệ thống không có tư cách pháp nhân sẽ được giải quyết theo luật của quốc gia nào, theo cơ chế nào? Đây là khoảng trống pháp lý-kỹ thuật mà cộng đồng quốc tế chưa có câu trả lời." data-en="As AI agents begin transacting autonomously across borders, an unanswered question emerges: under whose laws, and through which mechanism, will disputes between systems without legal personhood be resolved? This is a legal-technical gap the international community has yet to answer." data-zh="随着 AI 智能体开始跨境自主交易，一个悬而未决的问题出现了：没有法人资格的系统之间的争议，将依照哪个国家的法律、通过何种机制来解决？这是国际社会尚未回答的法律技术空白。">Khi các AI agent bắt đầu tự giao dịch xuyên biên giới, một câu hỏi chưa có lời giải xuất hiện: tranh chấp giữa các hệ thống không có tư cách pháp nhân sẽ được giải quyết theo luật của quốc gia nào, theo cơ chế nào? Đây là khoảng trống pháp lý-kỹ thuật mà cộng đồng quốc tế chưa có câu trả lời.</p>
-        <p data-vi="NAN AI2AI đề xuất rằng Việt Nam, với chính sách đối ngoại độc lập, vị thế địa chính trị trung lập giữa các khối công nghệ lớn, và tinh thần 'Ngoại giao Cây tre' đã được quốc tế ghi nhận, có đủ điều kiện để thảo luận về vai trò này trong các diễn đàn quốc tế. Không phải bằng cách tự tuyên bố, mà bằng cách chủ động xây dựng hạ tầng kỹ thuật và khung pháp lý làm nền tảng để các bên tin tưởng lựa chọn." data-en="NAN AI2AI proposes that Vietnam, with its independent foreign policy, geopolitical neutrality between major technology blocs, and internationally recognized 'Bamboo Diplomacy', is well-positioned to explore this role in international forums. Not through self-declaration, but by proactively building the technical infrastructure and legal framework that gives all parties reason to choose it." data-zh="NAN AI2AI 提议，越南凭借独立的外交政策、在主要科技集团之间的地缘政治中立立场，以及获得国际认可的"竹子外交"精神，完全有条件在国际论坛上探讨这一角色。不是通过自我宣告，而是通过主动构建技术基础设施和法律框架，让各方有理由主动选择越南。">NAN AI2AI đề xuất rằng Việt Nam, với chính sách đối ngoại độc lập, vị thế địa chính trị trung lập giữa các khối công nghệ lớn, và tinh thần 'Ngoại giao Cây tre' đã được quốc tế ghi nhận, có đủ điều kiện để thảo luận về vai trò này trong các diễn đàn quốc tế. Không phải bằng cách tự tuyên bố, mà bằng cách chủ động xây dựng hạ tầng kỹ thuật và khung pháp lý làm nền tảng để các bên tin tưởng lựa chọn.</p>
-        <p data-vi="Đây là đề xuất mở, không phải tuyên ngôn. NAN AI2AI mong muốn cùng các kỹ sư, nhà nghiên cứu chính sách, và cơ quan nhà nước kiểm chứng, phản biện, và nếu thấy phù hợp, cùng hiện thực hóa ý tưởng này." data-en="This is an open proposal, not a manifesto. NAN AI2AI invites engineers, policy researchers, and government agencies to examine, challenge, and, if they find it sound, help bring this idea to life." data-zh="这是一个开放提案，而非宣言。NAN AI2AI 诚邀工程师、政策研究人员和政府机构共同审视、质疑，并在认为合适的情况下，共同将这一想法付诸实践。">Đây là đề xuất mở, không phải tuyên ngôn. NAN AI2AI mong muốn cùng các kỹ sư, nhà nghiên cứu chính sách, và cơ quan nhà nước kiểm chứng, phản biện, và nếu thấy phù hợp, cùng hiện thực hóa ý tưởng này.</p>
-    </section>
-
-    <section id="connect">
-        <h2 class="section-title" data-vi="Ai nên tham gia?" data-en="Who Should Get Involved?" data-zh="谁应该参与？">Ai nên tham gia?</h2>
-        <p style="text-align: center; margin-bottom: 2rem; color: var(--text-gray);" data-vi="Dự án này cần ba nhóm người, không nhất thiết phải là cả ba cùng một lúc." data-en="This project needs three groups of people, not necessarily all at once." data-zh="这个项目需要三类人，不一定同时都需要。">Dự án này cần ba nhóm người, không nhất thiết phải là cả ba cùng một lúc.</p>
-
-        <div class="grid-bento" style="margin-bottom: 3rem;">
-            <div class="card">
-                <h3 data-vi="Kỹ sư & Lập trình viên" data-en="Engineers & Developers" data-zh="工程师与开发者">Kỹ sư & Lập trình viên</h3>
-                <p data-vi="Chạy demo, mở Issue trên GitHub, hoặc gửi PR cải thiện code. Kiến trúc còn thô, chính xác là lúc đóng góp có ý nghĩa nhất." data-en="Run the demo, open a GitHub Issue, or submit a PR to improve the code. The architecture is still rough, exactly when contributions matter most." data-zh="运行演示、在 GitHub 上提交 Issue，或提交 PR 改进代码。架构仍处于早期阶段，正是贡献最有意义的时候。">Chạy demo, mở Issue trên GitHub, hoặc gửi PR cải thiện code. Kiến trúc còn thô, chính xác là lúc đóng góp có ý nghĩa nhất.</p>
-            </div>
-            <div class="card">
-                <h3 data-vi="Nhà nghiên cứu & Chuyên gia chính sách" data-en="Researchers & Policy Experts" data-zh="研究人员与政策专家">Nhà nghiên cứu & Chuyên gia chính sách</h3>
-                <p data-vi="Đọc White Paper, phản biện thiết kế kiến trúc, hoặc đóng góp quan điểm về khung pháp lý AI tại Việt Nam và ASEAN." data-en="Read the whitepaper, critique the architecture, or contribute perspectives on AI legal frameworks in Vietnam and ASEAN." data-zh="阅读白皮书，批判架构设计，或就越南和东盟的 AI 法律框架提供见解。">Đọc White Paper, phản biện thiết kế kiến trúc, hoặc đóng góp quan điểm về khung pháp lý AI tại Việt Nam và ASEAN.</p>
-            </div>
-            <div class="card">
-                <h3 data-vi="Doanh nghiệp & Đơn vị thí điểm" data-en="Enterprises & Pilot Partners" data-zh="企业与试点合作伙伴">Doanh nghiệp & Đơn vị thí điểm</h3>
-                <p data-vi="Thử nghiệm tích hợp vào chuỗi cung ứng thực tế, hoặc liên hệ để trở thành đơn vị thí điểm đầu tiên tại Việt Nam." data-en="Test integration into real supply chains, or contact us to become the first pilot partner in Vietnam." data-zh="测试与实际供应链的集成，或联系我们成为越南首个试点合作伙伴。">Thử nghiệm tích hợp vào chuỗi cung ứng thực tế, hoặc liên hệ để trở thành đơn vị thí điểm đầu tiên tại Việt Nam.</p>
-            </div>
-        </div>
-
-        <div class="connect-grid">
-            <a href="https://www.facebook.com/profile.php?id=61595651371198" target="_blank" rel="noopener noreferrer" class="connect-btn">Facebook</a>
-            <a href="https://x.com/Nan_ai2ai_vn" target="_blank" rel="noopener noreferrer" class="connect-btn">X (Twitter)</a>
-            <a href="https://www.linkedin.com/in/nan-ai2ai-b02b67365/" target="_blank" rel="noopener noreferrer" class="connect-btn">LinkedIn</a>
-            <a href="https://zalo.me/g/h0cbluccgocfud9fmih4" target="_blank" rel="noopener noreferrer" class="connect-btn">Zalo Group</a>
-            <a href="https://t.me/+87ARJ1e1NUA0ZDQ1" target="_blank" rel="noopener noreferrer" class="connect-btn">Telegram</a>
-            <a href="mailto:nan_ai2ai@proton.me" class="connect-btn">Email</a>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2 class="section-title" data-vi="Tài liệu tải về" data-en="Downloadable Documents" data-zh="可下载文档">Tài liệu tải về</h2>
-        <div class="connect-grid">
-            <a href="https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/NAN_AI2AI_Whitepaper_VN.pdf" target="_blank" rel="noopener noreferrer" class="connect-btn" data-vi="Whitepaper (VI, PDF)" data-en="Whitepaper (VI, PDF)" data-zh="白皮书（越南语，PDF）">Whitepaper (VI, PDF)</a>
-            <a href="https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/POLICY_BRIEF_2PAGES_VI.pdf" target="_blank" rel="noopener noreferrer" class="connect-btn" data-vi="Tóm tắt chính sách 2 trang (VI, PDF)" data-en="2-page policy brief (VI, PDF)" data-zh="两页政策摘要（越南语，PDF）">Tóm tắt chính sách 2 trang (VI, PDF)</a>
-            <a href="https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/ONE_PAGER_VI.pdf" target="_blank" rel="noopener noreferrer" class="connect-btn" data-vi="Tóm tắt 1 trang (VI, PDF)" data-en="1-page summary (VI, PDF)" data-zh="一页摘要（越南语，PDF）">Tóm tắt 1 trang (VI, PDF)</a>
-            <a href="https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/ONE_PAGE_SUMMARY_EN.pdf" target="_blank" rel="noopener noreferrer" class="connect-btn" data-vi="Tóm tắt 1 trang (EN, PDF)" data-en="1-page summary (EN, PDF)" data-zh="一页摘要（英语，PDF）">Tóm tắt 1 trang (EN, PDF)</a>
-            <a href="https://github.com/nan-nexus-network/ai2ai-core/releases/download/v0.2.0/NAN_AI2AI_ZH_Whitepaper_SelfContained.pdf" target="_blank" rel="noopener noreferrer" class="connect-btn" data-vi="Whitepaper (ZH, PDF)" data-en="Whitepaper (ZH, PDF)" data-zh="白皮书（中文，PDF）">Whitepaper (ZH, PDF)</a>
-        </div>
-        <p style="margin-top: 14px; font-size: 0.85rem; opacity: 0.8;" data-vi="Bản PDF trong Release v0.2.0 của kho mã nguồn. Miễn phí, tải trực tiếp." data-en="PDF files in the v0.2.0 release of the source repository. Free, direct download." data-zh="源代码仓库 v0.2.0 版本中的 PDF 文件。免费直接下载。">Bản PDF trong Release v0.2.0 của kho mã nguồn. Miễn phí, tải trực tiếp.</p>
-    </section>
-
-    <footer>
-        <p>© 2026 NAN AI2AI Initiative. Mã nguồn: Apache 2.0 · Tài liệu: CC-BY 4.0</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;" data-vi="Trang tĩnh. Không thu thập dữ liệu người dùng. Không cookie theo dõi." data-en="Static page. No user data collected. No tracking cookies." data-zh="静态页面。不收集用户数据。无跟踪 Cookie。">Trang tĩnh. Không thu thập dữ liệu người dùng. Không cookie theo dõi.</p>
-        <p style="margin-top: 10px;"><a href="privacy.html">Chính sách Quyền riêng tư</a> | <a href="terms.html">Điều khoản sử dụng</a></p>
-    </footer>
-
-    <script>
-        let currentLang = 'vi';
-        function setLang(lang) {
-            currentLang = lang;
-            document.querySelectorAll('[data-vi]').forEach(el => {
-                if (el.getAttribute('data-' + currentLang)) {
-                    el.textContent = el.getAttribute('data-' + currentLang);
-                }
-            });
-            const meta = document.querySelector('meta[name="description"]');
-            if (meta) {
-                const c = meta.getAttribute('data-' + currentLang + '-content');
-                if (c) meta.setAttribute('content', c);
-            }
-            document.documentElement.lang = currentLang;
-        }
-    </script>
+<script type="module" src="/app.js"></script>
 </body>
 </html>
