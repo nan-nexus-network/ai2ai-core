@@ -28,7 +28,7 @@ const TRU001_MANIFEST = {
   },
   verified_metrics: {
     policy_instruments_count: 23,
-    automated_unit_tests_pass: 121,
+    automated_unit_tests_pass: 124,
     ci_jobs_status: "11/11 SUCCESS (3 OS x 3 Python matrix + TruffleHog secret scan + 2 licence compliance gates)",
     open_good_first_issues: 8,
     external_contributors_recorded: 1,

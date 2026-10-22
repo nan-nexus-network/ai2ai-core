@@ -47,7 +47,7 @@ Bạn không cần là chuyên gia mật mã học. Có kinh nghiệm lập trì
 
 Đây là những việc mà bất kỳ ai cũng có thể tự kiểm tra mà không cần tin lời chúng tôi:
 
-- **Mã nguồn:** <https://github.com/nan-nexus-network/ai2ai-core> (Apache 2.0) - 121 bài kiểm thử tự động, CI xanh 11/11 job
+- **Mã nguồn:** <https://github.com/nan-nexus-network/ai2ai-core> (Apache 2.0) - 124 bài kiểm thử tự động, CI xanh 11/11 job
 - **Tài liệu nghiên cứu:** <https://github.com/nan-nexus-network/ai2ai-research> (CC-BY 4.0) - bộ dữ liệu 23 văn bản, tự kiểm tra chéo bằng CI
 - **Tồn đọng kỹ thuật còn mở:** [`TECHNICAL_DEBT.md`](TECHNICAL_DEBT.md) - gồm cả những hạn chế mà chúng tôi chưa khắc phục được
 - **Trang thông tin 3 ngôn ngữ:** <https://nan-ai2ai.nexusasianetwork.workers.dev>

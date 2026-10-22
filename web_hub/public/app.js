@@ -28,14 +28,31 @@ function setLang(lang, pushUrl) {
   document.querySelectorAll("[data-lang-btn]").forEach(function (b) {
     b.setAttribute("aria-pressed", String(b.dataset.langBtn === lang));
   });
-  // tieu de + mo ta
-  document.title = I18N_DICT[lang].meta_title;
-  const md = document.querySelector('meta[name="description"]');
-  if (md) md.setAttribute("content", I18N_DICT[lang].meta_desc);
-  const og = document.querySelector('meta[property="og:title"]');
-  if (og) og.setAttribute("content", I18N_DICT[lang].meta_title);
-  const ogd = document.querySelector('meta[property="og:description"]');
-  if (ogd) ogd.setAttribute("content", I18N_DICT[lang].meta_desc);
+  // Tieu de + mo ta.
+  // Trang co <title data-title-vi/en/zh> (vi du: privacy.html, terms.html) giu
+  // tieu de rieng cua trang; trang chinh dung meta_title cua tu dien.
+  const titleEl = document.querySelector("title[data-title-vi]");
+  if (titleEl) {
+    const tv = titleEl.getAttribute("data-title-" + lang);
+    if (tv) document.title = tv;
+    const dv = titleEl.getAttribute("data-desc-" + lang);
+    if (dv) {
+      const mdd = document.querySelector('meta[name="description"]');
+      if (mdd) mdd.setAttribute("content", dv);
+      const ogd2 = document.querySelector('meta[property="og:description"]');
+      if (ogd2) ogd2.setAttribute("content", dv);
+    }
+    const og2 = document.querySelector('meta[property="og:title"]');
+    if (og2 && tv) og2.setAttribute("content", tv);
+  } else {
+    document.title = I18N_DICT[lang].meta_title;
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute("content", I18N_DICT[lang].meta_desc);
+    const og = document.querySelector('meta[property="og:title"]');
+    if (og) og.setAttribute("content", I18N_DICT[lang].meta_title);
+    const ogd = document.querySelector('meta[property="og:description"]');
+    if (ogd) ogd.setAttribute("content", I18N_DICT[lang].meta_desc);
+  }
   // noi dung sinh dong
   renderPolicyTable(lang);
   renderIssueTable(lang);

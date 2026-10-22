@@ -191,7 +191,7 @@ Nhóm khởi xướng minh bạch: người đứng đầu không phải kỹ s�
 Tài liệu đầy đủ và mã nguồn đính kèm bên dưới. Chúng tôi sẵn sàng trao đổi thêm nếu Quý Báo quan tâm.
 
 Trân trọng,
-NAN AI2AI Initiative
+Người khởi xượng sáng kiển NAN AI2AI
 📧 nan_ai2ai@proton.me
 📄 https://nan-ai2ai.nexusasianetwork.workers.dev
 💻 https://github.com/nan-nexus-network/ai2ai-core

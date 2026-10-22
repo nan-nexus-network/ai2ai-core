@@ -39,6 +39,7 @@ import io
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 import urllib.error
@@ -87,7 +88,7 @@ REQUIRED_TOKENS = [
     "中立技术证据基础设施",
     "1671/QĐ-TTg",
     "57-NQ/TW",
-    "121",
+    "124",
     "11/11",
     "23",
     "VIAC",
@@ -204,6 +205,39 @@ def check_i18n_sync(index_html_path):
             "allowed_not_on_page": list(DICT_ALLOWED_NOT_ON_PAGE),
             "status": "PASS" if not problems else "FAIL_CLOSED"}
 
+def check_test_count(index_html_path):
+    """Dem so bai test THAT bang pytest va doi chieu voi so ghi tren trang.
+
+    So bai test la con so hay thay doi lien tuc. Cong nay chay `pytest
+    --collect-only -q` (nguon su that) va doi chieu voi con so ghi tren
+    trang, de trang khong bao gio con bao cao so test sai.
+    """
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.abspath(os.path.join(script_dir, "..", ".."))
+    if not os.path.isdir(os.path.join(repo_root, "tests")):
+        return {"status": "SKIP", "reason": "khong tim thay thu muc tests/ cua repo"}
+    try:
+        r = subprocess.run([sys.executable, "-m", "pytest", "--collect-only", "-q"],
+                           cwd=repo_root, capture_output=True, text=True, timeout=300)
+    except Exception as e:
+        return {"status": "SKIP", "reason": "khong chay duoc pytest: %s" % str(e)[:80]}
+    m = re.search(r"(\d+)\s+tests? collected", r.stdout or "")
+    if not m:
+        return {"status": "SKIP", "reason": "pytest khong tra ve so test"}
+    actual = int(m.group(1))
+    h = io.open(index_html_path, encoding="utf-8").read()
+    published = []
+    for pat in (r"(\d+)\s+Bài Test", r"(\d+)\s+Tests PASS",
+                r"(\d+)\s+\u9879\u6d4b\u8bd5"):
+        for mm in re.finditer(pat, h):
+            published.append(int(mm.group(1)))
+    wrong = [v for v in published if v != actual]
+    return {"actual_tests_collected": actual,
+            "published_numbers": sorted(set(published)),
+            "mismatched": sorted(set(wrong)),
+            "status": "PASS" if published and not wrong else "FAIL_CLOSED"}
+
+
 def scan_content(text, source_label):
     banned_hits = []
     for pat in BANNED_PATTERNS:
@@ -273,9 +307,11 @@ def verify_local_bundle(index_html_path):
     external_scripts = re.findall(r'<script[^>]+src="(https?://[^"]+)"', bundle)
 
     sync_res = check_i18n_sync(index_html_path)
+    test_res = check_test_count(index_html_path)
     ok = (scan_res["status"] == "PASS" and not missing_colors and not missing_sections
           and not missing_langs and has_sim and not per_file
-          and not external_scripts and sync_res.get("status") in ("PASS", "SKIP"))
+          and not external_scripts and sync_res.get("status") in ("PASS", "SKIP")
+          and test_res.get("status") in ("PASS", "SKIP"))
     return {
         "file": index_html_path,
         "size_bytes": len(html.encode("utf-8")),
@@ -289,6 +325,7 @@ def verify_local_bundle(index_html_path):
         "has_sha256_simulator": has_sim,
         "external_script_src": external_scripts,
         "i18n_sync": sync_res,
+        "test_count": test_res,
         "status": "PASS" if ok else "FAIL_CLOSED",
     }
 
@@ -356,7 +393,7 @@ def verify_manifest_endpoint(url):
     vm = m.get("verified_metrics", {})
     expected = {
         "policy_instruments_count": 23,
-        "automated_unit_tests_pass": 121,
+        "automated_unit_tests_pass": 124,
         "open_good_first_issues": 8,
         "external_contributors_recorded": 1,
         "specialized_department_brains": 7,

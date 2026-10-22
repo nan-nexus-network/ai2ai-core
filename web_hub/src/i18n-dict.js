@@ -24,7 +24,7 @@ export const I18N_DICT = {
   vi: {
     meta_title: "NAN AI2AI: Hạ tầng Bằng chứng Kỹ thuật Trung lập cho Giao dịch AI Xuyên biên giới",
     meta_desc: "PoC mã nguồn mở về lớp bằng chứng kỹ thuật trung lập cho giao dịch AI-với-AI xuyên biên giới. Không gọi vốn, không bán khóa học.",
-    badge_status: "PoC Mã nguồn mở (Apache 2.0 & CC-BY 4.0) · CI Xanh 11/11 Job · 121 Bài Test PASS · Ngân sách 0 VND",
+    badge_status: "PoC Mã nguồn mở (Apache 2.0 & CC-BY 4.0) · CI Xanh 11/11 Job · 124 Bài Test PASS · Ngân sách 0 VND",
     hero_title: "Hạ tầng Bằng chứng Kỹ thuật Trung lập cho Giao dịch AI Xuyên biên giới",
     hero_manifesto: "“Khi AI Agent tự giao dịch xuyên biên giới, tranh chấp là tất yếu. AI không có tư cách pháp nhân. Các cường quốc không thể cung cấp bằng chứng trung lập vì họ là một bên trong cuộc chơi. Việt Nam, với vị thế trung lập và Ngoại giao Cây tre, có thể cung cấp hạ tầng bằng chứng kỹ thuật để phục vụ giải quyết tranh chấp AI toàn cầu.”",
     cta_video: "Xem Video Chiến lược (7 Chương)",
@@ -61,14 +61,14 @@ export const I18N_DICT = {
     sim_out: "Biên nhận (chỉ hiển thị, không gửi đi)",
     sim_default: "{\n  \"task\": \"find-supplier\",\n  \"region\": \"VN\",\n  \"amount\": 1250000\n}",
     footer_lic: "Mã nguồn Apache 2.0 · Tài liệu CC-BY 4.0",
-    footer_ai: "Trang này được biên soạn với hỗ trợ công cụ trí tuệ nhân tạo; mọi khẳng định về số liệu đều dẫn tới nguồn kiểm chứng được.",
+    footer_ai: "Nội dung do công cụ trí tuệ nhân tạo hỗ trợ biên soạn; mọi khẳng định định lượng đều dẫn tới nguồn kiểm chứng được.",
     lang_label: "Ngôn ngữ"
   },
 
   en: {
     meta_title: "NAN AI2AI: Neutral Technical Evidence Infrastructure for Cross-Border AI Transactions",
     meta_desc: "An open-source proof of concept for a neutral technical evidence layer for cross-border AI-to-AI transactions. No fundraising, no courses for sale.",
-    badge_status: "Open-Source PoC (Apache 2.0 & CC-BY 4.0) · 11/11 Green CI Jobs · 121 Tests PASS · $0 Budget",
+    badge_status: "Open-Source PoC (Apache 2.0 & CC-BY 4.0) · 11/11 Green CI Jobs · 124 Tests PASS · $0 Budget",
     hero_title: "Neutral Technical Evidence Infrastructure for Cross-Border AI Transactions",
     hero_manifesto: "“When AI Agents transact across borders, disputes are inevitable. AI has no legal personhood. Superpowers cannot provide neutral evidence because they are players in the game. Vietnam, with its neutrality and Bamboo Diplomacy, can provide technical evidence infrastructure to support global AI dispute resolution.”",
     cta_video: "Watch Strategic Video (7 Chapters)",
@@ -112,7 +112,7 @@ export const I18N_DICT = {
   zh: {
     meta_title: "NAN AI2AI: 跨境 AI 交易中立技术证据存证基础设施",
     meta_desc: "面向跨境 AI-to-AI 交易的中立技术证据层开源概念验证（PoC）。不募资、不卖课。",
-    badge_status: "开源概念验证 PoC (Apache 2.0 & CC-BY 4.0) · CI 11/11 项全绿通过 · 121 项测试通过 · 零预算公益研究",
+    badge_status: "开源概念验证 PoC (Apache 2.0 & CC-BY 4.0) · CI 11/11 项全绿通过 · 124 项测试通过 · 零预算公益研究",
     hero_title: "跨境 AI-to-AI 交易技术证据存证与中立证据基础设施",
     hero_manifesto: "\"当 AI Agent 跨境自动交易时，纠纷是必然的。AI 没有法人资格。科技大国无法提供中立证据，因为他们本身就是局中人。越南凭借中立地位与\"竹子外交\"，能够提供技术证据基础设施，服务于全球 AI 交易纠纷的解决。\"",
     cta_video: "观看战略解读视频（7 大章节）",
@@ -149,7 +149,7 @@ export const I18N_DICT = {
     sim_out: "回执（仅显示，不发送）",
     sim_default: "{\n  \"task\": \"find-supplier\",\n  \"region\": \"VN\",\n  \"amount\": 1250000\n}",
     footer_lic: "源代码 Apache 2.0 · 文档 CC-BY 4.0",
-    footer_ai: "本页借助人工智能工具整理，所有量化表述均指向可核验的来源。",
+    footer_ai: "内容标识：本页由人工智能辅助生成合成（依《人工智能生成合成内容标识办法》），全部量化表述均指向可核验的来源。",
     lang_label: "语言"
   }
 };

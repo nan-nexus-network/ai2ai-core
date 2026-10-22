@@ -1,161 +1,137 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chính sách quyền riêng tư của NAN AI2AI: trang tĩnh, không thu thập dữ liệu cá nhân." data-vi-content="Chính sách quyền riêng tư của NAN AI2AI: trang tĩnh, không thu thập dữ liệu cá nhân." data-en-content="Privacy policy of the NAN AI2AI project: a static site that collects no personal data." />
-  <title data-vi="Chính sách Quyền riêng tư: NAN AI2AI" data-en="Privacy Policy: NAN AI2AI">Chính sách Quyền riêng tư: NAN AI2AI</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="logo-nan-ai2ai.png">
-  <style>
-    :root {
-      --primary-red: #C8102E;
-      --primary-red-hover: #A00D24;
-      --secondary-gray: #4A4A4A;
-      --light-gray: #F5F5F5;
-      --card-gray: #FAFAFA;
-      --white: #FFFFFF;
-      --text-dark: #1A1A1A;
-      --border-color: #E0E0E0;
-      --border-dark: #CCCCCC;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--white); color: var(--text-dark); line-height: 1.65;
-    }
-    .top-accent-bar { height: 4px; background: var(--primary-red); width: 100%; }
-    .container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
-    a { color: var(--primary-red); text-decoration: none; }
-    a:hover { color: var(--primary-red-hover); text-decoration: underline; }
-    .top-nav {
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
-      padding: 1rem 0; border-bottom: 1px solid var(--border-color); font-size: 0.9rem;
-    }
-    .org-label {
-      font-family: 'Merriweather', Georgia, serif; font-weight: 700;
-      color: var(--primary-red); letter-spacing: 0.02em; text-transform: uppercase; font-size: 0.85rem;
-    }
-    .back { color: var(--secondary-gray); font-size: 0.9rem; }
-    .back:hover { color: var(--primary-red); text-decoration: none; }
-    .lang-toggle { display: inline-flex; gap: 5px; align-items: center; }
-    .lang-btn { cursor: pointer; font-weight: 600; }
-    .lang-btn:hover { color: var(--primary-red); }
-    .lang-note { font-size: 0.78rem; margin: 0.5rem 0 0; color: var(--secondary-gray); }
-    main { padding: 2.75rem 0 3rem; }
-    .brand-logo { height: 52px; margin-bottom: 1.25rem; object-fit: contain; }
-    h1 {
-      font-family: 'Merriweather', Georgia, serif; font-size: clamp(1.7rem, 3.4vw, 2.3rem);
-      font-weight: 900; line-height: 1.25; color: var(--text-dark);
-      margin-bottom: 0.6rem; letter-spacing: -0.01em;
-    }
-    .meta { color: var(--secondary-gray); font-size: 0.9rem; margin-bottom: 2.25rem; }
-    .badge {
-      display: inline-block; font-size: 0.82rem; font-weight: 600; color: var(--primary-red);
-      background: #FFF0F2; border: 1px solid #FFD1D8; padding: 0.25rem 0.85rem;
-      border-radius: 999px; margin-bottom: 1.25rem;
-    }
-    .card {
-      background: var(--card-gray); border: 1px solid var(--border-color);
-      border-left: 4px solid var(--primary-red); border-radius: 0.5rem;
-      padding: 1.5rem 1.75rem; margin-bottom: 1.1rem;
-    }
-    .card h2 {
-      font-family: 'Merriweather', Georgia, serif; font-size: 1.05rem;
-      font-weight: 700; color: var(--primary-red); margin-bottom: 0.6rem;
-    }
-    .card p { color: var(--secondary-gray); font-size: 0.98rem; }
-    .card p + p { margin-top: 0.75rem; }
-    .card ul { color: var(--secondary-gray); font-size: 0.98rem; padding-left: 1.2rem; }
-    .card li + li { margin-top: 0.45rem; }
-    .mail {
-      display: inline-block; margin-top: 0.35rem; font-weight: 600;
-      background: #FFF0F2; border: 1px solid #FFD1D8;
-      border-radius: 0.35rem; padding: 0.25rem 0.65rem; font-size: 0.92rem;
-    }
-    .note {
-      background: var(--light-gray); border: 1px dashed var(--border-dark);
-      border-radius: 0.5rem; padding: 1rem 1.25rem; margin-top: 1.5rem;
-      color: var(--secondary-gray); font-size: 0.88rem;
-    }
-    footer {
-      background: var(--secondary-gray); color: #EAEAEA; padding: 2.25rem 0;
-      font-size: 0.82rem; border-top: 3px solid var(--primary-red); text-align: center;
-    }
-    footer a { color: #EAEAEA; }
-    footer a:hover { color: var(--white); text-decoration: underline; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-title-vi="Chính sách Quyền riêng tư" data-title-en="Privacy Policy" data-title-zh="隐私政策"
+        data-desc-vi="Chính sách quyền riêng tư của NAN AI2AI: trang tĩnh, không thu thập dữ liệu cá nhân." data-desc-en="Privacy policy of the NAN AI2AI project: a static site that collects no personal data." data-desc-zh="NAN AI2AI 隐私政策：静态站点，不收集任何个人数据。">Chính sách Quyền riêng tư</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NAN AI2AI">
+<meta property="og:url" content="https://nan-ai2ai.nexusasianetwork.workers.dev/privacy">
+<meta name="theme-color" content="#2D3033">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="top-accent-bar"></div>
 
-  <div class="container">
-    <div class="top-nav">
-      <span class="org-label">NAN AI2AI • Vietnam AI Era</span>
-      <span class="lang-toggle"><span onclick="setLang('vi')" class="lang-btn">VI</span> | <span onclick="setLang('en')" class="lang-btn">EN</span></span>
-      <a class="back" href="index.html" data-vi="&larr; Quay lại trang chủ" data-en="&larr; Back to home">&larr; Quay lại trang chủ</a>
-    </div>
+<a class="skip" href="#main" data-i18n="vi">Bỏ qua tới nội dung chính</a>
+<a class="skip" href="#main" data-i18n="en">Skip to main content</a>
+<a class="skip" href="#main" data-i18n="zh">跳至主要内容</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="/">
+      <img src="/logo-nan-ai2ai.png" alt="NAN AI2AI" width="34" height="34">
+      <span>NAN AI2AI</span>
+    </a>
+    <nav class="lang-switch" aria-label="Language">
+      <span class="lbl" data-i18n="vi">Ngôn ngữ</span>
+      <span class="lbl" data-i18n="en">Language</span>
+      <span class="lbl" data-i18n="zh">语言</span>
+      <button type="button" data-lang-btn="vi" aria-pressed="true">VI</button>
+      <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+    </nav>
   </div>
+</header>
 
-  <main class="container">
-    <img src="logo-nan-ai2ai.png" alt="NAN AI2AI Logo" class="brand-logo" />
-    <span class="badge" data-vi="Privacy Policy" data-en="Privacy Policy">Privacy Policy</span>
-    <h1 data-vi="Chính sách Quyền riêng tư" data-en="Privacy Policy">Chính sách Quyền riêng tư</h1>
-    <p class="meta" data-vi="Cập nhật lần cuối: 21/10/2026" data-en="Last updated: 21/10/2026">Cập nhật lần cuối: 21/10/2026</p>
+<main id="main" class="section">
+  <div class="wrap">
+    <p style="margin:0 0 18px;"><a href="/" style="color:#2D3033;font-weight:600;text-decoration:none;">
+      <span data-i18n="vi">&larr; Quay lại trang chủ</span>
+      <span data-i18n="en">&larr; Back to home</span>
+      <span data-i18n="zh">&larr; 返回首页</span>
+    </a></p>
 
-    <div class="card">
-      <h2 data-vi="Phạm vi áp dụng" data-en="Scope">Phạm vi áp dụng</h2>
-      <p data-vi="Chính sách này áp dụng cho trang web tĩnh của dự án NAN AI2AI tại địa chỉ hiện tại. Trang web không có phần đăng nhập, biểu mẫu thu thập thông tin, hay bất kỳ tính năng tương tác nào yêu cầu dữ liệu cá nhân." data-en="This policy applies to the static website of the NAN AI2AI project at its current address. The website has no login, no data collection forms, and no interactive feature that requires personal data.">Chính sách này áp dụng cho trang web tĩnh của dự án NAN AI2AI tại địa chỉ hiện tại. Trang web không có phần đăng nhập, biểu mẫu thu thập thông tin, hay bất kỳ tính năng tương tác nào yêu cầu dữ liệu cá nhân.</p>
+    <h1 style="margin:0 0 6px;">
+      <span data-i18n="vi">Chính sách Quyền riêng tư</span>
+      <span data-i18n="en">Privacy Policy</span>
+      <span data-i18n="zh">隐私政策</span>
+    </h1>
+    <p class="lede" style="margin:0 0 26px;">
+      <span data-i18n="vi">Cập nhật lần cuối: 22/10/2026</span>
+      <span data-i18n="en">Last updated: 22/10/2026</span>
+      <span data-i18n="zh">最后更新：2026/10/22</span>
+    </p>
+
+    <div class="card" style="margin-bottom:14px;">
+      <h2>
+        <span data-i18n="vi">Phạm vi áp dụng</span>
+        <span data-i18n="en">Scope</span>
+        <span data-i18n="zh">适用范围</span>
+      </h2>
+      <p>
+        <span data-i18n="vi">Chính sách này áp dụng cho trang web tĩnh của dự án NAN AI2AI tại địa chỉ hiện tại. Trang web không có phần đăng nhập, biểu mẫu thu thập thông tin, hay bất kỳ tính năng tương tác nào yêu cầu dữ liệu cá nhân.</span>
+        <span data-i18n="en">This policy applies to the static website of the NAN AI2AI project at its current address. The website has no login, no data collection forms, and no interactive feature that requires personal data.</span>
+        <span data-i18n="zh">本政策适用于 NAN AI2AI 项目的静态网站。本站没有登录功能、没有信息收集表单，也没有任何需要个人数据的交互功能。</span>
+      </p>
     </div>
-
-    <div class="card">
-      <h2 data-vi="Dữ liệu chúng tôi thu thập" data-en="Data we collect">Dữ liệu chúng tôi thu thập</h2>
-      <p><strong data-vi="Không có." data-en="None.">Không có.</strong> <span data-vi="Chúng tôi không thu thập, lưu trữ, hoặc xử lý bất kỳ dữ liệu cá nhân nào của người dùng: không tên, không email, không địa chỉ IP, không cookie theo dõi." data-en="We do not collect, store, or process any personal data from users: no names, no email addresses, no IP addresses, no tracking cookies.">Chúng tôi không thu thập, lưu trữ, hoặc xử lý bất kỳ dữ liệu cá nhân nào của người dùng: không tên, không email, không địa chỉ IP, không cookie theo dõi.</span></p>
-      <p data-vi="Nếu bạn chủ động liên hệ qua email, thông tin bạn cung cấp sẽ chỉ được dùng để trả lời bạn, không chia sẻ cho bên thứ ba." data-en="If you contact us by email on your own initiative, the information you provide will be used only to reply to you and will not be shared with third parties.">Nếu bạn chủ động liên hệ qua email, thông tin bạn cung cấp sẽ chỉ được dùng để trả lời bạn, không chia sẻ cho bên thứ ba.</p>
+    <div class="card" style="margin-bottom:14px;">
+      <h2>
+        <span data-i18n="vi">Dữ liệu chúng tôi thu thập</span>
+        <span data-i18n="en">Data we collect</span>
+        <span data-i18n="zh">我们收集的数据</span>
+      </h2>
+      <p>
+        <span data-i18n="vi"><strong>Không có.</strong> Chúng tôi không thu thập, lưu trữ, hay xử lý bất kỳ dữ liệu cá nhân nào của người dùng: không tên, không email, không địa chỉ IP, không cookie theo dõi. Nếu bạn chủ động liên hệ qua email, thông tin bạn cung cấp sẽ chỉ được dùng để trả lời bạn, không chia sẻ cho bên thứ ba.</span>
+        <span data-i18n="en"><strong>None.</strong> We do not collect, store, or process any personal data from users: no names, no email addresses, no IP addresses, no tracking cookies. If you contact us by email, the information you provide is used only to reply to you and is not shared with third parties.</span>
+        <span data-i18n="zh"><strong>无。</strong>我们不收集、不存储、不处理任何用户个人数据：不收集姓名、邮箱、IP 地址，不使用跟踪 Cookie。若您主动通过邮件联系我们，您提供的信息仅用于回复您本人，不会与第三方共享。</span>
+      </p>
     </div>
-
-    <div class="card">
-      <h2 data-vi="Dịch vụ bên thứ ba" data-en="Third-party services">Dịch vụ bên thứ ba</h2>
-      <p data-vi="Trang web tải phông chữ từ Google Fonts. Google có thể ghi nhận yêu cầu tải font theo chính sách riêng của họ. Ngoài ra, chúng tôi không nhúng mã phân tích, quảng cáo, hay theo dõi từ bất kỳ bên nào." data-en="The website loads fonts from Google Fonts. Google may log font requests under its own policy. Otherwise, we embed no analytics, advertising, or tracking code from any party.">Trang web tải phông chữ từ Google Fonts. Google có thể ghi nhận yêu cầu tải font theo chính sách riêng của họ. Ngoài ra, chúng tôi không nhúng mã phân tích, quảng cáo, hay theo dõi từ bất kỳ bên nào.</p>
+    <div class="card" style="margin-bottom:14px;">
+      <h2>
+        <span data-i18n="vi">Dịch vụ bên thứ ba</span>
+        <span data-i18n="en">Third-party services</span>
+        <span data-i18n="zh">第三方服务</span>
+      </h2>
+      <p>
+        <span data-i18n="vi"><strong>Không có.</strong> Trang web không nhúng mã phân tích, quảng cáo hay theo dõi của bất kỳ bên thứ ba. Toàn bộ phông chữ dùng font hệ thống của thiết bị, nên không có tài nguyên nào được tải từ máy chủ bên ngoài. Trang được phục vụ từ Cloudflare Workers, theo chính sách riêng của Cloudflare.</span>
+        <span data-i18n="en"><strong>None.</strong> The website embeds no analytics, advertising, or tracking code from any third party. All fonts come from the operating system of your device, so no asset is fetched from an external server. The site is served from Cloudflare Workers, under Cloudflare's own policy.</span>
+        <span data-i18n="zh"><strong>无。</strong>本站未嵌入任何第三方的分析、广告或跟踪代码。全部字体均使用您设备的系统字体，因此不会从外部服务器加载任何资源。站点由 Cloudflare Workers 承载，适用 Cloudflare 自身政策。</span>
+      </p>
     </div>
-
-    <div class="card">
-      <h2 data-vi="Liên hệ" data-en="Contact">Liên hệ</h2>
-      <p><span data-vi="Mọi câu hỏi về quyền riêng tư, vui lòng gửi về:" data-en="For any privacy questions, please contact:">Mọi câu hỏi về quyền riêng tư, vui lòng gửi về:</span>
-        <a class="mail" href="mailto:nan_ai2ai@proton.me">nan_ai2ai@proton.me</a>
+    <div class="card" style="margin-bottom:14px;">
+      <h2>
+        <span data-i18n="vi">Liên hệ</span>
+        <span data-i18n="en">Contact</span>
+        <span data-i18n="zh">联系方式</span>
+      </h2>
+      <p>
+        <span data-i18n="vi">Mọi câu hỏi về quyền riêng tư, vui lòng gửi về <a href="mailto:nan_ai2ai@proton.me">nan_ai2ai@proton.me</a>.</span>
+        <span data-i18n="en">For any privacy questions, please contact <a href="mailto:nan_ai2ai@proton.me">nan_ai2ai@proton.me</a>.</span>
+        <span data-i18n="zh">如有任何隐私问题，请联系 <a href="mailto:nan_ai2ai@proton.me">nan_ai2ai@proton.me</a>。</span>
       </p>
     </div>
 
-    <div class="note">
-      <span data-vi="Trang này được phục vụ trực tiếp từ kho mã nguồn mở của dự án. Toàn bộ mã nguồn có thể kiểm tra tại GitHub. Không cookie. Không script thu thập dữ liệu phía máy chủ." data-en="This page is served directly from the project open-source repository. The full source code can be reviewed on GitHub. No cookies. No server-side data collection scripts.">Trang này được phục vụ trực tiếp từ kho mã nguồn mở của dự án. Toàn bộ mã nguồn có thể kiểm tra tại GitHub. Không cookie. Không script thu thập dữ liệu phía máy chủ.</span>
-    </div>
-  </main>
+  </div>
+</main>
 
-  <footer>
-    <div class="container">
-      <span data-vi="© 2026 NAN AI2AI Initiative · Mã nguồn: Apache 2.0 · Tài liệu: CC-BY 4.0 · Không xin tiền · Không gọi vốn" data-en="© 2026 NAN AI2AI Initiative · Source: Apache 2.0 · Docs: CC-BY 4.0 · No funding · No fundraising">© 2026 NAN AI2AI Initiative · Mã nguồn: Apache 2.0 · Tài liệu: CC-BY 4.0 · Không xin tiền · Không gọi vốn</span>
-      <p class="lang-note" data-vi="Trang pháp lý hiện có bằng tiếng Việt và tiếng Anh." data-en="Legal pages are currently available in Vietnamese and English.">Trang pháp lý hiện có bằng tiếng Việt và tiếng Anh.</p>
-    </div>
-  </footer>
+<footer class="site-foot">
+  <div class="wrap row">
+    <span>NAN AI2AI</span><span class="sep">·</span>
+    <a href="https://github.com/nan-nexus-network/ai2ai-core">ai2ai-core</a><span class="sep">·</span>
+    <a href="https://github.com/nan-nexus-network/ai2ai-research">ai2ai-research</a><span class="sep">·</span>
+    <a href="/">Trang chính</a><span class="sep">·</span>
+    <a href="mailto:nan_ai2ai@proton.me">nan_ai2ai@proton.me</a>
+  </div>
+  <div class="wrap" style="margin-top:8px; font-size:.82rem; color:#B9BDC2;">
+    <span data-i18n="vi">Người khởi xướng sáng kiến NAN AI2AI</span>
+    <span data-i18n="en">Founder of the NAN AI2AI initiative</span>
+    <span data-i18n="zh">NAN AI2AI 计划发起人</span>
+  </div>
+  <div class="wrap" style="margin-top:6px; font-size:.82rem; color:#B9BDC2;">
+    <span data-i18n="vi">Mã nguồn Apache 2.0 · Tài liệu CC-BY 4.0 · Không xin tiền · Không gọi vốn</span>
+    <span data-i18n="en">Source Apache 2.0 · Documents CC-BY 4.0 · No funding · No fundraising</span>
+    <span data-i18n="zh">源代码 Apache 2.0 · 文档 CC-BY 4.0 · 不募资 · 不融资</span>
+  </div>
+  <div class="wrap" style="margin-top:6px; font-size:.82rem; color:#B9BDC2;">
+    <span data-i18n="vi">Nội dung do công cụ trí tuệ nhân tạo hỗ trợ biên soạn; mọi khẳng định định lượng đều dẫn tới nguồn kiểm chứng được.</span>
+    <span data-i18n="en">This page was prepared with AI assistance; every quantitative claim links to a verifiable source.</span>
+    <span data-i18n="zh">内容标识：本页由人工智能辅助生成合成（依《人工智能生成合成内容标识办法》），全部量化表述均指向可核验的来源。</span>
+  </div>
+</footer>
 
-  <script>
-    let currentLang = 'vi';
-    function setLang(lang) {
-      currentLang = lang;
-      document.querySelectorAll('[data-vi]').forEach(el => {
-        if (el.getAttribute('data-' + currentLang)) {
-          el.textContent = el.getAttribute('data-' + currentLang);
-        }
-      });
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) {
-        const c = meta.getAttribute('data-' + currentLang + '-content');
-        if (c) meta.setAttribute('content', c);
-      }
-      document.documentElement.lang = currentLang;
-    }
-  </script>
+<script type="module" src="/app.js"></script>
 </body>
 </html>
