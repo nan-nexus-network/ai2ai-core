@@ -99,7 +99,7 @@ Tài liệu này chia làm **hai phần**, và điều đó quan trọng:
 
 | # | Vấn đề | Việc cần làm |
 |:--|:---|:---|
-| B3.1 | **Repo rỗng còn sót** ở tài khoản cá nhân: `nexusasianetwork-NAN/ai2ai-research` (0 KB) | Xoá tay (Settings → Danger Zone). Token hiện tại **không** có quyền `delete_repo` (HTTP 403) |
+| B3.1 | ~~**Repo rỗng còn sót** ở tài khoản cá nhân: `nexusasianetwork-NAN/ai2ai-research` (0 KB)~~ | ✅ **ĐÃ XOÁ 22/10/2026** bởi Chủ tịch (Settings → Danger Zone). API xác nhận HTTP 404 cho cả `ai2ai-research` lẫn `ai2ai-core` ở tài khoản cá nhân. Rủi ro "hai nguồn chính thức" đã dẹp. Kho thật trong org `nan-nexus-network` nguyên vẹn |
 | B3.2 | **Chưa có Discussion nào** dù Discussions đã bật cả 2 kho | Bài "Tại sao lại là Việt Nam?" đã soạn sẵn (`07_DISCUSSION_DRAFT_VN.md`) |
 | B3.3 | **Chưa có quy trình trả lời Issue** ghi thành văn bản | Đã có cam kết 48 giờ trong `CONTRIBUTING.md`; cần mẫu trả lời cho người đóng góp lần đầu (đã có 1 trường hợp thật: `dharsinir15-priya`) |
 | B3.4 | **Bộ Não & Skill (3.131 file) chưa có chiến lược công bố** | Tài sản trí tuệ lớn nhất, cũng là rủi ro lớn nhất nếu tài liệu truyền thông dẫn tới đường dẫn cục bộ. Xem `ASSET_INVENTORY_20261022.md` mục 2.4 |
