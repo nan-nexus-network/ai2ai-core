@@ -26,13 +26,18 @@ Xem [`CONTRIBUTOR_LADDER.md`](CONTRIBUTOR_LADDER.md) để biết điều kiện
 
 ## Đang mời
 
-Có **3 Issue `good first issue`** đang mở, mỗi issue là một đầu mối rõ ràng để bắt đầu đóng góp:
+Có **8 Issue `good first issue`** đang mở, mỗi issue là một đầu mối rõ ràng để bắt đầu đóng góp:
 
-| Issue | Nội dung |
-|:---|:---|
-| [#1](https://github.com/nan-nexus-network/ai2ai-core/issues/1) | Kiểm soát đầu vào và chống lạm dụng |
-| [#2](https://github.com/nan-nexus-network/ai2ai-core/issues/2) | Xác thực chữ ký Ed25519 và chuỗi tin cậy |
-| [#3](https://github.com/nan-nexus-network/ai2ai-core/issues/3) | Bộ kiểm thử |
+| Issue | Nội dung | Kho |
+|:---|:---|:---|
+| [#1](https://github.com/nan-nexus-network/ai2ai-core/issues/1) | Kiểm soát đầu vào và chống lạm dụng | `ai2ai-core` |
+| [#2](https://github.com/nan-nexus-network/ai2ai-core/issues/2) | Xác thực chữ ký Ed25519 và chuỗi tin cậy | `ai2ai-core` |
+| [#3](https://github.com/nan-nexus-network/ai2ai-core/issues/3) | Bộ kiểm thử | `ai2ai-core` |
+| [#4](https://github.com/nan-nexus-network/ai2ai-core/issues/4) | Benchmark độ trễ ký bằng chứng dưới 1.000 sự kiện đồng thời | `ai2ai-core` |
+| [#5](https://github.com/nan-nexus-network/ai2ai-core/issues/5) | JSON Schema cho biên nhận bằng chứng Lớp A → Lớp B | `ai2ai-core` |
+| [#6](https://github.com/nan-nexus-network/ai2ai-core/issues/6) | Ví dụ middleware MCP tự động ghi bằng chứng | `ai2ai-core` |
+| [#1](https://github.com/nan-nexus-network/ai2ai-research/issues/1) | Đối chiếu Luật Giao dịch điện tử 2023 với log bằng chứng Lớp A | `ai2ai-research` |
+| [#2](https://github.com/nan-nexus-network/ai2ai-research/issues/2) | Siêu dữ liệu GB/Z 185 & ACFTA 3.0 cho bộ 23 văn bản | `ai2ai-research` |
 
 Bạn không cần là chuyên gia mật mã học. Có kinh nghiệm lập trình, viết tài liệu, hoặc đọc hiểu chính sách công nghệ đều là đủ. Mọi Issue đều mô tả rõ phạm vi và điều kiện nghiệm thu.
 

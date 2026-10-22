@@ -40,7 +40,7 @@ Tài liệu này chia làm **hai phần**, và điều đó quan trọng:
 | Thuật ngữ GB/Z không thống nhất | 1 | "bộ tiêu chuẩn quốc gia" → **"bộ văn bản kỹ thuật chỉ dẫn chuẩn hoá quốc gia"** (6 chỗ) |
 | Đồng bộ CSV ↔ JSON | 1 | 5 dòng lệch ở trường `issuer`/`scope`/`name_local` (kể cả chữ Hán sai trong JSON) |
 
-**Ngoài ra, phát hiện thêm 1 lỗi trong lúc kiểm chứng:** `ONE_PAGE_SUMMARY.md` và `ABSTRACT_EN.md` còn viết *"chữ ký Ed25519 chưa có"*, đã lỗi thời vì `v0.2` đã có biên nhận `nan-receipt/v1` ký bởi bên thực thi. Đã cập nhật, kèm giữ nguyên các hạn chế còn lại.
+**Ngoài ra, phát hiện thêm 1 lỗi trong lúc kiểm chứng:** `MEDIA/ONE_PAGE_SUMMARY.md` và `PAPERS/ABSTRACT_EN.md` còn viết *"chữ ký Ed25519 chưa có"*, đã lỗi thời vì `v0.2` đã có biên nhận `nan-receipt/v1` ký bởi bên thực thi. Đã cập nhật, kèm giữ nguyên các hạn chế còn lại.
 
 ## A.2. Commit đã sửa
 
@@ -100,7 +100,7 @@ Tài liệu này chia làm **hai phần**, và điều đó quan trọng:
 | # | Vấn đề | Việc cần làm |
 |:--|:---|:---|
 | B3.1 | ~~**Repo rỗng còn sót** ở tài khoản cá nhân: `nexusasianetwork-NAN/ai2ai-research` (0 KB)~~ | ✅ **ĐÃ XOÁ 22/10/2026** bởi Chủ tịch (Settings → Danger Zone). API xác nhận HTTP 404 cho cả `ai2ai-research` lẫn `ai2ai-core` ở tài khoản cá nhân. Rủi ro "hai nguồn chính thức" đã dẹp. Kho thật trong org `nan-nexus-network` nguyên vẹn |
-| B3.2 | **Chưa có Discussion nào** dù Discussions đã bật cả 2 kho | Bài "Tại sao lại là Việt Nam?" đã soạn sẵn (`07_DISCUSSION_DRAFT_VN.md`) |
+| B3.2 | **Chưa có Discussion nào** dù Discussions đã bật cả 2 kho | Bài "Tại sao lại là Việt Nam?" đã soạn sẵn (`_strategic_reserve/07_CHINA_MARKET/07_DISCUSSION_DRAFT_VN.md`) |
 | B3.3 | **Chưa có quy trình trả lời Issue** ghi thành văn bản | Đã có cam kết 48 giờ trong `CONTRIBUTING.md`; cần mẫu trả lời cho người đóng góp lần đầu (đã có 1 trường hợp thật: `dharsinir15-priya`) |
 | B3.4 | **Bộ Não & Skill (3.131 file) chưa có chiến lược công bố** | Tài sản trí tuệ lớn nhất, cũng là rủi ro lớn nhất nếu tài liệu truyền thông dẫn tới đường dẫn cục bộ. Xem `ASSET_INVENTORY_20261022.md` mục 2.4 |
 | B3.5 | **Chưa có log kiểm toán tập trung** cho các kho tài liệu (`ai2ai-research`, kho tài liệu truyền thông) | `ai2ai-core` đã có `audit.log`; các kho còn lại chưa |
