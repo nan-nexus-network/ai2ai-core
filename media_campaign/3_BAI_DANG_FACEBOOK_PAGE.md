@@ -12,7 +12,7 @@
 
 Các AI Agent hiện đang vận hành trên các hệ sinh thái tách biệt: MCP (Anthropic/Mỹ), A2A (Google), GB/Z (Trung Quốc). Chúng không giao tiếp được với nhau — doanh nghiệp nào muốn dùng cả hai phải tự xử phần kết nối.
 
-NAN AI2AI là PoC (Proof of Concept) cho một tầng cầu nối trung lập giữa các hệ sinh thái này. Mã nguồn mở Apache 2.0. Demo `hello_bridge.py` chạy trong 60 giây.
+NAN AI2AI là PoC (Proof of Concept) cho một lớp bằng chứng kỹ thuật trung lập giữa các hệ sinh thái này. Mã nguồn mở Apache 2.0. Demo `hello_bridge.py` chạy trong 60 giây.
 
 Người khởi xướng không phải kỹ sư chuyên nghiệp — code được viết với sự hỗ trợ của AI và còn nhiều điểm cần cải thiện. Chúng tôi public để nhận phản biện kỹ thuật từ cộng đồng, không phải để ra mắt sản phẩm.
 
@@ -30,7 +30,7 @@ Không gọi vốn. Không nhận tài trợ.
 
 ---
 
-[Thảo luận kỹ thuật] Agent Interoperability — thử nghiệm khung cầu nối trung lập (Open Reference Bridge) chuyển đổi giao thức MCP ↔ GB/Z bằng Python stdlib.
+[Thảo luận kỹ thuật] Agent Interoperability — thử nghiệm lớp bằng chứng kỹ thuật trung lập chuyển đổi giao thức MCP ↔ GB/Z bằng Python stdlib.
 
 Bài toán: Một Agent chạy chuẩn MCP và một Agent chạy chuẩn GB/Z cần đàm phán tác vụ với nhau mà không cần con người làm trung gian. Hiện chưa có tầng dịch thuật trung lập nào cho việc này.
 
@@ -59,7 +59,7 @@ Khi AI Agent tự giao dịch xuyên biên giới mà không có tư cách pháp
 
 Đây là câu hỏi chính sách mà cộng đồng quốc tế chưa có câu trả lời. Và đây cũng là điểm khởi đầu cho đề xuất của NAN AI2AI.
 
-Chúng tôi vừa công bố tài liệu thảo luận mở và mã nguồn PoC cho một tầng cầu nối trung lập giữa các hệ sinh thái AI (MCP, GB/Z, chuẩn EU). Điểm cốt lõi không chỉ là kỹ thuật — mà là đề xuất Việt Nam, với vị thế trung lập địa chính trị và tinh thần Ngoại giao Cây tre, có điều kiện thuận lợi để đảm nhận vai trò trọng tài cho các giao dịch AI xuyên biên giới.
+Chúng tôi vừa công bố tài liệu thảo luận mở và mã nguồn PoC cho một lớp bằng chứng kỹ thuật trung lập giữa các hệ sinh thái AI (MCP, GB/Z, chuẩn EU). Điểm cốt lõi không chỉ là kỹ thuật — mà là đề xuất Việt Nam, với vị thế trung lập địa chính trị và tinh thần Ngoại giao Cây tre, có điều kiện thuận lợi để đảm nhận vai trò trọng tài cho các giao dịch AI xuyên biên giới.
 
 Đây là đề xuất mở, không phải tuyên ngôn. Chúng tôi mời các chuyên gia chính sách, nhà nghiên cứu và cộng đồng khởi nghiệp đọc, phản biện và đóng góp góc nhìn.
 

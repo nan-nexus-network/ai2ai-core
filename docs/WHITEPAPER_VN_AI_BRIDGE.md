@@ -20,6 +20,8 @@
 
 5. **Về tiêu chí dừng lại (Stopping Criteria):** *"Tiêu chí để chúng tôi dừng lại: Nếu sau 12 tháng, giao thức này không được cộng đồng đón nhận hoặc chứng minh được giá trị thực tiễn, chúng tôi sẽ công khai dừng dự án để không lãng phí nguồn lực xã hội."*
 
+6. **Về tán gọi của tài liệu dùng:** trong tài liệu này, lớp bằng chứng kỹ thuật được gọi đúng nghĩa chính là **Hạ tầng Bằng chứng Kỹ thuật Trung lập** (Neutral Technical Evidence Infrastructure) — cùng tên với trang web chính thức. Các thuật ngữ "Tầng Giao Thức Liên Vận" (Interoperability Layer) và "hộp cát thử nghiệm" vẫn xuất hiện ở một số chỗ như thuật ngữ kỹ thuật ban đầu; điểm khái niệm **Lớp A** (bằng chứng kỹ thuật) và **Lớp B** (phán xử pháp lý) cốt lõi giữ nguyên.
+
 ---
 
 ## TÓM TẮT CHO NGƯỜI BẬN RỘN (EXECUTIVE SUMMARY)

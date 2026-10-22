@@ -1,16 +1,16 @@
 cff-version: 1.2.0
-title: "NAN AI2AI-SI2SI — Hộp Cát Thử Nghiệm Cầu Nối Giao Thức AI"
+title: "NAN AI2AI: Hạt tầng Bằng chứng Kỹ thuật Trung lập cho Giao dịch AI Xuyên biên giới"
 message: "Nếu bạn dùng hồ sơ hoặc mã nguồn này trong nghiên cứu, vui lòng trích dẫn như sau."
 type: software
 authors:
-  - name: "Người khởi xướng sáng kiến NAN AI2AI-SI2SI"
+  - name: "Người khởi xướng sáng kiến NAN AI2AI"
 repository-code: "https://github.com/nan-nexus-network/ai2ai-core"
 url: "https://nan-ai2ai.nexusasianetwork.workers.dev"
 license: Apache-2.0
 version: 0.1.0
 keywords:
-  - protocol-bridge
-  - agent-interoperability
+  - technical-evidence
+  - cross-border-ai-transactions
   - a2a
   - mcp
   - ai2ai

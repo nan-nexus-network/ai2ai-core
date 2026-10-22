@@ -76,6 +76,24 @@ Không có tài liệu nội bộ nào trong cây commit đầu tiên, và toàn
 
 ---
 
+### 4.1. Một tài liệu nội bộ đã lọt vào cây commit (đã gỡ ngày 22/10/2026)
+
+`docs/SOFT_LAUNCH_LIST.md` (tiêu đề: *"Danh sách liên hệ soft launch - BẢN NỘI BỘ"*) đã bị commit nhầm vào nhánh `main` từ commit `867f4a3` (21/10/2026) và được đẩy lên GitHub công khai. Nội dung gồm 28 đầu mối liên hệ của cơ quan nhà nước và báo chí kèm địa chỉ email vai trò, ngày xác minh, trạng thái gửi thư và phạm vi chính sách nhắm tới.
+
+**Đánh giá mức độ:** toàn bộ địa chỉ trong danh sách là **địa chỉ email vai trò công khai** (đã in trên website của chính cơ quan đó), không có thông tin cá nhân, không có khóa hay thông tin truy cập. Một tên đăng nhập GitHub (`dharsinir15-priya`) xuất hiện trong danh sách đã là contributor công khai và vốn được ghi trong `CONTRIBUTORS.md`.
+
+**Đã xử lý:**
+- `git rm --cached docs/SOFT_LAUNCH_LIST.md` — gỡ khỏi cây commit hiện tại.
+- Thêm vào `.gitignore` — file chỉ còn trên máy cục bộ.
+- **Lịch sử Git là bất biến:** file vẫn còn trong lịch sử các commit cũ. Việc viết lại toàn bộ lịch sử (48 commit, đổi mọi SHA, di chuyển 2 tag `v0.1.0` và `v0.2.0`) là thao tác phá hủy khó hoàn tác trên kho công khai, nên **chưa thực hiện** và còn để Chủ tịch quyết định. Lệnh nếu thực hiện:
+  ```bash
+  git filter-repo --path docs/SOFT_LAUNCH_LIST.md --invert-paths
+  git push --force --tags origin main
+  ```
+
+**Tự kiểm chứng:** cây commit đầu tiên (root `98ba1d3`) không chứa bất kỳ tài liệu nội bộ nào — xem mục 4.
+
+
 ## 5. Những gì chúng tôi đã kiểm tra trước khi công bố
 
 | Kiểm tra | Kết quả |

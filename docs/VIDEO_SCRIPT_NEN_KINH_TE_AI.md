@@ -176,7 +176,7 @@ Mã nguồn đã mở công khai theo giấy phép Apache 2.0. Rất mong nhận
 ```text
 Đừng sợ AI cướp việc. Hãy chuẩn bị cho Nền kinh tế AI2AI! 🚀
 
-Khi các tác tử AI tự đàm phán và giao dịch, thế giới cần một tầng cầu nối trung lập và một cơ chế trọng tài công tâm. 
+Khi các tác tử AI tự đàm phán và giao dịch, thế giới cần một lớp bằng chứng kỹ thuật trung lập và một cơ chế trọng tài công tâm. 
 
 NAN AI2AI là khung tham chiếu mở do người Việt khởi xướng với mục tiêu:
 1. Kết nối các giao thức AI toàn cầu (MCP, GB/Z, EU).

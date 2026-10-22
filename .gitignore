@@ -5,6 +5,7 @@ __pycache__/
 
 # Private & secrets
 LEADS.md
+docs/SOFT_LAUNCH_LIST.md
 docs/THU_NGO_DONG_HANH.md
 THU_NGO_DONG_HANH.md
 .env

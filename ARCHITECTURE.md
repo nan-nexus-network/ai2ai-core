@@ -1,4 +1,4 @@
-# NAN AI2AI Bridge PoC Architecture
+# NAN AI2AI: Kiến trúc PoC lớp bằng chứng kỹ thuật trung lập
 
 ## Scope
 

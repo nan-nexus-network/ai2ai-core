@@ -1,7 +1,7 @@
 # MẪU BÀI CẬP NHẬT 24 GIỜ SAU RA MẮT (NGÀY 6)
 ## POST-LAUNCH 24-HOUR TRANSPARENCY & UPDATE TEMPLATE
-**Tài liệu tham chiếu nội bộ:** `docs/NGAY_6_UPDATE_TEMPLATE.md`  
-**Dự án:** NAN AI2AI-SI2SI Open Reference Bridge Sandbox  
+**Mẫu công khai dùng chung:** `docs/NGAY_6_UPDATE_TEMPLATE.md`  
+**Dự án:** NAN AI2AI - Hạt tầng Bằng chứng Kỹ thuật Trung lập (PoC)  
 **Mục đích:** Cung cấp khung bài viết minh bạch, thực tế để đăng tải lên LinkedIn, Facebook, Diễn đàn Tinh Tế và X.com sau đúng 24 giờ kể từ thời điểm công bố sáng kiến (Ngày 5).
 
 ---
@@ -13,16 +13,16 @@ Tùy thuộc vào kết quả tương tác thực địa trong 24 giờ qua, ng�
 ### Mẫu 1: Kịch bản A — Tương tác tốt & Lan tỏa tích cực
 > **Tiêu đề gợi ý:**  
 > `[Cập nhật 24h] Sáng kiến NAN AI2AI sau ngày đầu tiên: [X] phản biện kỹ thuật, [Y] ngôi sao GitHub và bài học lớn về tính trung lập.`  
-> *Ngắn gọn cho mạng xã hội:* `24 giờ sau khi mở hộp cát AI2AI Bridge: Chúng tôi đã học được gì từ cộng đồng?`
+> *Ngắn gọn cho mạng xã hội:* `24 giờ sau khi mở lớp bằng chứng kỹ thuật AI2AI: Chúng tôi đã học được gì từ cộng đồng?`
 
 ### Mẫu 2: Kịch bản B — Tương tác vừa phải / Ít tương tác / Nhiều chất vấn kỹ thuật
 > **Tiêu đề gợi ý:**  
-> `[Cập nhật 24h] 24 giờ thử nghiệm công khai AI2AI Bridge: [X] phản biện thẳng thắn, [Y] điểm cần hoàn thiện và cam kết giữ vững mã nguồn mở.`  
+> `[Cập nhật 24h] 24 giờ thử nghiệm công khai lớp bằng chứng kỹ thuật AI2AI: [X] phản biện thẳng thắn, [Y] điểm cần hoàn thiện và cam kết giữ vững mã nguồn mở.`  
 > *Ngắn gọn cho mạng xã hội:* `Sau 24 giờ mở mã nguồn AI2AI: Cảm ơn những phản biện 'dội gáo nước lạnh' đúng lúc.`
 
 ### Mẫu 3: Kịch bản C — Trầm lắng / Không tương tác / Phẳng lặng
 > **Tiêu đề gợi ý:**  
-> `[Cập nhật 24h] Ngày đầu tiên của Hộp cát AI2AI Bridge: Không có phép màu lan tỏa, và đó là điều hoàn toàn bình thường.`  
+> `[Cập nhật 24h] Ngày đầu tiên của Lớp bằng chứng kỹ thuật AI2AI: Không có phép màu lan tỏa, và đó là điều hoàn toàn bình thường.`  
 > *Ngắn gọn cho mạng xã hội:* `24 giờ tĩnh lặng của một dự án giao thức mở — Kiên trì với chặng đua 90 ngày.`
 
 ---

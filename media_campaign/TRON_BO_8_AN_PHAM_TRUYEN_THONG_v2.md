@@ -8,7 +8,7 @@
 
 Kỷ nguyên Vươn mình của Việt Nam sẽ được định hình bởi công nghệ. Nhưng có một câu hỏi ít ai đặt ra: nếu các AI Agent không nói chuyện được với nhau xuyên biên giới, doanh nghiệp Việt Nam sẽ mãi phụ thuộc vào hạ tầng do người khác xây?
 
-Chúng tôi không có hàng trăm tỷ đồng, không có đội ngũ hàng ngàn kỹ sư. Nhưng chúng tôi có một câu hỏi và đủ quyết tâm để thử trả lời nó. Với sự hỗ trợ của AI, chúng tôi đã phác thảo **Giao thức NAN AI2AI** — một tầng cầu nối trung lập giữa các hệ sinh thái MCP (Mỹ), GB/Z (Trung Quốc) và chuẩn EU.
+Chúng tôi không có hàng trăm tỷ đồng, không có đội ngũ hàng ngàn kỹ sư. Nhưng chúng tôi có một câu hỏi và đủ quyết tâm để thử trả lời nó. Với sự hỗ trợ của AI, chúng tôi đã phác thảo **Giao thức NAN AI2AI** — một lớp bằng chứng kỹ thuật trung lập giữa các hệ sinh thái MCP (Mỹ), GB/Z (Trung Quốc) và chuẩn EU.
 
 Việt Nam có những lợi thế thực sự: thế hệ kỹ sư trẻ, mạng lưới thương mại đa dạng, và vị thế ngoại giao trung lập đã được quốc tế ghi nhận qua Tuyên bố Hà Nội 1/2026. Chúng tôi không đề xuất Việt Nam đua mô hình tỷ đô — mà đề xuất Việt Nam đóng vai trò kết nối và, xa hơn, trở thành nơi giải quyết tranh chấp công tâm khi các agent AI tự giao dịch mà không có tư cách pháp nhân.
 
@@ -56,7 +56,7 @@ Mời bạn đọc, chạy thử, và nếu thấy sai — nói thẳng. Đó l�
 ---
 
 ## Ấn phẩm 4 (11:00) — Group IT / Cộng đồng Dev
-**Tiêu đề:** [Apache 2.0] PoC cầu nối AI Agent (MCP ↔ A2A) — mình không phải dev, cần anh em bắt lỗi thật.
+**Tiêu đề:** [Apache 2.0] PoC lớp bằng chứng kỹ thuật cho giao dịch AI Agent (MCP ↔ A2A) — mình không phải dev, cần anh em bắt lỗi thật.
 
 Chào anh em,
 
@@ -181,7 +181,7 @@ Chúng tôi xin gửi đến Quý Báo một đề xuất mở để tham khảo
 Các AI Agent đang bắt đầu tự giao dịch xuyên biên giới. Nhưng chúng vận hành trên các hệ sinh thái không tương thích (MCP, GB/Z, chuẩn EU) và không có tư cách pháp nhân. Khi tranh chấp xảy ra, hiện chưa có cơ chế quốc tế nào xử lý.
 
 **Đề xuất:**
-Nhóm NAN AI2AI vừa công bố mã nguồn mở PoC cho một tầng cầu nối trung lập giữa các hệ sinh thái này, kèm theo tài liệu thảo luận đề xuất Việt Nam — với vị thế trung lập địa chính trị và tinh thần Ngoại giao Cây tre — có điều kiện thuận lợi để đảm nhận vai trò trọng tài cho các giao dịch AI xuyên biên giới.
+Nhóm NAN AI2AI vừa công bố mã nguồn mở PoC cho một lớp bằng chứng kỹ thuật trung lập giữa các hệ sinh thái này, kèm theo tài liệu thảo luận đề xuất Việt Nam — với vị thế trung lập địa chính trị và tinh thần Ngoại giao Cây tre — có điều kiện thuận lợi để đảm nhận vai trò trọng tài cho các giao dịch AI xuyên biên giới.
 
 Nhóm khởi xướng minh bạch: người đứng đầu không phải kỹ sư lập trình, PoC được xây với sự hỗ trợ của AI, và toàn bộ tài liệu được công bố dưới dạng thảo luận mở để nhận phản biện từ cộng đồng kỹ thuật và chính sách.
 

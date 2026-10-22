@@ -1,4 +1,4 @@
-# NAN AI2AI-SI2SI: Hộp Cát Thử Nghiệm Cầu Nối Tham Chiếu AI (Open Reference Bridge Sandbox)
+# NAN AI2AI: Hạt tầng Bằng chứng Kỹ thuật Trung lập cho Giao dịch AI Xuyên biên giới
 
 > **⚠️ PROOF OF CONCEPT (PoC): DO NOT USE IN PRODUCTION**<br>
 > Mã nguồn chỉ minh họa một luồng cục bộ với dữ liệu mẫu. Bộ lọc chuỗi tĩnh không phải biện pháp bảo mật; SHA-256 trong biên nhận không xác thực danh tính, chữ ký hay việc thực thi từ xa. Chưa có transport giữa các Agent, xác thực, phân quyền hoặc kiểm chứng độc lập.
