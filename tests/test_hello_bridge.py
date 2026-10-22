@@ -8,6 +8,8 @@ Cách chạy: python -m unittest discover -s tests -v
 
 import os
 import sys
+import threading
+import time
 import unittest
 import importlib.util
 
@@ -31,7 +33,10 @@ class TestProtocolBridgeNode(unittest.TestCase):
     def setUp(self) -> None:
         self.bridge = ProtocolBridgeNode()
         # Deduplication cache là class-level, nên phải xoá giữa các test để
-        # các test không ảnh hưởng lẫn nhau.
+        # các test không ảnh hưởng lẫn nhau. Dùng `_store.clear()` để xoá cả
+        # các Event đang "in flight" — nếu chỉ xoá dict mà để lại Event cũ,
+        # một thread đang chờ sẽ treo vĩnh viễn.
+        ProtocolBridgeNode._store.clear()
         ProtocolBridgeNode._receipt_cache.clear()
         # Mỗi test dùng một operation_id riêng: khoá idempotency phải là duy
         # nhất cho mỗi thao tác logic.
@@ -264,6 +269,130 @@ class TestProtocolBridgeNode(unittest.TestCase):
         bridged = self.bridge.translate_mcp_to_a2a(self.valid_mcp_packet)
         with self.assertRaises(ValueError):
             self.bridge.issue_verification_receipt(bridged, {"ok": True}, "")
+
+
+    def test_12_concurrent_idempotency(self) -> None:
+        """Trường hợp 12: Hai request CÙNG LÚC với cùng operation_id.
+
+        Đây là race condition mà kiểm tra cache đơn thuần không chặn được:
+        cả hai request đều thấy cache rỗng và cùng chạy tác vụ. Với tác vụ
+        có tính phí (thanh toán, đặt hàng) thì đó là double-spend.
+
+        Với "Atomic In-flight Claim", **chỉ một** request chạy tác vụ; request
+        còn lại chờ và nhận lại **cùng một** biên nhận.
+        """
+        calls = []
+        calls_lock = threading.Lock()
+
+        def slow_executor():
+            # Ghi nhận lời gọi TRƯỚC khi ngủ, để nếu có race thì cả hai
+            # request đều ghi lại — thì test sẽ bắt được.
+            with calls_lock:
+                calls.append(1)
+            time.sleep(1)
+            return {"status": "success", "suppliers_found": 3}
+
+        bridged = self.bridge.translate_mcp_to_a2a(self.valid_mcp_packet)
+        results = []
+        errors = []
+
+        def worker():
+            try:
+                results.append(self.bridge.execute_with_idempotency(
+                    self.operation_id, bridged, slow_executor))
+            except BaseException as exc:  # noqa: BLE001 - test bao loi
+                errors.append(exc)
+
+        threads = [threading.Thread(target=worker) for _ in range(2)]
+        for thread in threads:
+            thread.start()
+        for thread in threads:
+            thread.join(timeout=15)
+
+        self.assertFalse(any(t.is_alive() for t in threads), "thread bi treo")
+        self.assertEqual(errors, [], "khong duoc co loi: %r" % errors)
+        self.assertEqual(len(calls), 1, "tac vu phai chay DUNG MOT LAN, thuc te %d" % len(calls))
+        self.assertEqual(len(results), 2, "ca hai request deu phai nhan ve bien nhan")
+        self.assertEqual(
+            results[0]["receipt_id"], results[1]["receipt_id"],
+            "ca hai request phai nhan cung MOT bien nhan")
+        self.assertEqual(
+            ProtocolBridgeNode._store.status(self.operation_id), "DONE")
+
+    def test_12b_concurrent_failure_is_not_retried_automatically(self) -> None:
+        """Trường hợp 12b: Tác vụ lỗi → KHÔNG tự chạy lại.
+
+        Tác vụ có thể **đã** có tác dụng phụ (đã trừ tiền, đã gửi hàng) trước
+        khi lỗi xảy ra. Chạy lại tự động là mở lại đúng lỗi double-spend mà
+        cơ chế này sinh ra để chống. Nên lần chạy lỗi được đánh dấu FAILED và
+        request đang chờ nhận lỗi đó, không tự chạy lại.
+        """
+        calls = []
+        calls_lock = threading.Lock()
+
+        def failing_executor():
+            with calls_lock:
+                calls.append(1)
+            time.sleep(0.4)
+            raise RuntimeError("task that bai gia lap")
+
+        bridged = self.bridge.translate_mcp_to_a2a(self.valid_mcp_packet)
+        errors = []
+
+        def worker():
+            try:
+                self.bridge.execute_with_idempotency(
+                    self.operation_id, bridged, failing_executor)
+            except BaseException as exc:  # noqa: BLE001 - test bao loi
+                errors.append(exc)
+
+        threads = [threading.Thread(target=worker) for _ in range(2)]
+        for thread in threads:
+            thread.start()
+        for thread in threads:
+            thread.join(timeout=15)
+
+        self.assertFalse(any(t.is_alive() for t in threads), "thread bi treo")
+        self.assertEqual(len(errors), 2, "ca hai request deu phai nhan loi")
+        self.assertEqual(len(calls), 1, "tac vu that bai khong duoc chay lai tu dong")
+        self.assertEqual(
+            ProtocolBridgeNode._store.status(self.operation_id), "FAILED")
+
+    def test_12c_distinct_operations_run_concurrently(self) -> None:
+        """Trường hợp 12c: Hai operation_id KHÁC nhau không chặn nhau.
+
+        Cơ chế phải chỉ chặn trùng lặp của CÙNG một khoá, không được biến
+        Bridge thành nút thắt toàn cục.
+        """
+        calls = []
+        calls_lock = threading.Lock()
+
+        def executor():
+            with calls_lock:
+                calls.append(1)
+            time.sleep(0.4)
+            return {"ok": True}
+
+        bridged = self.bridge.translate_mcp_to_a2a(self.valid_mcp_packet)
+        results = []
+
+        def worker(op_id):
+            results.append(self.bridge.execute_with_idempotency(
+                op_id, bridged, executor))
+
+        threads = [
+            threading.Thread(target=worker, args=(self.operation_id + "_A",)),
+            threading.Thread(target=worker, args=(self.operation_id + "_B",)),
+        ]
+        for thread in threads:
+            thread.start()
+        for thread in threads:
+            thread.join(timeout=15)
+
+        self.assertEqual(len(calls), 2, "hai operation_id khac nhau phai chay song song")
+        self.assertEqual(len(results), 2)
+        self.assertNotEqual(
+            results[0]["receipt_id"], results[1]["receipt_id"])
 
 
 if __name__ == "__main__":

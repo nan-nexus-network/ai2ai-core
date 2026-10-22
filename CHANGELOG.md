@@ -12,6 +12,17 @@ Dự án tuân theo [Semantic Versioning](https://semver.org/lang/vi/). Mọi m�
 
 ### Bổ sung
 
+- **Atomic In-flight Claim** — chống thực thi lặp **đồng thời** (race condition → double-spend). Khoá `threading.Lock` bảo vệ mọi biến đổi trạng thái; mỗi `operation_id` đang xử lý có một `threading.Event` để request thứ hai **chờ** thay vì chạy lại. Cơ chế nằm trong `nan_ai2ai/idempotency.py` và dùng **chỉ thư viện chuẩn Python**.
+- `ProtocolBridgeNode.execute_with_idempotency()` — claim khoá **trước khi** gọi bên thực thi. Đây là điểm khác biệt cốt lõi: chỉ khoá ở bước cấp biên nhận thì tác vụ **đã** chạy hai lần.
+- `docs/ADR_003_ATOMIC_IN_FLIGHT_CLAIM.md` — ghi lại quyết định, gồm cả lý do **không tự chạy lại** khi lần chạy trước lỗi (tác vụ có thể đã có tác dụng phụ).
+
+### Sửa
+
+- `hello_bridge.py` và `agent_chat.py` dùng chung bộ máy idempotency (mỗi bridge một kho riêng) để logic khoá **không trôi khỏi nhau** giữa hai hiện thực.
+- `agent_chat.py`: Agent B giờ được gọi **bên trong** claim, nên retry đồng thời cũng chỉ thực thi một lần.
+
+### Bổ sung
+
 - **Gói `nan_ai2ai/`** — mã nguồn tham chiếu có thể import được (gói ở thư mục gốc, không cần bước cài đặt).
 - **`nan_ai2ai/validation.py`** — bộ kiểm tra cấu trúc bằng **thư viện chuẩn Python**: allowlist trường, kiểu dữ liệu, độ dài, miền giá trị. Là **subset** của JSON Schema Draft 2020-12, không phải bản triển khai đầy đủ.
 - **`nan_ai2ai/ed25519.py`** — Ed25519 thuần Python theo **RFC 8032**, giữ cam kết "Zero Dependencies". Kiểm chứng bằng 5 vector chính thức RFC 8032 §7.1 và đối chiếu chéo với `cryptography` (25/25 mẫu ngẫu nhiên).

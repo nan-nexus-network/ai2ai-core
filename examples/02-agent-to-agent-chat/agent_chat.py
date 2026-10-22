@@ -18,8 +18,18 @@ dữ liệu (Integrity), không xác thực danh tính hay nguồn gốc.
 import json
 import hashlib
 import uuid
+import os
 import sys
+import threading
 from datetime import datetime, timezone
+
+# Them thu muc goc kho vao sys.path de import duoc goi `nan_ai2ai`.
+# Van hoat dong 100% thu vien chuan - khong dung goi cai dat nao.
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
+from nan_ai2ai import idempotency  # noqa: E402
 
 class NANBridgeNode:
     """Mô phỏng Node Cầu nối NAN AI2AI"""
@@ -30,7 +40,13 @@ class NANBridgeNode:
     #: `examples/01-hello-agent/hello_bridge.py`: mất khi khởi động lại, không
     #: dùng chung giữa các tiến trình, không có TTL. Việc hợp nhất hai hiện
     #: thực bridge còn lại nằm trong backlog (xem `ROADMAP.md`, mục BL4).
-    _receipt_cache = {}
+    # Kho trang thai idempotency rieng cho bridge nay (khong dung chung voi
+    # `ProtocolBridgeNode` trong examples/01-hello-agent/hello_bridge.py - hai
+    # hien thuc bridge van tach, xem ROADMAP.md muc BL4).
+    _store = idempotency.IdempotencyStore()
+    _cache_lock = _store._cache_lock
+    _in_flight_events = _store._in_flight_events
+    _receipt_cache = _store._receipt_cache
 
     @staticmethod
     def route_request(sender_did: str, receiver_did: str, payload: dict) -> dict:
@@ -51,23 +67,15 @@ class NANBridgeNode:
         """Trả về biên nhận đã cấp cho `operation_id`, hoặc None."""
         if not isinstance(operation_id, str) or not operation_id:
             return None
-        entry = NANBridgeNode._receipt_cache.get(operation_id)
-        return dict(entry) if entry else None
+        receipt = NANBridgeNode._store.lookup(operation_id)
+        return dict(receipt) if receipt else None
 
     @staticmethod
-    def issue_receipt(trace_id: str, result: dict, operation_id: str) -> dict:
-        """Cấp biên nhận xác thực SHA-256, có loại trừ trùng lặp theo operation_id.
-
-        Nếu `operation_id` đã có biên nhận, trả lại biên nhận cũ kèm log
-        "Duplicate detected! Returning cached receipt."
-        """
-        cached = NANBridgeNode.lookup_cached_receipt(operation_id)
-        if cached is not None:
-            print("   [Bridge] Duplicate detected! Returning cached receipt.")
-            return cached
+    def _build_receipt(trace_id: str, result: dict, operation_id: str) -> dict:
+        """Tạo biên nhận SHA-256 (hàm thuần, không đụng cache/khoá)."""
         raw_data = json.dumps(result, sort_keys=True) + trace_id
         proof = hashlib.sha256(raw_data.encode('utf-8')).hexdigest()
-        receipt = {
+        return {
             "receipt_id": f"rcpt_{uuid.uuid4().hex[:10]}",
             "trace_id": trace_id,
             "operation_id": operation_id,
@@ -75,8 +83,60 @@ class NANBridgeNode:
             "sha256_proof": proof,
             "data": result
         }
-        NANBridgeNode._receipt_cache[operation_id] = dict(receipt)
-        return receipt
+
+    @classmethod
+    def execute_once(cls, operation_id: str, executor_fn, trace_id: str) -> dict:
+        """Chạy tác vụ **đúng một lần** cho mỗi `operation_id`, rồi cấp biên nhận.
+
+        `executor_fn()` là phần tác vụ (gọi Agent B). Khoá idempotency được
+        chiếm **trước khi** gọi nó, nên nếu có nhiều request cùng
+        `operation_id` đến đồng thời, chỉ một request thực sự gọi Agent B.
+        """
+        store = cls._store
+        while True:
+            state, payload = store.claim(operation_id)
+            if state == "DONE":
+                print("   [Bridge] Duplicate detected! Returning cached receipt.")
+                return payload
+            if state == "FAILED":
+                raise idempotency.OperationFailed(operation_id, payload)
+            if state == "INFLIGHT":
+                payload.wait()
+                continue
+            try:
+                result = executor_fn()
+                receipt = cls._build_receipt(trace_id, result, operation_id)
+            except BaseException as exc:
+                store.fail(operation_id, exc)
+                raise
+            store.complete(operation_id, receipt)
+            return receipt
+
+    @classmethod
+    def issue_receipt(cls, trace_id: str, result: dict, operation_id: str) -> dict:
+        """Cấp biên nhận xác thực SHA-256, có loại trừ trùng lặp theo operation_id.
+
+        Nếu `operation_id` đã có biên nhận, trả lại biên nhận cũ kèm log
+        "Duplicate detected! Returning cached receipt."
+        """
+        store = cls._store
+        while True:
+            state, payload = store.claim(operation_id)
+            if state == "DONE":
+                print("   [Bridge] Duplicate detected! Returning cached receipt.")
+                return payload
+            if state == "FAILED":
+                raise idempotency.OperationFailed(operation_id, payload)
+            if state == "INFLIGHT":
+                payload.wait()
+                continue
+            try:
+                receipt = cls._build_receipt(trace_id, result, operation_id)
+            except BaseException as exc:
+                store.fail(operation_id, exc)
+                raise
+            store.complete(operation_id, receipt)
+            return receipt
 
 class AIAgent:
     def __init__(self, name, did):
@@ -118,14 +178,19 @@ def run_demo():
     packet = bridge.route_request(alice_agent.did, bob_agent.did, task_payload)
     print(f"    - Trace ID: {packet['trace_id']}")
 
-    # 3. Bob xử lý
-    bob_result = bob_agent.process_task(packet['task'])
-    print(f"[{bob_agent.name}] Đã xử lý xong. Kết quả:")
-    print(json.dumps(bob_result, indent=2, ensure_ascii=False))
+    # 3. Bob xử lý - CHẠY TRONG claim idempotency, nên khi có retry đồng thời
+    #    thì Agent B chỉ được gọi đúng một lần.
+    def _do_work():
+        bob_result = bob_agent.process_task(packet['task'])
+        print(f"[{bob_agent.name}] Đã xử lý xong. Kết quả:")
+        print(json.dumps(bob_result, indent=2, ensure_ascii=False))
+        return bob_result
+
+    receipt = bridge.execute_once(
+        task_payload["operation_id"], _do_work, packet['trace_id'])
 
     # 4. Bridge cấp biên nhận
     print("\n[3] NAN Bridge cấp Biên nhận Xác thực (Verification Receipt):")
-    receipt = bridge.issue_receipt(packet['trace_id'], bob_result, task_payload["operation_id"])
     print(json.dumps(receipt, indent=2, ensure_ascii=False))
 
     # 5. RETRY: ACK bị mất, Alice gửi lại CÙNG operation_id

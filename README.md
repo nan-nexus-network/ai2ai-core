@@ -61,8 +61,8 @@ python examples/01-hello-agent/hello_bridge.py
 4. **Tạo biên nhận demo:** Tính digest SHA-256 từ dữ liệu mẫu và phản hồi mô phỏng; digest không xác thực danh tính, nguồn gốc hoặc việc thực thi.
 5. **Chống thực thi lặp (Idempotency):** Cùng một `operation_id` chỉ được thực thi **một lần**. Lần retry (ví dụ khi ACK bị mất) nhận lại **đúng biên nhận cũ** nhờ deduplication cache, và bên thực thi **không** bị gọi lại. Demo 2 (P2P) thể hiện rõ điều này: Alice gửi 2 lần, Bob chỉ chạy 1 lần.
 
-> **Đã hỗ trợ Idempotency (`operation_id`) chống Replay Attack ở mức PoC.**
-> *Giới hạn cần nói rõ:* deduplication cache nằm **trong bộ nhớ của một tiến trình** — mất khi khởi động lại, không dùng chung giữa các nút, **không có TTL**, và khoá là do phía gọi tự chọn (dùng lại khoá cho hai thao tác khác nhau là lỗi phía gọi). Đây là bước đầu của cơ chế idempotency, **không phải** bảo vệ replay ở mức production. Xem [ARCHITECTURE.md](ARCHITECTURE.md).
+> **Đã hỗ trợ chống Replay Attack tuần tự VÀ đồng thời (Concurrent) ở mức PoC.** Mỗi gói tin phải có `operation_id`; cơ chế **Atomic In-flight Claim** (khoá nguyên tử `threading.Lock` + `threading.Event`) bảo đảm cùng một `operation_id` chỉ được **thực thi đúng một lần** — kể cả khi nhiều request đến **cùng lúc**. *(Xem [ADR-003](docs/ADR_003_ATOMIC_IN_FLIGHT_CLAIM.md).)*
+> *Giới hạn cần nói rõ:* deduplication cache nằm **trong bộ nhớ của một tiến trình** — mất khi khởi động lại, không dùng chung giữa các nút, **không có TTL**, và khoá là do phía gọi tự chọn (dùng lại khoá cho hai thao tác khác nhau là lỗi phía gọi). `threading.Lock` chỉ bảo vệ được **trong một tiến trình Python** — với nhiều tiến trình hoặc nhiều máy thì cần khoá phân tán. Đây là bước đầu của cơ chế idempotency, **không phải** bảo vệ replay ở mức production. Xem [ARCHITECTURE.md](ARCHITECTURE.md) và [ADR-003](docs/ADR_003_ATOMIC_IN_FLIGHT_CLAIM.md).
 
 ### Demo 2: Agent-to-Agent Chat (P2P)
 Dành cho các cá nhân muốn thử nghiệm kết nối AI của mình với AI của người khác. Zero dependencies, chạy trong 60 giây.

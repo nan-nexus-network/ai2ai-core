@@ -35,6 +35,7 @@ import hashlib
 import logging
 import os
 import sys
+import threading
 from datetime import datetime, timezone
 from typing import Tuple, Dict, List, Any, Optional
 
@@ -44,6 +45,7 @@ _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__f
 if _REPO_ROOT not in sys.path:
     sys.path.insert(0, _REPO_ROOT)
 
+from nan_ai2ai import idempotency  # noqa: E402
 from nan_ai2ai.validation import bridge_packet_schema, validate  # noqa: E402
 
 logger = logging.getLogger(__name__)
@@ -92,7 +94,26 @@ class ProtocolBridgeNode:
     #:     cho mỗi thao tác logic**; dùng lại khoá cho hai thao tác khác nhau là
     #:     lỗi phía gọi (được phát hiện và ghi cảnh báo, xem
     #:     ``issue_verification_receipt``).
-    _receipt_cache: Dict[str, Dict[str, Any]] = {}
+    #: Kho trạng thái idempotency dùng chung cho mọi thể hiện của lớp.
+    #:
+    #: `_store` giữ logic; ba thuộc tính dưới đây là **cùng một đối tượng**
+    #: với các thuộc tính bên trong store, nên có thể kiểm tra/xoá trực tiếp
+    #: (ví dụ trong test) mà không lệch với logic.
+    _store = idempotency.IdempotencyStore()
+
+    #: Khoá nguyên tử bao ve cac bien doi trang thai. `threading.Lock` chi bao ve
+    #: duoc trong MOT tien trinh Python (xem gioi han trong `nan_ai2ai/idempotency.py`).
+    _cache_lock = _store._cache_lock
+
+    #: operation_id -> `threading.Event` cho cac request **dang xu ly**.
+    #: Request thu hai se cho Event nay thay vi tu chay lai.
+    _in_flight_events = _store._in_flight_events
+
+    #: operation_id -> {"status": "PROCESSING"|"DONE"|"FAILED", ...}
+    #: - "DONE"    : {"receipt": <dict bien nhan>}
+    #: - "FAILED"  : {"error": <exception>}
+    #: - "PROCESSING": khoa da duoc chiem, chua xong.
+    _receipt_cache = _store._receipt_cache
 
     @staticmethod
     def sanitize_and_validate(
@@ -165,13 +186,80 @@ class ProtocolBridgeNode:
         """
         if not isinstance(operation_id, str) or not operation_id:
             return None
-        entry = ProtocolBridgeNode._receipt_cache.get(operation_id)
-        if entry is None:
+        receipt = ProtocolBridgeNode._store.lookup(operation_id)
+        if receipt is None:
             return None
-        return dict(entry["receipt"])
+        return dict(receipt)
 
     @staticmethod
+    def _build_receipt(
+        bridged_packet: Dict[str, Any],
+        execution_output: Dict[str, Any],
+        operation_id: str,
+    ) -> Dict[str, Any]:
+        """Tạo biên nhận SHA-256 (hàm thuần, **không** đụng cache/khoá)."""
+        raw_record = (
+            json.dumps(bridged_packet, sort_keys=True) + json.dumps(execution_output, sort_keys=True)
+        )
+        proof_hash = hashlib.sha256(raw_record.encode("utf-8")).hexdigest()
+        return {
+            "receipt_id": f"rcpt_{uuid.uuid4().hex[:10]}",
+            "trace_id": bridged_packet["trace_id"],
+            "operation_id": operation_id,
+            "status": "DEMO_DIGEST_ONLY",
+            "sha256_proof": proof_hash,
+            "result_data": execution_output
+        }
+
+    @classmethod
+    def execute_with_idempotency(
+        cls,
+        operation_id: str,
+        bridged_packet: Dict[str, Any],
+        executor_fn,
+    ) -> Dict[str, Any]:
+        """Chạy tác vụ **đúng một lần** cho mỗi ``operation_id``.
+
+        ``executor_fn()`` là phần *tác vụ* — gọi bên thực thi thật. Hàm này
+        **chiếm khoá nguyên tử** *trước khi* gọi nó, nên khi có nhiều request
+        cùng ``operation_id`` đến đồng thời, chỉ **một** request chạy tác vụ;
+        các request còn lại chờ và nhận lại **cùng một** biên nhận.
+
+        Đây là điểm khác biệt so với chỉ kiểm tra cache ở bước cấp biên nhận:
+        nếu khoá chỉ được giành *sau khi* tác vụ đã chạy thì tác vụ vẫn chạy
+        hai lần (race condition → double-spend).
+        """
+        if not isinstance(operation_id, str) or not operation_id.strip():
+            raise ValueError(
+                "operation_id khong duoc rong: can khoa idempotency de chong "
+                "thuc thi lap (replay).")
+
+        store = cls._store
+        while True:
+            state, payload = store.claim(operation_id)
+            if state == "DONE":
+                logger.warning("Duplicate detected! Returning cached receipt.")
+                return payload
+            if state == "FAILED":
+                raise idempotency.OperationFailed(operation_id, payload)
+            if state == "INFLIGHT":
+                # Khong giu khoa khi cho. Sau khi thuc phai QUAY LAI doc
+                # trang thai: request khac vua ket thuc hoac vua that bai.
+                payload.wait()
+                continue
+            # CLAIMED - chi request nay chay
+            try:
+                output = executor_fn()
+                receipt = cls._build_receipt(bridged_packet, output, operation_id)
+            except BaseException as exc:
+                store.fail(operation_id, exc)
+                raise
+            store.complete(operation_id, receipt)
+            return receipt
+
+    @classmethod
     def issue_verification_receipt(
+        cls,
         bridged_packet: Dict[str, Any],
         execution_output: Dict[str, Any],
         operation_id: str,
@@ -181,40 +269,33 @@ class ProtocolBridgeNode:
         ``operation_id`` là khoá idempotency. Nếu khoá này đã được cấp biên nhận
         trước đó, hàm **không tạo biên nhận mới** mà trả lại biên nhận đã lưu,
         kèm log ``Duplicate detected! Returning cached receipt.``
+
+        Có **claim nguyên tử**: nếu một request khác đang giữ khoá này, hàm chờ
+        (ngoài khoá) thay vì cấp biên nhận thứ hai.
         """
         if not isinstance(operation_id, str) or not operation_id.strip():
             raise ValueError(
                 "operation_id khong duoc rong: can khoa idempotency de chong "
                 "thuc thi lap (replay).")
 
-        cached = ProtocolBridgeNode.lookup_cached_receipt(operation_id)
-        if cached is not None:
-            logger.warning("Duplicate detected! Returning cached receipt.")
-            return cached
-
-        raw_record = (
-            json.dumps(bridged_packet, sort_keys=True) + json.dumps(execution_output, sort_keys=True)
-        )
-        proof_hash = hashlib.sha256(raw_record.encode("utf-8")).hexdigest()
-
-        receipt = {
-            "receipt_id": f"rcpt_{uuid.uuid4().hex[:10]}",
-            "trace_id": bridged_packet["trace_id"],
-            "operation_id": operation_id,
-            "status": "DEMO_DIGEST_ONLY",
-            "sha256_proof": proof_hash,
-            "result_data": execution_output
-        }
-
-        # Luu vao cache de lan retry nhan duoc cung mot bien nhan.
-        task_digest = hashlib.sha256(
-            json.dumps(bridged_packet.get("standardized_task", {}), sort_keys=True).encode("utf-8")
-        ).hexdigest()
-        ProtocolBridgeNode._receipt_cache[operation_id] = {
-            "receipt": dict(receipt),
-            "task_digest": task_digest,
-        }
-        return receipt
+        store = cls._store
+        while True:
+            state, payload = store.claim(operation_id)
+            if state == "DONE":
+                logger.warning("Duplicate detected! Returning cached receipt.")
+                return payload
+            if state == "FAILED":
+                raise idempotency.OperationFailed(operation_id, payload)
+            if state == "INFLIGHT":
+                payload.wait()
+                continue
+            try:
+                receipt = cls._build_receipt(bridged_packet, execution_output, operation_id)
+            except BaseException as exc:
+                store.fail(operation_id, exc)
+                raise
+            store.complete(operation_id, receipt)
+            return receipt
 
 
 def run_demo() -> None:
