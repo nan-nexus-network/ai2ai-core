@@ -9,7 +9,7 @@
 
 ---
 
-## 1. Vòng liên hệ đầu tiên (23 đầu mối, gồm 20 mục trọng tâm + 3 kênh bổ sung)
+## 1. Vòng liên hệ đầu tiên (28 đầu mối: 20 mục trọng tâm + 8 đầu mối bổ sung đã xác minh)
 
 | STT | Tổ chức / Bộ phận | Kênh liên hệ | Ngày xác minh | Trạng thái phản hồi | Phạm vi | Ngày nhận góp ý | Ghi chú |
 |---:|:---|:---|:---|:---|:---|:---|:---|
@@ -25,10 +25,10 @@
 | 10 | VCCI - Hội đồng Doanh nghiệp Hàng đầu VN | `vcci@vcci.com.vn` | 22/10/2026 | Chưa gửi | Tiêu chuẩn tuân thủ cho AI Agent | | Yêu cầu chuyển bộ phận |
 | 11 | Tạp chí Diễn đàn Doanh nghiệp - VCCI | `vcci@vcci.com.vn` | 22/10/2026 | Chưa gửi | Truyền thông chính sách TM số | | Yêu cầu chuyển tòa soạn |
 | 12 | VCCI - Cổng góp ý pháp luật (VIB) | biểu mẫu trực tuyến | 22/10/2026 | Chưa gửi | Góp ý chính sách chính thức | | `vibonline.com.vn` |
-| 13 | VIAC - Ban Thư ký | `info@viac.org.vn` | 22/10/2026 | Chưa gửi | Lớp B: tố tụng trọng tài | | Nhấn mạnh: KHÔNG thay thế VIAC |
+| 13 | VIAC - Ban Thư ký | `info@viac.org.vn` hoặc `datpt@viac.org.vn` | 22/10/2026 | Chưa gửi | Lớp B: tố tụng trọng tài | | Nguồn: `viac.vn`. Nhấn mạnh: KHÔNG thay thế VIAC |
 | 14 | VIAC - Ban Nghiên cứu & Đào tạo | `info@viac.org.vn` | 22/10/2026 | Chưa gửi | Chứng cứ điện tử, TM số | | Yêu cầu chuyển bộ phận |
 | 15 | VIAC - Nhóm trọng tài viên CNTT & TMĐT | `info@viac.org.vn` | 22/10/2026 | Chưa gửi | Phản biện biên bản mật mã học | | Yêu cầu chuyển bộ phận |
-| 16 | VICMC - Ban Thư ký | `secretariat@vicmc.vn` | 22/10/2026 | Chưa gửi | ODR kết hợp bằng chứng Lớp A | | Nguồn: `vicmc.vn/lien-he/` |
+| 16 | VICMC - Ban Thư ký | `secretariat@vicmc.vn` hoặc `banthuky@vicmc.vn` | 22/10/2026 | Chưa gửi | ODR kết hợp bằng chứng Lớp A | | Nguồn: `vicmc.vn/lien-he/` |
 | 17 | VietNamNet - Công nghệ | `contact@vietnamnet.vn` | 22/10/2026 | Chưa gửi | Báo chí CNTT | | Nguồn: `vietnamnet.vn` |
 | 18 | VnEconomy - Kinh tế số | `banthuonghieu@vneconomy.vn` | 22/10/2026 | Chưa gửi | Báo chí kinh tế | | Nguồn: `vneconomy.vn/lien-he/quang-cao` |
 | 19 | Tia Sáng | `tiasang@vnexpress.net` | 22/10/2026 | Chưa gửi | Chuyên trang tri thức | | Nguồn: `tiasang.com.vn` |
@@ -36,6 +36,11 @@
 | 21 | VnExpress - Số hóa | biểu mẫu liên hệ | 22/10/2026 | Chưa gửi | Báo chí CNTT | | `vnexpress.net/lien-he` - **CẦN XÁC MINH** |
 | 22 | Bộ KH&CN - Tổng hợp | `tonghop@mst.gov.vn` | 22/10/2026 | Chưa gửi | Tiếp nhận hồ sơ | | **CẦN XÁC MINH** |
 | 23 | Bộ KH&CN - Cổng tiếp nhận hồ sơ (một cửa) | biểu mẫu trực tuyến | 22/10/2026 | Chưa gửi | Góp ý thủ tục | | `vpcp.dichvucong.gov.vn` |
+| 24 | Tạp chí Diễn đàn Doanh nghiệp (cơ quan ngôn luận VCCI) | `toasoan@dddn.com.vn` | 22/10/2026 | Chưa gửi | Truyền thông chính sách TM số | | Nguồn: `diendandoanhnghiep.vn/gioi-thieu` · ĐT (024) 3.5771239 |
+| 25 | VnExpress - Bản tin | `webmaster@vnexpress.net` | 22/10/2026 | Chưa gửi | Báo chí CNTT | | Nguồn: footer bài viết vnexpress.net · ĐT 024 7300 8899 |
+| 26 | VnEconomy - Tòa soản | `toasoan@vneconomy.vn` | 22/10/2026 | Chưa gửi | Báo chí kinh tế | | Nguồn: "LỜI TÒA SOẠN" (PDF) · ĐT 024.3755 2050 |
+| 27 | ĐH Luật Hà Nội - Khoa Luật Dân dụy | `hopthuphananh.danguy@hlu.edu.vn` | 22/10/2026 | Chưa gửi | Phản biện học thuật bộ 23 văn bản | | Nguồn: footer `hlu.edu.vn` · `admin@hlu.edu.vn` (email chung) |
+| 28 | ĐH Luật TP.HCM - Khoa Luật Công & Pháp lý đại diện | `tvpl-pvcd@hcmulaw.edu.vn` | 22/10/2026 | Chưa gửi | Phản biện học thuật bộ 23 văn bản | | Nguồn: `hcmulaw.edu.vn/vi/lien-he` |
 
 **Ngày xác minh** là ngày kiểm chứng địa chỉ, không phải ngày gửi thư.
 
@@ -107,7 +112,7 @@ Release `v0.2.0` - https://github.com/nan-nexus-network/ai2ai-core/releases/tag/
 
 ## 5. Tổng hợp sau vòng liên hệ
 
-- Số đầu mối đã lập: 23 (20 mục trọng tâm + 3 kênh bổ sung)
+- Số đầu mối đã lập: 28 (20 mục trọng tâm + 8 đầu mối bổ sung). Mọi địa chỉ đều kèm nguồn công khai
 - Số thư đã gửi: 0
 - Số đã xác nhận phản hồi: 0
 - Số đề xuất buổi trao đổi: 0
